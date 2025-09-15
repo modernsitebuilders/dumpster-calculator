@@ -39,7 +39,16 @@ export default function BlogIndex() {
       readTime: "7 min read", 
       publishDate: "January 10, 2025",
       featured: false
-    }
+    },
+    {
+  slug: 'prohibited-items-dumpster',
+  title: 'What Can\'t Go in a Dumpster? Complete Prohibited Items List',
+  excerpt: 'Complete guide to items you cannot put in a dumpster rental. Learn about prohibited materials, disposal alternatives, and how to avoid extra fees.',
+  publishDate: 'January 5, 2025',
+  readTime: '6 min read',
+  category: 'Regulations',
+  featured: true
+}
   ];
 
   const categories = [
@@ -48,7 +57,8 @@ export default function BlogIndex() {
     "Kitchen Renovation",
     "Roofing",
     "Construction",
-    "General Tips"
+    "General Tips",
+    "Prohibited Items"
   ];
 
   return (
