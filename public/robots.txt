@@ -1,0 +1,12 @@
+# Robots.txt for Dumpster Calculator
+# Allow all bots to crawl the site
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://dumpster-size-calculator.com/sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
