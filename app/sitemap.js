@@ -19,6 +19,7 @@ export default function sitemap() {
     '/blog/bathroom-remodel-dumpster-size',
     '/blog/kitchen-renovation-dumpster-size', 
     '/blog/roof-replacement-dumpster-size',
+    '/blog/do-i-need-dumpster-permit',
 
     // NEW DUMPSTER SIZE GUIDES
     '/blog/10-yard-dumpster-guide',
@@ -28,6 +29,7 @@ export default function sitemap() {
 
     // NEW ROOM/PROJECT GUIDES
     '/blog/basement-cleanout-dumpster-size',
+    '/blog/garage-cleanout-dumpster-size',
     '/blog/garage-cleanout-dumpster-size',
     '/blog/deck-removal-dumpster-size',
     '/blog/flooring-replacement-dumpster-size',

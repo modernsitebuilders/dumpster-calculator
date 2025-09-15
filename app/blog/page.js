@@ -1,4 +1,4 @@
-// app/blog/page.js - UPDATED VERSION
+// app/blog/page.js - UPDATED WITH NEW HIGH-PRIORITY POSTS
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -7,6 +7,27 @@ export default function BlogIndex() {
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
 
   const blogPosts = [
+    // FEATURED HIGH-PRIORITY POSTS FIRST
+    {
+      title: "Do I Need a Dumpster Permit? Complete Guide by State & City",
+      excerpt: "Complete guide to dumpster permits. Learn when you need a permit, costs by city, how to apply, and alternatives. Covers all 50 states and major cities.",
+      slug: "do-i-need-dumpster-permit",
+      category: "Regulations",
+      readTime: "12 min read",
+      publishDate: "September 15, 2025",
+      featured: true // HIGH-PRIORITY - 5,400 monthly searches
+    },
+    {
+      title: "Garage Cleanout Dumpster Size: Complete Guide & Cost Breakdown",
+      excerpt: "Complete guide to choosing the right dumpster size for garage cleanouts. Includes pricing, tips for organizing, and what you can/cannot dispose of.",
+      slug: "garage-cleanout-dumpster-size",
+      category: "House Areas",
+      readTime: "9 min read",
+      publishDate: "September 15, 2025",
+      featured: true // HIGH-PRIORITY - 2,900 monthly searches
+    },
+    
+    // EXISTING FEATURED POSTS
     {
       title: "What Size Dumpster for Bathroom Remodel? Complete 2025 Guide",
       excerpt: "Planning a bathroom renovation? Learn exactly what dumpster size you need, costs, and tips for debris disposal. Covers everything from small updates to full gut renovations.",
@@ -26,24 +47,6 @@ export default function BlogIndex() {
       featured: true
     },
     {
-      title: "Roof Replacement Dumpster Size Calculator & Guide",
-      excerpt: "Roof replacement projects generate significant debris. Learn what dumpster size you need based on roof square footage, materials, and local disposal requirements.",
-      slug: "roof-replacement-dumpster-size",
-      category: "Roofing",
-      readTime: "7 min read", 
-      publishDate: "January 10, 2025",
-      featured: false
-    },
-    {
-      title: "Dumpster Rental Cost Guide: What You'll Really Pay in 2025",
-      excerpt: "Complete breakdown of dumpster rental costs including size pricing, delivery fees, permits, and hidden charges. Get accurate estimates for your project budget.",
-      slug: "dumpster-rental-cost-guide",
-      category: "General Tips",
-      readTime: "9 min read",
-      publishDate: "January 8, 2025",
-      featured: false
-    },
-    {
       title: "What Size Dumpster Do I Need? Complete Size Guide",
       excerpt: "Learn how to choose the right dumpster size for any project. Complete guide covering 10, 20, 30, and 40-yard dumpsters with real project examples.",
       slug: "what-size-dumpster-do-i-need",
@@ -61,7 +64,59 @@ export default function BlogIndex() {
       category: 'Regulations',
       featured: true
     },
-    // NEW POSTS - ADD THESE
+
+    // NEW HIGH-PRIORITY HOUSE AREAS (coming soon)
+    {
+      title: "Attic Cleanout Dumpster Size: Complete 2025 Guide",
+      excerpt: "Planning an attic cleanout? Learn what dumpster size you need, how to handle insulation and old belongings, plus cost-saving tips for seasonal cleanouts.",
+      slug: "attic-cleanout-dumpster-size",
+      category: "House Areas",
+      readTime: "8 min read",
+      publishDate: "September 16, 2025",
+      featured: false // 1,800 monthly searches
+    },
+
+    // NEW REGULATIONS CATEGORY EXPANSION
+    {
+      title: "HOA Dumpster Rules & Restrictions: Complete Guide",
+      excerpt: "Navigate HOA dumpster rules with confidence. Learn common restrictions, how to get approval, and alternatives for strict HOA communities.",
+      slug: "hoa-dumpster-rules",
+      category: "Regulations",
+      readTime: "7 min read",
+      publishDate: "September 16, 2025",
+      featured: false // 800 monthly searches
+    },
+    {
+      title: "Dumpster Weight Limits & Overage Fees: How to Avoid Extra Charges",
+      excerpt: "Avoid costly overage fees! Complete guide to dumpster weight limits, how weights are calculated, and tips to stay under the limit for every project type.",
+      slug: "weight-limits-overage-fees",
+      category: "Regulations",
+      readTime: "8 min read",
+      publishDate: "September 16, 2025",
+      featured: false
+    },
+
+    // EXISTING REGULAR POSTS
+    {
+      title: "Roof Replacement Dumpster Size Calculator & Guide",
+      excerpt: "Roof replacement projects generate significant debris. Learn what dumpster size you need based on roof square footage, materials, and local disposal requirements.",
+      slug: "roof-replacement-dumpster-size",
+      category: "Roofing",
+      readTime: "7 min read", 
+      publishDate: "January 10, 2025",
+      featured: false
+    },
+    {
+      title: "Dumpster Rental Cost Guide: What You'll Really Pay in 2025",
+      excerpt: "Complete breakdown of dumpster rental costs including size pricing, delivery fees, permits, and hidden charges. Get accurate estimates for your project budget.",
+      slug: "dumpster-rental-cost-guide",
+      category: "General Tips",
+      readTime: "9 min read",
+      publishDate: "January 8, 2025",
+      featured: false
+    },
+    
+    // DUMPSTER SIZE GUIDES
     {
       title: "10 Yard Dumpster Guide: Complete Size & Cost Breakdown",
       excerpt: "Everything you need to know about 10 yard dumpsters. Perfect for small projects, garage cleanouts, and minor renovations. Includes pricing and project examples.",
@@ -103,11 +158,12 @@ export default function BlogIndex() {
   const categories = [
     "All Posts",
     "General Tips",
+    "House Areas", // NEW CATEGORY - for garage, attic, basement cleanouts
     "Bathroom Renovation", 
     "Kitchen Renovation",
     "Roofing",
-    "Regulations",
-    "Dumpster Sizes"  // NEW CATEGORY
+    "Regulations", // EXPANDED CATEGORY
+    "Dumpster Sizes"
   ];
 
   // Filter posts based on selected category
@@ -160,13 +216,27 @@ export default function BlogIndex() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
-              <article key={post.slug} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <article key={post.slug} className={`bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow ${
+                post.featured ? 'ring-2 ring-blue-200 bg-blue-50' : ''
+              }`}>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold">
+                    <span className={`inline-block text-xs px-2 py-1 rounded-full font-semibold ${
+                      post.category === 'Regulations' ? 'bg-red-100 text-red-800' :
+                      post.category === 'House Areas' ? 'bg-green-100 text-green-800' :
+                      post.category === 'Dumpster Sizes' ? 'bg-purple-100 text-purple-800' :
+                      'bg-blue-100 text-blue-800'
+                    }`}>
                       {post.category}
                     </span>
-                    <span className="text-sm text-gray-500">{post.readTime}</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm text-gray-500">{post.readTime}</span>
+                      {post.featured && (
+                        <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full font-semibold">
+                          Popular
+                        </span>
+                      )}
+                    </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
                     <Link href={`/blog/${post.slug}`}>
@@ -211,32 +281,38 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        {/* Popular Topics - FIXED CITY URLS */}
+        {/* Popular Topics - UPDATED WITH NEW CATEGORIES */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Popular Topics</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-4 gap-6">
             <div>
-              <h3 className="font-semibold text-gray-800 mb-3">Renovation Projects</h3>
+              <h3 className="font-semibold text-gray-800 mb-3">House Areas</h3>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/blog/garage-cleanout-dumpster-size" className="text-blue-600 hover:underline">Garage Cleanouts</Link></li>
+                <li><Link href="/blog/attic-cleanout-dumpster-size" className="text-blue-600 hover:underline">Attic Cleanouts</Link></li>
+                <li><Link href="/blog/basement-cleanout-dumpster-size" className="text-blue-600 hover:underline">Basement Cleanouts</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-3">Regulations</h3>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/blog/do-i-need-dumpster-permit" className="text-blue-600 hover:underline">Permit Requirements</Link></li>
+                <li><Link href="/blog/prohibited-items-dumpster" className="text-blue-600 hover:underline">Prohibited Items</Link></li>
+                <li><Link href="/blog/hoa-dumpster-rules" className="text-blue-600 hover:underline">HOA Rules</Link></li>
+                <li><Link href="/blog/weight-limits-overage-fees" className="text-blue-600 hover:underline">Weight Limits</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-3">Renovations</h3>
               <ul className="space-y-2 text-sm">
                 <li><Link href="/blog/bathroom-remodel-dumpster-size" className="text-blue-600 hover:underline">Bathroom Remodels</Link></li>
                 <li><Link href="/blog/kitchen-renovation-dumpster-size" className="text-blue-600 hover:underline">Kitchen Renovations</Link></li>
                 <li><Link href="/blog/roof-replacement-dumpster-size" className="text-blue-600 hover:underline">Roof Replacements</Link></li>
-                <li><Link href="/blog/prohibited-items-dumpster" className="text-blue-600 hover:underline">Prohibited Items</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-800 mb-3">Dumpster Sizes</h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/blog/10-yard-dumpster-guide" className="text-blue-600 hover:underline">10 Yard Dumpsters</Link></li>
-                <li><Link href="/blog/20-yard-dumpster-guide" className="text-blue-600 hover:underline">20 Yard Dumpsters</Link></li>
-                <li><Link href="/blog/30-yard-dumpster-guide" className="text-blue-600 hover:underline">30 Yard Dumpsters</Link></li>
-                <li><Link href="/blog/40-yard-dumpster-guide" className="text-blue-600 hover:underline">40 Yard Dumpsters</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-3">Local Guides</h3>
               <ul className="space-y-2 text-sm">
-                {/* FIXED: Changed city URL structure to match your actual pages */}
                 <li><Link href="/dumpster-rental-philadelphia" className="text-blue-600 hover:underline">Philadelphia</Link></li>
                 <li><Link href="/dumpster-rental-miami" className="text-blue-600 hover:underline">Miami</Link></li>
                 <li><Link href="/dumpster-rental-houston" className="text-blue-600 hover:underline">Houston</Link></li>
