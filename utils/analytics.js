@@ -1,19 +1,14 @@
-// utils/analytics.js - Create this new file
+// utils/analytics.js
 'use client'
 
 // Enhanced analytics tracking for calculator usage
 export const trackEvent = (action, category, label = '', value = 0) => {
-  console.log('trackEvent called:', action, category, label, value); // ADD THIS
   if (typeof window !== 'undefined' && window.gtag) {
-    console.log('gtag available, sending event'); // ADD THIS
     window.gtag('event', action, {
       event_category: category,
       event_label: label,
       value: value,
     });
-    console.log('gtag event sent successfully'); // ADD THIS
-  } else {
-    console.log('gtag not available, window:', typeof window, 'gtag:', typeof window?.gtag); // ADD THIS
   }
 };
 
