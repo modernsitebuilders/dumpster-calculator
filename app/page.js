@@ -31,21 +31,25 @@ export default function Home() {
 
   // UPDATE PROJECT TYPE HANDLER WITH TRACKING
   const handleProjectTypeChange = (value) => {
-    setProjectType(value);
-    if (value) {
-      trackCalculatorUsage.projectTypeSelected(value);
-      trackCalculatorUsage.stepCompleted(1, 'project_type_selected');
-    }
-  };
+  console.log('Project type changed:', value); // ADD THIS
+  setProjectType(value);
+  if (value) {
+    console.log('About to track project type:', value); // ADD THIS
+    trackCalculatorUsage.projectTypeSelected(value);
+    trackCalculatorUsage.stepCompleted(1, 'project_type_selected');
+  }
+};
 
   // UPDATE SQUARE FOOTAGE HANDLER WITH TRACKING
   const handleSquareFootageChange = (value) => {
-    setSquareFootage(value);
-    if (value && value.length >= 2) {
-      trackCalculatorUsage.squareFootageEntered(value);
-      trackCalculatorUsage.stepCompleted(2, 'square_footage_entered');
-    }
-  };
+  console.log('Square footage changed:', value); // ADD THIS
+  setSquareFootage(value);
+  if (value && value.length >= 2) {
+    console.log('About to track square footage:', value); // ADD THIS
+    trackCalculatorUsage.squareFootageEntered(value);
+    trackCalculatorUsage.stepCompleted(2, 'square_footage_entered');
+  }
+};
 
   // SCROLL TO PROVIDERS FUNCTION
   const scrollToProviders = () => {
@@ -54,10 +58,11 @@ export default function Home() {
 
   // UPDATE CALCULATE FUNCTION WITH TRACKING
   const calculateSize = () => {
-    if (!projectType || !squareFootage) return;
-    
-    const project = projectTypes[projectType];
-    const baseSize = parseInt(squareFootage) * project.factor;
+  console.log('Calculate button clicked'); // ADD THIS
+  if (!projectType || !squareFootage) return;
+  
+  const project = projectTypes[projectType];
+  const baseSize = parseInt(squareFootage) * project.factor;
     
     let recommendation;
     let recommendedSize;
@@ -99,13 +104,14 @@ export default function Home() {
     setResult(recommendation);
 
     // ADD CALCULATION TRACKING
-    const calculationResult = {
-      recommendedSize: recommendedSize,
-      totalVolume: Math.round(baseSize / 27),
-      projectType: projectType,
-      squareFootage: parseInt(squareFootage)
-    };
-
+   const calculationResult = {
+    recommendedSize: recommendedSize,
+    totalVolume: Math.round(baseSize / 27),
+    projectType: projectType,
+    squareFootage: parseInt(squareFootage)
+  };
+  
+    console.log('About to track calculation:', calculationResult); // ADD THIS
     trackCalculatorUsage.calculationCompleted(calculationResult);
     trackCalculatorUsage.projectCombination(projectType, recommendedSize, squareFootage);
     trackCalculatorUsage.stepCompleted(3, 'calculation_completed');
