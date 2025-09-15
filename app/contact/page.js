@@ -2,6 +2,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Contact Us - Dumpster Size Calculator | Partnership Inquiries',
+  description: 'Contact our team for partnership opportunities, questions, or feedback about our dumpster size calculator. We respond within 24-48 hours.',
+  keywords: 'contact dumpster calculator, partnership inquiries, dumpster rental partnerships',
+};
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -25,10 +31,8 @@ export default function ContactPage() {
     setLoading(true);
     setStatus('');
 
-    // For now, we'll use a form submission service
-    // You can replace this with your own backend later
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch('https://formspree.io/f/mrbavbyl', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -175,7 +179,7 @@ export default function ContactPage() {
               {status === 'error' && (
                 <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                   <p className="text-red-700">
-                    For now, please email us directly at: info@dumpstercalculator.com
+                    There was an error sending your message. Please try again or email us directly at: info@dumpstercalculator.com
                   </p>
                 </div>
               )}
@@ -205,7 +209,7 @@ export default function ContactPage() {
             <div className="bg-blue-50 rounded-lg p-8">
               <h3 className="text-xl font-bold mb-4">Partnership Opportunities</h3>
               <p className="text-gray-700 mb-4">
-                Are you a dumpster rental company interested in receiving qualified leads? We connect thousands of customers with reliable providers.
+                Are you a dumpster rental company interested in receiving qualified leads? We connect customers with reliable providers.
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
