@@ -34,6 +34,24 @@ export default function BlogIndex() {
       featured: false
     },
     {
+  title: "Dumpster Rental Cost Guide: What You'll Really Pay in 2025",
+  excerpt: "Complete breakdown of dumpster rental costs including size pricing, delivery fees, permits, and hidden charges. Get accurate estimates for your project budget.",
+  slug: "dumpster-rental-cost-guide",
+  category: "General Tips",
+  readTime: "9 min read",
+  publishDate: "January 8, 2025",
+  featured: false
+},
+{
+  title: "What Size Dumpster Do I Need? Complete Size Guide",
+  excerpt: "Learn how to choose the right dumpster size for any project. Complete guide covering 10, 20, 30, and 40-yard dumpsters with real project examples.",
+  slug: "what-size-dumpster-do-i-need",
+  category: "General Tips", 
+  readTime: "7 min read",
+  publishDate: "January 3, 2025",
+  featured: true
+},
+ {
       slug: 'prohibited-items-dumpster',
       title: 'What Can\'t Go in a Dumpster? Complete Prohibited Items List',
       excerpt: 'Complete guide to items you cannot put in a dumpster rental. Learn about prohibited materials, disposal alternatives, and how to avoid extra fees.',
@@ -45,12 +63,13 @@ export default function BlogIndex() {
   ];
 
   const categories = [
-    "All Posts",
-    "Bathroom Renovation", 
-    "Kitchen Renovation",
-    "Roofing",
-    "Regulations"
-  ];
+  "All Posts",
+  "General Tips",
+  "Bathroom Renovation", 
+  "Kitchen Renovation",
+  "Roofing",
+  "Regulations"
+];
 
   // Filter posts based on selected category
   const filteredPosts = selectedCategory === "All Posts" 
