@@ -142,31 +142,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="mb-12">
-          <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">What Customers Say</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-lg p-6 shadow">
-                <div className="text-yellow-400 text-xl mb-3">★★★★★</div>
-                <p className="text-gray-700 mb-4">
-                  "Saved me $200! The calculator recommended a 20-yard instead of the 30-yard the rental company suggested. 
-                  Perfect size for my kitchen renovation."
-                </p>
-                <div className="text-sm text-gray-600">— Sarah M., Philadelphia</div>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow">
-                <div className="text-yellow-400 text-xl mb-3">★★★★★</div>
-                <p className="text-gray-700 mb-4">
-                  "Super accurate! Used it for my bathroom remodel and the 10-yard dumpster was exactly the right size. 
-                  Will definitely use again."
-                </p>
-                <div className="text-sm text-gray-600">— Mike R., Houston</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Contact CTA */}
         <section className="text-center">
           <div className="bg-white rounded-lg shadow-lg p-8">
