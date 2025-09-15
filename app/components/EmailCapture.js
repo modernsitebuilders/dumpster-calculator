@@ -36,9 +36,9 @@ export default function EmailCapture({ source = 'website' }) {
 
   return (
     <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow-md p-6 text-white">
-      <h3 className="text-xl font-bold mb-2">Save $50 on Your First Rental</h3>
+      <h3 className="text-xl font-bold mb-2">Stay Updated on Renovation Tips</h3>
       <p className="mb-4 text-blue-100">
-        Get exclusive discounts and tips delivered to your inbox
+        Get helpful guides on dumpster sizing and waste disposal delivered to your inbox
       </p>
       
       <form onSubmit={handleSubmit}>
@@ -61,14 +61,14 @@ export default function EmailCapture({ source = 'website' }) {
                 : 'bg-white text-blue-600 hover:bg-gray-100'
             }`}
           >
-            {loading ? 'Saving...' : 'Get Discount'}
+            {loading ? 'Subscribing...' : 'Subscribe'}
           </button>
         </div>
       </form>
       
       {status === 'success' && (
         <p className="text-sm text-green-100 mt-3">
-          ✓ Thanks for subscribing! Check your email for your discount code.
+          ✓ Thanks for subscribing! You'll receive helpful tips soon.
         </p>
       )}
       
