@@ -1,4 +1,4 @@
-// REPLACE your app/components/GoogleAnalytics.js with this:
+// UPDATED GoogleAnalytics.js with GA4-compliant event names
 
 'use client'
 import Script from 'next/script'
@@ -22,7 +22,7 @@ const GoogleAnalytics = () => {
             page_path: window.location.pathname,
           });
           
-          // Define the trackEvent function that your logs are calling
+          // GA4-compliant tracking function
           window.trackEvent = function(eventName, category, label, value) {
             console.log('🔍 trackEvent called:', eventName, category, label, value);
             
@@ -31,65 +31,107 @@ const GoogleAnalytics = () => {
               return false;
             }
             
-            console.log('✅ gtag available, sending event');
+            // Clean event name (GA4 rules: max 40 chars, alphanumeric + underscore)
+            const cleanEventName = eventName
+              .toLowerCase()
+              .replace(/[^a-z0-9_]/g, '_')
+              .substring(0, 40);
+            
+            // Clean parameters (GA4 rules: max 25 chars, alphanumeric + underscore)  
+            const eventParams = {};
+            
+            if (category) {
+              eventParams.event_category = category.substring(0, 100);
+            }
+            
+            if (label) {
+              eventParams.event_label = label.substring(0, 100);
+            }
+            
+            if (value !== undefined && value !== null && !isNaN(value)) {
+              eventParams.value = Number(value);
+            }
+            
+            console.log('📤 Sending GA4 event:', cleanEventName, eventParams);
             
             try {
-              // THIS IS THE ACTUAL GTAG CALL THAT WAS MISSING!
-              gtag('event', eventName, {
-                event_category: category || 'general',
-                event_label: label || '',
-                value: value !== undefined && value !== null && !isNaN(value) ? Number(value) : undefined
-              });
-              
-              console.log('✅ gtag event sent successfully');
+              gtag('event', cleanEventName, eventParams);
+              console.log('✅ GA4 event sent successfully');
               return true;
             } catch (error) {
-              console.error('❌ Error sending gtag event:', error);
+              console.error('❌ Error sending GA4 event:', error);
               return false;
             }
           };
           
-          // Define trackCalculatorUsage object for your calculator
+          // Updated trackCalculatorUsage with GA4-compliant events
           window.trackCalculatorUsage = {
             calculatorViewed: function() {
-              window.trackEvent('calculator_viewed', 'Calculator', 'Calculator Page Load', 0);
+              window.trackEvent('calculator_view', 'engagement', 'page_load');
             },
             
             projectTypeSelected: function(projectType) {
-              window.trackEvent('project_type_selected', 'Calculator', projectType, 0);
-              window.trackEvent('step_completed', 'Calculator_Flow', 'Step_1_project_type_selected', 0);
+              window.trackEvent('project_select', 'calculator', projectType);
+              window.trackEvent('calculator_step', 'progression', 'step_1_complete');
             },
             
             squareFootageEntered: function(footage) {
-              window.trackEvent('square_footage_entered', 'Calculator', 'Square Footage', footage);
-              window.trackEvent('step_completed', 'Calculator_Flow', 'Step_2_square_footage_entered', 0);
+              window.trackEvent('footage_enter', 'calculator', 'square_footage', footage);
+              window.trackEvent('calculator_step', 'progression', 'step_2_complete');
             },
             
             roomCountSelected: function(roomCount) {
-              window.trackEvent('room_count_selected', 'Calculator', 'Room Count', roomCount);
+              window.trackEvent('room_select', 'calculator', 'room_count', roomCount);
             },
             
             materialSelected: function(material) {
-              window.trackEvent('material_selected', 'Calculator', material, 0);
+              window.trackEvent('material_select', 'calculator', material);
             },
             
             calculationCompleted: function(data) {
-              window.trackEvent('calculation_completed', 'Calculator', 'Recommended_' + data.recommendedSize, data.totalVolume);
-              window.trackEvent('project_combination', 'Popular_Combos', data.projectType + '_' + data.squareFootage + 'sqft_' + data.recommendedSize, 0);
-              window.trackEvent('step_completed', 'Calculator_Flow', 'Step_3_calculation_completed', 0);
+              // Main completion event
+              window.trackEvent('calculation_complete', 'conversion', data.recommendedSize, data.totalVolume);
+              
+              // Project combination tracking (cleaned up)
+              const combo = data.projectType + '_' + data.squareFootage + 'sqft_' + data.recommendedSize.replace('-yard', 'yd');
+              window.trackEvent('project_combo', 'analytics', combo);
+              
+              // Final step completion
+              window.trackEvent('calculator_step', 'progression', 'step_3_complete');
+              
+              // Custom conversion event for GA4
+              gtag('event', 'generate_lead', {
+                currency: 'USD',
+                value: data.totalVolume,
+                project_type: data.projectType,
+                dumpster_size: data.recommendedSize,
+                square_footage: data.squareFootage
+              });
             },
             
             sectionEngaged: function(section) {
-              window.trackEvent('section_engaged', 'Calculator', section, 0);
+              window.trackEvent('section_engage', 'interaction', section);
             }
           };
           
-          // Initialize tracking when page loads
-          setTimeout(() => {
-            if (window.trackCalculatorUsage) {
-              window.trackCalculatorUsage.calculatorViewed();
-            }
-          }, 1000);
+          // Debug function to check event flow
+          window.debugGA4 = function() {
+            console.log('🔍 GA4 Debug Check:');
+            console.log('- Property ID: ${GA_MEASUREMENT_ID}');
+            console.log('- gtag loaded:', typeof gtag !== 'undefined');
+            console.log('- dataLayer entries:', window.dataLayer ? window.dataLayer.length : 0);
+            console.log('- Recent dataLayer:', window.dataLayer ? window.dataLayer.slice(-5) : []);
+            
+            // Send test event
+            gtag('event', 'debug_test', {
+              event_category: 'debug',
+              event_label: 'manual_test',
+              value: 1,
+              test_parameter: 'working'
+            });
+            
+            console.log('✅ Test event sent - check GA4 Real-time in 2-3 minutes');
+          };
         `}
       </Script>
     </>
@@ -97,54 +139,3 @@ const GoogleAnalytics = () => {
 }
 
 export default GoogleAnalytics
-
-/*
-ADD THIS TO YOUR CALCULATOR COMPONENT (wherever your calculator logic is):
-
-// Example usage in your calculator component:
-useEffect(() => {
-  // Track when calculator loads
-  if (window.trackCalculatorUsage) {
-    window.trackCalculatorUsage.calculatorViewed();
-  }
-}, []);
-
-const handleProjectTypeChange = (projectType) => {
-  setProjectType(projectType);
-  
-  // Track project type selection
-  if (window.trackCalculatorUsage) {
-    window.trackCalculatorUsage.projectTypeSelected(projectType);
-  }
-};
-
-const handleSquareFootageChange = (footage) => {
-  setSquareFootage(footage);
-  
-  // Track square footage entry
-  if (window.trackCalculatorUsage) {
-    window.trackCalculatorUsage.squareFootageEntered(footage);
-  }
-};
-
-const handleCalculate = () => {
-  const result = calculateDumpsterSize(); // your calculation logic
-  
-  // Track calculation completion
-  if (window.trackCalculatorUsage) {
-    window.trackCalculatorUsage.calculationCompleted({
-      recommendedSize: result.size,
-      totalVolume: result.volume,
-      projectType: projectType,
-      squareFootage: squareFootage
-    });
-  }
-};
-
-// For section engagement tracking
-const handleSectionFocus = (sectionName) => {
-  if (window.trackCalculatorUsage) {
-    window.trackCalculatorUsage.sectionEngaged(sectionName);
-  }
-};
-*/
