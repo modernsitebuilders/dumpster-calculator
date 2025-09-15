@@ -152,26 +152,26 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="bg-blue-600 rounded-lg p-8 text-center text-white mb-12">
-          <h2 className="text-2xl font-bold mb-4">
-            Stay Updated on Renovation Tips
-          </h2>
-          <p className="mb-6">
-            Get expert advice on dumpster sizing, cost-saving tips, and renovation guides delivered to your inbox.
-          </p>
-          <div className="max-w-md mx-auto flex gap-3">
-            <input 
-              type="email" 
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-2 rounded text-gray-900"
-            />
-            <button className="bg-white text-blue-600 px-6 py-2 rounded font-semibold hover:bg-gray-100 transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </div>
-
+        {/* Newsletter Signup - Improved */}
+<div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-lg shadow-lg p-8 text-white mb-12">
+  <h2 className="text-2xl font-bold mb-2 text-center">Stay Updated on Renovation Tips</h2>
+  <p className="text-center text-slate-200 mb-6">
+    Get helpful guides on dumpster sizing and waste disposal delivered to your inbox
+  </p>
+  <div className="max-w-md mx-auto flex gap-3">
+    <input 
+      type="email" 
+      placeholder="Enter your email"
+      className="flex-1 px-4 py-2 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400"
+    />
+    <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+      Subscribe
+    </button>
+  </div>
+  <p className="text-xs text-slate-300 text-center mt-3">
+    No spam, unsubscribe anytime
+  </p>
+</div>
         {/* Popular Topics */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Popular Topics</h2>
