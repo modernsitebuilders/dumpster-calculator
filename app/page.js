@@ -93,21 +93,21 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Stats Cards - Fixed Yellow Numbers */}
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
-                  <div className="text-2xl font-bold text-white">100%</div>
-                  <div className="text-sm text-blue-100">Free Tool</div>
-                </div>
-                <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
-                  <div className="text-2xl font-bold text-white">30sec</div>
-                  <div className="text-sm text-blue-100">Get Results</div>
-                </div>
-                <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
-                  <div className="text-2xl font-bold text-white">0</div>
-                  <div className="text-sm text-blue-100">Email Required</div>
-                </div>
-              </div>
+              {/* Stats Cards - Fix invisible text */}
+<div className="grid grid-cols-3 gap-4 mb-8">
+  <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
+    <div className="text-2xl font-bold text-gray-900">100%</div>
+    <div className="text-sm text-gray-700">Free Tool</div>
+  </div>
+  <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
+    <div className="text-2xl font-bold text-gray-900">30sec</div>
+    <div className="text-sm text-gray-700">Get Results</div>
+  </div>
+  <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
+    <div className="text-2xl font-bold text-gray-900">0</div>
+    <div className="text-sm text-gray-700">Email Required</div>
+  </div>
+</div>
 
               {/* CTA Button */}
               <div className="mb-6">
