@@ -151,11 +151,6 @@ const DumpsterProviderListings = ({ dumpsterSize, projectType }) => {
           </p>
         </div>
       </div>
-
-      {/* Email Capture - Still Active */}
-      <div className="mt-8">
-        <EmailCapture source="provider-listings" />
-      </div>
     </div>
   );
 };
