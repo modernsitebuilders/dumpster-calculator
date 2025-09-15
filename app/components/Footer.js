@@ -19,7 +19,7 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-800 mb-3">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="text-gray-600 hover:text-blue-600">
+                <Link href="/#calculator" className="text-gray-600 hover:text-blue-600">
                   Calculator
                 </Link>
               </li>
