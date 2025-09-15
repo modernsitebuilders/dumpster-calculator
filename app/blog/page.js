@@ -1,17 +1,10 @@
+'use client';
 import Link from 'next/link';
-
-export const metadata = {
-  title: 'Dumpster Rental Tips & Guides - Expert Advice Blog',
-  description: 'Expert guides on choosing the right dumpster size for home renovation projects. Learn about costs, permits, and disposal tips from industry professionals.',
-  keywords: 'dumpster rental guides, renovation waste disposal, dumpster size tips, home improvement debris',
-  openGraph: {
-    title: 'Dumpster Rental Tips & Guides - Expert Advice Blog',
-    description: 'Expert guides on choosing the right dumpster size for home renovation projects.',
-    url: 'https://dumpster-size-calculator.com/blog',
-  }
-};
+import { useState } from 'react';
 
 export default function BlogIndex() {
+  const [selectedCategory, setSelectedCategory] = useState("All Posts");
+
   const blogPosts = [
     {
       title: "What Size Dumpster for Bathroom Remodel? Complete 2025 Guide",
@@ -41,14 +34,14 @@ export default function BlogIndex() {
       featured: false
     },
     {
-  slug: 'prohibited-items-dumpster',
-  title: 'What Can\'t Go in a Dumpster? Complete Prohibited Items List',
-  excerpt: 'Complete guide to items you cannot put in a dumpster rental. Learn about prohibited materials, disposal alternatives, and how to avoid extra fees.',
-  publishDate: 'January 5, 2025',
-  readTime: '6 min read',
-  category: 'Regulations',
-  featured: true
-}
+      slug: 'prohibited-items-dumpster',
+      title: 'What Can\'t Go in a Dumpster? Complete Prohibited Items List',
+      excerpt: 'Complete guide to items you cannot put in a dumpster rental. Learn about prohibited materials, disposal alternatives, and how to avoid extra fees.',
+      publishDate: 'January 5, 2025',
+      readTime: '6 min read',
+      category: 'Regulations',
+      featured: true
+    }
   ];
 
   const categories = [
@@ -56,10 +49,13 @@ export default function BlogIndex() {
     "Bathroom Renovation", 
     "Kitchen Renovation",
     "Roofing",
-    "Construction",
-    "General Tips",
     "Regulations"
   ];
+
+  // Filter posts based on selected category
+  const filteredPosts = selectedCategory === "All Posts" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -86,8 +82,9 @@ export default function BlogIndex() {
             {categories.map((category) => (
               <button
                 key={category}
+                onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  category === "All Posts" 
+                  category === selectedCategory 
                     ? "bg-blue-600 text-white" 
                     : "bg-white text-gray-600 hover:bg-gray-100"
                 }`}
@@ -98,11 +95,13 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        {/* Featured Posts */}
+        {/* Show filtered posts */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Featured Articles</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {blogPosts.filter(post => post.featured).map((post) => (
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            {selectedCategory === "All Posts" ? "All Articles" : selectedCategory}
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredPosts.map((post) => (
               <article key={post.slug} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
@@ -126,42 +125,6 @@ export default function BlogIndex() {
                       className="text-blue-600 hover:text-blue-800 font-semibold text-sm"
                     >
                       Read More →
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        {/* All Posts */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">All Articles</h2>
-          <div className="space-y-6">
-            {blogPosts.map((post) => (
-              <article key={post.slug} className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-4 mb-2">
-                      <span className="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded font-medium">
-                        {post.category}
-                      </span>
-                      <span className="text-sm text-gray-500">{post.publishDate}</span>
-                      <span className="text-sm text-gray-500">{post.readTime}</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors">
-                      <Link href={`/blog/${post.slug}`}>
-                        {post.title}
-                      </Link>
-                    </h3>
-                    <p className="text-gray-600 mb-3">
-                      {post.excerpt}
-                    </p>
-                    <Link 
-                      href={`/blog/${post.slug}`}
-                      className="text-blue-600 hover:text-blue-800 font-semibold text-sm"
-                    >
-                      Read Full Article →
                     </Link>
                   </div>
                 </div>
@@ -200,7 +163,7 @@ export default function BlogIndex() {
                 <li><Link href="/blog/bathroom-remodel-dumpster-size" className="text-blue-600 hover:underline">Bathroom Remodels</Link></li>
                 <li><Link href="/blog/kitchen-renovation-dumpster-size" className="text-blue-600 hover:underline">Kitchen Renovations</Link></li>
                 <li><Link href="/blog/roof-replacement-dumpster-size" className="text-blue-600 hover:underline">Roof Replacements</Link></li>
-                <li><Link href="/blog" className="text-gray-600 hover:text-blue-600">Basement Cleanouts</Link></li>
+                <li><Link href="/blog/prohibited-items-dumpster" className="text-blue-600 hover:underline">Prohibited Items</Link></li>
               </ul>
             </div>
             <div>
