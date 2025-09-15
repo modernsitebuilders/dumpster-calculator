@@ -89,23 +89,23 @@ export default function Home() {
                 </h1>
                 <p className="text-xl text-blue-100 mb-6 leading-relaxed">
                   Get instant, accurate recommendations for any home renovation, cleanout, or construction project. 
-                  Used by over <strong className="text-white">25,000+ homeowners</strong> nationwide.
+                  <strong className="text-white">Free calculator based on industry data.</strong>
                 </p>
               </div>
 
-              {/* Trust Indicators */}
+              {/* Trust Indicators - HONEST CLAIMS ONLY */}
               <div className="grid grid-cols-3 gap-4 mb-8 text-center">
-                <div className="bg-white bg-opacity-10 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-yellow-300">25K+</div>
-                  <div className="text-sm text-blue-100">Projects Sized</div>
-                </div>
-                <div className="bg-white bg-opacity-10 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-yellow-300">4.9★</div>
-                  <div className="text-sm text-blue-100">User Rating</div>
-                </div>
                 <div className="bg-white bg-opacity-10 rounded-lg p-4">
                   <div className="text-2xl font-bold text-yellow-300">100%</div>
                   <div className="text-sm text-blue-100">Free Tool</div>
+                </div>
+                <div className="bg-white bg-opacity-10 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-yellow-300">30sec</div>
+                  <div className="text-sm text-blue-100">Get Results</div>
+                </div>
+                <div className="bg-white bg-opacity-10 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-yellow-300">0</div>
+                  <div className="text-sm text-blue-100">Email Required</div>
                 </div>
               </div>
 

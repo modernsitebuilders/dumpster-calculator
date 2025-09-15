@@ -42,105 +42,117 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Mission */}
-        <section className="mb-12">
-          <div className="bg-blue-50 rounded-lg p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Our Mission</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-4xl mb-4">💡</div>
-                <h3 className="text-xl font-semibold mb-3">Simplify Decisions</h3>
-                <p className="text-gray-600">
-                  Make dumpster sizing as easy as answering 2-3 simple questions about your project.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-4">💰</div>
-                <h3 className="text-xl font-semibold mb-3">Save Money</h3>
-                <p className="text-gray-600">
-                  Help homeowners avoid costly mistakes by choosing the right size the first time.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-4">🌱</div>
-                <h3 className="text-xl font-semibold mb-3">Reduce Waste</h3>
-                <p className="text-gray-600">
-                  Promote efficient waste management through better planning and sizing decisions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Our Mission - KEEP THIS */}
+<section className="mb-12">
+  <div className="bg-blue-50 rounded-lg p-8">
+    <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Our Mission</h2>
+    <div className="grid md:grid-cols-3 gap-6">
+      <div className="text-center">
+        <div className="text-4xl mb-4">💡</div>
+        <h3 className="text-xl font-semibold mb-3">Simplify Decisions</h3>
+        <p className="text-gray-600">
+          Make dumpster sizing as easy as answering 2-3 simple questions about your project.
+        </p>
+      </div>
+      <div className="text-center">
+        <div className="text-4xl mb-4">💰</div>
+        <h3 className="text-xl font-semibold mb-3">Save Money</h3>
+        <p className="text-gray-600">
+          Help homeowners avoid costly mistakes by choosing the right size the first time.
+        </p>
+      </div>
+      <div className="text-center">
+        <div className="text-4xl mb-4">🌱</div>
+        <h3 className="text-xl font-semibold mb-3">Reduce Waste</h3>
+        <p className="text-gray-600">
+          Promote efficient waste management through better planning and sizing decisions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        {/* By the Numbers */}
-        <section className="mb-12">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Impact by the Numbers</h2>
-            <div className="grid md:grid-cols-4 gap-6 text-center">
-              <div className="bg-green-50 rounded-lg p-6">
-                <div className="text-3xl font-bold text-green-600 mb-2">25,000+</div>
-                <div className="text-gray-600">Projects Sized</div>
-              </div>
-              <div className="bg-blue-50 rounded-lg p-6">
-                <div className="text-3xl font-bold text-blue-600 mb-2">$2.3M</div>
-                <div className="text-gray-600">Customer Savings</div>
-              </div>
-              <div className="bg-purple-50 rounded-lg p-6">
-                <div className="text-3xl font-bold text-purple-600 mb-2">4.9★</div>
-                <div className="text-gray-600">Average Rating</div>
-              </div>
-              <div className="bg-yellow-50 rounded-lg p-6">
-                <div className="text-3xl font-bold text-yellow-600 mb-2">92%</div>
-                <div className="text-gray-600">First-Try Success</div>
-              </div>
-            </div>
-          </div>
-        </section>
+{/* REPLACE "Impact by the Numbers" with THIS: */}
+<section className="mb-12">
+  <div className="bg-white rounded-lg shadow-lg p-8">
+    <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Why Choose Our Calculator</h2>
+    <div className="grid md:grid-cols-3 gap-6 text-center">
+      <div className="bg-green-50 rounded-lg p-6">
+        <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
+        <div className="text-gray-600">Free to Use</div>
+      </div>
+      <div className="bg-blue-50 rounded-lg p-6">
+        <div className="text-3xl font-bold text-blue-600 mb-2">Industry</div>
+        <div className="text-gray-600">Based Data</div>
+      </div>
+      <div className="bg-purple-50 rounded-lg p-6">
+        <div className="text-3xl font-bold text-purple-600 mb-2">No</div>
+        <div className="text-gray-600">Email Required</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        {/* How We're Different */}
-        <section className="mb-12">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">How We're Different</h2>
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="text-green-500 text-2xl mr-4">✓</div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Always Free & No Strings Attached</h3>
-                  <p className="text-gray-600">
-                    Our calculator is 100% free. No email required, no hidden costs, no pressure tactics.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="text-green-500 text-2xl mr-4">✓</div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Real Project Data</h3>
-                  <p className="text-gray-600">
-                    Our recommendations are based on actual project data from thousands of completed renovations.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="text-green-500 text-2xl mr-4">✓</div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Local Market Pricing</h3>
-                  <p className="text-gray-600">
-                    We provide realistic cost estimates based on your location and current market rates.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="text-green-500 text-2xl mr-4">✓</div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Independent & Unbiased</h3>
-                  <p className="text-gray-600">
-                    We're not owned by any dumpster company. Our only goal is giving you the most accurate recommendation.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+{/* How We're Different - KEEP BUT UPDATE */}
+<section className="mb-12">
+  <div className="bg-white rounded-lg shadow-lg p-8">
+    <h2 className="text-3xl font-bold text-gray-900 mb-6">How We're Different</h2>
+    <div className="space-y-6">
+      <div className="flex items-start">
+        <div className="text-green-500 text-2xl mr-4">✓</div>
+        <div>
+          <h3 className="text-xl font-semibold mb-2">Always Free & No Strings Attached</h3>
+          <p className="text-gray-600">
+            Our calculator is 100% free. No email required, no hidden costs, no pressure tactics.
+          </p>
+        </div>
+      </div>
+      <div className="flex items-start">
+        <div className="text-green-500 text-2xl mr-4">✓</div>
+        <div>
+          <h3 className="text-xl font-semibold mb-2">Industry Standard Calculations</h3>
+          <p className="text-gray-600">
+            Our recommendations are based on established industry standards and project data.
+          </p>
+        </div>
+      </div>
+      <div className="flex items-start">
+        <div className="text-green-500 text-2xl mr-4">✓</div>
+        <div>
+          <h3 className="text-xl font-semibold mb-2">Local Market Pricing</h3>
+          <p className="text-gray-600">
+            We provide realistic cost estimates based on current market rates.
+          </p>
+        </div>
+      </div>
+      <div className="flex items-start">
+        <div className="text-green-500 text-2xl mr-4">✓</div>
+        <div>
+          <h3 className="text-xl font-semibold mb-2">Independent & Unbiased</h3>
+          <p className="text-gray-600">
+            We're not owned by any dumpster company. Our goal is giving you accurate recommendations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* REMOVE the fake testimonials section entirely OR replace with: */}
+<section className="mb-12">
+  <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-8">
+    <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Customer Reviews Coming Soon</h2>
+    <div className="text-center">
+      <div className="text-6xl mb-4">🔄</div>
+      <p className="text-lg text-gray-600 mb-4">
+        We're a newly launched calculator and are collecting verified reviews from real users.
+      </p>
+      <p className="text-sm text-gray-500">
+        Check back soon for authentic customer feedback about our tool.
+      </p>
+    </div>
+  </div>
+</section>
 
         {/* Contact CTA */}
         <section className="text-center">
