@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import DumpsterProviderListings from './components/DumpsterProviderListings';
 import Link from 'next/link';
 import { trackCalculatorUsage } from '../utils/analytics'; // FIXED: Correct path for app/page.js
-console.log('trackCalculatorUsage loaded:', trackCalculatorUsage);
+
 export default function Home() {
   const [projectType, setProjectType] = useState('');
   const [squareFootage, setSquareFootage] = useState('');
@@ -31,10 +31,8 @@ export default function Home() {
 
   // UPDATE PROJECT TYPE HANDLER WITH TRACKING
   const handleProjectTypeChange = (value) => {
-  console.log('Project type changed:', value); // ADD THIS
   setProjectType(value);
   if (value) {
-    console.log('About to track project type:', value); // ADD THIS
     trackCalculatorUsage.projectTypeSelected(value);
     trackCalculatorUsage.stepCompleted(1, 'project_type_selected');
   }
@@ -42,10 +40,8 @@ export default function Home() {
 
   // UPDATE SQUARE FOOTAGE HANDLER WITH TRACKING
   const handleSquareFootageChange = (value) => {
-  console.log('Square footage changed:', value); // ADD THIS
   setSquareFootage(value);
   if (value && value.length >= 2) {
-    console.log('About to track square footage:', value); // ADD THIS
     trackCalculatorUsage.squareFootageEntered(value);
     trackCalculatorUsage.stepCompleted(2, 'square_footage_entered');
   }
@@ -58,7 +54,6 @@ export default function Home() {
 
   // UPDATE CALCULATE FUNCTION WITH TRACKING
   const calculateSize = () => {
-  console.log('Calculate button clicked'); // ADD THIS
   if (!projectType || !squareFootage) return;
   
   const project = projectTypes[projectType];
@@ -111,7 +106,6 @@ export default function Home() {
     squareFootage: parseInt(squareFootage)
   };
   
-    console.log('About to track calculation:', calculationResult); // ADD THIS
     trackCalculatorUsage.calculationCompleted(calculationResult);
     trackCalculatorUsage.projectCombination(projectType, recommendedSize, squareFootage);
     trackCalculatorUsage.stepCompleted(3, 'calculation_completed');

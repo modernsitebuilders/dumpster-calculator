@@ -1,5 +1,4 @@
-// UPDATED GoogleAnalytics.js with GA4-compliant event names
-
+// app/components/GoogleAnalytics.js
 'use client'
 import Script from 'next/script'
 
@@ -24,10 +23,8 @@ const GoogleAnalytics = () => {
           
           // GA4-compliant tracking function
           window.trackEvent = function(eventName, category, label, value) {
-            console.log('🔍 trackEvent called:', eventName, category, label, value);
-            
             if (typeof gtag === 'undefined') {
-              console.error('❌ gtag not available');
+              console.error('gtag not available');
               return false;
             }
             
@@ -52,14 +49,11 @@ const GoogleAnalytics = () => {
               eventParams.value = Number(value);
             }
             
-            console.log('📤 Sending GA4 event:', cleanEventName, eventParams);
-            
             try {
               gtag('event', cleanEventName, eventParams);
-              console.log('✅ GA4 event sent successfully');
               return true;
             } catch (error) {
-              console.error('❌ Error sending GA4 event:', error);
+              console.error('Error sending GA4 event:', error);
               return false;
             }
           };
@@ -112,25 +106,6 @@ const GoogleAnalytics = () => {
             sectionEngaged: function(section) {
               window.trackEvent('section_engage', 'interaction', section);
             }
-          };
-          
-          // Debug function to check event flow
-          window.debugGA4 = function() {
-            console.log('🔍 GA4 Debug Check:');
-            console.log('- Property ID: ${GA_MEASUREMENT_ID}');
-            console.log('- gtag loaded:', typeof gtag !== 'undefined');
-            console.log('- dataLayer entries:', window.dataLayer ? window.dataLayer.length : 0);
-            console.log('- Recent dataLayer:', window.dataLayer ? window.dataLayer.slice(-5) : []);
-            
-            // Send test event
-            gtag('event', 'debug_test', {
-              event_category: 'debug',
-              event_label: 'manual_test',
-              value: 1,
-              test_parameter: 'working'
-            });
-            
-            console.log('✅ Test event sent - check GA4 Real-time in 2-3 minutes');
           };
         `}
       </Script>
