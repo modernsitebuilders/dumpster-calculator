@@ -211,7 +211,7 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        {/* Popular Topics - UPDATED WITH WORKING LINKS */}
+        {/* Popular Topics - FIXED CITY URLS */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Popular Topics</h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -236,9 +236,10 @@ export default function BlogIndex() {
             <div>
               <h3 className="font-semibold text-gray-800 mb-3">Local Guides</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/philadelphia-dumpster-rental" className="text-blue-600 hover:underline">Philadelphia</Link></li>
-                <li><Link href="/miami-dumpster-rental" className="text-blue-600 hover:underline">Miami</Link></li>
-                <li><Link href="/houston-dumpster-rental" className="text-blue-600 hover:underline">Houston</Link></li>
+                {/* FIXED: Changed city URL structure to match your actual pages */}
+                <li><Link href="/dumpster-rental-philadelphia" className="text-blue-600 hover:underline">Philadelphia</Link></li>
+                <li><Link href="/dumpster-rental-miami" className="text-blue-600 hover:underline">Miami</Link></li>
+                <li><Link href="/dumpster-rental-houston" className="text-blue-600 hover:underline">Houston</Link></li>
                 <li><Link href="/dumpster-rental-atlanta" className="text-blue-600 hover:underline">Atlanta</Link></li>
               </ul>
             </div>

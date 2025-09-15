@@ -1,4 +1,4 @@
-// app/sitemap.js - CORRECTED VERSION WITH PROPER URL STRUCTURE
+// app/sitemap.js - FIXED TO USE /disclosure
 export default function sitemap() {
   const baseUrl = 'https://dumpster-size-calculator.com';
   
@@ -10,7 +10,7 @@ export default function sitemap() {
     '/contact',
     '/privacy',
     '/terms',
-    '/affiliate-disclosure',
+    '/disclosure',  // FIXED: Use /disclosure instead of /affiliate-disclosure
 
     // EXISTING BLOG POSTS
     '/blog/what-size-dumpster-do-i-need',           
@@ -36,7 +36,7 @@ export default function sitemap() {
     '/blog/landscaping-debris-dumpster-size',
     '/blog/moving-cleanout-dumpster-size',
 
-    // ALL CITY PAGES - CORRECTED TO MATCH YOUR ACTUAL STRUCTURE
+    // ALL CITY PAGES
     '/dumpster-rental-atlanta',
     '/dumpster-rental-austin',
     '/dumpster-rental-boston',
