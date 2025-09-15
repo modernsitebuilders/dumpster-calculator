@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import DumpsterProviderListings from './components/DumpsterProviderListings';
 import Link from 'next/link';
 import { trackCalculatorUsage } from '../utils/analytics'; // FIXED: Correct path for app/page.js
-
+console.log('trackCalculatorUsage loaded:', trackCalculatorUsage);
 export default function Home() {
   const [projectType, setProjectType] = useState('');
   const [squareFootage, setSquareFootage] = useState('');
