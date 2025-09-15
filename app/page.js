@@ -67,12 +67,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      {/* Enhanced Hero Section - Full Width */}
-      <div className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden">
+      {/* Enhanced Hero Section - Softer Blue, No Wave */}
+      <div className="relative bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 text-white overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="absolute inset-0 bg-black opacity-5"></div>
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}></div>
         
         <div className="relative container mx-auto px-4 py-16 max-w-7xl">
@@ -88,84 +88,87 @@ export default function Home() {
                   <span className="text-yellow-300"> Dumpster Size</span> for Your Project
                 </h1>
                 <p className="text-xl text-blue-100 mb-6 leading-relaxed">
-                  Get instant, accurate recommendations for any home renovation, cleanout, or construction project. 
-                  <strong className="text-white">Free calculator based on industry data.</strong>
+                  Get instant, accurate recommendations for any home renovation, cleanout, or construction project.
+                  <span className="text-blue-200 font-medium"> Free calculator based on industry data.</span>
                 </p>
               </div>
 
-              {/* Trust Indicators - HONEST CLAIMS ONLY */}
-              <div className="grid grid-cols-3 gap-4 mb-8 text-center">
-                <div className="bg-white bg-opacity-10 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-yellow-300">100%</div>
+              {/* Stats Cards - Fixed Yellow Numbers */}
+              <div className="grid grid-cols-3 gap-4 mb-8">
+                <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
+                  <div className="text-2xl font-bold text-white">100%</div>
                   <div className="text-sm text-blue-100">Free Tool</div>
                 </div>
-                <div className="bg-white bg-opacity-10 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-yellow-300">30sec</div>
+                <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
+                  <div className="text-2xl font-bold text-white">30sec</div>
                   <div className="text-sm text-blue-100">Get Results</div>
                 </div>
-                <div className="bg-white bg-opacity-10 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-yellow-300">0</div>
+                <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
+                  <div className="text-2xl font-bold text-white">0</div>
                   <div className="text-sm text-blue-100">Email Required</div>
                 </div>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="space-y-3">
+              {/* CTA Button */}
+              <div className="mb-6">
                 <button 
-                  onClick={() => document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full lg:w-auto bg-yellow-400 text-blue-900 font-bold py-4 px-8 rounded-lg hover:bg-yellow-300 transition duration-200 text-lg shadow-lg"
+                  onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
                 >
                   Calculate My Dumpster Size →
                 </button>
-                <p className="text-sm text-blue-200">
-                  Takes 30 seconds • No signup required • Get instant results
-                </p>
+              </div>
+              
+              <div className="text-sm text-blue-200">
+                Takes 30 seconds • No signup required • Get instant results
               </div>
             </div>
 
-            {/* Right Column - White Background */}
+            {/* Right Column - Benefits Card */}
             <div className="relative">
-              <div className="bg-white rounded-2xl p-8 shadow-lg border">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-4 text-gray-800">Get Your Answer in 30 Seconds</h3>
-                  <div className="space-y-4 text-left">
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      <span className="text-gray-700">No email or signup required</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      <span className="text-gray-700">Based on 25,000+ real projects</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      <span className="text-gray-700">Includes accurate cost estimates</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      <span className="text-gray-700">Covers all project types</span>
-                    </div>
+              <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white border-opacity-30">
+                <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                  Get Your Answer in 30 Seconds
+                </h3>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs">✓</span>
+                    </span>
+                    <span className="text-gray-700">No email or signup required</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs">✓</span>
+                    </span>
+                    <span className="text-gray-700">Based on 25,000+ real projects</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs">✓</span>
+                    </span>
+                    <span className="text-gray-700">Includes accurate cost estimates</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs">✓</span>
+                    </span>
+                    <span className="text-gray-700">Covers all project types</span>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Elements */}
+              {/* FREE Badge */}
               <div className="absolute -top-4 -right-4 bg-green-500 text-white p-3 rounded-full shadow-lg">
                 <span className="text-sm font-bold">FREE</span>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Bottom Wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-gray-50"></path>
-          </svg>
-        </div>
       </div>
 
-      {/* Main Content - Contained */}
+      {/* Main Content - Clean transition */}
       <div className="bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 py-12 max-w-4xl">
           {/* Calculator */}
@@ -176,15 +179,15 @@ export default function Home() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   What type of project?
                 </label>
-                <select 
+                <select
                   value={projectType}
                   onChange={(e) => setProjectType(e.target.value)}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
-                  <option value="">Select your project type...</option>
-                  {Object.entries(projectTypes).map(([key, value]) => (
+                  <option value="">Select your project type</option>
+                  {Object.entries(projectTypes).map(([key, project]) => (
                     <option key={key} value={key}>
-                      {value.name} (typically {value.avgSize})
+                      {project.name} ({project.avgSize})
                     </option>
                   ))}
                 </select>
