@@ -58,7 +58,7 @@ export default function BlogIndex() {
     "Roofing",
     "Construction",
     "General Tips",
-    "Prohibited Items"
+    "Regulations"
   ];
 
   return (
