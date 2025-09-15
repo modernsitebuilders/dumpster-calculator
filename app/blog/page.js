@@ -1,3 +1,4 @@
+// app/blog/page.js - UPDATED VERSION
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -34,24 +35,24 @@ export default function BlogIndex() {
       featured: false
     },
     {
-  title: "Dumpster Rental Cost Guide: What You'll Really Pay in 2025",
-  excerpt: "Complete breakdown of dumpster rental costs including size pricing, delivery fees, permits, and hidden charges. Get accurate estimates for your project budget.",
-  slug: "dumpster-rental-cost-guide",
-  category: "General Tips",
-  readTime: "9 min read",
-  publishDate: "January 8, 2025",
-  featured: false
-},
-{
-  title: "What Size Dumpster Do I Need? Complete Size Guide",
-  excerpt: "Learn how to choose the right dumpster size for any project. Complete guide covering 10, 20, 30, and 40-yard dumpsters with real project examples.",
-  slug: "what-size-dumpster-do-i-need",
-  category: "General Tips", 
-  readTime: "7 min read",
-  publishDate: "January 3, 2025",
-  featured: true
-},
- {
+      title: "Dumpster Rental Cost Guide: What You'll Really Pay in 2025",
+      excerpt: "Complete breakdown of dumpster rental costs including size pricing, delivery fees, permits, and hidden charges. Get accurate estimates for your project budget.",
+      slug: "dumpster-rental-cost-guide",
+      category: "General Tips",
+      readTime: "9 min read",
+      publishDate: "January 8, 2025",
+      featured: false
+    },
+    {
+      title: "What Size Dumpster Do I Need? Complete Size Guide",
+      excerpt: "Learn how to choose the right dumpster size for any project. Complete guide covering 10, 20, 30, and 40-yard dumpsters with real project examples.",
+      slug: "what-size-dumpster-do-i-need",
+      category: "General Tips", 
+      readTime: "7 min read",
+      publishDate: "January 3, 2025",
+      featured: true
+    },
+    {
       slug: 'prohibited-items-dumpster',
       title: 'What Can\'t Go in a Dumpster? Complete Prohibited Items List',
       excerpt: 'Complete guide to items you cannot put in a dumpster rental. Learn about prohibited materials, disposal alternatives, and how to avoid extra fees.',
@@ -59,17 +60,55 @@ export default function BlogIndex() {
       readTime: '6 min read',
       category: 'Regulations',
       featured: true
+    },
+    // NEW POSTS - ADD THESE
+    {
+      title: "10 Yard Dumpster Guide: Complete Size & Cost Breakdown",
+      excerpt: "Everything you need to know about 10 yard dumpsters. Perfect for small projects, garage cleanouts, and minor renovations. Includes pricing and project examples.",
+      slug: "10-yard-dumpster-guide",
+      category: "Dumpster Sizes",
+      readTime: "6 min read",
+      publishDate: "September 15, 2025",
+      featured: false
+    },
+    {
+      title: "20 Yard Dumpster Guide: The Most Popular Size",
+      excerpt: "The 20 yard dumpster is America's most popular rental size. Learn why it's perfect for kitchen renovations, bathroom remodels, and medium-sized projects.",
+      slug: "20-yard-dumpster-guide",
+      category: "Dumpster Sizes",
+      readTime: "7 min read",
+      publishDate: "September 15, 2025",
+      featured: false
+    },
+    {
+      title: "30 Yard Dumpster Guide: For Large Projects",
+      excerpt: "30 yard dumpsters are ideal for whole house renovations, new construction, and commercial projects. Complete guide with pricing and project examples.",
+      slug: "30-yard-dumpster-guide",
+      category: "Dumpster Sizes",
+      readTime: "8 min read",
+      publishDate: "September 15, 2025",
+      featured: false
+    },
+    {
+      title: "40 Yard Dumpster Guide: Maximum Capacity Solution",
+      excerpt: "The largest standard dumpster size for commercial projects, large construction, and industrial applications. Learn when you need maximum capacity.",
+      slug: "40-yard-dumpster-guide",
+      category: "Dumpster Sizes",
+      readTime: "9 min read",
+      publishDate: "September 15, 2025",
+      featured: false
     }
   ];
 
   const categories = [
-  "All Posts",
-  "General Tips",
-  "Bathroom Renovation", 
-  "Kitchen Renovation",
-  "Roofing",
-  "Regulations"
-];
+    "All Posts",
+    "General Tips",
+    "Bathroom Renovation", 
+    "Kitchen Renovation",
+    "Roofing",
+    "Regulations",
+    "Dumpster Sizes"  // NEW CATEGORY
+  ];
 
   // Filter posts based on selected category
   const filteredPosts = selectedCategory === "All Posts" 
@@ -152,26 +191,27 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        {/* Newsletter Signup - Fixed for Readability */}
-<div className="bg-blue-600 rounded-lg p-8 text-center text-white mb-12">
-  <h2 className="text-2xl font-bold mb-4">
-    Stay Updated on Renovation Tips
-  </h2>
-  <p className="mb-6">
-    Get expert advice on dumpster sizing, cost-saving tips, and renovation guides delivered to your inbox.
-  </p>
-  <div className="max-w-md mx-auto flex gap-3">
-    <input 
-      type="email" 
-      placeholder="Enter your email"
-      className="flex-1 px-4 py-2 rounded text-gray-900 placeholder-gray-500 bg-white border-0 focus:outline-none focus:ring-2 focus:ring-white"
-    />
-    <button className="bg-white text-blue-600 px-6 py-2 rounded font-semibold hover:bg-gray-100 transition-colors">
-      Subscribe
-    </button>
-  </div>
-</div>
-        {/* Popular Topics */}
+        {/* Newsletter Signup */}
+        <div className="bg-blue-600 rounded-lg p-8 text-center text-white mb-12">
+          <h2 className="text-2xl font-bold mb-4">
+            Stay Updated on Renovation Tips
+          </h2>
+          <p className="mb-6">
+            Get expert advice on dumpster sizing, cost-saving tips, and renovation guides delivered to your inbox.
+          </p>
+          <div className="max-w-md mx-auto flex gap-3">
+            <input 
+              type="email" 
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-2 rounded text-gray-900 placeholder-gray-500 bg-white border-0 focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <button className="bg-white text-blue-600 px-6 py-2 rounded font-semibold hover:bg-gray-100 transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+        {/* Popular Topics - UPDATED WITH WORKING LINKS */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Popular Topics</h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -187,10 +227,10 @@ export default function BlogIndex() {
             <div>
               <h3 className="font-semibold text-gray-800 mb-3">Dumpster Sizes</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/blog" className="text-gray-600 hover:text-blue-600">10 Yard Dumpsters</Link></li>
-                <li><Link href="/blog" className="text-gray-600 hover:text-blue-600">20 Yard Dumpsters</Link></li>
-                <li><Link href="/blog" className="text-gray-600 hover:text-blue-600">30 Yard Dumpsters</Link></li>
-                <li><Link href="/blog" className="text-gray-600 hover:text-blue-600">40 Yard Dumpsters</Link></li>
+                <li><Link href="/blog/10-yard-dumpster-guide" className="text-blue-600 hover:underline">10 Yard Dumpsters</Link></li>
+                <li><Link href="/blog/20-yard-dumpster-guide" className="text-blue-600 hover:underline">20 Yard Dumpsters</Link></li>
+                <li><Link href="/blog/30-yard-dumpster-guide" className="text-blue-600 hover:underline">30 Yard Dumpsters</Link></li>
+                <li><Link href="/blog/40-yard-dumpster-guide" className="text-blue-600 hover:underline">40 Yard Dumpsters</Link></li>
               </ul>
             </div>
             <div>
@@ -199,7 +239,7 @@ export default function BlogIndex() {
                 <li><Link href="/philadelphia-dumpster-rental" className="text-blue-600 hover:underline">Philadelphia</Link></li>
                 <li><Link href="/miami-dumpster-rental" className="text-blue-600 hover:underline">Miami</Link></li>
                 <li><Link href="/houston-dumpster-rental" className="text-blue-600 hover:underline">Houston</Link></li>
-                <li><Link href="/blog" className="text-gray-600 hover:text-blue-600">More Cities</Link></li>
+                <li><Link href="/dumpster-rental-atlanta" className="text-blue-600 hover:underline">Atlanta</Link></li>
               </ul>
             </div>
           </div>
@@ -211,20 +251,13 @@ export default function BlogIndex() {
             Need Help Choosing a Dumpster Size?
           </h2>
           <p className="text-gray-600 mb-6">
-            Use our free calculator to get a personalized recommendation for your specific project
+            Our free calculator gives you instant recommendations based on your specific project
           </p>
           <Link 
             href="/" 
             className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
           >
-            Calculate Your Dumpster Size
-          </Link>
-        </div>
-
-        {/* Back to Home */}
-        <div className="mt-8 text-center">
-          <Link href="/" className="text-blue-600 hover:underline">
-            ← Back to Calculator
+            Use Free Calculator
           </Link>
         </div>
       </div>

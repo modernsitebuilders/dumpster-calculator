@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 import DumpsterProviderListings from './components/DumpsterProviderListings';
+import Link from 'next/link';
+
 
 export default function Home() {
   const [projectType, setProjectType] = useState('');
@@ -282,6 +284,89 @@ export default function Home() {
           )}
         </div>
       </div>
+      {/* Expert Guides Section */}
+<div className="bg-white py-16">
+  <div className="container mx-auto px-4 max-w-4xl">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        Expert Dumpster Guides & Local Information
+      </h2>
+      <p className="text-xl text-gray-600">
+        Get professional advice for your specific project and location
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {/* Project Guides */}
+      <div className="bg-gray-50 rounded-lg p-6 text-center">
+        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-semibold mb-3">Project Guides</h3>
+        <p className="text-gray-600 text-sm mb-4">
+          Detailed guides for bathroom remodels, kitchen renovations, roofing projects, and more.
+        </p>
+        <Link href="/blog" className="text-blue-600 hover:text-blue-800 font-semibold">
+          View Renovation Guides →
+        </Link>
+      </div>
+
+      {/* Size Guides */}
+      <div className="bg-gray-50 rounded-lg p-6 text-center">
+        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2-2V7a2 2 0 012-2h2a2 2 0 002 2v2a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 00-2 2h-2a2 2 0 00-2 2v6a2 2 0 01-2 2H9z" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-semibold mb-3">Size Guides</h3>
+        <p className="text-gray-600 text-sm mb-4">
+          Complete breakdowns of 10, 20, 30, and 40-yard dumpsters with real project examples and pricing.
+        </p>
+        <Link href="/blog/20-yard-dumpster-guide" className="text-blue-600 hover:text-blue-800 font-semibold">
+          View Size Guides →
+        </Link>
+      </div>
+
+      {/* Local Information */}
+      <div className="bg-gray-50 rounded-lg p-6 text-center">
+        <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-semibold mb-3">Local Guides</h3>
+        <p className="text-gray-600 text-sm mb-4">
+          City-specific pricing, permit requirements, and local regulations for 20+ major cities.
+        </p>
+        <Link href="/dumpster-rental-chicago" className="text-blue-600 hover:text-blue-800 font-semibold">
+          View Local Guides →
+        </Link>
+      </div>
+    </div>
+
+    {/* Quick Links to Popular Content */}
+    <div className="mt-12 bg-blue-50 rounded-lg p-8">
+      <h3 className="text-lg font-semibold text-center mb-6">Popular Resources</h3>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <Link href="/blog/bathroom-remodel-dumpster-size" className="block text-center p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+          <span className="text-sm font-medium text-gray-700 hover:text-blue-600">Bathroom Remodels</span>
+        </Link>
+        <Link href="/blog/kitchen-renovation-dumpster-size" className="block text-center p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+          <span className="text-sm font-medium text-gray-700 hover:text-blue-600">Kitchen Renovations</span>
+        </Link>
+        <Link href="/blog/20-yard-dumpster-guide" className="block text-center p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+          <span className="text-sm font-medium text-gray-700 hover:text-blue-600">20 Yard Guide</span>
+        </Link>
+        <Link href="/dumpster-rental-new-york" className="block text-center p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+          <span className="text-sm font-medium text-gray-700 hover:text-blue-600">NYC Pricing</span>
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
     </main>
   );
 }
