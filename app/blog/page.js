@@ -152,23 +152,23 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        {/* Newsletter Signup - Improved */}
-<div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-lg shadow-lg p-8 text-white mb-12">
-  <h2 className="text-2xl font-bold mb-2 text-center">Stay Updated on Renovation Tips</h2>
-  <p className="text-center text-slate-200 mb-6">
+        {/* Newsletter Signup - Much More Readable */}
+<div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-lg p-8 mb-12 border border-blue-200">
+  <h2 className="text-2xl font-bold mb-2 text-center text-gray-800">Stay Updated on Renovation Tips</h2>
+  <p className="text-center text-gray-600 mb-6">
     Get helpful guides on dumpster sizing and waste disposal delivered to your inbox
   </p>
   <div className="max-w-md mx-auto flex gap-3">
     <input 
       type="email" 
       placeholder="Enter your email"
-      className="flex-1 px-4 py-2 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400"
+      className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
     />
-    <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
       Subscribe
     </button>
   </div>
-  <p className="text-xs text-slate-300 text-center mt-3">
+  <p className="text-xs text-gray-500 text-center mt-3">
     No spam, unsubscribe anytime
   </p>
 </div>
