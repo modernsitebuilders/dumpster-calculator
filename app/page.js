@@ -202,7 +202,7 @@ export default function Home() {
               </div>
               
               <div className="text-sm text-blue-200">
-                Takes 30 seconds • No signup required • Get instant results
+                 No signup required • Get instant results
               </div>
             </div>
 
@@ -210,7 +210,7 @@ export default function Home() {
             <div className="relative">
               <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white border-opacity-30">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-                  Get Your Answer in 30 Seconds
+                  Get Your Answer Immediately
                 </h3>
                 
                 <div className="space-y-4">
@@ -412,7 +412,7 @@ export default function Home() {
             <div className="mb-12">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                  📍 Local Information for {localContent.city.name}
+                  Local Information for {localContent.city.name}
                   {localContent.city.state && `, ${localContent.city.state}`}
                 </h2>
                 <p className="text-gray-600">
