@@ -275,7 +275,7 @@ export default function CalculatorForm({ onCalculate, isCalculating = false }) {
                     Calculating...
                   </span>
                 ) : (
-                  'Calculate My Dumpster Size 🎯'
+                  'Calculate My Dumpster Size'
                 )}
               </button>
               
