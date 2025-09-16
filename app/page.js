@@ -3,220 +3,22 @@ import React, { useState, useEffect } from 'react';
 import { MapPin, FileText, DollarSign, ExternalLink, Calculator, ChevronRight } from 'lucide-react';
 import { getCityFromZip, getLocalContent } from '../utils/zipToCityMapping';
 import DumpsterProviderListings from './components/DumpsterProviderListings';
+import CalculatorForm from './components/CalculatorForm';
+import ResultsDisplay from './components/ResultsDisplay';
 import Link from 'next/link';
 import { trackCalculatorUsage } from '../utils/analytics';
 
-// Add this data structure for all dumpster sizes
-const allDumpsterSizes = [
-  {
-    size: 10,
-    description: '10 Yard Dumpster',
-    dimensions: '12\' L × 8\' W × 3.5\' H',
-    capacity: '3 pickup truck loads',
-    weight: '1-2 tons',
-    price: '$250-$450',
-    bestFor: ['Small bathroom remodel', 'Garage cleanout', 'Small deck removal', 'Concrete/dirt disposal'],
-    slug: '10-yard-dumpster-guide'
-  },
-  {
-    size: 20,
-    description: '20 Yard Dumpster',
-    dimensions: '22\' L × 8\' W × 4\' H',
-    capacity: '6 pickup truck loads',
-    weight: '2-3 tons',
-    price: '$300-$500',
-    bestFor: ['Kitchen remodel', 'Large bathroom renovation', 'Flooring removal', 'Roof replacement (up to 1500 sq ft)'],
-    slug: '20-yard-dumpster-guide'
-  },
-  {
-    size: 30,
-    description: '30 Yard Dumpster',
-    dimensions: '22\' L × 8\' W × 6\' H',
-    capacity: '9 pickup truck loads',
-    weight: '3-5 tons',
-    price: '$400-$600',
-    bestFor: ['Major home renovation', 'New construction', 'Large commercial projects', 'Whole house cleanout'],
-    slug: '30-yard-dumpster-guide'
-  },
-  {
-    size: 40,
-    description: '40 Yard Dumpster',
-    dimensions: '22\' L × 8\' W × 8\' H',
-    capacity: '12 pickup truck loads',
-    weight: '5-8 tons',
-    price: '$500-$750',
-    bestFor: ['Major construction', 'Commercial demolition', 'Large industrial cleanouts', 'Multi-room renovation'],
-    slug: '40-yard-dumpster-guide'
-  }
-];
-
-// Enhanced Results Section Component
-const EnhancedResultsSection = ({ result, projectType, squareFootage }) => {
-  const recommendedSize = allDumpsterSizes.find(size => size.size === result.size);
-  const otherSizes = allDumpsterSizes.filter(size => size.size !== result.size);
-
-  return (
-    <div className="mt-8 space-y-6">
-      {/* Main Recommendation */}
-      <div className="bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 rounded-xl p-6">
-        <div className="flex items-center mb-4">
-          <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
-            ✓
-          </div>
-          <h3 className="text-2xl font-bold text-gray-900">
-            Recommended: {recommendedSize.description}
-          </h3>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <p className="text-gray-700 mb-2">
-              <strong>Dimensions:</strong> {recommendedSize.dimensions}
-            </p>
-            <p className="text-gray-700 mb-2">
-              <strong>Capacity:</strong> {recommendedSize.capacity}
-            </p>
-            <p className="text-gray-700 mb-2">
-              <strong>Weight Limit:</strong> {recommendedSize.weight}
-            </p>
-            <p className="text-green-700 font-semibold">
-              <strong>Price Range:</strong> {recommendedSize.price}
-            </p>
-          </div>
-          <div>
-            <p className="font-semibold text-gray-900 mb-2">Perfect for:</p>
-            <ul className="text-sm text-gray-700 space-y-1">
-              {recommendedSize.bestFor.slice(0, 3).map((item, index) => (
-                <li key={index} className="flex items-center">
-                  <span className="text-green-500 mr-2">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="flex flex-wrap gap-3">
-          <Link 
-            href={`/blog/${recommendedSize.slug}`}
-            className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium"
-          >
-            Learn More About {recommendedSize.size}-Yard
-          </Link>
-          <button 
-            onClick={() => trackCalculatorUsage.quoteRequested(recommendedSize.size, '00000')}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-          >
-            Get Quote
-          </button>
-        </div>
-      </div>
-
-      {/* Size Comparison Section */}
-      <div className="bg-white border rounded-xl p-6">
-        <h4 className="text-xl font-bold text-gray-900 mb-4">
-          Compare All Dumpster Sizes
-        </h4>
-        <p className="text-gray-600 mb-6">
-          Not sure if {recommendedSize.size}-yard is right for you? Compare all available sizes:
-        </p>
-        
-        <div className="grid md:grid-cols-3 gap-4">
-          {otherSizes.map((size) => (
-            <div 
-              key={size.size}
-              className="border rounded-lg p-4 hover:shadow-md transition-shadow"
-            >
-              <div className="flex justify-between items-start mb-3">
-                <h5 className="font-semibold text-gray-900">
-                  {size.size} Yard
-                </h5>
-                <span className="text-sm text-blue-600 font-medium">
-                  {size.price}
-                </span>
-              </div>
-              
-              <div className="space-y-1 text-sm text-gray-600 mb-3">
-                <p><strong>Capacity:</strong> {size.capacity}</p>
-                <p><strong>Weight:</strong> {size.weight}</p>
-              </div>
-              
-              <div className="mb-3">
-                <p className="text-xs text-gray-500 mb-1">Best for:</p>
-                <p className="text-sm text-gray-700">
-                  {size.bestFor[0]}
-                </p>
-              </div>
-              
-              <Link 
-                href={`/blog/${size.slug}`}
-                className="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline"
-              >
-                View {size.size}-Yard Guide →
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Why This Size Section */}
-      <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-        <h4 className="text-lg font-bold text-gray-900 mb-3">
-          Why We Recommend {recommendedSize.size}-Yard for Your {projectType}
-        </h4>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div>
-            <p className="text-gray-700">
-              Based on your {squareFootage} sq ft {projectType.toLowerCase()}, 
-              a {recommendedSize.size}-yard dumpster provides the right balance of:
-            </p>
-            <ul className="mt-2 space-y-1 text-gray-700">
-              <li className="flex items-center">
-                <span className="text-green-500 mr-2">✓</span>
-                Adequate capacity for your debris volume
-              </li>
-              <li className="flex items-center">
-                <span className="text-green-500 mr-2">✓</span>
-                Cost-effective pricing
-              </li>
-              <li className="flex items-center">
-                <span className="text-green-500 mr-2">✓</span>
-                Fits in most standard driveways
-              </li>
-            </ul>
-          </div>
-          <div className="bg-white p-4 rounded-lg">
-            <p className="font-semibold text-gray-900 mb-2">Quick Tip:</p>
-            <p className="text-sm text-gray-700">
-              It's usually better to go one size up rather than risk running out of space. 
-              Most companies charge significantly more for additional pickups.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 export default function Home() {
-  const [projectType, setProjectType] = useState('');
-  const [squareFootage, setSquareFootage] = useState('');
   const [result, setResult] = useState(null);
-  const [hasTrackedView, setHasTrackedView] = useState(false);
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [calculatorError, setCalculatorError] = useState(null);
   
-  // ZIP CODE STATE VARIABLES
+  // ZIP CODE STATE VARIABLES (keep existing)
   const [zipCode, setZipCode] = useState('');
   const [localContent, setLocalContent] = useState(null);
   const [showLocalContent, setShowLocalContent] = useState(false);
 
-  // ADD CALCULATOR VIEW TRACKING
-  useEffect(() => {
-    if (!hasTrackedView) {
-      trackCalculatorUsage.calculatorViewed();
-      setHasTrackedView(true);
-    }
-  }, [hasTrackedView]);
-
+  // Your original projectTypes (keep exactly as-is)
   const projectTypes = {
     'bathroom': { factor: 0.5, name: 'Bathroom Remodel', avgSize: '40-100 sq ft' },
     'kitchen': { factor: 0.7, name: 'Kitchen Remodel', avgSize: '150-250 sq ft' },
@@ -228,30 +30,12 @@ export default function Home() {
     'whole-house': { factor: 2.0, name: 'Whole House Cleanout', avgSize: '1500-2500 sq ft' }
   };
 
-  // UPDATE PROJECT TYPE HANDLER WITH TRACKING
-  const handleProjectTypeChange = (value) => {
-    setProjectType(value);
-    if (value) {
-      trackCalculatorUsage.projectTypeSelected(value);
-      trackCalculatorUsage.stepCompleted(1, 'project_type_selected');
-    }
-  };
-
-  // UPDATE SQUARE FOOTAGE HANDLER WITH TRACKING
-  const handleSquareFootageChange = (value) => {
-    setSquareFootage(value);
-    if (value && value.length >= 2) {
-      trackCalculatorUsage.squareFootageEntered(value);
-      trackCalculatorUsage.stepCompleted(2, 'square_footage_entered');
-    }
-  };
-
-  // SCROLL TO PROVIDERS FUNCTION
+  // SCROLL TO PROVIDERS FUNCTION (keep existing)
   const scrollToProviders = () => {
     document.getElementById('providers-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Add this function near the top of your component
+  // Add this function for scrolling to calculator (from our earlier work)
   const scrollToCalculator = () => {
     const calculatorSection = document.getElementById('calculator-section');
     if (calculatorSection) {
@@ -260,12 +44,10 @@ export default function Home() {
         block: 'start'
       });
     }
-    
-    // Track the button click
     trackCalculatorUsage.sectionEngaged('size_guides_button_clicked');
   };
   
-  // ZIP CODE HANDLER FUNCTIONS
+  // ZIP CODE HANDLER FUNCTIONS (keep existing)
   const handleZipCodeSubmit = (e) => {
     e.preventDefault();
     if (zipCode.length === 5) {
@@ -284,10 +66,12 @@ export default function Home() {
     }
   };
 
-  // UPDATE CALCULATE FUNCTION WITH TRACKING
-  const calculateSize = () => {
-    if (!projectType || !squareFootage) return;
+  // Your original calculateSize function (keep exactly as-is, just handle form data)
+  const handleCalculatorSubmit = (formData) => {
+    setIsCalculating(true);
+    setCalculatorError(null);
     
+    const { projectType, squareFootage } = formData;
     const project = projectTypes[projectType];
     const baseSize = parseInt(squareFootage) * project.factor;
       
@@ -328,9 +112,7 @@ export default function Home() {
       };
     }
 
-    setResult(recommendation);
-
-    // ADD CALCULATION TRACKING
+    // ADD CALCULATION TRACKING (keep existing)
     const calculationResult = {
       recommendedSize: recommendedSize,
       totalVolume: Math.round(baseSize / 27),
@@ -341,11 +123,31 @@ export default function Home() {
     trackCalculatorUsage.calculationCompleted(calculationResult);
     trackCalculatorUsage.projectCombination(projectType, recommendedSize, squareFootage);
     trackCalculatorUsage.stepCompleted(3, 'calculation_completed');
+
+    // Set results for ResultsDisplay component
+    setResult({
+      recommendedSize: recommendedSize,
+      totalVolume: Math.round(baseSize / 27),
+      projectType: project.name,
+      squareFootage: parseInt(squareFootage)
+    });
+    
+    setIsCalculating(false);
+  };
+
+  const handleCalculatorError = (error) => {
+    setCalculatorError(error);
+  };
+
+  const handleReset = () => {
+    setResult(null);
+    setIsCalculating(false);
+    setCalculatorError(null);
   };
 
   return (
     <main className="min-h-screen">
-      {/* Enhanced Hero Section */}
+      {/* Enhanced Hero Section (keep exactly as-is) */}
       <div className="relative bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-black opacity-5"></div>
@@ -390,7 +192,7 @@ export default function Home() {
               {/* CTA Button */}
               <div className="mb-6">
                 <button 
-                  onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('calculator-section')?.scrollIntoView({ behavior: 'smooth' })}
                   className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
                 >
                   Calculate My Dumpster Size →
@@ -449,72 +251,34 @@ export default function Home() {
       {/* Main Content */}
       <div className="bg-gradient-to-b from-gray-50 to-white">
         <div id="calculator-section" className="container mx-auto px-4 py-12 max-w-4xl">
-          {/* Calculator with tracking */}
-          <div id="calculator" className="bg-white rounded-lg shadow-lg p-8 mb-8">
-            <div className="space-y-6">
-              {/* Project Type with tracking */}
-              <div>
-                <label htmlFor="main-project-type" className="block text-sm font-medium text-gray-700 mb-2">
-                  Project type
-                </label>
-                <select
-                  id="main-project-type"
-                  name="projectType"
-                  value={projectType}
-                  onChange={(e) => handleProjectTypeChange(e.target.value)}
-                  onFocus={() => trackCalculatorUsage.sectionEngaged('project_type_select')}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option value="">Select your project type</option>
-                  {Object.entries(projectTypes).map(([key, project]) => (
-                    <option key={key} value={key}>
-                      {project.name} ({project.avgSize})
-                    </option>
-                  ))}
-                </select>
+          
+          {/* Error Display */}
+          {calculatorError && (
+            <div className="mb-6 bg-red-50 border border-red-200 rounded-lg p-4">
+              <div className="flex items-center">
+                <svg className="w-5 h-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+                <span className="text-red-700">{calculatorError}</span>
               </div>
-
-              {/* Square Footage with tracking */}
-              <div>
-                <label htmlFor="main-square-footage" className="block text-sm font-medium text-gray-700 mb-2">
-                  Project size (square feet)
-                </label>
-                <input 
-                  type="number"
-                  id="main-square-footage"
-                  name="squareFootage"
-                  value={squareFootage}
-                  onChange={(e) => handleSquareFootageChange(e.target.value)}
-                  onFocus={() => trackCalculatorUsage.sectionEngaged('square_footage_input')}
-                  placeholder="Enter square footage"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                />
-                <p className="text-sm text-gray-500 mt-1">
-                  Tip: Multiply length × width to get square feet
-                </p>
-              </div>
-
-              {/* Calculate Button */}
-              <button
-                onClick={calculateSize}
-                className="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-200"
-              >
-                Calculate Dumpster Size
-              </button>
             </div>
+          )}
 
-            {/* Enhanced Results Section */}
-            {result && (
-              <EnhancedResultsSection 
-                result={result}
-                projectType={projectTypes[projectType]?.name}
-                squareFootage={squareFootage}
-              />
-            )}
-          </div>
+          {/* CLEAN COMPONENT USAGE - Just two components */}
+          {!result ? (
+            <CalculatorForm 
+              onCalculate={handleCalculatorSubmit}
+              isCalculating={isCalculating}
+            />
+          ) : (
+            <ResultsDisplay 
+              result={result}
+              onReset={handleReset}
+            />
+          )}
 
-          {/* Info Section */}
-          <div className="bg-gray-50 rounded-lg p-8 mb-8">
+          {/* Info Section (keep existing) */}
+          <div className="bg-gray-50 rounded-lg p-8 mb-8 mt-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Common Dumpster Sizes Explained
             </h2>
@@ -538,19 +302,19 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Provider Listings Section */}
+          {/* Provider Listings Section (keep existing) */}
           {result && (
             <div id="providers-section">
               <DumpsterProviderListings 
                 dumpsterSize={result.size} 
-                projectType={projectTypes[projectType]?.name}
+                projectType={result.projectType}
               />
             </div>
           )}
         </div>
       </div>
       
-      {/* Expert Guides Section */}
+      {/* Expert Guides Section (keep exactly as-is, just update Size Guides button) */}
       <div className="bg-white py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
@@ -581,7 +345,7 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Size Guides */}
+            {/* Size Guides - UPDATED BUTTON */}
             <div className="bg-gray-50 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -603,7 +367,7 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Local Information */}
+            {/* Local Information (keep exactly as-is) */}
             <div className="bg-gray-50 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -635,13 +399,13 @@ export default function Home() {
                 </button>
               </form>
               
-              <Link href="/local/guides" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">
+              <Link href="/local" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">
                 View All Local Guides →
               </Link>
             </div>
           </div>
 
-          {/* Local Content Results */}
+          {/* Local Content Results (keep exactly as-is) */}
           {showLocalContent && localContent && (
             <div className="mb-12">
               <div className="text-center mb-8">
@@ -754,7 +518,7 @@ export default function Home() {
             </div>
           )}
 
-          {/* Popular Resources */}
+          {/* Popular Resources (keep existing) */}
           <div className="mt-12 bg-blue-50 rounded-lg p-8">
             <h3 className="text-lg font-semibold text-center mb-6">Popular Resources</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
