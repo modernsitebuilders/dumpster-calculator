@@ -97,14 +97,13 @@ const otherSizes = allDumpsterSizes.filter(d => {
       {/* Main Result */}
       <div className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200 rounded-2xl p-8">
         <div className="text-center mb-6">
-          <div className="text-6xl mb-4">🎯</div>
-          <h3 className="text-3xl font-bold text-green-800 mb-2">
-            Perfect Match Found!
-          </h3>
-          <p className="text-lg text-green-700">
-            Based on your {result.projectType} project ({result.squareFootage} sq ft)
-          </p>
-        </div>
+  <h3 className="text-3xl font-bold text-green-800 mb-2">
+    Recommended Size
+  </h3>
+  <p className="text-lg text-green-700">
+    For your {result.projectType} project ({result.squareFootage} sq ft)
+  </p>
+</div>
 
         {recommendedDumpster && (
           <div className="bg-white rounded-xl p-6 shadow-lg">
