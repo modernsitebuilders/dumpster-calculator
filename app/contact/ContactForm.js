@@ -25,17 +25,12 @@ export default function ContactForm() {
     setStatus('');
 
     try {
-      // Try FormData approach first (more compatible with Formspree)
-      const formDataObj = new FormData();
-      formDataObj.append('name', formData.name);
-      formDataObj.append('email', formData.email);
-      formDataObj.append('company', formData.company);
-      formDataObj.append('subject', formData.subject);
-      formDataObj.append('message', formData.message);
-
       const response = await fetch('https://formspree.io/f/xwpnjgoz', {
         method: 'POST',
-        body: formDataObj
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
 
       if (response.ok) {
@@ -48,11 +43,9 @@ export default function ContactForm() {
           message: ''
         });
       } else {
-        console.error('Form submission failed:', response.status, response.statusText);
         setStatus('error');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
       setStatus('error');
     }
     setLoading(false);
