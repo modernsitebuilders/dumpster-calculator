@@ -130,15 +130,6 @@ export default function CalculatorForm({ onCalculate, isCalculating = false }) {
     startTimeRef.current = Date.now();
   };
 
-  // Progress calculation
-  const getProgress = () => {
-    let progress = 0;
-    if (projectType) progress += 33;
-    if (squareFootage) progress += 33;
-    if (projectType && squareFootage) progress += 34; // Ready to calculate
-    return progress;
-  };
-
   return (
     <div id="calculator" className="bg-white rounded-2xl shadow-2xl p-8 mb-16">
       <div className="text-center mb-8">
@@ -146,7 +137,7 @@ export default function CalculatorForm({ onCalculate, isCalculating = false }) {
           Free Dumpster Size Calculator
         </h2>
         <p className="text-gray-600">
-          Get your perfect dumpster size recommendation in under 30 seconds
+          Whats the job and how big is it? Get a custom dumpster size recommendation in seconds.
         </p>
         
         {/* Progress Bar */}
