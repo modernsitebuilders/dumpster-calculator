@@ -1,4 +1,3 @@
-// app/contact/ContactForm.js
 'use client';
 import { useState } from 'react';
 
@@ -26,12 +25,17 @@ export default function ContactForm() {
     setStatus('');
 
     try {
+      // Try FormData approach first (more compatible with Formspree)
+      const formDataObj = new FormData();
+      formDataObj.append('name', formData.name);
+      formDataObj.append('email', formData.email);
+      formDataObj.append('company', formData.company);
+      formDataObj.append('subject', formData.subject);
+      formDataObj.append('message', formData.message);
+
       const response = await fetch('https://formspree.io/f/xwpnjgoz', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
+        body: formDataObj
       });
 
       if (response.ok) {
@@ -44,9 +48,11 @@ export default function ContactForm() {
           message: ''
         });
       } else {
+        console.error('Form submission failed:', response.status, response.statusText);
         setStatus('error');
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       setStatus('error');
     }
     setLoading(false);
@@ -65,7 +71,7 @@ export default function ContactForm() {
             type="text"
             id="name"
             name="name"
-            autocomplete="name"
+            autoComplete="name"
             required
             value={formData.name}
             onChange={handleChange}
@@ -81,7 +87,7 @@ export default function ContactForm() {
             type="email"
             id="email"
             name="email"
-            autocomplete="email"
+            autoComplete="email"
             required
             value={formData.email}
             onChange={handleChange}
@@ -97,7 +103,7 @@ export default function ContactForm() {
             type="text"
             id="company"
             name="company"
-            autocomplete="organization"
+            autoComplete="organization"
             value={formData.company}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
