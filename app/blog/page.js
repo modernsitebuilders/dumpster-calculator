@@ -334,7 +334,7 @@ export default function BlogIndex() {
     }
   ];
 
-  const categories = ["All Posts", "Regulations", "House Areas", "Dumpster Sizes", "Kitchen Renovation", "Bathroom Renovation", "Bedroom Renovation", "Living Room Renovation", "Major Renovation", "Roofing", "Pricing", "Outdoor Projects", "Flooring", "Construction", "Landscaping", "Cleanouts", "Local Permits"];
+  const categories = ["All Posts", "Regulations", "House Areas", "Dumpster Sizes", "Kitchen Renovation", "Bathroom Renovation", "Bedroom Renovation", "Living Room Renovation", "Major Renovation", "Roofing", "Pricing", "Outdoor Projects", "Flooring", "Construction", "Landscaping", "Cleanouts", "Local Permits", "General Tips"];
 
   const filteredPosts = selectedCategory === "All Posts" 
     ? blogPosts 
@@ -362,7 +362,7 @@ export default function BlogIndex() {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
                     ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                 }`}
               >
                 {category}
@@ -371,106 +371,121 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        {/* Featured Posts Section */}
+        {/* Featured Posts */}
         {selectedCategory === "All Posts" && (
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Featured Guides</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Featured Articles</h2>
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
               {blogPosts.filter(post => post.featured).map((post) => (
-                <article key={post.slug} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div key={post.slug} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
-                      <span className={`inline-block text-xs px-2 py-1 rounded-full font-semibold ${
-                        post.category === 'Regulations' ? 'bg-red-100 text-red-800' :
-                        post.category === 'House Areas' ? 'bg-green-100 text-green-800' :
-                        post.category === 'Dumpster Sizes' ? 'bg-purple-100 text-purple-800' :
-                        'bg-blue-100 text-blue-800'
-                      }`}>
+                      <span className="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">
                         {post.category}
                       </span>
-                      <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full font-semibold">
-                        Featured
-                      </span>
+                      <span className="text-xs text-gray-500">{post.readTime}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
-                      <Link href={`/blog/${post.slug}`}>
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight">
+                      <Link href={`/blog/${post.slug}`} className="hover:text-blue-600">
                         {post.title}
                       </Link>
                     </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3 text-sm">
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-500">{post.readTime}</span>
+                      <span className="text-xs text-gray-400">{post.publishDate}</span>
                       <Link 
                         href={`/blog/${post.slug}`}
-                        className="text-blue-600 hover:text-blue-800 font-semibold text-sm"
+                        className="text-blue-600 hover:text-blue-800 text-sm font-semibold"
                       >
-                        Read Guide →
+                        Read More →
                       </Link>
                     </div>
                   </div>
-                </article>
+                </div>
               ))}
             </div>
           </div>
         )}
 
-        {/* All Posts Section */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            {selectedCategory === "All Posts" ? "All Guides" : `${selectedCategory} Guides`}
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredPosts.map((post) => (
-              <article key={post.slug} className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow ${
-                post.featured && selectedCategory === "All Posts" ? 'ring-2 ring-blue-200 bg-blue-50' : ''
-              }`}>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className={`inline-block text-xs px-2 py-1 rounded-full font-semibold ${
-                      post.category === 'Regulations' ? 'bg-red-100 text-red-800' :
-                      post.category === 'House Areas' ? 'bg-green-100 text-green-800' :
-                      post.category === 'Dumpster Sizes' ? 'bg-purple-100 text-purple-800' :
-                      post.category === 'Major Renovation' ? 'bg-orange-100 text-orange-800' :
-                      post.category === 'Construction' ? 'bg-gray-100 text-gray-800' :
-                      post.category === 'Landscaping' ? 'bg-emerald-100 text-emerald-800' :
-                      post.category === 'Cleanouts' ? 'bg-cyan-100 text-cyan-800' :
-                      'bg-blue-100 text-blue-800'
-                    }`}>
-                      {post.category}
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm text-gray-500">{post.readTime}</span>
-                      {post.featured && (
-                        <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full font-semibold">
-                          Popular
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
-                    <Link href={`/blog/${post.slug}`}>
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">{post.publishDate}</span>
-                    <Link 
-                      href={`/blog/${post.slug}`}
-                      className="text-blue-600 hover:text-blue-800 font-semibold text-sm"
-                    >
-                      Read More →
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
+        {/* Category Description */}
+        {selectedCategory === "Local Guides" && (
+          <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-8">
+            <h2 className="text-xl font-bold text-purple-800 mb-2">Local Market Guides</h2>
+            <p className="text-purple-700">
+              In-depth analysis of dumpster rental markets in major cities. Compare providers, understand pricing trends, 
+              and find the best companies in your area. These guides complement our city-specific pricing pages.
+            </p>
           </div>
+        )}
+
+        {selectedCategory === "Local Permits" && (
+          <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-8">
+            <h2 className="text-xl font-bold text-red-800 mb-2">Local Permit Requirements</h2>
+            <p className="text-red-700">
+              City-specific dumpster permit guides covering requirements, costs, application processes, and regulations. 
+              Essential reading before placing a dumpster on public property.
+            </p>
+          </div>
+        )}
+
+        {/* All Posts Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredPosts.map((post) => (
+            <article key={post.slug} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className={`text-xs px-3 py-1 rounded-full font-semibold ${
+                    post.category === 'Local Permits' ? 'bg-red-100 text-red-800' :
+                    post.category === 'Local Guides' ? 'bg-purple-100 text-purple-800' :
+                    post.category === 'Dumpster Sizes' ? 'bg-green-100 text-green-800' :
+                    post.category === 'Pricing' ? 'bg-yellow-100 text-yellow-800' :
+                    'bg-blue-100 text-blue-800'
+                  }`}>
+                    {post.category}
+                  </span>
+                  <span className="text-xs text-gray-500">{post.readTime}</span>
+                </div>
+                
+                <h2 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                  <Link href={`/blog/${post.slug}`} className="hover:text-blue-600">
+                    {post.title}
+                  </Link>
+                </h2>
+                
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-400">{post.publishDate}</span>
+                  <Link 
+                    href={`/blog/${post.slug}`}
+                    className="text-blue-600 hover:text-blue-800 text-sm font-semibold"
+                  >
+                    Read More →
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
+
+        {/* Empty State */}
+        {filteredPosts.length === 0 && (
+          <div className="text-center py-12">
+            <h3 className="text-xl font-semibold text-gray-600 mb-4">
+              No articles found in "{selectedCategory}"
+            </h3>
+            <button 
+              onClick={() => setSelectedCategory("All Posts")}
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+            >
+              View All Posts
+            </button>
+          </div>
+        )}
 
         {/* Newsletter Signup */}
 <div className="bg-blue-600 rounded-lg p-8 text-center text-white mb-12">
@@ -540,19 +555,19 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="bg-gray-100 rounded-lg p-8 text-center">
+        {/* CTA Section */}
+        <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-8 mt-12 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Need Help Choosing a Dumpster Size?
           </h2>
           <p className="text-gray-600 mb-6">
-            Our free calculator gives you instant recommendations based on your specific project
+            Use our free calculator to get instant recommendations for your specific project
           </p>
           <Link 
             href="/" 
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition"
           >
-            Use Free Calculator
+            Try Our Calculator →
           </Link>
         </div>
       </div>

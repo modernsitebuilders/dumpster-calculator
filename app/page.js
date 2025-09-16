@@ -1,14 +1,21 @@
 'use client';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { MapPin, FileText, DollarSign, ExternalLink, Calculator, ChevronRight } from 'lucide-react';
+import { getCityFromZip, getLocalContent } from '../utils/zipToCityMapping';
 import DumpsterProviderListings from './components/DumpsterProviderListings';
 import Link from 'next/link';
-import { trackCalculatorUsage } from '../utils/analytics'; // FIXED: Correct path for app/page.js
+import { trackCalculatorUsage } from '../utils/analytics';
 
 export default function Home() {
   const [projectType, setProjectType] = useState('');
   const [squareFootage, setSquareFootage] = useState('');
   const [result, setResult] = useState(null);
   const [hasTrackedView, setHasTrackedView] = useState(false);
+  
+  // ZIP CODE STATE VARIABLES
+  const [zipCode, setZipCode] = useState('');
+  const [localContent, setLocalContent] = useState(null);
+  const [showLocalContent, setShowLocalContent] = useState(false);
 
   // ADD CALCULATOR VIEW TRACKING
   useEffect(() => {
@@ -31,34 +38,53 @@ export default function Home() {
 
   // UPDATE PROJECT TYPE HANDLER WITH TRACKING
   const handleProjectTypeChange = (value) => {
-  setProjectType(value);
-  if (value) {
-    trackCalculatorUsage.projectTypeSelected(value);
-    trackCalculatorUsage.stepCompleted(1, 'project_type_selected');
-  }
-};
+    setProjectType(value);
+    if (value) {
+      trackCalculatorUsage.projectTypeSelected(value);
+      trackCalculatorUsage.stepCompleted(1, 'project_type_selected');
+    }
+  };
 
   // UPDATE SQUARE FOOTAGE HANDLER WITH TRACKING
   const handleSquareFootageChange = (value) => {
-  setSquareFootage(value);
-  if (value && value.length >= 2) {
-    trackCalculatorUsage.squareFootageEntered(value);
-    trackCalculatorUsage.stepCompleted(2, 'square_footage_entered');
-  }
-};
+    setSquareFootage(value);
+    if (value && value.length >= 2) {
+      trackCalculatorUsage.squareFootageEntered(value);
+      trackCalculatorUsage.stepCompleted(2, 'square_footage_entered');
+    }
+  };
 
   // SCROLL TO PROVIDERS FUNCTION
   const scrollToProviders = () => {
     document.getElementById('providers-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // ZIP CODE HANDLER FUNCTIONS
+  const handleZipCodeSubmit = (e) => {
+    e.preventDefault();
+    if (zipCode.length === 5) {
+      const content = getLocalContent(zipCode);
+      setLocalContent(content);
+      setShowLocalContent(true);
+      trackCalculatorUsage.zipCodeSubmitted(zipCode);
+    }
+  };
+
+  const handleZipCodeChange = (e) => {
+    const value = e.target.value.replace(/\D/g, '').slice(0, 5);
+    setZipCode(value);
+    if (value.length !== 5) {
+      setShowLocalContent(false);
+    }
+  };
+
   // UPDATE CALCULATE FUNCTION WITH TRACKING
   const calculateSize = () => {
-  if (!projectType || !squareFootage) return;
-  
-  const project = projectTypes[projectType];
-  const baseSize = parseInt(squareFootage) * project.factor;
+    if (!projectType || !squareFootage) return;
     
+    const project = projectTypes[projectType];
+    const baseSize = parseInt(squareFootage) * project.factor;
+      
     let recommendation;
     let recommendedSize;
     
@@ -99,13 +125,13 @@ export default function Home() {
     setResult(recommendation);
 
     // ADD CALCULATION TRACKING
-   const calculationResult = {
-    recommendedSize: recommendedSize,
-    totalVolume: Math.round(baseSize / 27),
-    projectType: projectType,
-    squareFootage: parseInt(squareFootage)
-  };
-  
+    const calculationResult = {
+      recommendedSize: recommendedSize,
+      totalVolume: Math.round(baseSize / 27),
+      projectType: projectType,
+      squareFootage: parseInt(squareFootage)
+    };
+    
     trackCalculatorUsage.calculationCompleted(calculationResult);
     trackCalculatorUsage.projectCombination(projectType, recommendedSize, squareFootage);
     trackCalculatorUsage.stepCompleted(3, 'calculation_completed');
@@ -140,20 +166,20 @@ export default function Home() {
               </div>
 
               {/* Stats Cards - Clean white background */}
-<div className="grid grid-cols-3 gap-4 mb-8">
-  <div className="bg-white rounded-lg p-4 text-center shadow-md">
-    <div className="text-2xl font-bold text-gray-900">100%</div>
-    <div className="text-sm text-gray-700">Free Tool</div>
-  </div>
-  <div className="bg-white rounded-lg p-4 text-center shadow-md">
-    <div className="text-2xl font-bold text-gray-900">30sec</div>
-    <div className="text-sm text-gray-700">Get Results</div>
-  </div>
-  <div className="bg-white rounded-lg p-4 text-center shadow-md">
-    <div className="text-2xl font-bold text-gray-900">0</div>
-    <div className="text-sm text-gray-700">Email Required</div>
-  </div>
-</div>
+              <div className="grid grid-cols-3 gap-4 mb-8">
+                <div className="bg-white rounded-lg p-4 text-center shadow-md">
+                  <div className="text-2xl font-bold text-gray-900">100%</div>
+                  <div className="text-sm text-gray-700">Free Tool</div>
+                </div>
+                <div className="bg-white rounded-lg p-4 text-center shadow-md">
+                  <div className="text-2xl font-bold text-gray-900">30sec</div>
+                  <div className="text-sm text-gray-700">Get Results</div>
+                </div>
+                <div className="bg-white rounded-lg p-4 text-center shadow-md">
+                  <div className="text-2xl font-bold text-gray-900">0</div>
+                  <div className="text-sm text-gray-700">Email Required</div>
+                </div>
+              </div>
 
               {/* CTA Button */}
               <div className="mb-6">
@@ -223,16 +249,16 @@ export default function Home() {
               {/* Project Type with tracking */}
               <div>
                 <label htmlFor="main-project-type" className="block text-sm font-medium text-gray-700 mb-2">
-  Project type
-</label>
-<select
-  id="main-project-type"
-  name="projectType"
-  value={projectType}
-  onChange={(e) => handleProjectTypeChange(e.target.value)}
-  onFocus={() => trackCalculatorUsage.sectionEngaged('project_type_select')}
-  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
->
+                  Project type
+                </label>
+                <select
+                  id="main-project-type"
+                  name="projectType"
+                  value={projectType}
+                  onChange={(e) => handleProjectTypeChange(e.target.value)}
+                  onFocus={() => trackCalculatorUsage.sectionEngaged('project_type_select')}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                >
                   <option value="">Select your project type</option>
                   {Object.entries(projectTypes).map(([key, project]) => (
                     <option key={key} value={key}>
@@ -245,18 +271,18 @@ export default function Home() {
               {/* Square Footage with tracking */}
               <div>
                 <label htmlFor="main-square-footage" className="block text-sm font-medium text-gray-700 mb-2">
-  Project size (square feet)
-</label>
-<input 
-  type="number"
-  id="main-square-footage"
-  name="squareFootage"
-  value={squareFootage}
-  onChange={(e) => handleSquareFootageChange(e.target.value)}
-  onFocus={() => trackCalculatorUsage.sectionEngaged('square_footage_input')}
-  placeholder="Enter square footage"
-  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-/>
+                  Project size (square feet)
+                </label>
+                <input 
+                  type="number"
+                  id="main-square-footage"
+                  name="squareFootage"
+                  value={squareFootage}
+                  onChange={(e) => handleSquareFootageChange(e.target.value)}
+                  onFocus={() => trackCalculatorUsage.sectionEngaged('square_footage_input')}
+                  placeholder="Enter square footage"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
                 <p className="text-sm text-gray-500 mt-1">
                   Tip: Multiply length × width to get square feet
                 </p>
@@ -351,17 +377,19 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Resource Cards Grid */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            
             {/* Project Guides */}
             <div className="bg-gray-50 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2-2V7a2 2 0 012-2h2a2 2 0 002 2v2a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 00-2 2h-2a2 2 0 00-2 2v6a2 2 0 01-2 2H9z" />
                 </svg>
               </div>
               <h3 className="text-lg font-semibold mb-3">Project Guides</h3>
               <p className="text-gray-600 text-sm mb-4">
-                Detailed guides for bathroom remodels, kitchen renovations, roofing projects, and more.
+                Room-by-room guides for kitchens, bathrooms, basements, and major renovations.
               </p>
               <Link href="/blog" className="text-blue-600 hover:text-blue-800 font-semibold">
                 View Renovation Guides →
@@ -377,7 +405,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-semibold mb-3">Size Guides</h3>
               <p className="text-gray-600 text-sm mb-4">
-                Complete breakdowns of 10, 20, 30, and 40-yard dumpsters with real project examples and pricing.
+                Complete breakdowns of 10, 20, 30, and 40-yard dumpsters with real project examples.
               </p>
               <Link href="/blog/20-yard-dumpster-guide" className="text-blue-600 hover:text-blue-800 font-semibold">
                 View Size Guides →
@@ -392,17 +420,150 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-3">Local Guides</h3>
+              <h3 className="text-lg font-semibold mb-3">Local Information</h3>
               <p className="text-gray-600 text-sm mb-4">
-                City-specific pricing, permit requirements, and local regulations for 20+ major cities.
+                Enter your ZIP code to see pricing, permits, and providers in your area.
               </p>
-              <Link href="/dumpster-rental-chicago" className="text-blue-600 hover:text-blue-800 font-semibold">
-                View Local Guides →
+              
+              {/* ZIP Code Input */}
+              <form onSubmit={handleZipCodeSubmit} className="flex gap-2 max-w-xs mx-auto mb-4">
+                <input
+                  type="text"
+                  value={zipCode}
+                  onChange={handleZipCodeChange}
+                  placeholder="ZIP code"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none text-center text-sm"
+                  maxLength="5"
+                />
+                <button
+                  type="submit"
+                  className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-4 py-2 rounded-lg transition text-sm"
+                  disabled={zipCode.length !== 5}
+                >
+                  Find
+                </button>
+              </form>
+              
+              <Link href="/local/guides" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">
+                View All Local Guides →
               </Link>
             </div>
           </div>
 
-          {/* Quick Links to Popular Content */}
+          {/* Local Content Results */}
+          {showLocalContent && localContent && (
+            <div className="mb-12">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                  📍 Local Information for {localContent.city.name}
+                  {localContent.city.state && `, ${localContent.city.state}`}
+                </h2>
+                <p className="text-gray-600">
+                  {localContent.hasLocalContent 
+                    ? "Here's what's available in your area:"
+                    : "We're expanding to your area soon. Check out these general resources:"
+                  }
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                
+                {/* Local Pricing Guide */}
+                {localContent.hasLocalContent && localContent.localGuides.length > 0 && (
+                  <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-blue-500">
+                    <div className="flex items-center mb-4">
+                      <svg className="w-8 h-8 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                      </svg>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900">Local Pricing Guide</h3>
+                        <p className="text-gray-600 text-sm">Pricing & providers in your city</p>
+                      </div>
+                    </div>
+                    
+                    {localContent.localGuides.map((guide, index) => (
+                      <div key={index} className="mb-4">
+                        <h4 className="font-bold text-lg mb-2">{guide.title}</h4>
+                        <p className="text-gray-600 text-sm mb-3">{guide.description}</p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">
+                            {guide.category}
+                          </span>
+                          <span className="text-xs text-gray-500">{guide.readTime}</span>
+                        </div>
+                      </div>
+                    ))}
+                    
+                    <Link 
+                      href={localContent.localGuides[0]?.url}
+                      className="block bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-semibold mt-4"
+                    >
+                      View {localContent.city.name} Pricing →
+                    </Link>
+                  </div>
+                )}
+
+                {/* Local Permit Guide */}
+                {localContent.hasLocalContent && localContent.permitGuides.length > 0 && (
+                  <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500">
+                    <div className="flex items-center mb-4">
+                      <svg className="w-8 h-8 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900">Permit Requirements</h3>
+                        <p className="text-gray-600 text-sm">Local regulations & applications</p>
+                      </div>
+                    </div>
+                    
+                    {localContent.permitGuides.map((guide, index) => (
+                      <div key={index} className="mb-4">
+                        <h4 className="font-bold text-lg mb-2">{guide.title}</h4>
+                        <p className="text-gray-600 text-sm mb-3">{guide.description}</p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs px-3 py-1 bg-red-100 text-red-800 rounded-full font-semibold">
+                            {guide.category}
+                          </span>
+                          <span className="text-xs text-gray-500">{guide.readTime}</span>
+                        </div>
+                      </div>
+                    ))}
+                    
+                    <Link 
+                      href={localContent.permitGuides[0]?.url}
+                      className="block bg-red-600 text-white text-center py-3 rounded-lg hover:bg-red-700 transition font-semibold mt-4"
+                    >
+                      View {localContent.city.name} Permits →
+                    </Link>
+                  </div>
+                )}
+
+                {/* No Local Content Available */}
+                {!localContent.hasLocalContent && (
+                  <div className="md:col-span-2">
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center">
+                      <h3 className="text-xl font-bold text-yellow-800 mb-2">
+                        Coming to {localContent.city.name} Soon!
+                      </h3>
+                      <p className="text-yellow-700 mb-4">
+                        We're working on adding specific content for your area. Check out our general guides:
+                      </p>
+                      <div className="flex flex-wrap justify-center gap-4">
+                        <Link href="/blog/dumpster-rental-cost-guide" className="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition text-sm font-semibold">
+                          General Pricing Guide
+                        </Link>
+                        <Link href="/blog/do-i-need-dumpster-permit" className="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition text-sm font-semibold">
+                          Permit Requirements
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Popular Resources */}
           <div className="mt-12 bg-blue-50 rounded-lg p-8">
             <h3 className="text-lg font-semibold text-center mb-6">Popular Resources</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
