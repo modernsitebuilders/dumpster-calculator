@@ -43,8 +43,14 @@ export default function EmailCapture({ source = 'website' }) {
       
       <form onSubmit={handleSubmit}>
         <div className="flex gap-3">
+          <label htmlFor="newsletter-email" className="sr-only">
+            Email Address
+          </label>
           <input
             type="email"
+            id="newsletter-email"
+            name="email"
+            autocomplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"

@@ -80,7 +80,6 @@ export default function Calculator() {
   const calculateDumpsterSize = () => {
     if (!projectType || !squareFootage) return;
 
-    // Your existing calculation logic here...
     const sqft = parseInt(squareFootage);
     let baseVolume;
     
@@ -208,8 +207,13 @@ export default function Calculator() {
                'Total square footage?'}
             </h3>
             <div className="relative">
+              <label htmlFor="square-footage" className="sr-only">
+                Enter square footage
+              </label>
               <input
                 type="number"
+                id="square-footage"
+                name="squareFootage"
                 value={squareFootage}
                 onChange={handleSquareFootageChange}
                 placeholder="Enter square footage"
@@ -244,25 +248,22 @@ export default function Calculator() {
                   } ${material.popular ? 'ring-2 ring-yellow-200' : ''}`}
                 >
                   <div className="font-medium">{material.label}</div>
-                  <div className="text-sm text-gray-600 mt-1">{material.desc}</div>
+                  <div className="text-sm text-gray-600">{material.desc}</div>
                   {material.popular && (
-                    <div className="text-xs text-yellow-600 font-semibold mt-2">Most Common</div>
+                    <div className="text-xs text-yellow-600 font-semibold mt-1">Most Common</div>
                   )}
                 </button>
               ))}
             </div>
-          </div>
-        )}
-
-        {/* Calculate Button */}
-        {projectType && squareFootage && (
-          <div className="text-center animate-fadeIn">
-            <button
-              onClick={calculateDumpsterSize}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-xl"
-            >
-              Calculate My Dumpster Size 🎯
-            </button>
+            
+            <div className="mt-6">
+              <button
+                onClick={calculateDumpsterSize}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition text-lg"
+              >
+                Calculate My Dumpster Size 🎯
+              </button>
+            </div>
           </div>
         )}
 
@@ -272,20 +273,19 @@ export default function Calculator() {
             <h3 className="text-2xl font-bold text-green-800 mb-4">
               ✅ Recommended: {result.recommendedSize} Dumpster
             </h3>
-            
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-2">Perfect for your project:</h4>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• {squareFootage} sq ft {projectType.replace('_', ' ')}</li>
-                  <li>• {materialType} materials</li>
+                <h4 className="font-semibold text-gray-800 mb-2">Perfect For:</h4>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li>• {result.squareFootage} sq ft {result.projectType} project</li>
+                  <li>• {result.materialType} materials</li>
                   <li>• Estimated {result.totalVolume} cubic yards of debris</li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">Typical cost range:</h4>
-                <div className="text-2xl font-bold text-green-600">
-                  ${result.recommendedSize === '10-yard' ? '$250-$400' :
+                <h4 className="font-semibold text-gray-800 mb-2">Typical Cost Range:</h4>
+                <div className="text-lg font-bold text-green-600">
+                  {result.recommendedSize === '10-yard' ? '$250-$400' :
                     result.recommendedSize === '20-yard' ? '$350-$550' :
                     result.recommendedSize === '30-yard' ? '$450-$650' :
                     '$550-$750'}
@@ -317,8 +317,14 @@ export default function Calculator() {
               Get Quotes for {result.recommendedSize} Dumpster
             </h3>
             <form onSubmit={handleZipCodeSubmit} className="flex gap-3">
+              <label htmlFor="zip-code" className="sr-only">
+                ZIP Code
+              </label>
               <input
                 type="text"
+                id="zip-code"
+                name="zipCode"
+                autocomplete="postal-code"
                 value={zipCode}
                 onChange={(e) => setZipCode(e.target.value)}
                 placeholder="Enter your ZIP code"

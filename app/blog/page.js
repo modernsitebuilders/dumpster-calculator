@@ -462,24 +462,30 @@ export default function BlogIndex({ searchParams }) {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="bg-blue-600 rounded-lg p-8 text-center text-white mb-12">
-          <h2 className="text-2xl font-bold mb-4">
-            Stay Updated on Renovation Tips
-          </h2>
-          <p className="mb-6">
-            Get expert advice on dumpster sizing, cost-saving tips, and renovation guides delivered to your inbox.
-          </p>
-          <div className="max-w-md mx-auto flex gap-3">
-            <input 
-              type="email" 
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-2 rounded text-gray-900 placeholder-gray-500 bg-white border-0 focus:outline-none focus:ring-2 focus:ring-white"
-            />
-            <button className="bg-white text-blue-600 px-6 py-2 rounded font-semibold hover:bg-gray-100 transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </div>
+<div className="bg-blue-600 rounded-lg p-8 text-center text-white mb-12">
+  <h2 className="text-2xl font-bold mb-4">
+    Stay Updated on Renovation Tips
+  </h2>
+  <p className="mb-6">
+    Get expert advice on dumpster sizing, cost-saving tips, and renovation guides delivered to your inbox.
+  </p>
+  <div className="max-w-md mx-auto flex gap-3">
+    <label htmlFor="blog-newsletter-email" className="sr-only">
+      Email Address
+    </label>
+    <input 
+      type="email"
+      id="blog-newsletter-email"
+      name="email"
+      autocomplete="email"
+      placeholder="Enter your email"
+      className="flex-1 px-4 py-2 rounded text-gray-900 placeholder-gray-500 bg-white border-0 focus:outline-none focus:ring-2 focus:ring-white"
+    />
+    <button className="bg-white text-blue-600 px-6 py-2 rounded font-semibold hover:bg-gray-100 transition-colors">
+      Subscribe
+    </button>
+  </div>
+</div>
 
         {/* Popular Topics - UPDATED WITH NEW CATEGORIES */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
