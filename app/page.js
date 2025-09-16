@@ -222,15 +222,17 @@ export default function Home() {
             <div className="space-y-6">
               {/* Project Type with tracking */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  What type of project?
-                </label>
-                <select
-                  value={projectType}
-                  onChange={(e) => handleProjectTypeChange(e.target.value)}
-                  onFocus={() => trackCalculatorUsage.sectionEngaged('project_type_select')}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
+                <label htmlFor="main-project-type" className="block text-sm font-medium text-gray-700 mb-2">
+  Project type
+</label>
+<select
+  id="main-project-type"
+  name="projectType"
+  value={projectType}
+  onChange={(e) => handleProjectTypeChange(e.target.value)}
+  onFocus={() => trackCalculatorUsage.sectionEngaged('project_type_select')}
+  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+>
                   <option value="">Select your project type</option>
                   {Object.entries(projectTypes).map(([key, project]) => (
                     <option key={key} value={key}>
@@ -242,17 +244,19 @@ export default function Home() {
 
               {/* Square Footage with tracking */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Project size (square feet)
-                </label>
-                <input 
-                  type="number"
-                  value={squareFootage}
-                  onChange={(e) => handleSquareFootageChange(e.target.value)}
-                  onFocus={() => trackCalculatorUsage.sectionEngaged('square_footage_input')}
-                  placeholder="Enter square footage"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                />
+                <label htmlFor="main-square-footage" className="block text-sm font-medium text-gray-700 mb-2">
+  Project size (square feet)
+</label>
+<input 
+  type="number"
+  id="main-square-footage"
+  name="squareFootage"
+  value={squareFootage}
+  onChange={(e) => handleSquareFootageChange(e.target.value)}
+  onFocus={() => trackCalculatorUsage.sectionEngaged('square_footage_input')}
+  placeholder="Enter square footage"
+  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+/>
                 <p className="text-sm text-gray-500 mt-1">
                   Tip: Multiply length × width to get square feet
                 </p>
