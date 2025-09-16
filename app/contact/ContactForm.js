@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -11,23 +11,6 @@ export default function ContactForm() {
   });
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
-
-  // Load EmailJS SDK
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-    script.onload = () => {
-      // Initialize EmailJS with your public key
-      window.emailjs.init('13pp0zowA6LvS8-bg');
-    };
-    document.head.appendChild(script);
-
-    return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
-  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -42,34 +25,30 @@ export default function ContactForm() {
     setStatus('');
 
     try {
-      // Send email using EmailJS
-      const result = await window.emailjs.send(
-        'service_9pqnmwt',  // Your Service ID
-        '2ikqvuv',          // Your Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          company: formData.company,
-          subject: formData.subject,
-          message: formData.message,
-        }
-      );
-
-      console.log('Email sent successfully:', result);
-      setStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        subject: 'general',
-        message: ''
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
 
+      if (response.ok) {
+        setStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          subject: 'general',
+          message: ''
+        });
+      } else {
+        setStatus('error');
+      }
     } catch (error) {
-      console.error('Email send failed:', error);
+      console.error('Form submission error:', error);
       setStatus('error');
     }
-    
     setLoading(false);
   };
 
@@ -173,7 +152,6 @@ export default function ContactForm() {
           {loading ? 'Sending...' : 'Send Message'}
         </button>
 
-        {/* Status Messages */}
         {status === 'success' && (
           <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
             <p className="text-green-700">Message sent successfully! We'll get back to you soon.</p>
