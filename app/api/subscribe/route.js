@@ -40,7 +40,7 @@ export async function POST(request) {
     }
     
     // Option 2: Send to your email via Formspree (backup)
-    const FORMSPREE_ID = process.env.FORMSPREE_ID || 'mrbavbyl';
+    const FORMSPREE_ID = process.env.FORMSPREE_ID || 'xwpnjgoz';
     
     if (FORMSPREE_ID && FORMSPREE_ID !== 'YOUR_FORMSPREE_ID') {
       await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
