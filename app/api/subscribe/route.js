@@ -14,50 +14,36 @@ export async function POST(request) {
       );
     }
 
-    // For now, we'll store in a Google Sheet (free and easy)
-    // You'll need to set up a Google Sheet with Zapier or direct API
-    
-    // Option 1: Send to Google Sheets via Web App Script (free)
-    const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL || 'YOUR_GOOGLE_SCRIPT_URL';
-    
-    if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_SCRIPT_URL') {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          source: source || 'website',
-          timestamp: new Date().toISOString(),
-          url: request.headers.get('referer') || 'unknown'
-        })
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to save email');
-      }
+    // Send email notification using EmailJS
+    const emailJSResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        service_id: 'service_9pqnmwt',
+        template_id: '2ikqvuv', // Use your contact form template or create a new one for subscriptions
+        user_id: '13pp0zowA6LvS8-bg',
+        template_params: {
+          from_name: 'Newsletter Subscriber',
+          from_email: email,
+          company: '',
+          subject: 'Newsletter Subscription',
+          message: `New newsletter subscription from ${source || 'website'}\n\nEmail: ${email}\nSource: ${source}\nTimestamp: ${new Date().toISOString()}`
+        }
+      })
+    });
+
+    if (!emailJSResponse.ok) {
+      throw new Error('Failed to send notification email');
     }
-    
-    // Option 2: Send to your email via Formspree (backup)
-    const FORMSPREE_ID = process.env.FORMSPREE_ID || 'xwpnjgoz';
-    
-    if (FORMSPREE_ID && FORMSPREE_ID !== 'YOUR_FORMSPREE_ID') {
-      await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          source: source || 'website',
-          message: `New email subscriber: ${email}`
-        })
-      });
-    }
-    
-    // Option 3: Log to console for development
-    console.log('New subscriber:', { email, source, timestamp: new Date().toISOString() });
+
+    // Option: Also log to console for development
+    console.log('New subscriber:', { 
+      email, 
+      source: source || 'website', 
+      timestamp: new Date().toISOString() 
+    });
     
     return NextResponse.json(
       { message: 'Successfully subscribed!' },
