@@ -6,6 +6,198 @@ import DumpsterProviderListings from './components/DumpsterProviderListings';
 import Link from 'next/link';
 import { trackCalculatorUsage } from '../utils/analytics';
 
+// Add this data structure for all dumpster sizes
+const allDumpsterSizes = [
+  {
+    size: 10,
+    description: '10 Yard Dumpster',
+    dimensions: '12\' L × 8\' W × 3.5\' H',
+    capacity: '3 pickup truck loads',
+    weight: '1-2 tons',
+    price: '$250-$450',
+    bestFor: ['Small bathroom remodel', 'Garage cleanout', 'Small deck removal', 'Concrete/dirt disposal'],
+    slug: '10-yard-dumpster-guide'
+  },
+  {
+    size: 20,
+    description: '20 Yard Dumpster',
+    dimensions: '22\' L × 8\' W × 4\' H',
+    capacity: '6 pickup truck loads',
+    weight: '2-3 tons',
+    price: '$300-$500',
+    bestFor: ['Kitchen remodel', 'Large bathroom renovation', 'Flooring removal', 'Roof replacement (up to 1500 sq ft)'],
+    slug: '20-yard-dumpster-guide'
+  },
+  {
+    size: 30,
+    description: '30 Yard Dumpster',
+    dimensions: '22\' L × 8\' W × 6\' H',
+    capacity: '9 pickup truck loads',
+    weight: '3-5 tons',
+    price: '$400-$600',
+    bestFor: ['Major home renovation', 'New construction', 'Large commercial projects', 'Whole house cleanout'],
+    slug: '30-yard-dumpster-guide'
+  },
+  {
+    size: 40,
+    description: '40 Yard Dumpster',
+    dimensions: '22\' L × 8\' W × 8\' H',
+    capacity: '12 pickup truck loads',
+    weight: '5-8 tons',
+    price: '$500-$750',
+    bestFor: ['Major construction', 'Commercial demolition', 'Large industrial cleanouts', 'Multi-room renovation'],
+    slug: '40-yard-dumpster-guide'
+  }
+];
+
+// Enhanced Results Section Component
+const EnhancedResultsSection = ({ result, projectType, squareFootage }) => {
+  const recommendedSize = allDumpsterSizes.find(size => size.size === result.size);
+  const otherSizes = allDumpsterSizes.filter(size => size.size !== result.size);
+
+  return (
+    <div className="mt-8 space-y-6">
+      {/* Main Recommendation */}
+      <div className="bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 rounded-xl p-6">
+        <div className="flex items-center mb-4">
+          <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
+            ✓
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900">
+            Recommended: {recommendedSize.description}
+          </h3>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <p className="text-gray-700 mb-2">
+              <strong>Dimensions:</strong> {recommendedSize.dimensions}
+            </p>
+            <p className="text-gray-700 mb-2">
+              <strong>Capacity:</strong> {recommendedSize.capacity}
+            </p>
+            <p className="text-gray-700 mb-2">
+              <strong>Weight Limit:</strong> {recommendedSize.weight}
+            </p>
+            <p className="text-green-700 font-semibold">
+              <strong>Price Range:</strong> {recommendedSize.price}
+            </p>
+          </div>
+          <div>
+            <p className="font-semibold text-gray-900 mb-2">Perfect for:</p>
+            <ul className="text-sm text-gray-700 space-y-1">
+              {recommendedSize.bestFor.slice(0, 3).map((item, index) => (
+                <li key={index} className="flex items-center">
+                  <span className="text-green-500 mr-2">•</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-3">
+          <Link 
+            href={`/blog/${recommendedSize.slug}`}
+            className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium"
+          >
+            Learn More About {recommendedSize.size}-Yard
+          </Link>
+          <button 
+            onClick={() => trackCalculatorUsage.quoteRequested(recommendedSize.size, '00000')}
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+          >
+            Get Quote
+          </button>
+        </div>
+      </div>
+
+      {/* Size Comparison Section */}
+      <div className="bg-white border rounded-xl p-6">
+        <h4 className="text-xl font-bold text-gray-900 mb-4">
+          Compare All Dumpster Sizes
+        </h4>
+        <p className="text-gray-600 mb-6">
+          Not sure if {recommendedSize.size}-yard is right for you? Compare all available sizes:
+        </p>
+        
+        <div className="grid md:grid-cols-3 gap-4">
+          {otherSizes.map((size) => (
+            <div 
+              key={size.size}
+              className="border rounded-lg p-4 hover:shadow-md transition-shadow"
+            >
+              <div className="flex justify-between items-start mb-3">
+                <h5 className="font-semibold text-gray-900">
+                  {size.size} Yard
+                </h5>
+                <span className="text-sm text-blue-600 font-medium">
+                  {size.price}
+                </span>
+              </div>
+              
+              <div className="space-y-1 text-sm text-gray-600 mb-3">
+                <p><strong>Capacity:</strong> {size.capacity}</p>
+                <p><strong>Weight:</strong> {size.weight}</p>
+              </div>
+              
+              <div className="mb-3">
+                <p className="text-xs text-gray-500 mb-1">Best for:</p>
+                <p className="text-sm text-gray-700">
+                  {size.bestFor[0]}
+                </p>
+              </div>
+              
+              <Link 
+                href={`/blog/${size.slug}`}
+                className="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline"
+              >
+                View {size.size}-Yard Guide →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Why This Size Section */}
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <h4 className="text-lg font-bold text-gray-900 mb-3">
+          Why We Recommend {recommendedSize.size}-Yard for Your {projectType}
+        </h4>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <p className="text-gray-700">
+              Based on your {squareFootage} sq ft {projectType.toLowerCase()}, 
+              a {recommendedSize.size}-yard dumpster provides the right balance of:
+            </p>
+            <ul className="mt-2 space-y-1 text-gray-700">
+              <li className="flex items-center">
+                <span className="text-green-500 mr-2">✓</span>
+                Adequate capacity for your debris volume
+              </li>
+              <li className="flex items-center">
+                <span className="text-green-500 mr-2">✓</span>
+                Cost-effective pricing
+              </li>
+              <li className="flex items-center">
+                <span className="text-green-500 mr-2">✓</span>
+                Fits in most standard driveways
+              </li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded-lg">
+            <p className="font-semibold text-gray-900 mb-2">Quick Tip:</p>
+            <p className="text-sm text-gray-700">
+              It's usually better to go one size up rather than risk running out of space. 
+              Most companies charge significantly more for additional pickups.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function Home() {
   const [projectType, setProjectType] = useState('');
   const [squareFootage, setSquareFootage] = useState('');
@@ -59,6 +251,20 @@ export default function Home() {
     document.getElementById('providers-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Add this function near the top of your component
+  const scrollToCalculator = () => {
+    const calculatorSection = document.getElementById('calculator-section');
+    if (calculatorSection) {
+      calculatorSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    
+    // Track the button click
+    trackCalculatorUsage.sectionEngaged('size_guides_button_clicked');
+  };
+  
   // ZIP CODE HANDLER FUNCTIONS
   const handleZipCodeSubmit = (e) => {
     e.preventDefault();
@@ -242,7 +448,7 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4 py-12 max-w-4xl">
+        <div id="calculator-section" className="container mx-auto px-4 py-12 max-w-4xl">
           {/* Calculator with tracking */}
           <div id="calculator" className="bg-white rounded-lg shadow-lg p-8 mb-8">
             <div className="space-y-6">
@@ -297,34 +503,13 @@ export default function Home() {
               </button>
             </div>
 
-            {/* SINGLE Result section with tracking */}
+            {/* Enhanced Results Section */}
             {result && (
-              <div className="mt-8 p-6 bg-green-50 border-2 border-green-200 rounded-lg">
-                <h2 className="text-2xl font-bold text-green-800 mb-2">
-                  Recommended: {result.description}
-                </h2>
-                <p className="text-green-700 mb-2">{result.details}</p>
-                <p className="text-green-600 font-semibold mb-4">
-                  Estimated Cost: {result.price}
-                </p>
-                
-                {/* CTA Buttons */}
-                <div className="mt-6 space-y-3">
-                  <button 
-                    onClick={() => {
-                      trackCalculatorUsage.quoteRequested(result.size + '-yard', 'unknown');
-                      trackCalculatorUsage.stepCompleted(4, 'quote_requested');
-                      scrollToProviders();
-                    }}
-                    className="w-full bg-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-700 transition duration-200"
-                  >
-                    Get Free Quotes from Local Providers
-                  </button>
-                  <p className="text-sm text-gray-500 text-center">
-                    We will connect you with 3 local companies for the best price
-                  </p>
-                </div>
-              </div>
+              <EnhancedResultsSection 
+                result={result}
+                projectType={projectTypes[projectType]?.name}
+                squareFootage={squareFootage}
+              />
             )}
           </div>
 
@@ -407,9 +592,15 @@ export default function Home() {
               <p className="text-gray-600 text-sm mb-4">
                 Complete breakdowns of 10, 20, 30, and 40-yard dumpsters with real project examples.
               </p>
-              <Link href="/blog/20-yard-dumpster-guide" className="text-blue-600 hover:text-blue-800 font-semibold">
-                View Size Guides →
-              </Link>
+              <button 
+                onClick={scrollToCalculator}
+                className="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-50 transition-all duration-200 hover:shadow-xl"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                Find My Size
+              </button>
             </div>
 
             {/* Local Information */}
