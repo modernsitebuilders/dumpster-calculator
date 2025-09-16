@@ -1,9 +1,20 @@
 // app/blog/page.js - COMPLETE WITH ALL BLOG POSTS (SERVER-SIDE COMPATIBLE)
+'use client';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+export default function BlogIndex() {
+  
+  const [selectedCategory, setSelectedCategory] = useState("All Posts");
 
-export default function BlogIndex({ searchParams }) {
-  const selectedCategory = searchParams?.category || "All Posts";
-
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get('category');
+      if (category) {
+        setSelectedCategory(category);
+      }
+    }
+  }, []);
   const blogPosts = [
     // FEATURED HIGH-PRIORITY POSTS FIRST
     {
