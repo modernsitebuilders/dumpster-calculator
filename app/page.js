@@ -20,15 +20,17 @@ export default function Home() {
 
   // Your original projectTypes (keep exactly as-is)
   const projectTypes = {
-    'bathroom': { factor: 0.5, name: 'Bathroom Remodel', avgSize: '40-100 sq ft' },
-    'kitchen': { factor: 0.7, name: 'Kitchen Remodel', avgSize: '150-250 sq ft' },
-    'roof': { factor: 1.2, name: 'Roof Replacement', avgSize: '1500-3000 sq ft' },
-    'garage': { factor: 0.8, name: 'Garage Cleanout', avgSize: '400-600 sq ft' },
-    'basement': { factor: 1.0, name: 'Basement Cleanout', avgSize: '800-1500 sq ft' },
-    'yard': { factor: 0.6, name: 'Yard Waste', avgSize: 'Varies' },
-    'construction': { factor: 1.5, name: 'Construction Debris', avgSize: 'Varies' },
-    'whole-house': { factor: 2.0, name: 'Whole House Cleanout', avgSize: '1500-2500 sq ft' }
-  };
+  'bathroom': { factor: 0.5, name: 'Bathroom Remodel', avgSize: '40-100 sq ft' },
+  'kitchen': { factor: 0.7, name: 'Kitchen Remodel', avgSize: '150-250 sq ft' },
+  'roof': { factor: 1.2, name: 'Roof Replacement', avgSize: '1500-3000 sq ft' },
+  'garage_cleanout': { factor: 0.8, name: 'Garage Cleanout', avgSize: '400-600 sq ft' }, // Changed from 'garage'
+  'basement': { factor: 1.0, name: 'Basement Cleanout', avgSize: '800-1500 sq ft' },
+  'yard': { factor: 0.6, name: 'Yard Waste', avgSize: 'Varies' },
+  'construction': { factor: 1.5, name: 'Construction Debris', avgSize: 'Varies' },
+  'whole_house': { factor: 2.0, name: 'Whole House Cleanout', avgSize: '1500-2500 sq ft' }, // Changed from 'whole-house'
+  'deck': { factor: 0.4, name: 'Deck/Patio Removal', avgSize: '10-20 yard' }, // Add this
+  'other': { factor: 0.5, name: 'Other Project', avgSize: 'Custom' } // Add this
+};
 
   // SCROLL TO PROVIDERS FUNCTION (keep existing)
   const scrollToProviders = () => {
