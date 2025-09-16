@@ -195,22 +195,22 @@ export default function CalculatorForm({ onCalculate, isCalculating = false }) {
                 Enter square footage
               </label>
               <input
-                type="number"
-                id="square-footage"
-                name="squareFootage"
-                value={squareFootage}
-                onChange={handleSquareFootageChange}
-                onFocus={() => trackCalculatorUsage.sectionEngaged('square_footage_input')}
-                placeholder="Enter square footage"
-                className={`w-full p-4 border-2 rounded-lg focus:outline-none text-lg transition-colors ${
-                  errors.squareFootage && touched.squareFootage 
-                    ? 'border-red-500 focus:border-red-500' 
-                    : 'border-gray-300 focus:border-blue-500'
-                }`}
-                min="1"
-                max="10000"
-                aria-describedby={errors.squareFootage ? 'sqft-error' : 'sqft-help'}
-              />
+  type="number"
+  id="square-footage"
+  name="squareFootage"
+  value={squareFootage}
+  onChange={handleSquareFootageChange}
+  onFocus={() => trackCalculatorUsage.sectionEngaged('square_footage_input')}
+  placeholder="Enter square footage"
+  className={`w-full p-4 border-2 rounded-lg focus:outline-none text-lg transition-colors hide-number-arrows ${
+    errors.squareFootage && touched.squareFootage 
+      ? 'border-red-500 focus:border-red-500' 
+      : 'border-gray-300 focus:border-blue-500'
+  }`}
+  min="1"
+  max="10000"
+  aria-describedby={errors.squareFootage ? 'sqft-error' : 'sqft-help'}
+/>
               <span className="absolute right-4 top-4 text-gray-500">sq ft</span>
             </div>
             {errors.squareFootage && touched.squareFootage ? (
