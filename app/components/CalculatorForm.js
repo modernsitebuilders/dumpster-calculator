@@ -82,14 +82,6 @@ export default function CalculatorForm({ onCalculate, isCalculating = false }) {
       trackCalculatorUsage.squareFootageEntered(sqft);
       markStepCompleted(2, 'square_footage');
     }
-    
-    // Validate immediately if touched
-    if (touched.squareFootage) {
-      const error = validateSquareFootage(sqft);
-      if (error) {
-        setErrors(prev => ({ ...prev, squareFootage: error }));
-      }
-    }
   };
 
   const handleMaterialChange = (material) => {
