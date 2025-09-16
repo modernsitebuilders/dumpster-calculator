@@ -138,22 +138,6 @@ export default function AboutPage() {
   </div>
 </section>
 
-{/* REMOVE the fake testimonials section entirely OR replace with: */}
-<section className="mb-12">
-  <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-8">
-    <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Customer Reviews Coming Soon</h2>
-    <div className="text-center">
-      <div className="text-6xl mb-4">🔄</div>
-      <p className="text-lg text-gray-600 mb-4">
-        We're a newly launched calculator and are collecting verified reviews from real users.
-      </p>
-      <p className="text-sm text-gray-500">
-        Check back soon for authentic customer feedback about our tool.
-      </p>
-    </div>
-  </div>
-</section>
-
         {/* Contact CTA */}
         <section className="text-center">
           <div className="bg-white rounded-lg shadow-lg p-8">
