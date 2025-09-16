@@ -1,10 +1,8 @@
-// app/blog/page.js - UPDATED WITH NEW HIGH-PRIORITY POSTS
-'use client';
+// app/blog/page.js - COMPLETE WITH ALL BLOG POSTS (SERVER-SIDE COMPATIBLE)
 import Link from 'next/link';
-import { useState } from 'react';
 
-export default function BlogIndex() {
-  const [selectedCategory, setSelectedCategory] = useState("All Posts");
+export default function BlogIndex({ searchParams }) {
+  const selectedCategory = searchParams?.category || "All Posts";
 
   const blogPosts = [
     // FEATURED HIGH-PRIORITY POSTS FIRST
@@ -15,7 +13,7 @@ export default function BlogIndex() {
       category: "Regulations",
       readTime: "12 min read",
       publishDate: "September 15, 2025",
-      featured: true // HIGH-PRIORITY - 5,400 monthly searches
+      featured: true
     },
     {
       title: "Garage Cleanout Dumpster Size: Complete Guide & Cost Breakdown",
@@ -24,7 +22,7 @@ export default function BlogIndex() {
       category: "House Areas",
       readTime: "9 min read",
       publishDate: "September 15, 2025",
-      featured: true // HIGH-PRIORITY - 2,900 monthly searches
+      featured: true
     },
     
     // EXISTING FEATURED POSTS
@@ -65,18 +63,36 @@ export default function BlogIndex() {
       featured: true
     },
 
-    // NEW HIGH-PRIORITY HOUSE AREAS (coming soon)
+    // NEW HIGH-PRIORITY HOUSE AREAS
     {
-      title: "Attic Cleanout Dumpster Size: Complete 2025 Guide",
+      title: "Attic Cleanout Dumpster Size Guide: Insulation & Storage Removal",
       excerpt: "Planning an attic cleanout? Learn what dumpster size you need, how to handle insulation and old belongings, plus cost-saving tips for seasonal cleanouts.",
       slug: "attic-cleanout-dumpster-size",
       category: "House Areas",
       readTime: "8 min read",
-      publishDate: "September 16, 2025",
-      featured: false // 1,800 monthly searches
+      publishDate: "January 16, 2025",
+      featured: false
+    },
+    {
+      title: "Basement Cleanout Dumpster Size Guide: Water Damage & Storage Removal",
+      excerpt: "Basement cleanouts often involve water damage, mold remediation, and decades of stored belongings. Learn how to choose the right dumpster size for wet materials and heavy debris.",
+      slug: "basement-cleanout-dumpster-size",
+      category: "House Areas",
+      readTime: "8 min read",
+      publishDate: "January 16, 2025",
+      featured: false
     },
 
     // NEW REGULATIONS CATEGORY EXPANSION
+    {
+      title: "Dumpster Weight Limits & Overage Fees: How to Avoid Extra Charges",
+      excerpt: "Avoid costly overage fees! Complete guide to dumpster weight limits, how weights are calculated, and tips to stay under the limit for every project type.",
+      slug: "weight-limits-overage-fees",
+      category: "Regulations",
+      readTime: "8 min read",
+      publishDate: "January 18, 2025",
+      featured: false
+    },
     {
       title: "HOA Dumpster Rules & Restrictions: Complete Guide",
       excerpt: "Navigate HOA dumpster rules with confidence. Learn common restrictions, how to get approval, and alternatives for strict HOA communities.",
@@ -84,19 +100,68 @@ export default function BlogIndex() {
       category: "Regulations",
       readTime: "7 min read",
       publishDate: "September 16, 2025",
-      featured: false // 800 monthly searches
-    },
-    {
-      title: "Dumpster Weight Limits & Overage Fees: How to Avoid Extra Charges",
-      excerpt: "Avoid costly overage fees! Complete guide to dumpster weight limits, how weights are calculated, and tips to stay under the limit for every project type.",
-      slug: "weight-limits-overage-fees",
-      category: "Regulations",
-      readTime: "8 min read",
-      publishDate: "September 16, 2025",
       featured: false
     },
 
-    // EXISTING REGULAR POSTS
+    // NEW RENOVATION GUIDES
+    {
+      title: "Bedroom Renovation Dumpster Size Guide: Complete Remodel Planning",
+      excerpt: "Bedroom renovations range from simple cosmetic updates to complete gut jobs. Learn how to choose the right dumpster size based on your renovation scope and room size.",
+      slug: "bedroom-renovation-dumpster-size",
+      category: "Bedroom Renovation",
+      readTime: "7 min read",
+      publishDate: "January 20, 2025",
+      featured: false
+    },
+    {
+      title: "Whole House Renovation Dumpster Size Guide: Complete Planning Strategy",
+      excerpt: "Whole house renovations generate massive amounts of debris that require strategic planning. Learn multi-dumpster strategies, phasing options, and cost optimization techniques.",
+      slug: "whole-house-renovation-dumpster-size",
+      category: "Major Renovation",
+      readTime: "12 min read",
+      publishDate: "January 22, 2025",
+      featured: false
+    },
+
+    // DUMPSTER SIZE GUIDES
+    {
+      title: "10 Yard Dumpster Guide: Small Projects & Pricing",
+      excerpt: "Complete guide to 10 yard dumpsters. Perfect for small renovations, cleanouts, and minor construction projects. Dimensions, costs, and project examples.",
+      slug: "10-yard-dumpster-guide",
+      category: "Dumpster Sizes",
+      readTime: "6 min read",
+      publishDate: "January 8, 2025",
+      featured: false
+    },
+    {
+      title: "20 Yard Dumpster Guide: The Most Popular Size",
+      excerpt: "20 yard dumpster complete guide. Perfect for kitchen renovations, large bathroom remodels, and flooring projects. Dimensions, pricing, and project examples.",
+      slug: "20-yard-dumpster-guide",
+      category: "Dumpster Sizes",
+      readTime: "7 min read",
+      publishDate: "January 9, 2025",
+      featured: false
+    },
+    {
+      title: "30 Yard Dumpster Guide: Large Projects & Construction",
+      excerpt: "30 yard dumpster complete guide. Ideal for new construction, large renovations, and commercial projects. Full breakdown of costs and capabilities.",
+      slug: "30-yard-dumpster-guide",
+      category: "Dumpster Sizes",
+      readTime: "8 min read",
+      publishDate: "January 10, 2025",
+      featured: false
+    },
+    {
+      title: "40 Yard Dumpster Guide: Commercial & Major Construction",
+      excerpt: "40 yard dumpster complete guide. The largest standard size for major commercial projects, large construction, and industrial cleanouts.",
+      slug: "40-yard-dumpster-guide",
+      category: "Dumpster Sizes",
+      readTime: "7 min read",
+      publishDate: "January 11, 2025",
+      featured: false
+    },
+
+    // ADDITIONAL PROJECT GUIDES
     {
       title: "Roof Replacement Dumpster Size Calculator & Guide",
       excerpt: "Roof replacement projects generate significant debris. Learn what dumpster size you need based on roof square footage, materials, and local disposal requirements.",
@@ -110,97 +175,183 @@ export default function BlogIndex() {
       title: "Dumpster Rental Cost Guide: What You'll Really Pay in 2025",
       excerpt: "Complete breakdown of dumpster rental costs including size pricing, delivery fees, permits, and hidden charges. Get accurate estimates for your project budget.",
       slug: "dumpster-rental-cost-guide",
-      category: "General Tips",
+      category: "Pricing",
       readTime: "9 min read",
-      publishDate: "January 8, 2025",
+      publishDate: "January 7, 2025",
       featured: false
     },
-    
-    // DUMPSTER SIZE GUIDES
+
+    // ALL PROJECT GUIDES (from your actual file structure)
     {
-      title: "10 Yard Dumpster Guide: Complete Size & Cost Breakdown",
-      excerpt: "Everything you need to know about 10 yard dumpsters. Perfect for small projects, garage cleanouts, and minor renovations. Includes pricing and project examples.",
-      slug: "10-yard-dumpster-guide",
-      category: "Dumpster Sizes",
+      title: "Deck Removal Dumpster Size: Complete Teardown Guide",
+      excerpt: "Planning to remove an old deck? Learn what dumpster size you need based on deck materials, size, and disposal requirements. Wood, composite, and metal deck removal.",
+      slug: "deck-removal-dumpster-size",
+      category: "Outdoor Projects",
       readTime: "6 min read",
-      publishDate: "September 15, 2025",
+      publishDate: "January 25, 2025",
       featured: false
     },
     {
-      title: "20 Yard Dumpster Guide: The Most Popular Size",
-      excerpt: "The 20 yard dumpster is America's most popular rental size. Learn why it's perfect for kitchen renovations, bathroom remodels, and medium-sized projects.",
-      slug: "20-yard-dumpster-guide",
-      category: "Dumpster Sizes",
+      title: "Flooring Removal Dumpster Size: Complete Demo Guide",
+      excerpt: "Flooring demolition creates significant debris. Learn what dumpster size you need for carpet, hardwood, tile, and laminate removal projects.",
+      slug: "flooring-removal-dumpster-size",
+      category: "Flooring",
       readTime: "7 min read",
-      publishDate: "September 15, 2025",
+      publishDate: "January 25, 2025",
       featured: false
     },
     {
-      title: "30 Yard Dumpster Guide: For Large Projects",
-      excerpt: "30 yard dumpsters are ideal for whole house renovations, new construction, and commercial projects. Complete guide with pricing and project examples.",
-      slug: "30-yard-dumpster-guide",
-      category: "Dumpster Sizes",
+      title: "Flooring Replacement Dumpster Size: Complete Material Guide", 
+      excerpt: "Flooring replacement generates both old and new material waste. Learn what dumpster size you need for complete flooring renovation projects.",
+      slug: "flooring-replacement-dumpster-size",
+      category: "Flooring",
+      readTime: "7 min read",
+      publishDate: "January 26, 2025",
+      featured: false
+    },
+    {
+      title: "Living Room Renovation Dumpster Size: Complete Remodel Guide",
+      excerpt: "Living room renovations involve furniture, flooring, and entertainment systems. Learn how to size dumpsters for family room and living space remodels.",
+      slug: "living-room-renovation-dumpster-size",
+      category: "Living Room Renovation",
       readTime: "8 min read",
-      publishDate: "September 15, 2025",
+      publishDate: "January 24, 2025",
       featured: false
     },
     {
-      title: "40 Yard Dumpster Guide: Maximum Capacity Solution",
-      excerpt: "The largest standard dumpster size for commercial projects, large construction, and industrial applications. Learn when you need maximum capacity.",
-      slug: "40-yard-dumpster-guide",
-      category: "Dumpster Sizes",
+      title: "Construction Debris Dumpster Size: Commercial & Residential Guide",
+      excerpt: "Construction projects generate diverse debris types. Learn how to size dumpsters for new construction, renovations, and commercial building projects.",
+      slug: "construction-debris-dumpster-size",
+      category: "Construction",
       readTime: "9 min read",
-      publishDate: "September 15, 2025",
+      publishDate: "January 27, 2025", 
+      featured: false
+    },
+    {
+      title: "Landscaping Cleanup Dumpster Size: Seasonal & Project Guide",
+      excerpt: "Landscaping cleanups require proper debris disposal. Learn what dumpster size you need for seasonal yard work, tree trimming, and garden renovations.",
+      slug: "landscaping-cleanup-dumpster-size",
+      category: "Landscaping",
+      readTime: "6 min read",
+      publishDate: "January 28, 2025",
+      featured: false
+    },
+    {
+      title: "Landscaping Debris Dumpster Size: Yard Waste & Tree Removal",
+      excerpt: "Landscaping projects create unique disposal challenges. Learn what dumpster size you need for tree removal, yard cleanups, and landscaping renovations.",
+      slug: "landscaping-debris-dumpster-size",
+      category: "Landscaping",
+      readTime: "6 min read",
+      publishDate: "January 28, 2025",
+      featured: false
+    },
+    {
+      title: "Moving Cleanout Dumpster Size: Complete Relocation Guide",
+      excerpt: "Moving generates significant unwanted items. Learn how to size dumpsters for house cleanouts, estate sales, and relocation debris disposal.",
+      slug: "moving-cleanout-dumpster-size",
+      category: "Cleanouts",
+      readTime: "7 min read", 
+      publishDate: "January 29, 2025",
+      featured: false
+    },
+
+    // CITY-SPECIFIC PERMIT GUIDES
+    {
+      title: "Chicago Dumpster Permit Guide: Requirements & Applications",
+      excerpt: "Complete guide to Chicago dumpster permits. Learn requirements, costs, application process, and alternatives for Chicagoland area projects.",
+      slug: "chicago-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "8 min read",
+      publishDate: "February 1, 2025",
+      featured: false
+    },
+    {
+      title: "Houston Dumpster Permit Guide: Harris County Requirements",
+      excerpt: "Houston dumpster permit requirements and application process. Complete guide for Harris County and surrounding areas including permit alternatives.",
+      slug: "houston-dumpster-permit-guide",
+      category: "Local Permits", 
+      readTime: "7 min read",
+      publishDate: "February 2, 2025",
+      featured: false
+    },
+    {
+      title: "Los Angeles Dumpster Permit Guide: City Requirements",
+      excerpt: "LA dumpster permit requirements, costs, and application process. Complete guide for Los Angeles County and surrounding municipalities.",
+      slug: "los-angeles-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "8 min read", 
+      publishDate: "February 3, 2025",
+      featured: false
+    },
+    {
+      title: "NYC Dumpster Permit Guide: Complete Requirements",
+      excerpt: "New York City dumpster permit requirements and DOT applications. Complete guide for all five boroughs including costs and alternatives.",
+      slug: "nyc-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "9 min read",
+      publishDate: "February 4, 2025", 
+      featured: false
+    },
+    {
+      title: "Phoenix Dumpster Permit Guide: Maricopa County Rules",
+      excerpt: "Phoenix dumpster permit requirements and application process. Complete guide for Maricopa County including residential and commercial permits.",
+      slug: "phoenix-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "7 min read",
+      publishDate: "February 5, 2025",
+      featured: false
+    },
+
+    // ADDITIONAL GUIDES
+    {
+      title: "Dumpster Permit Requirements: Complete State-by-State Guide",
+      excerpt: "Comprehensive guide to dumpster permit requirements across all 50 states. Learn when permits are required and how to obtain them.",
+      slug: "dumpster-permit-requirements",
+      category: "Regulations",
+      readTime: "10 min read",
+      publishDate: "February 6, 2025",
+      featured: false
+    },
+    {
+      title: "Dumpster Placement Rules: Complete Property Guide",
+      excerpt: "Learn proper dumpster placement rules for driveways, streets, and properties. Avoid fines and ensure safe, legal placement.",
+      slug: "dumpster-placement-rules",
+      category: "Regulations",
+      readTime: "6 min read",
+      publishDate: "February 7, 2025",
       featured: false
     }
   ];
 
-  const categories = [
-    "All Posts",
-    "General Tips",
-    "House Areas", // NEW CATEGORY - for garage, attic, basement cleanouts
-    "Bathroom Renovation", 
-    "Kitchen Renovation",
-    "Roofing",
-    "Regulations", // EXPANDED CATEGORY
-    "Dumpster Sizes"
-  ];
+  const categories = ["All Posts", "Regulations", "House Areas", "Dumpster Sizes", "Kitchen Renovation", "Bathroom Renovation", "Bedroom Renovation", "Living Room Renovation", "Major Renovation", "Roofing", "Pricing", "Outdoor Projects", "Flooring", "Construction", "Landscaping", "Cleanouts", "Local Permits"];
 
-  // Filter posts based on selected category
   const filteredPosts = selectedCategory === "All Posts" 
     ? blogPosts 
     : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
+        
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Dumpster Rental Guides & Tips
+            Dumpster Size Calculator Blog
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Expert advice on choosing the right dumpster size for your renovation projects
+          <p className="text-xl text-gray-600 mb-8">
+            Expert guides for choosing the right dumpster size for any project
           </p>
-          <Link 
-            href="/" 
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-          >
-            Try Our Free Calculator
-          </Link>
-        </div>
-
-        {/* Category Filter */}
-        <div className="mb-8">
-          <div className="flex flex-wrap gap-2 justify-center">
-            {categories.map((category) => (
+          
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {categories.map(category => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  category === selectedCategory 
-                    ? "bg-blue-600 text-white" 
-                    : "bg-white text-gray-600 hover:bg-gray-100"
+                  selectedCategory === category
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
                 }`}
               >
                 {category}
@@ -209,15 +360,60 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        {/* Show filtered posts */}
+        {/* Featured Posts Section */}
+        {selectedCategory === "All Posts" && (
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Featured Guides</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              {blogPosts.filter(post => post.featured).map((post) => (
+                <article key={post.slug} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className={`inline-block text-xs px-2 py-1 rounded-full font-semibold ${
+                        post.category === 'Regulations' ? 'bg-red-100 text-red-800' :
+                        post.category === 'House Areas' ? 'bg-green-100 text-green-800' :
+                        post.category === 'Dumpster Sizes' ? 'bg-purple-100 text-purple-800' :
+                        'bg-blue-100 text-blue-800'
+                      }`}>
+                        {post.category}
+                      </span>
+                      <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full font-semibold">
+                        Featured
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
+                      <Link href={`/blog/${post.slug}`}>
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-3 text-sm">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-500">{post.readTime}</span>
+                      <Link 
+                        href={`/blog/${post.slug}`}
+                        className="text-blue-600 hover:text-blue-800 font-semibold text-sm"
+                      >
+                        Read Guide →
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* All Posts Section */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            {selectedCategory === "All Posts" ? "All Articles" : selectedCategory}
+            {selectedCategory === "All Posts" ? "All Guides" : `${selectedCategory} Guides`}
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPosts.map((post) => (
-              <article key={post.slug} className={`bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow ${
-                post.featured ? 'ring-2 ring-blue-200 bg-blue-50' : ''
+              <article key={post.slug} className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow ${
+                post.featured && selectedCategory === "All Posts" ? 'ring-2 ring-blue-200 bg-blue-50' : ''
               }`}>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
@@ -225,6 +421,10 @@ export default function BlogIndex() {
                       post.category === 'Regulations' ? 'bg-red-100 text-red-800' :
                       post.category === 'House Areas' ? 'bg-green-100 text-green-800' :
                       post.category === 'Dumpster Sizes' ? 'bg-purple-100 text-purple-800' :
+                      post.category === 'Major Renovation' ? 'bg-orange-100 text-orange-800' :
+                      post.category === 'Construction' ? 'bg-gray-100 text-gray-800' :
+                      post.category === 'Landscaping' ? 'bg-emerald-100 text-emerald-800' :
+                      post.category === 'Cleanouts' ? 'bg-cyan-100 text-cyan-800' :
                       'bg-blue-100 text-blue-800'
                     }`}>
                       {post.category}
@@ -307,16 +507,17 @@ export default function BlogIndex() {
               <ul className="space-y-2 text-sm">
                 <li><Link href="/blog/bathroom-remodel-dumpster-size" className="text-blue-600 hover:underline">Bathroom Remodels</Link></li>
                 <li><Link href="/blog/kitchen-renovation-dumpster-size" className="text-blue-600 hover:underline">Kitchen Renovations</Link></li>
-                <li><Link href="/blog/roof-replacement-dumpster-size" className="text-blue-600 hover:underline">Roof Replacements</Link></li>
+                <li><Link href="/blog/bedroom-renovation-dumpster-size" className="text-blue-600 hover:underline">Bedroom Renovations</Link></li>
+                <li><Link href="/blog/whole-house-renovation-dumpster-size" className="text-blue-600 hover:underline">Whole House</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-3">Local Guides</h3>
+              <h3 className="font-semibold text-gray-800 mb-3">Dumpster Sizes</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/dumpster-rental-philadelphia" className="text-blue-600 hover:underline">Philadelphia</Link></li>
-                <li><Link href="/dumpster-rental-miami" className="text-blue-600 hover:underline">Miami</Link></li>
-                <li><Link href="/dumpster-rental-houston" className="text-blue-600 hover:underline">Houston</Link></li>
-                <li><Link href="/dumpster-rental-atlanta" className="text-blue-600 hover:underline">Atlanta</Link></li>
+                <li><Link href="/blog/10-yard-dumpster-guide" className="text-blue-600 hover:underline">10 Yard Guide</Link></li>
+                <li><Link href="/blog/20-yard-dumpster-guide" className="text-blue-600 hover:underline">20 Yard Guide</Link></li>
+                <li><Link href="/blog/30-yard-dumpster-guide" className="text-blue-600 hover:underline">30 Yard Guide</Link></li>
+                <li><Link href="/blog/40-yard-dumpster-guide" className="text-blue-600 hover:underline">40 Yard Guide</Link></li>
               </ul>
             </div>
           </div>

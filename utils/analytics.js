@@ -1,5 +1,4 @@
-// utils/analytics.js
-'use client'
+// utils/analytics.js - SSR-SAFE VERSION (REMOVE 'use client')
 
 // Enhanced analytics tracking for calculator usage
 export const trackEvent = (action, category, label = '', value = 0) => {

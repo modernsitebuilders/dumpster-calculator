@@ -1,4 +1,3 @@
-// components/Calculator.js - Enhanced with tracking
 'use client'
 import { useState, useEffect, useRef } from 'react';
 import { trackCalculatorUsage } from '../utils/analytics';

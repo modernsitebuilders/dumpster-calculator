@@ -1,3 +1,5 @@
+'use client'
+'use client'
 // app/components/Footer.js
 import Link from 'next/link';
 
