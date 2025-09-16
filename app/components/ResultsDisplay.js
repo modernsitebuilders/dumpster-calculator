@@ -2,10 +2,15 @@
 'use client'
 import { useState, useEffect } from 'react';
 import { trackCalculatorUsage } from '../../utils/analytics';
+import { getCityFromZip } from '../../utils/zipToCityMapping';
+import DumpsterProviderListings from './DumpsterProviderListings';
+
 export default function ResultsDisplay({ result, onQuoteRequest, onReset }) {
   const [showQuoteForm, setShowQuoteForm] = useState(false);
   const [zipCode, setZipCode] = useState('');
   const [isAnimating, setIsAnimating] = useState(true);
+  const [showProviders, setShowProviders] = useState(false);
+  const [userCity, setUserCity] = useState('');
 
   // Trigger entrance animation
   useEffect(() => {
@@ -64,46 +69,57 @@ export default function ResultsDisplay({ result, onQuoteRequest, onReset }) {
       trackCalculatorUsage.zipCodeEntered(zipCode);
       trackCalculatorUsage.quoteRequested(result.recommendedSize, zipCode);
       
-      // Redirect to quotes or show providers
-      window.open(`https://example-provider.com/quotes?size=${result.recommendedSize}&zip=${zipCode}`, '_blank');
+      // Get city name from ZIP and show providers
+      const cityName = getCityFromZip(zipCode);
+      setUserCity(cityName);
+      setShowProviders(true);
     }
   };
 
   const handleReset = () => {
     setShowQuoteForm(false);
     setZipCode('');
+    setShowProviders(false);
+    setUserCity('');
     if (onReset) onReset();
+  };
+
+  const scrollToLocalGuides = () => {
+    document.getElementById('local-guides')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
   };
 
   if (!result) return null;
 
-console.log('ResultsDisplay received:', result); // ADD THIS LINE HERE
+  console.log('ResultsDisplay received:', result);
 
-const recommendedDumpster = allDumpsterSizes.find(d => {
-  if (!result?.recommendedSize) return false;
-  const firstPart = String(result.recommendedSize).split('-')[0];
-  const parsed = parseInt(firstPart, 10);
-  return d.size === parsed;
-});
+  const recommendedDumpster = allDumpsterSizes.find(d => {
+    if (!result?.recommendedSize) return false;
+    const firstPart = String(result.recommendedSize).split('-')[0];
+    const parsed = parseInt(firstPart, 10);
+    return d.size === parsed;
+  });
 
-const otherSizes = allDumpsterSizes.filter(d => {
-  if (!result?.recommendedSize) return true;
-  const firstPart = String(result.recommendedSize).split('-')[0];
-  const parsed = parseInt(firstPart, 10);
-  return d.size !== parsed;
-});
+  const otherSizes = allDumpsterSizes.filter(d => {
+    if (!result?.recommendedSize) return true;
+    const firstPart = String(result.recommendedSize).split('-')[0];
+    const parsed = parseInt(firstPart, 10);
+    return d.size !== parsed;
+  });
+
   return (
     <div className={`space-y-6 ${isAnimating ? 'animate-slideUp' : ''}`}>
       {/* Main Result */}
       <div className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200 rounded-2xl p-8">
         <div className="text-center mb-6">
-  <h3 className="text-3xl font-bold text-green-800 mb-2">
-    Recommended Size
-  </h3>
-  <p className="text-lg text-green-700">
-    For your {result.projectType} project ({result.squareFootage} sq ft)
-  </p>
-</div>
+          <h3 className="text-3xl font-bold text-green-800 mb-2">
+            Recommended Size
+          </h3>
+          <p className="text-lg text-green-700">
+            For your {result.projectType} project ({result.squareFootage} sq ft)
+          </p>
+        </div>
 
         {recommendedDumpster && (
           <div className="bg-white rounded-xl p-6 shadow-lg">
@@ -151,13 +167,13 @@ const otherSizes = allDumpsterSizes.filter(d => {
           onClick={handleQuoteRequest}
           className="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg transition text-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
         >
-          Get Local Quotes 📞
+          Get Local Quotes
         </button>
         <button
           onClick={handleReset}
           className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-4 px-6 rounded-lg transition focus:ring-2 focus:ring-gray-500 focus:outline-none"
         >
-          Start Over 🔄
+          Start Over
         </button>
       </div>
 
@@ -185,7 +201,7 @@ const otherSizes = allDumpsterSizes.filter(d => {
                   </div>
                   {isRecommended && (
                     <div className="text-green-600 font-semibold text-sm">
-                      ✨ Your Match
+                      Recommended
                     </div>
                   )}
                 </div>
@@ -235,7 +251,7 @@ const otherSizes = allDumpsterSizes.filter(d => {
               type="submit"
               className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition focus:ring-2 focus:ring-blue-500 focus:outline-none"
             >
-              Get Quotes →
+              Get Quotes
             </button>
           </form>
           <p className="text-xs text-blue-600 mt-2">
@@ -244,9 +260,41 @@ const otherSizes = allDumpsterSizes.filter(d => {
         </div>
       )}
 
+      {/* Provider Listings - shown after ZIP code entered */}
+      {showProviders && (
+        <div id="providers-section">
+          <DumpsterProviderListings 
+            dumpsterSize={parseInt(result.recommendedSize.split('-')[0])} 
+            projectType={result.projectType}
+          />
+        </div>
+      )}
+
+      {/* City Guide Button */}
+      {showProviders && userCity && (
+        <div className="text-center mt-6">
+          <button 
+            onClick={scrollToLocalGuides}
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+          >
+            View {userCity} Area Guides & Pricing
+          </button>
+        </div>
+      )}
+
+      {/* Local Blog Content */}
+      {showProviders && userCity && (
+        <div id="local-guides" className="mt-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            {userCity} Dumpster Rental Information
+          </h3>
+          {/* Add your local blog links here based on userCity */}
+        </div>
+      )}
+
       {/* Additional Tips */}
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
-        <h4 className="font-bold text-amber-800 mb-2">💡 Pro Tips for Your Project</h4>
+        <h4 className="font-bold text-amber-800 mb-2">Pro Tips for Your Project</h4>
         <ul className="text-sm text-amber-700 space-y-1">
           <li>• Consider renting for 7-10 days to avoid rush fees</li>
           <li>• Check if your city requires permits for street placement</li>
