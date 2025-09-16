@@ -77,14 +77,21 @@ export default function ResultsDisplay({ result, onQuoteRequest, onReset }) {
 
   if (!result) return null;
 
-  const recommendedDumpster = allDumpsterSizes.find(d => 
-    d.size === parseInt(result.recommendedSize.split('-')[0])
-  );
+console.log('ResultsDisplay received:', result); // ADD THIS LINE HERE
 
-  const otherSizes = allDumpsterSizes.filter(d => 
-    d.size !== parseInt(result.recommendedSize.split('-')[0])
-  );
+const recommendedDumpster = allDumpsterSizes.find(d => {
+  if (!result?.recommendedSize) return false;
+  const firstPart = String(result.recommendedSize).split('-')[0];
+  const parsed = parseInt(firstPart, 10);
+  return d.size === parsed;
+});
 
+const otherSizes = allDumpsterSizes.filter(d => {
+  if (!result?.recommendedSize) return true;
+  const firstPart = String(result.recommendedSize).split('-')[0];
+  const parsed = parseInt(firstPart, 10);
+  return d.size !== parsed;
+});
   return (
     <div className={`space-y-6 ${isAnimating ? 'animate-slideUp' : ''}`}>
       {/* Main Result */}
