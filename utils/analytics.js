@@ -53,6 +53,14 @@ export const trackCalculatorUsage = {
     // Don't track actual zip codes for privacy, just track that it was entered
     trackEvent('zip_code_entered', 'Calculator', 'ZIP_Code_Provided');
   },
+  zipCodeSubmitted: (zipCode) => {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'zip_code_submitted', {
+      event_category: 'local_content',
+      zip_code: zipCode
+    });
+  }
+},
 
   // Track engagement with calculator sections
   sectionEngaged: (sectionName) => {
