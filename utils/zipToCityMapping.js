@@ -295,6 +295,10 @@ export function getLocalContent(zipCode) {
     };
   }
 
+  // Only show permit guides for cities that have them
+  const citiesWithPermitGuides = ['chicago', 'houston', 'new-york', 'los-angeles', 'phoenix'];
+  const hasPermitGuide = citiesWithPermitGuides.includes(city.slug);
+
   return {
     hasLocalContent: true,
     city,
@@ -307,15 +311,15 @@ export function getLocalContent(zipCode) {
         readTime: '5 min read'
       }
     ],
-    permitGuides: [
+    permitGuides: hasPermitGuide ? [
       {
         title: `${city.name} Dumpster Permit Guide`,
         description: `Complete permit requirements, costs, and application process for ${city.name}, ${city.state}`,
         url: `/blog/${city.slug}-dumpster-permit-guide`,
-        category: 'Permits & Regulations', 
+        category: 'Permits & Regulations',
         readTime: '8 min read'
       }
-    ]
+    ] : [] // Empty array if no permit guide exists
   };
 }
 
