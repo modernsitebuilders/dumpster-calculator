@@ -1,71 +1,71 @@
-// app/dumpster-rental-phoenix/page.js
+// app/dumpster-rental-charlotte/page.js
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental Phoenix AZ | Desert Delivery | Best Arizona Prices',
-  description: 'Dumpster rental in Phoenix starting at $275. Serving Scottsdale, Tempe, Mesa, and all of Valley of the Sun. Heat-resistant service.',
-  keywords: 'dumpster rental phoenix, dumpster rental arizona, roll off dumpster phoenix, scottsdale dumpster rental'
+  title: 'Dumpster Rental Charlotte NC | Queen City Service | Best Carolina Prices',
+  description: 'Dumpster rental in Charlotte starting at $280. Serving Ballantyne, Uptown, South End, and all of Queen City. Professional service.',
+  keywords: 'dumpster rental charlotte, dumpster rental north carolina, roll off dumpster charlotte, ballantyne dumpster rental'
 };
 
-export default function PhoenixPage() {
+export default function CharlottePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Dumpster Rental in Phoenix, AZ
+            Dumpster Rental in Charlotte, NC
           </h1>
           <p className="text-xl text-gray-600 mb-6">
-            Desert-tough dumpster service for the Valley of the Sun
+            Professional dumpster service for the Queen City
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Heat Resistant</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Early Morning Delivery</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Valley-Wide Service</span>
+            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Fast Delivery</span>
+            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ All Neighborhoods</span>
+            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Competitive Rates</span>
           </div>
         </div>
 
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">Get Phoenix Dumpster Quote</h2>
-          <p className="mb-6">Beat the heat with early morning delivery</p>
+          <h2 className="text-2xl font-bold mb-4">Get Charlotte Dumpster Quote</h2>
+          <p className="mb-6">Professional service throughout the Queen City</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
             Calculate Size & Get Quotes
           </Link>
         </div>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Phoenix Dumpster Rental Pricing</h2>
+          <h2 className="text-2xl font-bold mb-6">Charlotte Dumpster Rental Pricing</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-xl font-bold mb-3">10 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$275 - $375</p>
+              <p className="text-3xl font-bold text-green-600 mb-2">$280 - $380</p>
               <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Small projects</li>
-                <li>• Pool area cleanouts</li>
-                <li>• Garage renovations</li>
+                <li>• Small cleanouts</li>
+                <li>• Bathroom remodels</li>
+                <li>• Garage cleaning</li>
               </ul>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-xl font-bold mb-3">20 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$375 - $475</p>
+              <p className="text-3xl font-bold text-green-600 mb-2">$380 - $480</p>
               <ul className="text-gray-600 space-y-1 text-sm">
                 <li>• Kitchen remodels</li>
-                <li>• Tile removal</li>
-                <li>• Bathroom renovations</li>
+                <li>• Flooring projects</li>
+                <li>• Deck removal</li>
               </ul>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-xl font-bold mb-3">30 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$475 - $600</p>
+              <p className="text-3xl font-bold text-green-600 mb-2">$480 - $600</p>
               <ul className="text-gray-600 space-y-1 text-sm">
                 <li>• Whole house projects</li>
                 <li>• New construction</li>
-                <li>• Large cleanouts</li>
+                <li>• Large renovations</li>
               </ul>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-xl font-bold mb-3">40 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$575 - $725</p>
+              <p className="text-3xl font-bold text-green-600 mb-2">$580 - $720</p>
               <ul className="text-gray-600 space-y-1 text-sm">
                 <li>• Commercial projects</li>
                 <li>• Large construction</li>
@@ -74,149 +74,149 @@ export default function PhoenixPage() {
             </div>
           </div>
           <p className="text-sm text-gray-600 mt-4">
-            *Prices include 7-day rental period. Arizona has some of the most competitive rates in the Southwest.
+            *Prices include 7-day rental period. North Carolina offers competitive rates throughout the Carolinas.
           </p>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Phoenix Valley Areas We Serve</h2>
+          <h2 className="text-2xl font-bold mb-6">Charlotte Metro Areas We Serve</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <h3 className="font-semibold mb-2">Phoenix Proper</h3>
+              <h3 className="font-semibold mb-2">Central Charlotte</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Downtown Phoenix</li>
-                <li>Central Phoenix</li>
-                <li>North Phoenix</li>
-                <li>Ahwatukee</li>
-                <li>Arcadia</li>
-                <li>Biltmore</li>
-                <li>Camelback</li>
-                <li>Desert Ridge</li>
+                <li>Uptown</li>
+                <li>South End</li>
+                <li>NoDa</li>
+                <li>Plaza Midwood</li>
+                <li>Dilworth</li>
+                <li>Myers Park</li>
+                <li>Fourth Ward</li>
+                <li>First Ward</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">East Valley</h3>
+              <h3 className="font-semibold mb-2">South Charlotte</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Scottsdale</li>
-                <li>Tempe</li>
-                <li>Mesa</li>
-                <li>Chandler</li>
-                <li>Gilbert</li>
-                <li>Apache Junction</li>
-                <li>Queen Creek</li>
-                <li>Fountain Hills</li>
+                <li>Ballantyne</li>
+                <li>SouthPark</li>
+                <li>Pineville</li>
+                <li>Blakeney</li>
+                <li>Arboretum</li>
+                <li>Rea Farms</li>
+                <li>Stonecrest</li>
+                <li>Carmel</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">West Valley</h3>
+              <h3 className="font-semibold mb-2">North Charlotte</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Glendale</li>
-                <li>Peoria</li>
-                <li>Surprise</li>
-                <li>Avondale</li>
-                <li>Goodyear</li>
-                <li>Buckeye</li>
-                <li>Litchfield Park</li>
-                <li>Tolleson</li>
+                <li>University City</li>
+                <li>Concord Mills</li>
+                <li>Highland Creek</li>
+                <li>Northlake</li>
+                <li>Huntersville</li>
+                <li>Cornelius</li>
+                <li>Davidson</li>
+                <li>Mooresville</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">North Valley</h3>
+              <h3 className="font-semibold mb-2">East/West Charlotte</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Paradise Valley</li>
-                <li>Cave Creek</li>
-                <li>Carefree</li>
-                <li>Anthem</li>
-                <li>New River</li>
-                <li>Desert Hills</li>
-                <li>North Scottsdale</li>
-                <li>Deer Valley</li>
+                <li>Matthews</li>
+                <li>Mint Hill</li>
+                <li>Indian Trail</li>
+                <li>Stallings</li>
+                <li>Gastonia</li>
+                <li>Belmont</li>
+                <li>Mount Holly</li>
+                <li>Waxhaw</li>
               </ul>
             </div>
           </div>
           
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600">
-              <strong>Extended Service:</strong> We also serve Tucson, Flagstaff, Sedona, 
-              and other Arizona communities with advance scheduling.
+              <strong>Extended Service:</strong> We also serve Rock Hill, Kannapolis, Concord, 
+              and other Charlotte metro communities with advance scheduling.
             </p>
           </div>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Phoenix Desert Climate Tips</h2>
+          <h2 className="text-2xl font-bold mb-6">Charlotte Project Considerations</h2>
           <div className="space-y-4">
-            <div className="border-l-4 border-orange-500 pl-4">
-              <h3 className="font-semibold mb-1">Extreme Heat Management</h3>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Weather & Seasonal Planning</h3>
               <p className="text-gray-600">
-                Summer temperatures exceed 115°F. We schedule deliveries for dawn hours (5-7 AM) and provide heat-resistant containers and covers.
+                Charlotte's humid subtropical climate means year-round projects. Spring storms and summer heat require covered containers for certain materials.
               </p>
             </div>
-            <div className="border-l-4 border-orange-500 pl-4">
-              <h3 className="font-semibold mb-1">Monsoon Season Preparation</h3>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Tree Removal & Landscaping</h3>
               <p className="text-gray-600">
-                July-September brings sudden storms and flash floods. Our dumpsters include secure tie-downs and drainage features for safety.
+                Charlotte's urban forest requires specialized disposal. We handle tree debris, brush, and landscaping waste following city guidelines.
               </p>
             </div>
-            <div className="border-l-4 border-orange-500 pl-4">
-              <h3 className="font-semibold mb-1">Desert Landscaping Projects</h3>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Historic District Regulations</h3>
               <p className="text-gray-600">
-                Removing desert plants, rocks, and hardscaping is common. We specialize in heavy desert debris and coordinate with xeriscape contractors.
+                Myers Park, Dilworth, and other historic areas have special requirements. We coordinate with historic commissions for renovation projects.
               </p>
             </div>
-            <div className="border-l-4 border-orange-500 pl-4">
-              <h3 className="font-semibold mb-1">HOA Requirements</h3>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">HOA Community Guidelines</h3>
               <p className="text-gray-600">
-                Many Valley communities have strict HOA rules about dumpster placement and screening. We provide guidance on compliance and timing.
+                Many Charlotte neighborhoods have HOA restrictions on dumpster placement and timing. We provide compliant service and screening options.
               </p>
             </div>
-            <div className="border-l-4 border-orange-500 pl-4">
-              <h3 className="font-semibold mb-1">Pool Renovation Specialists</h3>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Construction Boom Support</h3>
               <p className="text-gray-600">
-                Pool remodels and removals are common in Phoenix. We handle pool coping, decking, and equipment disposal with proper drainage considerations.
+                Charlotte's rapid growth creates high demand for construction dumpsters. We maintain large inventory for residential and commercial projects.
               </p>
             </div>
           </div>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Phoenix Dumpster Rental FAQs</h2>
+          <h2 className="text-2xl font-bold mb-6">Charlotte Dumpster Rental FAQs</h2>
           <div className="space-y-4">
             <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">What time do you deliver in Phoenix summers?</summary>
+              <summary className="font-semibold">Do I need a permit in Charlotte?</summary>
               <p className="mt-2 text-gray-600">
-                Summer deliveries start at 5 AM to beat the heat. We complete most deliveries by 8 AM when temperatures are still manageable for our crew.
+                Street placement requires a permit from Charlotte DOT. Driveway and private property placement typically doesn't require permits.
               </p>
             </details>
             
             <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Can dumpsters handle desert heat?</summary>
+              <summary className="font-semibold">How far in advance should I book?</summary>
               <p className="mt-2 text-gray-600">
-                Yes! Our dumpsters are built for extreme conditions. We use reinforced materials and heat-resistant coatings to prevent warping or damage.
+                Charlotte's growing market means 2-3 days advance booking is recommended, especially during peak construction season (March-October).
               </p>
             </details>
             
             <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">What about monsoon season?</summary>
+              <summary className="font-semibold">What about HOA communities?</summary>
               <p className="mt-2 text-gray-600">
-                We monitor weather closely during monsoon season (July-September) and may reschedule deliveries during flash flood warnings for safety.
+                Many Charlotte neighborhoods have HOA guidelines. We provide discrete placement options and work with community requirements for timing and screening.
               </p>
             </details>
             
             <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Do you serve Scottsdale and Paradise Valley?</summary>
+              <summary className="font-semibold">Can you handle large construction debris?</summary>
               <p className="mt-2 text-gray-600">
-                Absolutely! We're familiar with upscale community requirements and provide discrete, professional service that meets HOA standards.
+                Yes! Charlotte's construction boom keeps us busy with concrete, steel, and heavy materials. We have specialized equipment for construction sites.
               </p>
             </details>
           </div>
         </section>
 
         <div className="bg-green-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Ready to Rent in Phoenix?</h2>
-          <p className="mb-6 text-gray-700">Get quotes from licensed Arizona providers</p>
+          <h2 className="text-2xl font-bold mb-4">Ready to Rent in Charlotte?</h2>
+          <p className="mb-6 text-gray-700">Get quotes from licensed North Carolina providers</p>
           <Link href="/" className="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-700 transition">
-            Get Phoenix Quotes Now
+            Get Charlotte Quotes Now
           </Link>
         </div>
       </div>
