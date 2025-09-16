@@ -137,18 +137,9 @@ export default function CalculatorForm({ onCalculate, isCalculating = false }) {
           Free Dumpster Size Calculator
         </h2>
         <p className="text-gray-600">
-          Whats the job and how big is it? Get a custom dumpster size recommendation in seconds.
+          Get accurate sizing recommendations for your project
         </p>
-        
-        {/* Progress Bar */}
-        <div className="mt-4 bg-gray-200 rounded-full h-2 max-w-md mx-auto">
-          <div 
-            className="bg-blue-600 h-2 rounded-full transition-all duration-500"
-            style={{ width: `${getProgress()}%` }}
-          />
         </div>
-        <p className="text-sm text-gray-500 mt-2">{Math.round(getProgress())}% Complete</p>
-      </div>
 
       <form onSubmit={handleCalculate} className="space-y-6">
         {/* Step 1: Project Type */}
