@@ -174,16 +174,6 @@ export default function Home() {
 
           {/* New Materials Calculator */}
           <DumpsterCalculatorWithMaterials />
-          
-          {/* Link to Simple Calculator */}
-          <div className="text-center mt-8">
-            <a 
-              href="/calculator-simple" 
-              className="text-sm text-gray-500 hover:text-gray-700 underline"
-            >
-              Prefer a quick estimate? Try our simple calculator →
-            </a>
-          </div>
         </div>
       </div>
 
