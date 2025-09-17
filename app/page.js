@@ -306,18 +306,69 @@ export default function Home() {
           </div>
 
           {/* Local Content Results */}
-          {showLocalContent && localContent && (
-            <div className="mb-12">
-              {/* Your existing local content display code */}
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                  Local Information for {localContent.city.name}
-                  {localContent.city.state && `, ${localContent.city.state}`}
-                </h2>
+{showLocalContent && localContent && (
+  <div className="mb-12">
+    <div className="text-center mb-8">
+      <h2 className="text-3xl font-bold text-gray-900 mb-2">
+        Local Information for {localContent.city.name}
+        {localContent.city.state && `, ${localContent.city.state}`}
+      </h2>
+    </div>
+    
+    {/* Add this section to display the local guides */}
+    <div className="grid md:grid-cols-2 gap-6">
+      {/* Local Pricing Guide */}
+      {localContent.localGuides && localContent.localGuides.length > 0 && (
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Local Pricing & Providers</h3>
+          {localContent.localGuides.map((guide, index) => (
+            <div key={index} className="mb-4">
+              <h4 className="font-bold text-lg mb-2">{guide.title}</h4>
+              <p className="text-gray-600 text-sm mb-3">{guide.description}</p>
+              <div className="flex items-center justify-between">
+                <span className="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">
+                  {guide.category}
+                </span>
+                <span className="text-xs text-gray-500">{guide.readTime}</span>
               </div>
-              {/* Rest of local content display */}
+              <Link 
+                href={guide.url}
+                className="block mt-3 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition font-semibold"
+              >
+                View Guide →
+              </Link>
             </div>
-          )}
+          ))}
+        </div>
+      )}
+
+      {/* Permit Guide (if exists) */}
+      {localContent.permitGuides && localContent.permitGuides.length > 0 && (
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Permit Requirements</h3>
+          {localContent.permitGuides.map((guide, index) => (
+            <div key={index} className="mb-4">
+              <h4 className="font-bold text-lg mb-2">{guide.title}</h4>
+              <p className="text-gray-600 text-sm mb-3">{guide.description}</p>
+              <div className="flex items-center justify-between">
+                <span className="text-xs px-3 py-1 bg-red-100 text-red-800 rounded-full font-semibold">
+                  {guide.category}
+                </span>
+                <span className="text-xs text-gray-500">{guide.readTime}</span>
+              </div>
+              <Link 
+                href={guide.url}
+                className="block mt-3 bg-red-600 text-white text-center py-2 rounded-lg hover:bg-red-700 transition font-semibold"
+              >
+                View Permit Guide →
+              </Link>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+)}
 
           {/* Popular Resources */}
           <div className="mt-12 bg-blue-50 rounded-lg p-8">
