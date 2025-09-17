@@ -29,7 +29,7 @@ export default function BlogIndex() {
       readTime: "12 min read",
       publishDate: "September 15, 2025",
       featured: true,
-      image: "/images/blog/dumpster-permit-guide.jpg" // Add your image
+      image: "/images/blog/building-permit.jpg"
     },
     {
       title: "Garage Cleanout Dumpster Size: Complete Guide & Cost Breakdown",
