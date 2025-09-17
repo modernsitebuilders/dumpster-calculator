@@ -24,6 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
 .hide-number-arrows::-webkit-outer-spin-button,
 .hide-number-arrows::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -32,4 +33,14 @@ body {
 
 .hide-number-arrows[type=number] {
   -moz-appearance: textfield;
+}
+
+/* Hide scrollbar for category pills */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
