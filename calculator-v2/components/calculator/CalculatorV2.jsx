@@ -282,6 +282,15 @@ const DumpsterCalculatorWithMaterials = () => {
     });
     
     setShowDetails(true);
+    setTimeout(() => {
+      const resultsElement = document.getElementById('results-section');
+      if (resultsElement) {
+        resultsElement.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+      }
+    }, 100);
   };
 
   const reset = () => {
@@ -492,58 +501,55 @@ const DumpsterCalculatorWithMaterials = () => {
       )}
 
       {/* Step 3: Results */}
-      {currentStep === 3 && result && (
-        <div className="bg-white rounded-xl p-6 shadow-lg">
-          <div className="text-center mb-6">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-4">
-              <CheckCircle2 className="w-12 h-12 text-green-600" />
+{currentStep === 3 && result && (
+       <div id="results-section" className="bg-white rounded-xl p-6 shadow-lg">
+    
+    {/* RECOMMENDATION FIRST - Most important info */}
+    <div className="mb-6">
+      {result.needsMultiple ? (
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-red-800 mb-2">
+              Multiple Dumpsters Required
+            </h2>
+            <p className="text-lg font-semibold text-red-800 mb-2">
+              Due to weight limits, you'll need:
+            </p>
+            <div className="flex justify-center gap-4">
+              <div className="bg-white rounded-lg p-3 border-2 border-red-300">
+                <span className="text-2xl font-bold text-gray-800">
+                  {result.multipleRecommendation.primary} Yard
+                </span>
+              </div>
+              <span className="self-center text-2xl">+</span>
+              <div className="bg-white rounded-lg p-3 border-2 border-red-300">
+                <span className="text-2xl font-bold text-gray-800">
+                  {result.multipleRecommendation.secondary} Yard
+                </span>
+              </div>
             </div>
-            
-            {result.needsMultiple ? (
-              <>
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                  Multiple Dumpsters Required
-                </h2>
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-4">
-                  <p className="text-lg font-semibold text-red-800 mb-2">
-                    Due to weight limits, you'll need:
-                  </p>
-                  <div className="flex justify-center gap-4">
-                    <div className="bg-white rounded-lg p-3 border-2 border-red-300">
-                      <span className="text-2xl font-bold text-gray-800">
-                        {result.multipleRecommendation.primary} Yard
-                      </span>
-                    </div>
-                    <span className="self-center text-2xl">+</span>
-                    <div className="bg-white rounded-lg p-3 border-2 border-red-300">
-                      <span className="text-2xl font-bold text-gray-800">
-                        {result.multipleRecommendation.secondary} Yard
-                      </span>
-                    </div>
-                  </div>
-                  <p className="text-sm text-red-700 mt-3">
-                    ⚠️ Heavy materials like concrete/dirt cannot be hauled in a single load due to DOT weight regulations. 
-                    Splitting into multiple dumpsters prevents overweight fines and ensures safe transport.
-                  </p>
-                </div>
-              </>
-            ) : (
-              <>
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                  Recommended Size: {result.recommendedSize} Yard Dumpster
-                </h2>
-                
-                {result.weightAdjusted && (
-                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mt-4">
-                    <AlertCircle className="inline w-5 h-5 text-yellow-600 mr-2" />
-                    <span className="text-sm text-yellow-800">
-                      Size adjusted for heavy materials (weight limits apply)
-                    </span>
-                  </div>
-                )}
-              </>
-            )}
+            <p className="text-sm text-red-700 mt-3">
+              ⚠️ Heavy materials like concrete/dirt cannot be hauled in a single load due to DOT weight regulations.
+            </p>
           </div>
+        </div>
+      ) : (
+        <div className="bg-green-50 border-2 border-green-500 rounded-lg p-6 text-center">
+          <CheckCircle2 className="w-12 h-12 text-green-600 mx-auto mb-2" />
+          <h2 className="text-3xl font-bold text-gray-800 mb-2">
+            {result.recommendedSize} Yard Dumpster
+          </h2>
+          <p className="text-gray-600">Recommended for your project</p>
+          
+          {result.weightAdjusted && (
+            <div className="mt-3 text-sm text-yellow-700 bg-yellow-50 rounded p-2">
+              <AlertCircle className="inline w-4 h-4 mr-1" />
+              Size adjusted for heavy materials
+            </div>
+          )}
+        </div>
+      )}
+    </div>
 
           {/* Project Summary - NEW SECTION */}
           <div className="mb-6 bg-blue-50 rounded-lg p-4">
