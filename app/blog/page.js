@@ -1,13 +1,10 @@
-// app/blog/page.js - Production-Ready Modern Blog Page
+// app/blog/page.js - COMPLETE WITH ALL BLOG POSTS (SERVER-SIDE COMPATIBLE)
 'use client';
 import Link from 'next/link';
-/**import Image from 'next/image';**/
 import { useState, useEffect } from 'react';
-import { ChevronRight, Calendar, Clock, TrendingUp, Home, Gavel, Calculator, Hammer, DollarSign, Trees, Truck, MapPin, Info, Search, ArrowRight } from 'lucide-react';
-
 export default function BlogIndex() {
+  
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
-  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -18,7 +15,6 @@ export default function BlogIndex() {
       }
     }
   }, []);
-
   const blogPosts = [
     // FEATURED HIGH-PRIORITY POSTS FIRST
     {
@@ -28,8 +24,7 @@ export default function BlogIndex() {
       category: "Regulations",
       readTime: "12 min read",
       publishDate: "September 15, 2025",
-      featured: true,
-      image: "/images/blog/building-permit.jpg"
+      featured: true
     },
     {
       title: "Garage Cleanout Dumpster Size: Complete Guide & Cost Breakdown",
@@ -38,9 +33,10 @@ export default function BlogIndex() {
       category: "House Areas",
       readTime: "9 min read",
       publishDate: "September 15, 2025",
-      featured: true,
-      image: "/images/blog/garage-cleanout.jpg"
+      featured: true
     },
+    
+    // EXISTING FEATURED POSTS
     {
       title: "What Size Dumpster for Bathroom Remodel? Complete 2025 Guide",
       excerpt: "Planning a bathroom renovation? Learn exactly what dumpster size you need, costs, and tips for debris disposal. Covers everything from small updates to full gut renovations.",
@@ -48,28 +44,25 @@ export default function BlogIndex() {
       category: "Bathroom Renovation",
       readTime: "8 min read",
       publishDate: "January 15, 2025",
-      featured: true,
-      image: "/images/blog/bathroom-remodel.jpg"
+      featured: true
     },
     {
       title: "Kitchen Renovation Dumpster Size Guide: What Size Do You Need?",
       excerpt: "Complete guide to choosing the right dumpster size for kitchen remodels. From cabinet replacement to full gut renovations, learn what size fits your project scope.",
-      slug: "kitchen-renovation-dumpster-size",
+      slug: "kitchen-renovation-dumpster-size", 
       category: "Kitchen Renovation",
       readTime: "10 min read",
       publishDate: "January 12, 2025",
-      featured: true,
-      image: "/images/blog/kitchen-renovation.jpg"
+      featured: true
     },
     {
       title: "What Size Dumpster Do I Need? Complete Size Guide",
       excerpt: "Learn how to choose the right dumpster size for any project. Complete guide covering 10, 20, 30, and 40-yard dumpsters with real project examples.",
       slug: "what-size-dumpster-do-i-need",
-      category: "General Tips",
+      category: "General Tips", 
       readTime: "7 min read",
       publishDate: "January 3, 2025",
-      featured: true,
-      image: "/images/blog/dumpster-sizes.jpg"
+      featured: true
     },
     {
       slug: 'prohibited-items-dumpster',
@@ -78,11 +71,10 @@ export default function BlogIndex() {
       publishDate: 'January 5, 2025',
       readTime: '6 min read',
       category: 'Regulations',
-      featured: true,
-      image: "/images/blog/prohibited-items.jpg"
+      featured: true
     },
 
-    // NON-FEATURED POSTS
+    // NEW HIGH-PRIORITY HOUSE AREAS
     {
       title: "Attic Cleanout Dumpster Size Guide: Insulation & Storage Removal",
       excerpt: "Planning an attic cleanout? Learn what dumpster size you need, how to handle insulation and old belongings, plus cost-saving tips for seasonal cleanouts.",
@@ -90,8 +82,7 @@ export default function BlogIndex() {
       category: "House Areas",
       readTime: "8 min read",
       publishDate: "January 16, 2025",
-      featured: false,
-      image: "/images/blog/attic-cleanout.jpg"
+      featured: false
     },
     {
       title: "Basement Cleanout Dumpster Size Guide: Water Damage & Storage Removal",
@@ -100,18 +91,18 @@ export default function BlogIndex() {
       category: "House Areas",
       readTime: "8 min read",
       publishDate: "January 16, 2025",
-      featured: false,
-      image: "/images/blog/basement-cleanout.jpg"
+      featured: false
     },
+
+    // NEW REGULATIONS CATEGORY EXPANSION
     {
-      title: "Weight Limits & Overage Fees: How to Avoid Extra Charges",
+      title: "Dumpster Weight Limits & Overage Fees: How to Avoid Extra Charges",
       excerpt: "Avoid costly overage fees! Complete guide to dumpster weight limits, how weights are calculated, and tips to stay under the limit for every project type.",
       slug: "weight-limits-overage-fees",
       category: "Regulations",
       readTime: "8 min read",
       publishDate: "January 18, 2025",
-      featured: false,
-      image: "/images/blog/weight-limits.jpg"
+      featured: false
     },
     {
       title: "HOA Dumpster Rules & Restrictions: Complete Guide",
@@ -120,9 +111,10 @@ export default function BlogIndex() {
       category: "Regulations",
       readTime: "7 min read",
       publishDate: "September 16, 2025",
-      featured: false,
-      image: "/images/blog/hoa-rules.jpg"
+      featured: false
     },
+
+    // NEW RENOVATION GUIDES
     {
       title: "Bedroom Renovation Dumpster Size Guide: Complete Remodel Planning",
       excerpt: "Bedroom renovations range from simple cosmetic updates to complete gut jobs. Learn how to choose the right dumpster size based on your renovation scope and room size.",
@@ -130,8 +122,7 @@ export default function BlogIndex() {
       category: "Bedroom Renovation",
       readTime: "7 min read",
       publishDate: "January 20, 2025",
-      featured: false,
-      image: "/images/blog/bedroom-renovation.jpg"
+      featured: false
     },
     {
       title: "Whole House Renovation Dumpster Size Guide: Complete Planning Strategy",
@@ -140,9 +131,10 @@ export default function BlogIndex() {
       category: "Major Renovation",
       readTime: "12 min read",
       publishDate: "January 22, 2025",
-      featured: false,
-      image: "/images/blog/whole-house-renovation.jpg"
+      featured: false
     },
+
+    // DUMPSTER SIZE GUIDES
     {
       title: "10 Yard Dumpster Guide: Small Projects & Pricing",
       excerpt: "Complete guide to 10 yard dumpsters. Perfect for small renovations, cleanouts, and minor construction projects. Dimensions, costs, and project examples.",
@@ -150,8 +142,7 @@ export default function BlogIndex() {
       category: "Dumpster Sizes",
       readTime: "6 min read",
       publishDate: "January 8, 2025",
-      featured: false,
-      image: "/images/blog/10-yard-dumpster.jpg"
+      featured: false
     },
     {
       title: "20 Yard Dumpster Guide: The Most Popular Size",
@@ -160,8 +151,7 @@ export default function BlogIndex() {
       category: "Dumpster Sizes",
       readTime: "7 min read",
       publishDate: "January 9, 2025",
-      featured: false,
-      image: "/images/blog/20-yard-dumpster.jpg"
+      featured: false
     },
     {
       title: "30 Yard Dumpster Guide: Large Projects & Construction",
@@ -170,8 +160,7 @@ export default function BlogIndex() {
       category: "Dumpster Sizes",
       readTime: "8 min read",
       publishDate: "January 10, 2025",
-      featured: false,
-      image: "/images/blog/30-yard-dumpster.jpg"
+      featured: false
     },
     {
       title: "40 Yard Dumpster Guide: Commercial & Major Construction",
@@ -180,18 +169,18 @@ export default function BlogIndex() {
       category: "Dumpster Sizes",
       readTime: "7 min read",
       publishDate: "January 11, 2025",
-      featured: false,
-      image: "/images/blog/40-yard-dumpster.jpg"
+      featured: false
     },
+
+    // ADDITIONAL PROJECT GUIDES
     {
       title: "Roof Replacement Dumpster Size Calculator & Guide",
       excerpt: "Roof replacement projects generate significant debris. Learn what dumpster size you need based on roof square footage, materials, and local disposal requirements.",
       slug: "roof-replacement-dumpster-size",
       category: "Roofing",
-      readTime: "7 min read",
+      readTime: "7 min read", 
       publishDate: "January 10, 2025",
-      featured: false,
-      image: "/images/blog/roof-replacement.jpg"
+      featured: false
     },
     {
       title: "Dumpster Rental Cost Guide: What You'll Really Pay in 2025",
@@ -200,278 +189,371 @@ export default function BlogIndex() {
       category: "Pricing",
       readTime: "9 min read",
       publishDate: "January 7, 2025",
-      featured: false,
-      image: "/images/blog/cost-guide.jpg"
+      featured: false
     },
-    // Add remaining posts with their images...
-  ];
 
-  const categoryIcons = {
-    "All Posts": <Home className="w-4 h-4" />,
-    "Regulations": <Gavel className="w-4 h-4" />,
-    "House Areas": <Home className="w-4 h-4" />,
-    "Dumpster Sizes": <Calculator className="w-4 h-4" />,
-    "Kitchen Renovation": <Hammer className="w-4 h-4" />,
-    "Bathroom Renovation": <Hammer className="w-4 h-4" />,
-    "Bedroom Renovation": <Hammer className="w-4 h-4" />,
-    "Living Room Renovation": <Hammer className="w-4 h-4" />,
-    "Major Renovation": <Hammer className="w-4 h-4" />,
-    "Roofing": <Home className="w-4 h-4" />,
-    "Pricing": <DollarSign className="w-4 h-4" />,
-    "Outdoor Projects": <Trees className="w-4 h-4" />,
-    "Flooring": <Home className="w-4 h-4" />,
-    "Construction": <Truck className="w-4 h-4" />,
-    "Landscaping": <Trees className="w-4 h-4" />,
-    "Cleanouts": <Truck className="w-4 h-4" />,
-    "Local Permits": <MapPin className="w-4 h-4" />,
-    "General Tips": <Info className="w-4 h-4" />
-  };
+    // ALL PROJECT GUIDES (from your actual file structure)
+    {
+      title: "Deck Removal Dumpster Size: Complete Teardown Guide",
+      excerpt: "Planning to remove an old deck? Learn what dumpster size you need based on deck materials, size, and disposal requirements. Wood, composite, and metal deck removal.",
+      slug: "deck-removal-dumpster-size",
+      category: "Outdoor Projects",
+      readTime: "6 min read",
+      publishDate: "January 25, 2025",
+      featured: false
+    },
+    {
+      title: "Flooring Removal Dumpster Size: Complete Demo Guide",
+      excerpt: "Flooring demolition creates significant debris. Learn what dumpster size you need for carpet, hardwood, tile, and laminate removal projects.",
+      slug: "flooring-removal-dumpster-size",
+      category: "Flooring",
+      readTime: "7 min read",
+      publishDate: "January 25, 2025",
+      featured: false
+    },
+    {
+      title: "Flooring Replacement Dumpster Size: Complete Material Guide", 
+      excerpt: "Flooring replacement generates both old and new material waste. Learn what dumpster size you need for complete flooring renovation projects.",
+      slug: "flooring-replacement-dumpster-size",
+      category: "Flooring",
+      readTime: "7 min read",
+      publishDate: "January 26, 2025",
+      featured: false
+    },
+    {
+      title: "Living Room Renovation Dumpster Size: Complete Remodel Guide",
+      excerpt: "Living room renovations involve furniture, flooring, and entertainment systems. Learn how to size dumpsters for family room and living space remodels.",
+      slug: "living-room-renovation-dumpster-size",
+      category: "Living Room Renovation",
+      readTime: "8 min read",
+      publishDate: "January 24, 2025",
+      featured: false
+    },
+    {
+      title: "Construction Debris Dumpster Size: Commercial & Residential Guide",
+      excerpt: "Construction projects generate diverse debris types. Learn how to size dumpsters for new construction, renovations, and commercial building projects.",
+      slug: "construction-debris-dumpster-size",
+      category: "Construction",
+      readTime: "9 min read",
+      publishDate: "January 27, 2025", 
+      featured: false
+    },
+    {
+      title: "Landscaping Cleanup Dumpster Size: Seasonal & Project Guide",
+      excerpt: "Landscaping cleanups require proper debris disposal. Learn what dumpster size you need for seasonal yard work, tree trimming, and garden renovations.",
+      slug: "landscaping-cleanup-dumpster-size",
+      category: "Landscaping",
+      readTime: "6 min read",
+      publishDate: "January 28, 2025",
+      featured: false
+    },
+    {
+      title: "Landscaping Debris Dumpster Size: Yard Waste & Tree Removal",
+      excerpt: "Landscaping projects create unique disposal challenges. Learn what dumpster size you need for tree removal, yard cleanups, and landscaping renovations.",
+      slug: "landscaping-debris-dumpster-size",
+      category: "Landscaping",
+      readTime: "6 min read",
+      publishDate: "January 28, 2025",
+      featured: false
+    },
+    {
+      title: "Moving Cleanout Dumpster Size: Complete Relocation Guide",
+      excerpt: "Moving generates significant unwanted items. Learn how to size dumpsters for house cleanouts, estate sales, and relocation debris disposal.",
+      slug: "moving-cleanout-dumpster-size",
+      category: "Cleanouts",
+      readTime: "7 min read", 
+      publishDate: "January 29, 2025",
+      featured: false
+    },
+
+    // CITY-SPECIFIC PERMIT GUIDES
+    {
+      title: "Chicago Dumpster Permit Guide: Requirements & Applications",
+      excerpt: "Complete guide to Chicago dumpster permits. Learn requirements, costs, application process, and alternatives for Chicagoland area projects.",
+      slug: "chicago-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "8 min read",
+      publishDate: "February 1, 2025",
+      featured: false
+    },
+    {
+      title: "Houston Dumpster Permit Guide: Harris County Requirements",
+      excerpt: "Houston dumpster permit requirements and application process. Complete guide for Harris County and surrounding areas including permit alternatives.",
+      slug: "houston-dumpster-permit-guide",
+      category: "Local Permits", 
+      readTime: "7 min read",
+      publishDate: "February 2, 2025",
+      featured: false
+    },
+    {
+      title: "Los Angeles Dumpster Permit Guide: City Requirements",
+      excerpt: "LA dumpster permit requirements, costs, and application process. Complete guide for Los Angeles County and surrounding municipalities.",
+      slug: "los-angeles-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "8 min read", 
+      publishDate: "February 3, 2025",
+      featured: false
+    },
+    {
+      title: "NYC Dumpster Permit Guide: Complete Requirements",
+      excerpt: "New York City dumpster permit requirements and DOT applications. Complete guide for all five boroughs including costs and alternatives.",
+      slug: "nyc-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "9 min read",
+      publishDate: "February 4, 2025", 
+      featured: false
+    },
+    {
+      title: "Phoenix Dumpster Permit Guide: Maricopa County Rules",
+      excerpt: "Phoenix dumpster permit requirements and application process. Complete guide for Maricopa County including residential and commercial permits.",
+      slug: "phoenix-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "7 min read",
+      publishDate: "February 5, 2025",
+      featured: false
+    },
+
+    // ADDITIONAL GUIDES
+    {
+      title: "Dumpster Permit Requirements: Complete State-by-State Guide",
+      excerpt: "Comprehensive guide to dumpster permit requirements across all 50 states. Learn when permits are required and how to obtain them.",
+      slug: "dumpster-permit-requirements",
+      category: "Regulations",
+      readTime: "10 min read",
+      publishDate: "February 6, 2025",
+      featured: false
+    },
+    {
+      title: "Dumpster Placement Rules: Complete Property Guide",
+      excerpt: "Learn proper dumpster placement rules for driveways, streets, and properties. Avoid fines and ensure safe, legal placement.",
+      slug: "dumpster-placement-rules",
+      category: "Regulations",
+      readTime: "6 min read",
+      publishDate: "February 7, 2025",
+      featured: false
+    }
+  ];
 
   const categories = ["All Posts", "Regulations", "House Areas", "Dumpster Sizes", "Kitchen Renovation", "Bathroom Renovation", "Bedroom Renovation", "Living Room Renovation", "Major Renovation", "Roofing", "Pricing", "Outdoor Projects", "Flooring", "Construction", "Landscaping", "Cleanouts", "Local Permits", "General Tips"];
 
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesCategory = selectedCategory === "All Posts" || post.category === selectedCategory;
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
-  const featuredPosts = blogPosts.filter(post => post.featured).slice(0, 3);
+  const filteredPosts = selectedCategory === "All Posts" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      {/* Hero Section with Gradient */}
-      <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
-        <div className="container mx-auto px-4 py-16 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-5xl font-bold mb-6 leading-tight">
-              Dumpster Rental Resource Center
-            </h1>
-            <p className="text-xl mb-8 text-blue-100">
-              Expert guides, calculators, and tips for your next project
-            </p>
-            
-            {/* Search Bar */}
-            <div className="relative max-w-2xl mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
-              <input
-                type="text"
-                placeholder="Search articles..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-xl text-gray-900 placeholder-gray-500 shadow-lg focus:outline-none focus:ring-4 focus:ring-white/30"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Category Pills with Icons */}
-      <div className="bg-white shadow-sm sticky top-0 z-40 border-b">
-        <div className="container mx-auto px-4 py-4 max-w-7xl">
-          <div className="flex gap-2 overflow-x-auto pb-2 hide-scrollbar">
-            <style jsx>{`
-              .hide-scrollbar {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-              }
-              .hide-scrollbar::-webkit-scrollbar {
-                display: none;
-              }
-            `}</style>
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
+        
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Dumpster Size Calculator Blog
+          </h1>
+          <p className="text-xl text-gray-600 mb-8">
+            Expert guides for choosing the right dumpster size for any project
+          </p>
+          
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
             {categories.map(category => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md transform scale-105'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                 }`}
               >
-                {categoryIcons[category] || <Info className="w-4 h-4" />}
-                <span>{category}</span>
+                {category}
               </button>
             ))}
           </div>
         </div>
-      </div>
 
-      <div className="container mx-auto px-4 py-12 max-w-7xl">
-        {/* Featured Articles Carousel */}
-        {selectedCategory === "All Posts" && !searchQuery && (
-          <section className="mb-16">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900">Featured Guides</h2>
-                <p className="text-gray-600 mt-2">Most popular resources this month</p>
-              </div>
-              <TrendingUp className="w-6 h-6 text-blue-600" />
-            </div>
-            
-            <div className="grid lg:grid-cols-3 gap-8">
-              {featuredPosts.map((post) => (
-                <Link
-                  href={`/blog/${post.slug}`}
-                  key={post.slug}
-                  className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 block"
-                >
-                  <div className="aspect-video overflow-hidden bg-gradient-to-br from-blue-400 to-indigo-600 relative">
-                    <img 
-                      src={post.image}
-                      alt={post.title}
-                      width={800}
-                      height={400}
-                      className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500"
-                      priority={true}
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  
-                  <div className="absolute bottom-0 p-6 text-white">
-                    <div className="flex items-center gap-4 mb-3">
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold">
+        {/* Featured Posts */}
+        {selectedCategory === "All Posts" && (
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Featured Articles</h2>
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              {blogPosts.filter(post => post.featured).map((post) => (
+                <div key={post.slug} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">
                         {post.category}
                       </span>
-                      <span className="text-xs flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        {post.readTime}
-                      </span>
+                      <span className="text-xs text-gray-500">{post.readTime}</span>
                     </div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-blue-200 transition-colors">
-                      {post.title}
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight">
+                      <Link href={`/blog/${post.slug}`} className="hover:text-blue-600">
+                        {post.title}
+                      </Link>
                     </h3>
-                    <p className="text-sm text-gray-200 line-clamp-2 mb-4">
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
-                    <span className="flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all">
-                      Read More <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* Main Articles Grid */}
-        <section>
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">
-              {searchQuery ? 'Search Results' : selectedCategory === "All Posts" ? 'All Articles' : selectedCategory}
-            </h2>
-            <span className="text-gray-500">
-              {filteredPosts.length} articles
-            </span>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredPosts.map((post) => (
-              <Link
-                href={`/blog/${post.slug}`}
-                key={post.slug}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group block"
-              >
-                <div className="aspect-video overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 relative">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    width={800}
-                    height={400}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className={`text-xs px-3 py-1 rounded-full font-semibold ${
-                      post.category === 'Regulations' ? 'bg-red-100 text-red-700' :
-                      post.category === 'Pricing' ? 'bg-green-100 text-green-700' :
-                      post.category === 'House Areas' ? 'bg-purple-100 text-purple-700' :
-                      'bg-blue-100 text-blue-700'
-                    }`}>
-                      {post.category}
-                    </span>
-                    <div className="flex items-center gap-3 text-xs text-gray-500">
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
-                        {new Date(post.publishDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        {post.readTime}
-                      </span>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-400">{post.publishDate}</span>
+                      <Link 
+                        href={`/blog/${post.slug}`}
+                        className="text-blue-600 hover:text-blue-800 text-sm font-semibold"
+                      >
+                        Read More →
+                      </Link>
                     </div>
                   </div>
-                  
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                    {post.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  
-                  <span className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold text-sm group-hover:gap-3 transition-all">
-                    Read Article <ChevronRight className="w-4 h-4" />
-                  </span>
                 </div>
-              </Link>
-            ))}
-          </div>
-
-          {/* Empty State */}
-          {filteredPosts.length === 0 && (
-            <div className="text-center py-16 bg-white rounded-xl">
-              <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="w-10 h-10 text-gray-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">
-                No articles found
-              </h3>
-              <p className="text-gray-500 mb-6">
-                Try adjusting your search or filter criteria
-              </p>
-              <button 
-                onClick={() => {
-                  setSelectedCategory("All Posts");
-                  setSearchQuery("");
-                }}
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
-              >
-                View All Articles
-              </button>
+              ))}
             </div>
-          )}
-        </section>
-
-        {/* Newsletter Section */}
-        <section className="mt-20 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-12 text-white text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/10"></div>
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">
-              Get Expert Renovation Tips
-            </h2>
-            <p className="text-blue-100 mb-8">
-              Weekly guides on dumpster sizing, cost-saving tips, and project planning delivered to your inbox.
-            </p>
-            <form className="flex gap-4 max-w-md mx-auto">
-              <input 
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-white/30"
-                required
-              />
-              <button 
-                type="submit"
-                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg"
-              >
-                Subscribe
-              </button>
-            </form>
           </div>
-        </section>
+        )}
+
+        {/* Category Description */}
+        {selectedCategory === "Local Guides" && (
+          <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-8">
+            <h2 className="text-xl font-bold text-purple-800 mb-2">Local Market Guides</h2>
+            <p className="text-purple-700">
+              In-depth analysis of dumpster rental markets in major cities. Compare providers, understand pricing trends, 
+              and find the best companies in your area. These guides complement our city-specific pricing pages.
+            </p>
+          </div>
+        )}
+
+        {selectedCategory === "Local Permits" && (
+          <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-8">
+            <h2 className="text-xl font-bold text-red-800 mb-2">Local Permit Requirements</h2>
+            <p className="text-red-700">
+              City-specific dumpster permit guides covering requirements, costs, application processes, and regulations. 
+              Essential reading before placing a dumpster on public property.
+            </p>
+          </div>
+        )}
+
+        {/* All Posts Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredPosts.map((post) => (
+            <article key={post.slug} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className={`text-xs px-3 py-1 rounded-full font-semibold ${
+                    post.category === 'Local Permits' ? 'bg-red-100 text-red-800' :
+                    post.category === 'Local Guides' ? 'bg-purple-100 text-purple-800' :
+                    post.category === 'Dumpster Sizes' ? 'bg-green-100 text-green-800' :
+                    post.category === 'Pricing' ? 'bg-yellow-100 text-yellow-800' :
+                    'bg-blue-100 text-blue-800'
+                  }`}>
+                    {post.category}
+                  </span>
+                  <span className="text-xs text-gray-500">{post.readTime}</span>
+                </div>
+                
+                <h2 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                  <Link href={`/blog/${post.slug}`} className="hover:text-blue-600">
+                    {post.title}
+                  </Link>
+                </h2>
+                
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-400">{post.publishDate}</span>
+                  <Link 
+                    href={`/blog/${post.slug}`}
+                    className="text-blue-600 hover:text-blue-800 text-sm font-semibold"
+                  >
+                    Read More →
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Empty State */}
+        {filteredPosts.length === 0 && (
+          <div className="text-center py-12">
+            <h3 className="text-xl font-semibold text-gray-600 mb-4">
+              No articles found in "{selectedCategory}"
+            </h3>
+            <button 
+              onClick={() => setSelectedCategory("All Posts")}
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+            >
+              View All Posts
+            </button>
+          </div>
+        )}
+
+        {/* Newsletter Signup */}
+<div className="bg-blue-600 rounded-lg p-8 text-center text-white mb-12">
+  <h2 className="text-2xl font-bold mb-4">
+    Stay Updated on Renovation Tips
+  </h2>
+  <p className="mb-6">
+    Get expert advice on dumpster sizing, cost-saving tips, and renovation guides delivered to your inbox.
+  </p>
+  <div className="max-w-md mx-auto flex gap-3">
+    <label htmlFor="blog-newsletter-email" className="sr-only">
+      Email Address
+    </label>
+    <input 
+      type="email"
+      id="blog-newsletter-email"
+      name="email"
+      autocomplete="email"
+      placeholder="Enter your email"
+      className="flex-1 px-4 py-2 rounded text-gray-900 placeholder-gray-500 bg-white border-0 focus:outline-none focus:ring-2 focus:ring-white"
+    />
+    <button className="bg-white text-blue-600 px-6 py-2 rounded font-semibold hover:bg-gray-100 transition-colors">
+      Subscribe
+    </button>
+  </div>
+</div>
+
+        {/* Popular Topics - UPDATED WITH NEW CATEGORIES */}
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Popular Topics</h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-3">House Areas</h3>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/blog/garage-cleanout-dumpster-size" className="text-blue-600 hover:underline">Garage Cleanouts</Link></li>
+                <li><Link href="/blog/attic-cleanout-dumpster-size" className="text-blue-600 hover:underline">Attic Cleanouts</Link></li>
+                <li><Link href="/blog/basement-cleanout-dumpster-size" className="text-blue-600 hover:underline">Basement Cleanouts</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-3">Regulations</h3>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/blog/do-i-need-dumpster-permit" className="text-blue-600 hover:underline">Permit Requirements</Link></li>
+                <li><Link href="/blog/prohibited-items-dumpster" className="text-blue-600 hover:underline">Prohibited Items</Link></li>
+                <li><Link href="/blog/hoa-dumpster-rules" className="text-blue-600 hover:underline">HOA Rules</Link></li>
+                <li><Link href="/blog/weight-limits-overage-fees" className="text-blue-600 hover:underline">Weight Limits</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-3">Renovations</h3>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/blog/bathroom-remodel-dumpster-size" className="text-blue-600 hover:underline">Bathroom Remodels</Link></li>
+                <li><Link href="/blog/kitchen-renovation-dumpster-size" className="text-blue-600 hover:underline">Kitchen Renovations</Link></li>
+                <li><Link href="/blog/bedroom-renovation-dumpster-size" className="text-blue-600 hover:underline">Bedroom Renovations</Link></li>
+                <li><Link href="/blog/whole-house-renovation-dumpster-size" className="text-blue-600 hover:underline">Whole House</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-3">Dumpster Sizes</h3>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/blog/10-yard-dumpster-guide" className="text-blue-600 hover:underline">10 Yard Guide</Link></li>
+                <li><Link href="/blog/20-yard-dumpster-guide" className="text-blue-600 hover:underline">20 Yard Guide</Link></li>
+                <li><Link href="/blog/30-yard-dumpster-guide" className="text-blue-600 hover:underline">30 Yard Guide</Link></li>
+                <li><Link href="/blog/40-yard-dumpster-guide" className="text-blue-600 hover:underline">40 Yard Guide</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-8 mt-12 text-center">
