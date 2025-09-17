@@ -1,13 +1,10 @@
 'use client';
 import React, { useState } from 'react';
-import { MapPin, FileText, DollarSign, ExternalLink, Calculator, ChevronRight } from 'lucide-react';
 import { getCityFromZip, getLocalContent } from '../utils/zipToCityMapping';
-import DumpsterProviderListings from './components/DumpsterProviderListings';
 import Link from 'next/link';
 import { trackCalculatorUsage } from '../utils/analytics';
 import dynamic from 'next/dynamic';
 
-// Remove the regular import and only use dynamic import
 const DumpsterCalculatorWithMaterials = dynamic(
   () => import('@/calculator-v2/components/calculator/CalculatorV2'),
   { 
