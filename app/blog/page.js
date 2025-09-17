@@ -1,7 +1,7 @@
 // app/blog/page.js - Production-Ready Modern Blog Page
 'use client';
 import Link from 'next/link';
-import Image from 'next/image';
+/**import Image from 'next/image';**/
 import { useState, useEffect } from 'react';
 import { ChevronRight, Calendar, Clock, TrendingUp, Home, Gavel, Calculator, Hammer, DollarSign, Trees, Truck, MapPin, Info, Search, ArrowRight } from 'lucide-react';
 
@@ -317,7 +317,7 @@ export default function BlogIndex() {
                   className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 block"
                 >
                   <div className="aspect-video overflow-hidden bg-gradient-to-br from-blue-400 to-indigo-600 relative">
-                    <Image 
+                    <img 
                       src={post.image}
                       alt={post.title}
                       width={800}
@@ -373,7 +373,7 @@ export default function BlogIndex() {
                 className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group block"
               >
                 <div className="aspect-video overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 relative">
-                  <Image 
+                  <img
                     src={post.image}
                     alt={post.title}
                     width={800}
