@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { MapPin, FileText, DollarSign, ExternalLink, Calculator, ChevronRight } from 'lucide-react';
 import { getCityFromZip, getLocalContent } from '../utils/zipToCityMapping';
 import DumpsterProviderListings from './components/DumpsterProviderListings';
-import CalculatorForm from './components/CalculatorForm';
-import ResultsDisplay from './components/ResultsDisplay';
 import Link from 'next/link';
 import { trackCalculatorUsage } from '../utils/analytics';
 
