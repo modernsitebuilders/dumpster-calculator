@@ -779,7 +779,7 @@ export default function WeightLimitsOverageFeesPage() {
             <h3 className="text-2xl font-bold mb-4">Calculate Weight-Appropriate Dumpster Size</h3>
             <p className="mb-6 text-gray-700">Our calculator factors in material weights to prevent overage fees</p>
             <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
-              Avoid Weight Fees →
+              Use Calculator →
             </Link>
           </div>
         </div>
