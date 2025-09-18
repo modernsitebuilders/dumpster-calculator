@@ -1,21 +1,16 @@
-// app/blog/page.js - Complete with all blog post images
-'use client';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import BlogContent from './BlogContent';
+
+export const metadata = {
+  title: 'Dumpster Calculator Blog - Expert Guides & Tips',
+  description: 'Expert guides on dumpster sizes, permits, renovation debris, and cost optimization. Find the right dumpster for your project.',
+  openGraph: {
+    title: 'Dumpster Calculator Blog',
+    description: 'Expert guides on dumpster rental sizing and planning',
+    type: 'website',
+  }
+};
 
 export default function BlogIndex() {
-  const [selectedCategory, setSelectedCategory] = useState("All Posts");
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      const category = params.get('category');
-      if (category) {
-        setSelectedCategory(category);
-      }
-    }
-  }, []);
-
   const blogPosts = [
     // FEATURED HIGH-PRIORITY POSTS FIRST
     {
@@ -26,7 +21,9 @@ export default function BlogIndex() {
       readTime: "12 min read",
       publishDate: "September 15, 2025",
       featured: true,
-      image: "/images/blog/building-permit.jpg"
+      image: "/images/blog/building-permit.jpg",
+      width: 800,
+      height: 450
     },
     {
       title: "Garage Cleanout Dumpster Size: Complete Guide & Cost Breakdown",
@@ -36,7 +33,9 @@ export default function BlogIndex() {
       readTime: "9 min read",
       publishDate: "September 15, 2025",
       featured: true,
-      image: "/images/blog/garage-cleanout.jpg"
+      image: "/images/blog/garage-cleanout.jpg",
+      width: 800,
+      height: 450
     },
     {
       title: "What Size Dumpster for Bathroom Remodel? Complete 2025 Guide",
@@ -46,7 +45,9 @@ export default function BlogIndex() {
       readTime: "8 min read",
       publishDate: "January 15, 2025",
       featured: true,
-      image: "/images/blog/bathroom-remodel.jpg"
+      image: "/images/blog/bathroom-remodel.jpg",
+      width: 800,
+      height: 450
     },
     {
       title: "Kitchen Renovation Dumpster Size Guide: What Size Do You Need?",
@@ -56,7 +57,9 @@ export default function BlogIndex() {
       readTime: "10 min read",
       publishDate: "January 12, 2025",
       featured: true,
-      image: "/images/blog/kitchen-renovation.jpg"
+      image: "/images/blog/kitchen-renovation.jpg",
+      width: 800,
+      height: 450
     },
     {
       title: "What Size Dumpster Do I Need? Complete Size Guide",
@@ -66,12 +69,16 @@ export default function BlogIndex() {
       readTime: "7 min read",
       publishDate: "January 3, 2025",
       featured: true,
-      image: "/images/blog/construction-debris.jpg"
+      image: "/images/blog/construction-debris.jpg",
+      width: 800,
+      height: 450
     },
     {
       slug: 'prohibited-items-dumpster',
       title: 'What Can\'t Go in a Dumpster? Complete Prohibited Items List',
       excerpt: 'Complete guide to items you cannot put in a dumpster rental. Learn about prohibited materials, disposal alternatives, and how to avoid extra fees.',
+      width: 800,
+      height: 450,
       publishDate: 'January 5, 2025',
       readTime: '6 min read',
       category: 'Regulations',
@@ -88,17 +95,21 @@ export default function BlogIndex() {
       readTime: "8 min read",
       publishDate: "January 16, 2025",
       featured: false,
-      image: "/images/blog/attic-cleanout.jpg"
+      image: "/images/blog/attic-cleanout.jpg",
+      width: 800,
+      height: 450
     },
     {
       title: "Basement Cleanout Dumpster Size Guide: Water Damage & Storage Removal",
       excerpt: "Basement cleanouts often involve water damage, mold remediation, and decades of stored belongings. Learn how to choose the right dumpster size for wet materials and heavy debris.",
       slug: "basement-cleanout-dumpster-size",
+      image: "/images/blog/basement-cleanout.jpg",
+      width: 800,
+      height: 450,
       category: "House Areas",
       readTime: "8 min read",
       publishDate: "January 16, 2025",
-      featured: false,
-      image: "/images/blog/basement-cleanout.jpg"
+      featured: false
     },
     {
       title: "Dumpster Weight Limits & Overage Fees: How to Avoid Extra Charges",
@@ -108,7 +119,9 @@ export default function BlogIndex() {
       readTime: "8 min read",
       publishDate: "January 18, 2025",
       featured: false,
-      image: "/images/blog/weight-limits.jpg"
+      image: "/images/blog/weight-limits.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "HOA Dumpster Rules & Restrictions: Complete Guide",
@@ -118,7 +131,9 @@ export default function BlogIndex() {
       readTime: "7 min read",
       publishDate: "September 16, 2025",
       featured: false,
-      image: "/images/blog/hoa-rules.jpg"
+      image: "/images/blog/hoa-rules.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Bedroom Renovation Dumpster Size Guide: Complete Remodel Planning",
@@ -128,7 +143,9 @@ export default function BlogIndex() {
       readTime: "7 min read",
       publishDate: "January 20, 2025",
       featured: false,
-      image: "/images/blog/bedroom-renovation.jpg"
+      image: "/images/blog/bedroom-renovation.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Whole House Renovation Dumpster Size Guide: Complete Planning Strategy",
@@ -138,7 +155,9 @@ export default function BlogIndex() {
       readTime: "12 min read",
       publishDate: "January 22, 2025",
       featured: false,
-      image: "/images/blog/whole-house-renovation.jpg"
+      image: "/images/blog/whole-house-renovation.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "10 Yard Dumpster Guide: Small Projects & Pricing",
@@ -148,7 +167,9 @@ export default function BlogIndex() {
       readTime: "6 min read",
       publishDate: "January 8, 2025",
       featured: false,
-      image: "/images/blog/construction-debris.jpg"
+      image: "/images/blog/construction-debris.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "20 Yard Dumpster Guide: The Most Popular Size",
@@ -158,7 +179,9 @@ export default function BlogIndex() {
       readTime: "7 min read",
       publishDate: "January 9, 2025",
       featured: false,
-      image: "/images/blog/construction-debris.jpg"
+      image: "/images/blog/construction-debris.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "30 Yard Dumpster Guide: Large Projects & Construction",
@@ -168,7 +191,9 @@ export default function BlogIndex() {
       readTime: "8 min read",
       publishDate: "January 10, 2025",
       featured: false,
-      image: "/images/blog/construction-debris.jpg"
+      image: "/images/blog/construction-debris.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "40 Yard Dumpster Guide: Commercial & Major Construction",
@@ -178,7 +203,9 @@ export default function BlogIndex() {
       readTime: "7 min read",
       publishDate: "January 11, 2025",
       featured: false,
-      image: "/images/blog/construction-debris.jpg"
+      image: "/images/blog/construction-debris.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Roof Replacement Dumpster Size Calculator & Guide",
@@ -188,7 +215,9 @@ export default function BlogIndex() {
       readTime: "7 min read", 
       publishDate: "January 10, 2025",
       featured: false,
-      image: "/images/blog/construction-debris.jpg"
+      image: "/images/blog/construction-debris.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Dumpster Rental Cost Guide: What You'll Really Pay in 2025",
@@ -198,7 +227,9 @@ export default function BlogIndex() {
       readTime: "9 min read",
       publishDate: "January 7, 2025",
       featured: false,
-      image: "/images/blog/construction-debris.jpg"
+      image: "/images/blog/construction-debris.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Deck Removal Dumpster Size: Complete Teardown Guide",
@@ -208,7 +239,9 @@ export default function BlogIndex() {
       readTime: "6 min read",
       publishDate: "January 25, 2025",
       featured: false,
-      image: "/images/blog/deck-removal.jpg"
+      image: "/images/blog/deck-removal.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Flooring Removal Dumpster Size: Complete Demo Guide",
@@ -218,7 +251,9 @@ export default function BlogIndex() {
       readTime: "7 min read",
       publishDate: "January 25, 2025",
       featured: false,
-      image: "/images/blog/flooring-removal.jpg"
+      image: "/images/blog/flooring-removal.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Flooring Replacement Dumpster Size: Complete Material Guide", 
@@ -228,7 +263,9 @@ export default function BlogIndex() {
       readTime: "7 min read",
       publishDate: "January 26, 2025",
       featured: false,
-      image: "/images/blog/flooring-removal.jpg"
+      image: "/images/blog/flooring-removal.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Living Room Renovation Dumpster Size: Complete Remodel Guide",
@@ -238,7 +275,9 @@ export default function BlogIndex() {
       readTime: "8 min read",
       publishDate: "January 24, 2025",
       featured: false,
-      image: "/images/blog/living-room-renovation.jpg"
+      image: "/images/blog/living-room-renovation.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Construction Debris Dumpster Size: Commercial & Residential Guide",
@@ -248,7 +287,9 @@ export default function BlogIndex() {
       readTime: "9 min read",
       publishDate: "January 27, 2025", 
       featured: false,
-      image: "/images/blog/construction-debris.jpg"
+      image: "/images/blog/construction-debris.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Landscaping Cleanup Dumpster Size: Seasonal & Project Guide",
@@ -258,7 +299,9 @@ export default function BlogIndex() {
       readTime: "6 min read",
       publishDate: "January 28, 2025",
       featured: false,
-      image: "/images/blog/landscaping-debris.jpg"
+      image: "/images/blog/landscaping-debris.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Landscaping Debris Dumpster Size: Yard Waste & Tree Removal",
@@ -268,19 +311,22 @@ export default function BlogIndex() {
       readTime: "6 min read",
       publishDate: "January 28, 2025",
       featured: false,
-      image: "/images/blog/landscaping-debris.jpg"
+      image: "/images/blog/landscaping-debris.jpg",
+      width: 800,
+      height: 450,
     },
     {
       title: "Moving Cleanout Dumpster Size: Complete Relocation Guide",
       excerpt: "Moving generates significant unwanted items. Learn how to size dumpsters for house cleanouts, estate sales, and relocation debris disposal.",
       slug: "moving-cleanout-dumpster-size",
       category: "Cleanouts",
-      readTime: "7 min read", 
-      publishDate: "January 29, 2025",
+      readTime: "6 min read",
+      publishDate: "January 28, 2025",
       featured: false,
-      image: "/images/blog/construction-debris.jpg"
+      image: "/images/blog/landscaping-debris.jpg",
+      width: 800,
+      height: 450
     },
-
     // CITY-SPECIFIC PERMIT GUIDES
     {
       title: "Chicago Dumpster Permit Guide: Requirements & Applications",
@@ -290,7 +336,9 @@ export default function BlogIndex() {
       readTime: "8 min read",
       publishDate: "February 1, 2025",
       featured: false,
-      image: "/images/blog/building-permit.jpg"
+      image: "/images/blog/building-permit.jpg",
+      width: 800,
+      height: 450
     },
     {
       title: "Houston Dumpster Permit Guide: Harris County Requirements",
@@ -300,7 +348,9 @@ export default function BlogIndex() {
       readTime: "7 min read",
       publishDate: "February 2, 2025",
       featured: false,
-      image: "/images/blog/building-permit.jpg"
+      image: "/images/blog/building-permit.jpg",
+      width: 800,
+      height: 450
     },
     {
       title: "Los Angeles Dumpster Permit Guide: City Requirements",
@@ -310,7 +360,9 @@ export default function BlogIndex() {
       readTime: "8 min read", 
       publishDate: "February 3, 2025",
       featured: false,
-      image: "/images/blog/building-permit.jpg"
+      image: "/images/blog/building-permit.jpg",
+      width: 800,
+      height: 450
     },
     {
       title: "NYC Dumpster Permit Guide: Complete Requirements",
@@ -320,7 +372,9 @@ export default function BlogIndex() {
       readTime: "9 min read",
       publishDate: "February 4, 2025", 
       featured: false,
-      image: "/images/blog/building-permit.jpg"
+      image: "/images/blog/building-permit.jpg",
+      width: 800,
+      height: 450
     },
     {
       title: "Phoenix Dumpster Permit Guide: Maricopa County Rules",
@@ -330,9 +384,10 @@ export default function BlogIndex() {
       readTime: "7 min read",
       publishDate: "February 5, 2025",
       featured: false,
-      image: "/images/blog/building-permit.jpg"
+      image: "/images/blog/building-permit.jpg",
+      width: 800,
+      height: 450
     },
-
     // ADDITIONAL GUIDES
     {
       title: "Dumpster Permit Requirements: Complete State-by-State Guide",
@@ -342,7 +397,9 @@ export default function BlogIndex() {
       readTime: "10 min read",
       publishDate: "February 6, 2025",
       featured: false,
-      image: "/images/blog/building-permit.jpg"
+      image: "/images/blog/building-permit.jpg",
+      width: 800,
+      height: 450
     },
     {
       title: "Dumpster Placement Rules: Complete Property Guide",
@@ -352,84 +409,11 @@ export default function BlogIndex() {
       readTime: "6 min read",
       publishDate: "February 7, 2025",
       featured: false,
-      image: "/images/blog/hoa-rules.jpg"
+      image: "/images/blog/hoa-rules.jpg",
+      width: 800,
+      height: 450,
     }
   ];
 
-  const categories = ["All Posts", "Regulations", "House Areas", "Dumpster Sizes", "Kitchen Renovation", "Bathroom Renovation", "Bedroom Renovation", "Living Room Renovation", "Major Renovation", "Roofing", "Pricing", "Outdoor Projects", "Flooring", "Construction", "Landscaping", "Cleanouts", "Local Permits", "General Tips"];
-
-  const filteredPosts = selectedCategory === "All Posts" 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
-
-  // Rest of your existing component code stays the same...
-  return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Dumpster Calculator Blog</h1>
-
-        {/* Category Filter */}
-        <div className="mb-8">
-          <nav className="flex flex-wrap gap-3" aria-label="Blog categories">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition ${
-                  selectedCategory === cat
-                    ? 'bg-yellow-500 text-black shadow-md'
-                    : 'bg-white text-gray-700 hover:bg-yellow-100'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </nav>
-        </div>
-
-        {/* Posts Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredPosts.length === 0 ? (
-            <p className="text-gray-500 col-span-full text-center">No posts found in this category.</p>
-          ) : (
-            filteredPosts.map((post) => (
-              <article
-                key={post.slug}
-                className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
-              >
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-40 object-cover"
-                  loading="lazy"
-                />
-                <div className="p-6 flex flex-col flex-grow">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-2">{post.title}</h2>
-                  <p className="text-gray-600 flex-grow">{post.excerpt}</p>
-                  <div className="mt-4 flex items-center justify-between text-sm text-gray-500">
-                    <span>{post.readTime}</span>
-                    <time dateTime={new Date(post.publishDate).toISOString()}>
-                      {new Date(post.publishDate).toLocaleDateString(undefined, {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                      })}
-                    </time>
-                  </div>
-                  <a
-                    href={`/blog/${post.slug}`}
-                    className="mt-6 inline-block text-yellow-600 hover:text-yellow-700 font-semibold"
-                    aria-label={`Read more about ${post.title}`}
-                  >
-                    Read More →
-                  </a>
-                </div>
-              </article>
-            ))
-          )}
-        </div>
-      </div>
-    </div>
-  );
+  return <BlogContent blogPosts={blogPosts} />;
 }
