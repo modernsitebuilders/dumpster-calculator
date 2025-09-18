@@ -2,9 +2,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental Austin TX | Same Day Service | Best ATX Prices',
-  description: 'Dumpster rental in Austin starting at $300. Serving South Austin, North Austin, Cedar Park, and all of Central Texas. Same-day delivery available.',
-  keywords: 'dumpster rental austin, dumpster rental ATX, roll off dumpster austin, cedar park dumpster rental'
+  title: 'Dumpster Rental Austin TX | Local Companies & Size Guide',
+  description: 'Find dumpster rental companies in Austin. Compare local providers serving Central Texas and the Hill Country.',
+  keywords: 'dumpster rental austin, austin dumpster companies, roll off dumpster austin, texas dumpster rental'
 };
 
 export default function AustinPage() {
@@ -14,93 +14,167 @@ export default function AustinPage() {
         {/* Local Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Dumpster Rental in Austin, TX
+            Dumpster Rental in Austin, Texas
           </h1>
+          <p className="text-xl text-gray-600">
+            Find local dumpster rental companies serving Austin and Central Texas
+          </p>
         </div>
 
         {/* Quick Calculator CTA */}
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">Get Austin Dumpster Quote</h2>
-          <p className="mb-6">Fast service from South Austin to Cedar Park</p>
+          <h2 className="text-2xl font-bold mb-4">Calculate Your Dumpster Size</h2>
+          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your Austin project</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
-            Calculate Size & Get Quotes
+            Use Size Calculator
           </Link>
         </div>
 
-        {/* Local Pricing */}
+        {/* Local Austin Companies */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Austin Dumpster Rental Pricing</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">10 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$300 - $400</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Small projects</li>
-                <li>• Garage cleanouts</li>
-                <li>• Minor renovations</li>
-              </ul>
+          <h2 className="text-2xl font-bold mb-6">Austin Dumpster Rental Companies</h2>
+          <div className="space-y-6">
+            
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Rubbish Inc Dumpster Rental</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (512) 298-5445</p>
+                  <p><strong>Website:</strong> rubbish-inc.com</p>
+                  <p><strong>Features:</strong> Both rentals and junk removal services</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Austin, Cedar Park, Round Rock, Central Texas</p>
+                  <p><strong>Specialties:</strong> Locally-owned, contractor program, emergency cleanup</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">20 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$400 - $500</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Kitchen remodels</li>
-                <li>• Bathroom renovations</li>
-                <li>• Flooring replacement</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Grime Time Dumpster Rentals</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (512) 790-7078</p>
+                  <p><strong>Website:</strong> grimetime.com</p>
+                  <p><strong>Features:</strong> Same-day service, no hidden fees</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Austin and Central Texas</p>
+                  <p><strong>Specialties:</strong> Founded 2021, transparent pricing, porta potty rentals</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">30 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$500 - $625</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Whole house projects</li>
-                <li>• New construction</li>
-                <li>• Large cleanouts</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Austex Dumpsters</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (512) 292-3867</p>
+                  <p><strong>Website:</strong> austexdumpsters.com</p>
+                  <p><strong>Features:</strong> 2-hour turnaround time</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Austin metro area</p>
+                  <p><strong>Specialties:</strong> Same-day delivery, competitive pricing, sizes 10-30 yards</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">40 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$600 - $750</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Commercial projects</li>
-                <li>• Large construction</li>
-                <li>• Multi-unit buildings</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Dumposaurus Dumpsters</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (512) 774-5666</p>
+                  <p><strong>Website:</strong> dumposaurus.com</p>
+                  <p><strong>Owner:</strong> Shawn Mansur & family</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Austin, Bastrop, Bee Cave, Buda, Kyle, Lakeway</p>
+                  <p><strong>Specialties:</strong> Family-owned, local Austin company, education-focused</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Hook-N-Haul Dumpsters</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> hooknhauldumpsters.com</p>
+                  <p><strong>Container Sizes:</strong> 10, 12, 20, 30, 40 cubic yards</p>
+                  <p><strong>Features:</strong> Hook lift system, flat rate pricing</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Austin and surrounding areas</p>
+                  <p><strong>Specialties:</strong> Driveway-friendly, no hidden fees, CDL licensed</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">A-Tex Dumpsters</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> atexdumpsters.com</p>
+                  <p><strong>Features:</strong> Same-day delivery available</p>
+                  <p><strong>Container Sizes:</strong> 10, 15, 20, 30-yard options</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Austin and surrounding areas</p>
+                  <p><strong>Specialties:</strong> Family-owned, transparent pricing, flexible terms</p>
+                </div>
+              </div>
             </div>
           </div>
-          <p className="text-sm text-gray-600 mt-4">
-            *Prices include 7-day rental period. Austin has competitive rates due to multiple local providers.
-          </p>
+
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">
+              <strong>Note:</strong> These companies are listed for informational purposes. Contact companies directly 
+              for current pricing, availability, and service details. Always verify licensing and insurance.
+            </p>
+          </div>
         </section>
 
-        {/* Service Areas */}
+        {/* Austin Area Coverage */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Austin Areas We Serve</h2>
+          <h2 className="text-2xl font-bold mb-6">Austin Metro Area Coverage</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
               <h3 className="font-semibold mb-2">Central Austin</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>Downtown</li>
                 <li>East Austin</li>
-                <li>South Austin</li>
+                <li>South Congress</li>
                 <li>Hyde Park</li>
-                <li>Zilker</li>
-                <li>Barton Hills</li>
                 <li>Clarksville</li>
+                <li>Tarrytown</li>
+                <li>Zilker</li>
                 <li>Bouldin Creek</li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-2">North Austin</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Cedar Park</li>
                 <li>Round Rock</li>
-                <li>Pflugerville</li>
+                <li>Cedar Park</li>
                 <li>Leander</li>
+                <li>Pflugerville</li>
                 <li>Georgetown</li>
                 <li>Hutto</li>
                 <li>Liberty Hill</li>
-                <li>Brushy Creek</li>
+                <li>Wells Branch</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">South Austin</h3>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>Buda</li>
+                <li>Kyle</li>
+                <li>San Marcos</li>
+                <li>Dripping Springs</li>
+                <li>Manchaca</li>
+                <li>Slaughter Lane</li>
+                <li>Circle C</li>
+                <li>Sunset Valley</li>
               </ul>
             </div>
             <div>
@@ -110,114 +184,73 @@ export default function AustinPage() {
                 <li>Bee Cave</li>
                 <li>West Lake Hills</li>
                 <li>Rollingwood</li>
-                <li>Sunset Valley</li>
-                <li>Dripping Springs</li>
                 <li>Spicewood</li>
-                <li>Point Venture</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">South Austin</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>Buda</li>
-                <li>Kyle</li>
-                <li>Dripping Springs</li>
-                <li>Manchaca</li>
-                <li>Oak Hill</li>
-                <li>Circle C</li>
-                <li>Westlake</li>
-                <li>Brodie Lane</li>
+                <li>Lago Vista</li>
+                <li>Marble Falls</li>
+                <li>Lost Creek</li>
               </ul>
             </div>
           </div>
           
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600">
-              <strong>Also serving nearby areas:</strong> San Marcos, New Braunfels, Bastrop, 
-              Elgin, Manor, Del Valle, and all of Travis, Williamson, and Hays Counties
+              <strong>Also serving:</strong> Bastrop, Elgin, Lockhart, Taylor, 
+              and all of Central Texas and the Hill Country
             </p>
           </div>
         </section>
 
-        {/* Local Tips */}
+        {/* Austin Tips */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Austin-Specific Dumpster Tips</h2>
+          <h2 className="text-2xl font-bold mb-6">Austin Dumpster Considerations</h2>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Music Festival Seasons</h3>
+              <h3 className="font-semibold mb-1">Rapid Growth & High Demand</h3>
               <p className="text-gray-600">
-                SXSW (March) and ACL (October) create high demand. Book dumpsters well in advance during festival seasons for guaranteed availability.
+                Austin's booming population and construction market creates high demand. Book early, especially during spring/summer construction season.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Keep Austin Green</h3>
+              <h3 className="font-semibold mb-1">Heat Considerations</h3>
               <p className="text-gray-600">
-                Austin prioritizes environmental responsibility. We sort materials for recycling and work with local facilities to minimize landfill waste.
+                Texas heat can be extreme May-September. Schedule deliveries early morning and stay hydrated when loading dumpsters.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Texas Heat Considerations</h3>
+              <h3 className="font-semibold mb-1">Keep Austin Weird & Green</h3>
               <p className="text-gray-600">
-                Summer temperatures exceed 100°F. Schedule deliveries for early morning (6-8 AM) and consider covering dumpsters to prevent heat damage to debris.
+                Austin prioritizes environmental responsibility. Many local companies emphasize recycling and eco-friendly disposal practices.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Rapid Growth Areas</h3>
+              <h3 className="font-semibold mb-1">Tech Hub Renovations</h3>
               <p className="text-gray-600">
-                Cedar Park, Pflugerville, and Leander are booming. Expect potential delivery delays during peak construction season (spring/summer).
+                With many tech workers moving to Austin, home office renovations are common. Companies are experienced with residential remodeling projects.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Lake Travis Projects</h3>
+              <h3 className="font-semibold mb-1">Festival & Event Season</h3>
               <p className="text-gray-600">
-                Waterfront properties may have special access requirements. We coordinate with lakeside communities for dock and narrow road deliveries.
+                During SXSW, ACL, and other major events, availability may be limited and streets congested. Plan accordingly.
+              </p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Hill Country Accessibility</h3>
+              <p className="text-gray-600">
+                Properties in the Hill Country may have steep driveways or limited access. Discuss placement options with rental companies.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Austin FAQ */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Austin Dumpster Rental FAQs</h2>
-          <div className="space-y-4">
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Do I need a permit for a dumpster in Austin?</summary>
-              <p className="mt-2 text-gray-600">
-                Private property placement typically doesn't require permits. Public street placement requires a permit from Austin Transportation Department ($50-150). We can help with the application process.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">What size dumpster for Austin bungalow renovation?</summary>
-              <p className="mt-2 text-gray-600">
-                Most Austin bungalows (900-1,200 sq ft) need a 20-yard dumpster for full renovations. Kitchen/bathroom only projects typically need 10-15 yard containers.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Can you deliver during SXSW or ACL?</summary>
-              <p className="mt-2 text-gray-600">
-                Yes, but book 2-3 weeks in advance. Festival traffic creates delays, so we schedule deliveries for early morning hours and coordinate with event logistics.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Do you service the Domain and tech corridor?</summary>
-              <p className="mt-2 text-gray-600">
-                Absolutely! We regularly service commercial projects in the Domain, tech campuses, and North Austin business districts. We understand corporate scheduling requirements.
-              </p>
-            </details>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <div className="bg-green-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Ready to Rent a Dumpster in Austin?</h2>
+        {/* Back to Calculator */}
+        <div className="bg-gray-50 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Need Help Choosing a Size?</h2>
           <p className="mb-6 text-gray-700">
-            Get instant quotes from licensed Austin providers
+            Use our free calculator to determine the right dumpster size for your Austin project
           </p>
-          <Link href="/" className="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-700 transition">
-            Get Austin Quotes Now
+          <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
+            Calculate Dumpster Size
           </Link>
         </div>
       </div>
