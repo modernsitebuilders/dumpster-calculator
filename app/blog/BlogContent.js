@@ -12,16 +12,16 @@ const BlogCard = ({ post, priority = false }) => {
     <article className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
       <div className="relative w-full h-40">
         <Image
-          src={post.image}
-          alt={post.title}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover"
-          loading={priority ? 'eager' : 'lazy'}
-          priority={priority}
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
-        />
+  src={post.image}
+  alt={post.title}
+  fill
+  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  className="object-cover"
+  loading={priority ? 'eager' : 'lazy'}
+  priority={index < 3} // Only first 3 images
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJR..." // Add blur placeholder
+/>
       </div>
       <div className="p-6 flex flex-col flex-grow">
         <h2 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-2">
