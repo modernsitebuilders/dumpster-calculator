@@ -20,6 +20,10 @@ export default function sitemap() {
     '/blog/kitchen-renovation-dumpster-size', 
     '/blog/roof-replacement-dumpster-size',
     '/blog/do-i-need-dumpster-permit',
+    '/blog/concrete-disposal-guide',
+'/blog/roofing-shingle-weight-calculator',
+'/blog/how-to-avoid-dumpster-overage-fees',
+'/blog/dumpster-weight-vs-volume',
 
     // NEW DUMPSTER SIZE GUIDES
     '/blog/10-yard-dumpster-guide',
