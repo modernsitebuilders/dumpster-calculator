@@ -117,6 +117,8 @@ export default function BlogContent({ blogPosts }) {
               <button
                 key={cat}
                 type="button"
+                name="category-filter"
+                id={`category-${cat.toLowerCase().replace(/\s+/g, '-')}`}
                 onClick={() => handleCategoryChange(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all transform hover:scale-105 ${
                   selectedCategory === cat
@@ -172,23 +174,31 @@ export default function BlogContent({ blogPosts }) {
           <nav className="mt-12 flex justify-center" aria-label="Pagination">
             <div className="flex space-x-2">
               <button 
+                name="pagination-prev"
+                type="button"
                 className="px-4 py-2 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
                 aria-label="Previous page"
               >
                 Previous
               </button>
               <button 
+                name="pagination-page"
+                type="button"
                 className="px-4 py-2 bg-yellow-500 text-white rounded-lg shadow"
                 aria-current="page"
               >
                 1
               </button>
               <button 
+                name="pagination-page"
+                type="button"
                 className="px-4 py-2 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
               >
                 2
               </button>
               <button 
+                name="pagination-next"
+                type="button"
                 className="px-4 py-2 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
                 aria-label="Next page"
               >
