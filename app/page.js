@@ -285,8 +285,6 @@ export default function Home() {
                 Pricing, permits, and providers in your area
               </p>
               
-              // Replace your current ZIP code form section with this improved version:
-
 {/* Local Information Card */}
 <div className="bg-white rounded-lg p-6 text-center shadow-md">
   <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
