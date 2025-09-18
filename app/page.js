@@ -347,8 +347,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-
-          {/* Local Content Results */}
 {showLocalContent && localContent && (
   <div className="mb-12">
     <div className="text-center mb-8">
