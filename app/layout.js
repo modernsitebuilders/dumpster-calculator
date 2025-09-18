@@ -4,6 +4,7 @@ import './globals.css';
 import Script from 'next/script';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import GoogleAnalytics from './components/GoogleAnalytics'; // ADD THIS LINE
 
 // Optimize font loading with subset and display swap
 const inter = Inter({ 
@@ -124,6 +125,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.className} antialiased flex flex-col min-h-screen`}>
+        {/* Google Analytics - ADD THIS LINE */}
+        <GoogleAnalytics />
+        
         {/* Skip to content link for accessibility */}
         <a 
           href="#main-content" 
@@ -187,23 +191,6 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-        
-        {/* Google Analytics - Load after page is interactive */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'GA_MEASUREMENT_ID', {
-              page_path: window.location.pathname,
-              send_page_view: true,
-            });
-          `}
-        </Script>
       </body>
     </html>
   );
