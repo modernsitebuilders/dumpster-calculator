@@ -1,6 +1,6 @@
 // app/sitemap.js - COMPLETE SITEMAP WITH ALL ROUTES
 export default function sitemap() {
-  const baseUrl = 'https://dumpster-size-calculator.com';
+  const baseUrl = 'https://www.dumpster-size-calculator.com';
   
   const routes = [
     // MAIN PAGES
