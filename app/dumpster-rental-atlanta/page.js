@@ -2,9 +2,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental Atlanta GA | Same Day Service | Best ATL Prices',
-  description: 'Dumpster rental in Atlanta starting at $325. Serving Buckhead, Midtown, Decatur, and all of Metro Atlanta. Same-day delivery available.',
-  keywords: 'dumpster rental atlanta, dumpster rental ATL, roll off dumpster atlanta, dumpster rental buckhead, dumpster rental midtown atlanta'
+  title: 'Dumpster Rental Atlanta GA | Local Companies & Size Guide',
+  description: 'Find dumpster rental companies in Atlanta. Compare local providers serving Metro Atlanta and North Georgia.',
+  keywords: 'dumpster rental atlanta, atlanta dumpster companies, roll off dumpster atlanta, georgia dumpster rental'
 };
 
 export default function AtlantaPage() {
@@ -14,237 +14,243 @@ export default function AtlantaPage() {
         {/* Local Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Dumpster Rental in Atlanta, GA
+            Dumpster Rental in Atlanta, Georgia
           </h1>
+          <p className="text-xl text-gray-600">
+            Find local dumpster rental companies serving Metro Atlanta and surrounding areas
+          </p>
         </div>
 
         {/* Quick Calculator CTA */}
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">Get Instant Atlanta Dumpster Quote</h2>
-          <p className="mb-6">Calculate the perfect size for your Atlanta project</p>
+          <h2 className="text-2xl font-bold mb-4">Calculate Your Dumpster Size</h2>
+          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your Atlanta project</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
-            Calculate Size & Get Quotes
+            Use Size Calculator
           </Link>
         </div>
 
-        {/* Local Pricing */}
+        {/* Local Atlanta Companies */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Atlanta Dumpster Rental Pricing</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">10 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$325 - $425</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Small bathroom remodels</li>
-                <li>• Garage cleanouts</li>
-                <li>• Minor deck removal</li>
-              </ul>
+          <h2 className="text-2xl font-bold mb-6">Atlanta Dumpster Rental Companies</h2>
+          <div className="space-y-6">
+            
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Arrow Waste</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> arrowwaste.com</p>
+                  <p><strong>Experience:</strong> Serving Atlanta since 1994</p>
+                  <p><strong>Features:</strong> Same-day service, large fleet</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Cobb, Henry, Rockdale, Newton counties</p>
+                  <p><strong>Specialties:</strong> Metro Atlanta's largest, transparent pricing</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">20 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$425 - $550</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Kitchen renovations</li>
-                <li>• Flooring replacement</li>
-                <li>• Large bathroom remodels</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Bin There Dump That Atlanta</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (404) 692-2838</p>
+                  <p><strong>Website:</strong> atlantadumpsterrentals.net</p>
+                  <p><strong>Features:</strong> 100% driveway protection, double doors</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Buckhead, Dunwoody, Roswell, Marietta</p>
+                  <p><strong>Specialties:</strong> Residential friendly, fits in tight spaces</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">30 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$525 - $675</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Whole house renovations</li>
-                <li>• New construction</li>
-                <li>• Large cleanouts</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">ADM Waste</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> atlantadumpsters.com</p>
+                  <p><strong>Features:</strong> Family-owned, growing fleet</p>
+                  <p><strong>Services:</strong> Roll-off and portable toilets</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Atlanta and surrounding areas</p>
+                  <p><strong>Specialties:</strong> Licensed and insured, commercial focus</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">40 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$625 - $775</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Commercial projects</li>
-                <li>• Film/TV productions</li>
-                <li>• Major demolition</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Hippo Atlanta Dumpster Rental</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (678) 808-9600</p>
+                  <p><strong>Website:</strong> atlanta.hippodumpsters.com</p>
+                  <p><strong>Container Sizes:</strong> 10, 15, 20-yard options</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> 20+ Atlanta metro cities</p>
+                  <p><strong>Specialties:</strong> Family-owned, same-day service, competitive pricing</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Dump Daddy</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> dumpdaddy.com</p>
+                  <p><strong>Location:</strong> Office in Buford, GA</p>
+                  <p><strong>Container Sizes:</strong> 10, 15, 20-yard options</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Greater Atlanta area</p>
+                  <p><strong>Specialties:</strong> Driveway protection system, same-day service</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">WG Waste</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (404) 709-8898</p>
+                  <p><strong>Website:</strong> wgwaste.com</p>
+                  <p><strong>Features:</strong> Five-star rating, front load services</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Atlanta metro area</p>
+                  <p><strong>Specialties:</strong> Locally owned, transparent pricing, eco-friendly</p>
+                </div>
+              </div>
             </div>
           </div>
-          <p className="text-sm text-gray-600 mt-4">
-            *Prices include 7-day rental period. Extended rentals available. Permit fees additional where required.
-          </p>
+
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">
+              <strong>Note:</strong> These companies are listed for informational purposes. Contact companies directly 
+              for current pricing, availability, and service details. Always verify licensing and insurance.
+            </p>
+          </div>
         </section>
 
-        {/* Service Areas */}
+        {/* Atlanta Area Coverage */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Atlanta Metro Areas We Serve</h2>
+          <h2 className="text-2xl font-bold mb-6">Metro Atlanta Area Coverage</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <h3 className="font-semibold mb-2">City of Atlanta</h3>
+              <h3 className="font-semibold mb-2">Central Atlanta</h3>
               <ul className="text-sm text-gray-600 space-y-1">
+                <li>Downtown</li>
                 <li>Midtown</li>
                 <li>Buckhead</li>
-                <li>Downtown</li>
                 <li>Virginia-Highland</li>
+                <li>Little Five Points</li>
                 <li>Grant Park</li>
-                <li>Inman Park</li>
                 <li>Old Fourth Ward</li>
-                <li>Poncey-Highland</li>
+                <li>West End</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">North Metro</h3>
+              <h3 className="font-semibold mb-2">North Atlanta</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Alpharetta</li>
-                <li>Roswell</li>
                 <li>Sandy Springs</li>
+                <li>Roswell</li>
+                <li>Alpharetta</li>
                 <li>Johns Creek</li>
                 <li>Dunwoody</li>
                 <li>Brookhaven</li>
                 <li>Chamblee</li>
-                <li>Doraville</li>
+                <li>Peachtree Corners</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">East Metro</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>Decatur</li>
-                <li>Avondale Estates</li>
-                <li>Stone Mountain</li>
-                <li>Tucker</li>
-                <li>Clarkston</li>
-                <li>Scottdale</li>
-                <li>Pine Lake</li>
-                <li>Lithonia</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">South/West Metro</h3>
+              <h3 className="font-semibold mb-2">West Atlanta</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>Marietta</li>
                 <li>Smyrna</li>
-                <li>Vinings</li>
+                <li>Kennesaw</li>
+                <li>Acworth</li>
+                <li>Powder Springs</li>
+                <li>Austell</li>
+                <li>Douglasville</li>
+                <li>Mableton</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">East/South Atlanta</h3>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>Decatur</li>
+                <li>Stone Mountain</li>
+                <li>Tucker</li>
+                <li>Lawrenceville</li>
                 <li>East Point</li>
                 <li>College Park</li>
-                <li>Hapeville</li>
-                <li>Forest Park</li>
-                <li>Morrow</li>
+                <li>Union City</li>
+                <li>Fairburn</li>
               </ul>
             </div>
           </div>
           
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600">
-              <strong>Also serving nearby areas:</strong> Kennesaw, Acworth, Woodstock, Canton, 
-              Lawrenceville, Duluth, Norcross, Peachtree City, Newnan, and all of Metro Atlanta
+              <strong>Also serving:</strong> Conyers, McDonough, Stockbridge, Covington, 
+              Canton, Woodstock, and all surrounding counties
             </p>
           </div>
         </section>
 
-        {/* Local Regulations */}
+        {/* Atlanta Tips */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Atlanta Dumpster Permit Information</h2>
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-            <h3 className="font-bold mb-3">Do you need a permit in Atlanta?</h3>
-            <ul className="space-y-2">
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">✓</span>
-                <span><strong>Private property:</strong> No permit needed for driveways or private lots</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-red-600 mr-2">✗</span>
-                <span><strong>Public street/right-of-way:</strong> Permit required from Atlanta Public Works ($50-100)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-yellow-600 mr-2">!</span>
-                <span><strong>Film productions:</strong> Special permits may be needed through Atlanta Film Office</span>
-              </li>
-            </ul>
-            <p className="mt-4 text-sm">
-              <strong>Permit Office:</strong> Atlanta Public Works Department<br />
-              55 Trinity Ave SW, Suite 3900<br />
-              Phone: (404) 330-6240
-            </p>
-          </div>
-        </section>
-
-        {/* Local Tips */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Atlanta-Specific Dumpster Tips</h2>
+          <h2 className="text-2xl font-bold mb-6">Atlanta Dumpster Considerations</h2>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Film Industry Considerations</h3>
+              <h3 className="font-semibold mb-1">Rapid Metro Growth</h3>
               <p className="text-gray-600">
-                Atlanta is a major film hub. We coordinate with production schedules and understand studio requirements for waste management.
+                Atlanta's explosive growth creates constant demand for dumpsters. Book early, especially in booming areas like Alpharetta and Sandy Springs.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Historic District Considerations</h3>
+              <h3 className="font-semibold mb-1">Traffic Considerations</h3>
               <p className="text-gray-600">
-                Grant Park, Inman Park, and Virginia-Highland may have additional restrictions. Check with local historic preservation office.
+                Atlanta traffic is notorious. Schedule deliveries outside rush hours (7-9 AM, 4-7 PM) to avoid delays and additional charges.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Traffic and Delivery Times</h3>
+              <h3 className="font-semibold mb-1">Film Industry Impact</h3>
               <p className="text-gray-600">
-                Best delivery times are 7-9 AM or after 7 PM to avoid Atlanta traffic. I-285 and downtown congestion can delay deliveries.
+                Georgia's film industry creates periodic high demand. Areas near studios and filming locations may have limited availability during productions.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">HOA and Condo Requirements</h3>
+              <h3 className="font-semibold mb-1">Historic Neighborhoods</h3>
               <p className="text-gray-600">
-                Many Buckhead and Midtown buildings require advance notice and COI. We handle all documentation for high-rise projects.
+                Areas like Grant Park, Inman Park, and Virginia-Highland have narrow streets and mature trees. Companies offer smaller trucks for these areas.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Recycling and Disposal</h3>
+              <h3 className="font-semibold mb-1">Weather Patterns</h3>
               <p className="text-gray-600">
-                Materials go to Republic Services or Advanced Disposal facilities. Atlanta encourages recycling - we sort materials when possible.
+                Summer storms can be intense. Cover loads during rainy season to prevent water weight charges. Spring is busiest for renovations.
+              </p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Sprawling Metro Area</h3>
+              <p className="text-gray-600">
+                Metro Atlanta covers multiple counties. Verify service areas for outlying locations as some companies have distance limitations.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Atlanta FAQ */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Atlanta Dumpster Rental FAQs</h2>
-          <div className="space-y-4">
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">How quickly can I get a dumpster in Atlanta?</summary>
-              <p className="mt-2 text-gray-600">
-                Same-day delivery available for orders placed before 11 AM. Most Atlanta areas can get delivery within 2-4 hours during business hours.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">What size dumpster for Atlanta bungalow renovation?</summary>
-              <p className="mt-2 text-gray-600">
-                Most Atlanta bungalows (1,200-1,800 sq ft) need a 20 or 30-yard dumpster for full renovations. Kitchen/bath only typically needs 10-20 yard.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Can you deliver to high-rise buildings in Midtown?</summary>
-              <p className="mt-2 text-gray-600">
-                Yes, we regularly service high-rise construction and renovations. Building management approval and COI required. Loading dock placement preferred.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Do you work with Atlanta film productions?</summary>
-              <p className="mt-2 text-gray-600">
-                Absolutely! We're experienced with film and TV production waste management. We can coordinate with location managers and handle special scheduling requirements.
-              </p>
-            </details>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <div className="bg-green-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Ready to Rent a Dumpster in Atlanta?</h2>
+        {/* Back to Calculator */}
+        <div className="bg-gray-50 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Need Help Choosing a Size?</h2>
           <p className="mb-6 text-gray-700">
-            Get instant quotes from licensed Atlanta providers
+            Use our free calculator to determine the right dumpster size for your Atlanta project
           </p>
-          <Link href="/" className="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-700 transition">
-            Get Atlanta Quotes Now
+          <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
+            Calculate Dumpster Size
           </Link>
         </div>
       </div>
