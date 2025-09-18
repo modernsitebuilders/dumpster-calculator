@@ -2,8 +2,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental NYC | Manhattan, Brooklyn, Queens | Same Day Service',
-  description: 'Dumpster rental in New York City starting at $399. Same-day delivery in Manhattan, Brooklyn, Queens, Bronx, and Staten Island. Licensed and insured.',
+  title: 'Dumpster Rental NYC | Manhattan, Brooklyn, Queens | Local Companies',
+  description: 'Find dumpster rental companies in New York City. Compare local providers serving Manhattan, Brooklyn, Queens, Bronx, and Staten Island.',
   keywords: 'dumpster rental nyc, dumpster rental new york, manhattan dumpster rental, brooklyn dumpster rental, roll off dumpster nyc'
 };
 
@@ -16,69 +16,111 @@ export default function NewYorkPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in New York City
           </h1>
+          <p className="text-xl text-gray-600">
+            Find local dumpster rental companies serving all five boroughs
+          </p>
         </div>
 
         {/* Quick Calculator CTA */}
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">Get Instant NYC Dumpster Quote</h2>
-          <p className="mb-6">Calculate the perfect size for your NYC project and get local quotes</p>
+          <h2 className="text-2xl font-bold mb-4">Calculate Your Dumpster Size</h2>
+          <p className="mb-6">Use our free calculator to determine what size dumpster you need</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
-            Calculate Size & Get Quotes
+            Use Size Calculator
           </Link>
         </div>
 
-        {/* Local Pricing */}
+        {/* Local NYC Companies */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">NYC Dumpster Rental Prices</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">10 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$399 - $499</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Perfect for NYC apartment cleanouts</li>
-                <li>• Small renovation in brownstones</li>
-                <li>• Studio/1BR apartment projects</li>
-              </ul>
-            </div>
+          <h2 className="text-2xl font-bold mb-6">NYC Dumpster Rental Companies</h2>
+          <div className="space-y-6">
             
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">20 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$499 - $599</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Multi-room renovations</li>
-                <li>• Restaurant/retail cleanouts</li>
-                <li>• 2-3BR apartment cleanouts</li>
-              </ul>
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Guma Containers</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> gumacontainers.com</p>
+                  <p><strong>Contact:</strong> Online form</p>
+                  <p><strong>Fleet:</strong> 40+ trucks, 800+ containers</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Brooklyn, Bronx, Manhattan, Staten Island, Queens</p>
+                  <p><strong>Focus:</strong> Construction & demolition projects</p>
+                </div>
+              </div>
             </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">30 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$599 - $749</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Townhouse renovations</li>
-                <li>• Commercial office cleanouts</li>
-                <li>• Multi-unit building projects</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Dumpster King NY</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> dumpsterkingny.com</p>
+                  <p><strong>Phone:</strong> 718-635-3311</p>
+                  <p><strong>Based in:</strong> Brooklyn</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Bronx, Brooklyn, Queens, Manhattan, parts of Nassau County</p>
+                  <p><strong>Services:</strong> Residential, commercial, and industrial projects</p>
+                </div>
+              </div>
             </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">40 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$749 - $899</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Large construction sites</li>
-                <li>• Building demolition</li>
-                <li>• Major commercial projects</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Best Way Carting Inc</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> bestwaycarting.com</p>
+                  <p><strong>Experience:</strong> 30+ years in business</p>
+                  <p><strong>Container Sizes:</strong> 10-40 yard options</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Brooklyn, Queens, NYC area</p>
+                  <p><strong>Services:</strong> Construction waste removal, waste management</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">D.B. Container Service</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> 718-257-2300</p>
+                  <p><strong>Address:</strong> 129 Louisiana Ave, Brooklyn, NY 11207</p>
+                  <p><strong>Hours:</strong> Mon-Fri 6am-6pm, Sat 7am-1pm</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> All five NYC boroughs</p>
+                  <p><strong>Container Sizes:</strong> 10, 15, 20, 30, 40 yard containers</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">PCI Dumpster Rental</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> dumpstercleanups.com</p>
+                  <p><strong>Experience:</strong> 30+ years serving the region</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> NYC, Long Island, Westchester</p>
+                  <p><strong>Services:</strong> Residential, commercial, construction</p>
+                </div>
+              </div>
             </div>
           </div>
-          <p className="text-sm text-gray-600 mt-4">
-            * NYC prices include delivery, pickup, and disposal. Permit fees additional where required.
-          </p>
+
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">
+              <strong>Note:</strong> These companies are listed for informational purposes. Contact companies directly 
+              for current pricing, availability, and service details. Always verify licensing and insurance.
+            </p>
+          </div>
         </section>
 
         {/* Service Areas */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">NYC Neighborhoods We Serve</h2>
+          <h2 className="text-2xl font-bold mb-6">NYC Neighborhoods</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             <div>
               <h3 className="font-semibold mb-2">Manhattan</h3>
@@ -146,194 +188,45 @@ export default function NewYorkPage() {
               </ul>
             </div>
           </div>
-          
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <p className="text-sm text-gray-600">
-              <strong>Also serving nearby:</strong> Newark, Jersey City, Hoboken, Yonkers, 
-              Mount Vernon, New Rochelle, and all of Greater New York Area
-            </p>
-          </div>
         </section>
 
-        {/* NYC Permit Information */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">NYC Dumpster Permit Requirements</h2>
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-            <h3 className="font-bold mb-3">NYC Street Permit Requirements</h3>
-            <ul className="space-y-2">
-              <li className="flex items-start">
-                <span className="text-red-600 mr-2">✗</span>
-                <span><strong>Street/Sidewalk placement:</strong> Requires NYC DOT permit ($95+ depending on borough)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">✓</span>
-                <span><strong>Private property:</strong> No permit needed for driveways or private lots</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-yellow-600 mr-2">!</span>
-                <span><strong>Co-op/Condo buildings:</strong> May need building management approval</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-yellow-600 mr-2">!</span>
-                <span><strong>Landmark districts:</strong> Additional approval required in historic areas</span>
-              </li>
-            </ul>
-            <p className="mt-4 text-sm">
-              <strong>NYC Department of Transportation</strong><br />
-              Permit Office: 55 Water Street, New York, NY 10041<br />
-              Phone: 311 or (212) NEW-YORK<br />
-              <strong>Processing time:</strong> 3-5 business days (expedited available)
-            </p>
-          </div>
-        </section>
 
-        {/* NYC-Specific Tips */}
+
+        {/* NYC Tips */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">NYC Dumpster Rental Tips</h2>
+          <h2 className="text-2xl font-bold mb-6">NYC Dumpster Considerations</h2>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Tight Space Solutions</h3>
+              <h3 className="font-semibold mb-1">Space Constraints</h3>
               <p className="text-gray-600">
-                NYC streets are narrow. Consider 10-yard dumpsters for easier placement. We offer "high-side" options for same capacity in smaller footprint.
+                NYC streets are often narrow. Consider smaller dumpster sizes if space is limited.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Alternate Side Parking</h3>
+              <h3 className="font-semibold mb-1">Parking Regulations</h3>
               <p className="text-gray-600">
-                Schedule delivery/pickup around street cleaning. We track ASP schedules for all NYC streets to avoid tickets.
+                Be aware of alternate side parking rules and street cleaning schedules.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
               <h3 className="font-semibold mb-1">Building Requirements</h3>
               <p className="text-gray-600">
-                Many NYC buildings require COI (Certificate of Insurance). We provide this free within 24 hours.
-              </p>
-            </div>
-            <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Weekend Delivery</h3>
-              <p className="text-gray-600">
-                Best time for NYC delivery is early morning (6-8 AM) or weekends when traffic is lighter. Saturday delivery available.
-              </p>
-            </div>
-            <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Elevator Buildings</h3>
-              <p className="text-gray-600">
-                For high-rise cleanouts, coordinate with building management. We can place dumpsters in loading docks or designated areas.
+                Many buildings require advance notice and may have specific delivery requirements.
               </p>
             </div>
           </div>
         </section>
 
-        {/* NYC FAQ */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">NYC Dumpster Rental FAQs</h2>
-          <div className="space-y-4">
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">How quickly can I get a dumpster in NYC?</summary>
-              <p className="mt-2 text-gray-600">
-                Same-day delivery available for orders placed before noon. Manhattan and Brooklyn typically within 2-4 hours. 
-                Outer boroughs within 24 hours. Emergency service available.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Do I need a permit for a dumpster in NYC?</summary>
-              <p className="mt-2 text-gray-600">
-                Yes, if placing on any public property (street, sidewalk). Private property (driveways, lots) doesn't require 
-                city permits but may need building approval. We help with permit applications.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">What size dumpster for NYC apartment cleanout?</summary>
-              <p className="mt-2 text-gray-600">
-                Studio/1BR: 10-yard. 2-3BR: 20-yard. Entire brownstone: 30-yard. Remember NYC apartments 
-                accumulate more than suburban homes due to limited storage.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Can you place dumpsters on NYC sidewalks?</summary>
-              <p className="mt-2 text-gray-600">
-                Only with proper DOT permits. Sidewalk must be 12+ feet wide to maintain 8-foot pedestrian path. 
-                We handle permit applications and compliance.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">What's not allowed in NYC dumpsters?</summary>
-              <p className="mt-2 text-gray-600">
-                NYC has strict rules: No electronics (e-waste), appliances with Freon, batteries, paint, chemicals. 
-                Mattresses require wrapping in plastic. We provide full prohibited items list.
-              </p>
-            </details>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <div className="bg-green-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Ready for NYC Dumpster Rental?</h2>
+        {/* Back to Calculator */}
+        <div className="bg-gray-50 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Need Help Choosing a Size?</h2>
           <p className="mb-6 text-gray-700">
-            Get instant quotes from licensed NYC dumpster rental companies
+            Use our free calculator to determine the right dumpster size for your NYC project
           </p>
-          <div className="space-y-4">
-            <Link href="/" className="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-700 transition">
-              Get NYC Quotes Now
-            </Link>
-            <p className="text-sm text-gray-600">
-              Or call for immediate NYC service: <strong>1-877-NYC-DUMP</strong>
-            </p>
-          </div>
+          <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
+            Calculate Dumpster Size
+          </Link>
         </div>
-
-        {/* Schema Markup for Local SEO */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              "name": "Dumpster Rental New York City",
-              "provider": {
-                "@type": "Organization",
-                "name": "Dumpster Size Calculator"
-              },
-              "areaServed": [
-                {
-                  "@type": "City",
-                  "name": "New York",
-                  "addressRegion": "NY"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Manhattan"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Brooklyn"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Queens"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Bronx"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Staten Island"
-                }
-              ],
-              "serviceType": "Dumpster Rental",
-              "availableChannel": {
-                "@type": "ServiceChannel",
-                "serviceUrl": "https://dumpster-size-calculator.com/dumpster-rental-new-york",
-                "servicePhone": "1-877-NYC-DUMP"
-              }
-            })
-          }}
-        />
       </div>
     </main>
   );

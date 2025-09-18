@@ -41,7 +41,7 @@ export default function LocalGuidesPage() {
             Local Dumpster Rental Pricing Guides
           </h1>
           <p className="text-xl text-gray-600">
-            Find pricing, providers, and neighborhood coverage in your city
+            Find pricing, and neighborhood coverage in your city
           </p>
         </div>
 
