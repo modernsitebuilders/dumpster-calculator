@@ -2,76 +2,141 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental Charlotte NC | Queen City Service | Best Carolina Prices',
-  description: 'Dumpster rental in Charlotte starting at $280. Serving Ballantyne, Uptown, South End, and all of Queen City. Professional service.',
-  keywords: 'dumpster rental charlotte, dumpster rental north carolina, roll off dumpster charlotte, ballantyne dumpster rental'
+  title: 'Dumpster Rental Charlotte NC | Local Companies & Size Guide',
+  description: 'Find dumpster rental companies in Charlotte. Compare local providers serving the Queen City and surrounding counties.',
+  keywords: 'dumpster rental charlotte, charlotte dumpster companies, roll off dumpster charlotte, north carolina dumpster rental'
 };
 
 export default function CharlottePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* Local Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Dumpster Rental in Charlotte, NC
+            Dumpster Rental in Charlotte, North Carolina
           </h1>
+          <p className="text-xl text-gray-600">
+            Find local dumpster rental companies serving the Queen City and surrounding areas
+          </p>
         </div>
 
+        {/* Quick Calculator CTA */}
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">Get Charlotte Dumpster Quote</h2>
-          <p className="mb-6">Professional service throughout the Queen City</p>
+          <h2 className="text-2xl font-bold mb-4">Calculate Your Dumpster Size</h2>
+          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your Charlotte project</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
-            Calculate Size & Get Quotes
+            Use Size Calculator
           </Link>
         </div>
 
+        {/* Local Charlotte Companies */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Charlotte Dumpster Rental Pricing</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">10 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$280 - $380</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Small cleanouts</li>
-                <li>• Bathroom remodels</li>
-                <li>• Garage cleaning</li>
-              </ul>
+          <h2 className="text-2xl font-bold mb-6">Charlotte Dumpster Rental Companies</h2>
+          <div className="space-y-6">
+            
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Griffin Waste</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (704) 825-7878</p>
+                  <p><strong>Website:</strong> griffinwaste.com</p>
+                  <p><strong>Features:</strong> Same-day local service, wide loading door</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Uptown, South End, NoDa, Myers Park, Ballantyne</p>
+                  <p><strong>Specialties:</strong> Locally operated, no hidden fees, low 4-foot walls</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">20 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$380 - $480</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Kitchen remodels</li>
-                <li>• Flooring projects</li>
-                <li>• Deck removal</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Willow Dumpsters</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> willowdumpsters.com</p>
+                  <p><strong>Container Sizes:</strong> 10, 20, 30, 40-yard options</p>
+                  <p><strong>Features:</strong> Locally owned and operated</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Charlotte and surrounding counties</p>
+                  <p><strong>Specialties:</strong> Licensed and insured, contractor's first choice</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">30 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$480 - $600</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Whole house projects</li>
-                <li>• New construction</li>
-                <li>• Large renovations</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">VaVia Dumpster Rental</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> govavia.com</p>
+                  <p><strong>Container Sizes:</strong> 10 and 15-yard options</p>
+                  <p><strong>Features:</strong> No hidden fees, transparent pricing</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Charlotte metro area</p>
+                  <p><strong>Specialties:</strong> Specialized in small spaces, driveway placement</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">40 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$580 - $720</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Commercial projects</li>
-                <li>• Large construction</li>
-                <li>• Multi-building sites</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Viking Dumpsters</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> vikingdumpsters.com</p>
+                  <p><strong>Features:</strong> Driver tracking available</p>
+                  <p><strong>Services:</strong> Courtesy text notifications</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Charlotte and surrounding areas</p>
+                  <p><strong>Specialties:</strong> Protection boards included, same-day pickup available</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">DumpStor of Charlotte</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (980) 393-3867</p>
+                  <p><strong>Website:</strong> dumpstor.com/charlotte-nc</p>
+                  <p><strong>Container Sizes:</strong> 12 and 20-yard options</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Charlotte area</p>
+                  <p><strong>Specialties:</strong> Driveway protection, fits in parking space, DumpStor Pro combo units</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Waste Connections of Charlotte</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> wasteconnections.com/charlotte</p>
+                  <p><strong>Experience:</strong> 25+ years serving Charlotte</p>
+                  <p><strong>Features:</strong> Grapple truck services available</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Mecklenburg, Cabarrus, Gaston, Iredell, York County SC</p>
+                  <p><strong>Specialties:</strong> Commercial and residential, recycling options</p>
+                </div>
+              </div>
             </div>
           </div>
-          <p className="text-sm text-gray-600 mt-4">
-            *Prices include 7-day rental period. North Carolina offers competitive rates throughout the Carolinas.
-          </p>
+
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">
+              <strong>Note:</strong> These companies are listed for informational purposes. Contact companies directly 
+              for current pricing, availability, and service details. Always verify licensing and insurance.
+            </p>
+          </div>
         </section>
 
+        {/* Charlotte Area Coverage */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Charlotte Metro Areas We Serve</h2>
+          <h2 className="text-2xl font-bold mb-6">Charlotte Metro Area Coverage</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
               <h3 className="font-semibold mb-2">Central Charlotte</h3>
@@ -80,135 +145,112 @@ export default function CharlottePage() {
                 <li>South End</li>
                 <li>NoDa</li>
                 <li>Plaza Midwood</li>
+                <li>Elizabeth</li>
                 <li>Dilworth</li>
                 <li>Myers Park</li>
-                <li>Fourth Ward</li>
-                <li>First Ward</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">South Charlotte</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>Ballantyne</li>
-                <li>SouthPark</li>
-                <li>Pineville</li>
-                <li>Blakeney</li>
-                <li>Arboretum</li>
-                <li>Rea Farms</li>
-                <li>Stonecrest</li>
-                <li>Carmel</li>
+                <li>Cotswold</li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-2">North Charlotte</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>University City</li>
-                <li>Concord Mills</li>
                 <li>Highland Creek</li>
-                <li>Northlake</li>
                 <li>Huntersville</li>
                 <li>Cornelius</li>
                 <li>Davidson</li>
                 <li>Mooresville</li>
+                <li>Concord</li>
+                <li>Harrisburg</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">East/West Charlotte</h3>
+              <h3 className="font-semibold mb-2">South Charlotte</h3>
               <ul className="text-sm text-gray-600 space-y-1">
+                <li>Ballantyne</li>
+                <li>Pineville</li>
                 <li>Matthews</li>
                 <li>Mint Hill</li>
                 <li>Indian Trail</li>
-                <li>Stallings</li>
-                <li>Gastonia</li>
+                <li>Waxhaw</li>
+                <li>Fort Mill, SC</li>
+                <li>Rock Hill, SC</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">West Charlotte</h3>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>Steele Creek</li>
+                <li>Mountain Island</li>
                 <li>Belmont</li>
                 <li>Mount Holly</li>
-                <li>Waxhaw</li>
+                <li>Gastonia</li>
+                <li>Kings Mountain</li>
+                <li>Cramerton</li>
+                <li>Lowell</li>
               </ul>
             </div>
           </div>
           
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600">
-              <strong>Extended Service:</strong> We also serve Rock Hill, Kannapolis, Concord, 
-              and other Charlotte metro communities with advance scheduling.
+              <strong>Also serving:</strong> Monroe, Kannapolis, Statesville, Shelby, 
+              and all of Mecklenburg, Cabarrus, Gaston, and surrounding counties
             </p>
           </div>
         </section>
 
+        {/* Charlotte Tips */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Charlotte Project Considerations</h2>
+          <h2 className="text-2xl font-bold mb-6">Charlotte Dumpster Considerations</h2>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Weather & Seasonal Planning</h3>
+              <h3 className="font-semibold mb-1">Banking & Business Hub Growth</h3>
               <p className="text-gray-600">
-                Charlotte's humid subtropical climate means year-round projects. Spring storms and summer heat require covered containers for certain materials.
+                Charlotte's status as the second-largest banking center creates constant commercial renovation demand. Book early for Uptown and South End projects.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Tree Removal & Landscaping</h3>
+              <h3 className="font-semibold mb-1">Rapid Suburban Expansion</h3>
               <p className="text-gray-600">
-                Charlotte's urban forest requires specialized disposal. We handle tree debris, brush, and landscaping waste following city guidelines.
+                Areas like Ballantyne, University City, and surrounding towns are booming. New construction and home renovations keep dumpster demand high year-round.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Historic District Regulations</h3>
+              <h3 className="font-semibold mb-1">Historic Neighborhoods</h3>
               <p className="text-gray-600">
-                Myers Park, Dilworth, and other historic areas have special requirements. We coordinate with historic commissions for renovation projects.
+                Dilworth, Myers Park, and Plaza Midwood have mature trees and narrow streets. Many companies offer smaller footprint options for these areas.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">HOA Community Guidelines</h3>
+              <h3 className="font-semibold mb-1">NASCAR & Event Season</h3>
               <p className="text-gray-600">
-                Many Charlotte neighborhoods have HOA restrictions on dumpster placement and timing. We provide compliant service and screening options.
+                Race weeks and major events at Bank of America Stadium create traffic and availability challenges. Plan accordingly during these periods.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Construction Boom Support</h3>
+              <h3 className="font-semibold mb-1">Carolina Weather Patterns</h3>
               <p className="text-gray-600">
-                Charlotte's rapid growth creates high demand for construction dumpsters. We maintain large inventory for residential and commercial projects.
+                Humid summers and occasional ice storms affect project timing. Spring and fall are busiest for renovations and cleanouts.
+              </p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Multi-County Service Areas</h3>
+              <p className="text-gray-600">
+                Charlotte metro spans North and South Carolina. Some companies serve both states - verify service areas for outlying locations.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Charlotte Dumpster Rental FAQs</h2>
-          <div className="space-y-4">
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Do I need a permit in Charlotte?</summary>
-              <p className="mt-2 text-gray-600">
-                Street placement requires a permit from Charlotte DOT. Driveway and private property placement typically doesn't require permits.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">How far in advance should I book?</summary>
-              <p className="mt-2 text-gray-600">
-                Charlotte's growing market means 2-3 days advance booking is recommended, especially during peak construction season (March-October).
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">What about HOA communities?</summary>
-              <p className="mt-2 text-gray-600">
-                Many Charlotte neighborhoods have HOA guidelines. We provide discrete placement options and work with community requirements for timing and screening.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Can you handle large construction debris?</summary>
-              <p className="mt-2 text-gray-600">
-                Yes! Charlotte's construction boom keeps us busy with concrete, steel, and heavy materials. We have specialized equipment for construction sites.
-              </p>
-            </details>
-          </div>
-        </section>
-
-        <div className="bg-green-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Ready to Rent in Charlotte?</h2>
-          <p className="mb-6 text-gray-700">Get quotes from licensed North Carolina providers</p>
-          <Link href="/" className="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-700 transition">
-            Get Charlotte Quotes Now
+        {/* Back to Calculator */}
+        <div className="bg-gray-50 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Need Help Choosing a Size?</h2>
+          <p className="mb-6 text-gray-700">
+            Use our free calculator to determine the right dumpster size for your Charlotte project
+          </p>
+          <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
+            Calculate Dumpster Size
           </Link>
         </div>
       </div>
