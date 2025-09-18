@@ -284,66 +284,44 @@ export default function Home() {
               <p className="text-gray-600 text-sm mb-4">
                 Pricing, permits, and providers in your area
               </p>
-              
-{/* Local Information Card */}
-<div className="bg-white rounded-lg p-6 text-center shadow-md">
-  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-    <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-    </svg>
-  </div>
-  <h3 className="text-lg font-semibold mb-3">Local Information</h3>
-  <p className="text-gray-600 text-sm mb-4">
-    Pricing, permits, and providers in your area
-  </p>
   
   {/* Improved ZIP Code Form */}
   <form onSubmit={handleZipCodeSubmit} className="mb-4">
-    <div className="flex flex-col sm:flex-row gap-2 max-w-xs mx-auto">
-      <input
-        type="text"
-        id="zipcode-input"
-        name="zipcode"
-        value={zipCode}
-        onChange={handleZipCodeChange}
-        placeholder="Enter ZIP code"
-        className="flex-1 px-4 py-2.5 border border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200 text-center font-medium"
-        maxLength="5"
-        aria-label="Enter ZIP code"
-        pattern="[0-9]{5}"
-        inputMode="numeric"
-      />
-      <button
-        type="submit"
-        className={`px-6 py-2.5 rounded-lg font-semibold transition-all ${
-          zipCode.length === 5 
-            ? 'bg-purple-600 hover:bg-purple-700 text-white shadow-md hover:shadow-lg transform hover:-translate-y-0.5' 
-            : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-        }`}
-        disabled={zipCode.length !== 5}
-      >
-        Find
-      </button>
-    </div>
-    
-    {/* Optional: Add a helper text */}
-    {zipCode.length > 0 && zipCode.length < 5 && (
-      <p className="text-xs text-gray-500 mt-2">
-        Enter {5 - zipCode.length} more digit{5 - zipCode.length !== 1 ? 's' : ''}
-      </p>
-    )}
-  </form>
+  <div className="flex flex-col gap-2 max-w-xs mx-auto">
+    <input
+      type="text"
+      id="zipcode-input"
+      name="zipcode"
+      value={zipCode}
+      onChange={handleZipCodeChange}
+      placeholder="Enter ZIP code"
+      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200 text-center font-medium"
+      maxLength="5"
+      aria-label="Enter ZIP code"
+      pattern="[0-9]{5}"
+      inputMode="numeric"
+    />
+    <button
+      type="submit"
+      className={`w-full px-6 py-2.5 rounded-lg font-semibold transition-all ${
+        zipCode.length === 5 
+          ? 'bg-purple-600 hover:bg-purple-700 text-white shadow-md hover:shadow-lg transform hover:-translate-y-0.5' 
+          : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+      }`}
+      disabled={zipCode.length !== 5}
+    >
+      Find
+    </button>
+  </div>
   
-  <Link href="/local" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">
-    All Local Guides →
-  </Link>
+  {/* Optional: Add a helper text */}
+  {zipCode.length > 0 && zipCode.length < 5 && (
+    <p className="text-xs text-gray-500 mt-2 text-center">
+      Enter {5 - zipCode.length} more digit{5 - zipCode.length !== 1 ? 's' : ''}
+    </p>
+  )}
+</form>
 </div>
-              
-              <Link href="/local" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">
-                All Local Guides →
-              </Link>
-            </div>
           </div>
 {showLocalContent && localContent && (
   <div className="mb-12">
