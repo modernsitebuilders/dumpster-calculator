@@ -14,8 +14,14 @@ export default function LocalPermitsPage() {
     { name: 'Houston', state: 'TX', slug: 'houston', permitRequired: true, cost: '$50-$150', processingTime: '3-5 days', complexity: 'Medium' },
     { name: 'New York', state: 'NY', slug: 'new-york', permitRequired: true, cost: '$45-$200', processingTime: '7-14 days', complexity: 'High' },
     { name: 'Los Angeles', state: 'CA', slug: 'los-angeles', permitRequired: true, cost: '$63-$400', processingTime: '5-10 days', complexity: 'Medium' },
-    { name: 'Phoenix', state: 'AZ', slug: 'phoenix', permitRequired: true, cost: '$25-$100', processingTime: '15 days', complexity: 'Medium' }
-  ];
+    { name: 'Phoenix', state: 'AZ', slug: 'phoenix', permitRequired: true, cost: '$25-$100', processingTime: '15 days', complexity: 'Medium' },
+    { name: 'Philadelphia', state: 'PA', slug: 'philadelphia', permitRequired: true, cost: '$80-$500/year', processingTime: '5 days', complexity: 'High' },
+    { name: 'Atlanta', state: 'GA', slug: 'atlanta', permitRequired: true, cost: '$20 + $10-25/day', processingTime: '7 days', complexity: 'Medium' },
+    { name: 'Dallas', state: 'TX', slug: 'dallas', permitRequired: true, cost: '$240+ (escalating)', processingTime: '48 hours - 2 weeks', complexity: 'Medium' },
+    { name: 'Boston', state: 'MA', slug: 'boston', permitRequired: true, cost: '$50-$1,490/month', processingTime: '7+ days', complexity: 'High' },
+    { name: 'San Francisco', state: 'CA', slug: 'san-francisco', permitRequired: true, cost: '$484 + $205/month', processingTime: '10-15 days', complexity: 'High' },
+    { name: 'Washington DC', state: 'DC', slug: 'washington-dc', permitRequired: true, cost: '$50 + $75-200/month', processingTime: '15 days', complexity: 'Medium' },
+];
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
