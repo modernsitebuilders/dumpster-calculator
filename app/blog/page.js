@@ -423,6 +423,78 @@ export default function BlogIndex() {
       width: 800,
       height: 450
     },
+    {
+      title: "Philadelphia Dumpster Permit Guide: RFID Requirements & Applications",
+      excerpt: "Complete guide to Philadelphia's complex dumpster permit system. Learn about RFID medallions, three-tiered licensing, costs, and how to avoid violations.",
+      slug: "philadelphia-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "9 min read",
+      publishDate: "February 10, 2025",
+      featured: false,
+      image: "/images/blog/building-permit.webp",
+      width: 800,
+      height: 450
+    },
+    {
+      title: "Atlanta Dumpster Permit Guide: Linear Footage Pricing & Requirements",
+      excerpt: "Complete guide to Atlanta dumpster permits with linear footage pricing. Learn costs ($10-25/day), insurance requirements, and placement restrictions.",
+      slug: "atlanta-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "7 min read",
+      publishDate: "February 11, 2025",
+      featured: false,
+      image: "/images/blog/building-permit.webp",
+      width: 800,
+      height: 450
+    },
+    {
+      title: "Dallas Dumpster Permit Guide: Square Footage Pricing & Escalating Fees",
+      excerpt: "Complete guide to Dallas dumpster permits with square footage pricing that doubles every 60 days. Learn costs, traffic requirements, and weekend fees.",
+      slug: "dallas-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "7 min read",
+      publishDate: "February 12, 2025",
+      featured: false,
+      image: "/images/blog/building-permit.webp",
+      width: 800,
+      height: 450
+    },
+    {
+      title: "Boston Dumpster Permit Guide: Three-Department System & Requirements",
+      excerpt: "Complete guide to Boston's complex three-department permit system. Learn about street occupancy, site cleanliness, fire permits, and $5,000 surety bonds.",
+      slug: "boston-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "8 min read",
+      publishDate: "February 13, 2025",
+      featured: false,
+      image: "/images/blog/building-permit.webp",
+      width: 800,
+      height: 450
+    },
+    {
+      title: "San Francisco Dumpster Permit Guide: Premium Fees & Environmental Requirements",
+      excerpt: "Complete guide to San Francisco's high-cost dumpster permits at $205/month plus $484 application. Learn about environmental requirements and safety rules.",
+      slug: "san-francisco-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "8 min read",
+      publishDate: "February 14, 2025",
+      featured: false,
+      image: "/images/blog/building-permit.webp",
+      width: 800,
+      height: 450
+    },
+    {
+      title: "Washington DC Dumpster Permit Guide: Zone-Based Pricing & Public Inconvenience Fees",
+      excerpt: "Complete guide to Washington DC dumpster permits with zone-based escalating fees. Learn about commercial vs residential rates and Central Business District charges.",
+      slug: "washington-dc-dumpster-permit-guide",
+      category: "Local Permits",
+      readTime: "7 min read",
+      publishDate: "February 15, 2025",
+      featured: false,
+      image: "/images/blog/building-permit.webp",
+      width: 800,
+      height: 450
+    },
     // ADDITIONAL GUIDES
     {
       title: "Dumpster Permit Requirements: Complete State-by-State Guide",

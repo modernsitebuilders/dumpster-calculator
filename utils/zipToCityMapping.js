@@ -296,7 +296,8 @@ export function getLocalContent(zipCode) {
   }
 
   // Only show permit guides for cities that have them
-  const citiesWithPermitGuides = ['chicago', 'houston', 'new-york', 'los-angeles', 'phoenix'];
+  const citiesWithPermitGuides = ['chicago', 'houston', 'new-york', 'los-angeles', 'phoenix',
+  'philadelphia', 'atlanta', 'dallas', 'boston', 'san-francisco', 'washington-dc'];
   const hasPermitGuide = citiesWithPermitGuides.includes(city.slug);
 
   return {

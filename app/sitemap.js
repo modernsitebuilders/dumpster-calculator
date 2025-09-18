@@ -51,6 +51,12 @@ export default function sitemap() {
     '/blog/los-angeles-dumpster-permit-guide',
     '/blog/nyc-dumpster-permit-guide',
     '/blog/phoenix-dumpster-permit-guide',
+    '/blog/philadelphia-dumpster-permit-guide',
+    '/blog/atlanta-dumpster-permit-guide',
+    '/blog/dallas-dumpster-permit-guide',
+    '/blog/boston-dumpster-permit-guide',
+    '/blog/san-francisco-dumpster-permit-guide',
+    '/blog/washington-dc-dumpster-permit-guide',
 
     // ADDITIONAL REGULATION GUIDES  
     '/blog/hoa-dumpster-rules',
