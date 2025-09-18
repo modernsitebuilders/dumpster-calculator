@@ -2,9 +2,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental Philadelphia PA | Same Day Delivery | Best Prices',
-  description: 'Dumpster rental in Philadelphia starting at $299. Same-day delivery available. Serving Center City, South Philly, Northeast, and surrounding areas.',
-  keywords: 'dumpster rental philadelphia, philadelphia dumpster rental, dumpster rental philly, roll off dumpster philadelphia'
+  title: 'Dumpster Rental Philadelphia PA | Local Companies & Size Guide',
+  description: 'Find dumpster rental companies in Philadelphia. Compare local providers serving the City of Brotherly Love and surrounding areas.',
+  keywords: 'dumpster rental philadelphia, philly dumpster companies, roll off dumpster philadelphia, pennsylvania dumpster rental'
 };
 
 export default function PhiladelphiaPage() {
@@ -14,247 +14,224 @@ export default function PhiladelphiaPage() {
         {/* Local Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Dumpster Rental in Philadelphia, PA
+            Dumpster Rental in Philadelphia, Pennsylvania
           </h1>
+          <p className="text-xl text-gray-600">
+            Find local dumpster rental companies serving the City of Brotherly Love and surrounding areas
+          </p>
+        </div>
+
+        {/* Quick Calculator CTA */}
+        <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
+          <h2 className="text-2xl font-bold mb-4">Calculate Your Dumpster Size</h2>
+          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your Philadelphia project</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
-            Calculate Size & Get Quotes
+            Use Size Calculator
           </Link>
         </div>
 
-        {/* Local Pricing */}
+        {/* Local Philadelphia Companies */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Philadelphia Dumpster Rental Prices</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">10 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$299 - $399</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Perfect for South Philly rowhome cleanouts</li>
-                <li>• Small bathroom/kitchen remodels</li>
-                <li>• Garage cleanouts in Manayunk</li>
-              </ul>
-            </div>
+          <h2 className="text-2xl font-bold mb-6">Philadelphia Dumpster Rental Companies</h2>
+          <div className="space-y-6">
             
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">20 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$399 - $499</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Full home renovations in Center City</li>
-                <li>• Roof replacements in Northeast Philly</li>
-                <li>• Estate cleanouts in Chestnut Hill</li>
-              </ul>
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Tri-State Waste & Recycling</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> 215-288-8797</p>
+                  <p><strong>Email:</strong> info@tswaste.com</p>
+                  <p><strong>Website:</strong> tswaste.com</p>
+                  <p><strong>Hours:</strong> 7am-5pm Mon-Sat</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Philadelphia County & surrounding counties</p>
+                  <p><strong>Specialties:</strong> Family-owned, transparent pricing, personalized service</p>
+                </div>
+              </div>
             </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">30 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$499 - $599</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• New construction in Fishtown</li>
-                <li>• Commercial renovations</li>
-                <li>• Large demolition projects</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Hippo Philly Dumpster Rental</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (215) 888-2203</p>
+                  <p><strong>Website:</strong> philadelphia.hippodumpsters.com</p>
+                  <p><strong>Container Sizes:</strong> 10, 15, 20-yard options</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Philadelphia plus 30+ suburbs</p>
+                  <p><strong>Coverage:</strong> Ardmore, Conshohocken, Media, Chester, and more</p>
+                </div>
+              </div>
             </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">40 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$599 - $699</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Commercial cleanouts in University City</li>
-                <li>• Industrial projects in Navy Yard</li>
-                <li>• Major construction debris</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Liberty Dumpster Rental Philadelphia</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> philadelphia.libertydumpster.com</p>
+                  <p><strong>Features:</strong> Online ordering, no hidden fees</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Philadelphia area</p>
+                  <p><strong>Specialties:</strong> Home renovations, construction, estate cleanouts</p>
+                </div>
+              </div>
             </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Hart Dumpster Rentals</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> hartandsonwaste.com/philadelphia-pa/</p>
+                  <p><strong>Container Sizes:</strong> 10, 15, 20-yard options</p>
+                  <p><strong>Features:</strong> Fast delivery, fair pricing</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Every zip code in Philadelphia</p>
+                  <p><strong>Specialties:</strong> Rowhomes, tight alley placement, city logistics</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Accurate Recycling</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> 610-623-7772</p>
+                  <p><strong>Website:</strong> accuraterecycling.com/dumpster-rental-philadelphia/</p>
+                  <p><strong>Experience:</strong> 4 generations of service</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Philadelphia region</p>
+                  <p><strong>Services:</strong> Same-day rental, flexible scheduling, permit guidance</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">
+              <strong>Note:</strong> These companies are listed for informational purposes. Contact companies directly 
+              for current pricing, availability, and service details. Always verify licensing and insurance.
+            </p>
           </div>
         </section>
 
-        {/* Service Areas */}
+        {/* Philadelphia Area Coverage */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Philadelphia Neighborhoods We Serve</h2>
+          <h2 className="text-2xl font-bold mb-6">Philadelphia Area Coverage</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <h3 className="font-semibold mb-2">Center City</h3>
+              <h3 className="font-semibold mb-2">Center City/South</h3>
               <ul className="text-sm text-gray-600 space-y-1">
+                <li>Center City</li>
                 <li>Rittenhouse Square</li>
-                <li>Old City</li>
                 <li>Society Hill</li>
-                <li>Washington Square</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">South Philly</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>Passyunk Square</li>
-                <li>Bella Vista</li>
                 <li>Queen Village</li>
+                <li>Bella Vista</li>
+                <li>South Philadelphia</li>
+                <li>Passyunk</li>
                 <li>Point Breeze</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">North/Northeast</h3>
+              <h3 className="font-semibold mb-2">North Philadelphia</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Fishtown</li>
                 <li>Northern Liberties</li>
-                <li>Port Richmond</li>
-                <li>Mayfair</li>
+                <li>Fishtown</li>
+                <li>Kensington</li>
+                <li>Frankford</li>
+                <li>Germantown</li>
+                <li>Mount Airy</li>
+                <li>Chestnut Hill</li>
+                <li>Olney</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">West Philly</h3>
+              <h3 className="font-semibold mb-2">West Philadelphia</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>University City</li>
-                <li>Spruce Hill</li>
-                <li>Clark Park</li>
                 <li>Powelton Village</li>
+                <li>Mantua</li>
+                <li>West Oak Lane</li>
+                <li>Overbrook</li>
+                <li>Wynnefield</li>
+                <li>Cobbs Creek</li>
+                <li>Southwest Philly</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">Northwest/Suburbs</h3>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>Manayunk</li>
+                <li>Roxborough</li>
+                <li>East Falls</li>
+                <li>Fairmount</li>
+                <li>Conshohocken</li>
+                <li>Ardmore</li>
+                <li>Media</li>
+                <li>Chester</li>
               </ul>
             </div>
           </div>
           
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600">
-              <strong>Also serving nearby areas:</strong> Bensalem, Upper Darby, Chester, Norristown, 
-              Camden NJ, Cherry Hill NJ, and all of Greater Philadelphia
+              <strong>Also serving:</strong> Camden, NJ; Wilmington, DE; Montgomery County, Delaware County, 
+              Chester County, and all of Greater Philadelphia
             </p>
           </div>
         </section>
 
-        {/* Local Regulations */}
+        {/* Philadelphia Tips */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Philadelphia Dumpster Permit Information</h2>
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-            <h3 className="font-bold mb-3">Do you need a permit in Philadelphia?</h3>
-            <ul className="space-y-2">
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">✓</span>
-                <span><strong>Private property:</strong> No permit needed for driveways or private lots</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-red-600 mr-2">✗</span>
-                <span><strong>Public street:</strong> Permit required from Streets Department ($75-150)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-yellow-600 mr-2">!</span>
-                <span><strong>Historic districts:</strong> Additional approval may be needed in Society Hill, Old City</span>
-              </li>
-            </ul>
-            <p className="mt-4 text-sm">
-              <strong>Permit Office:</strong> Philadelphia Streets Department<br />
-              1401 John F. Kennedy Blvd, Room 830<br />
-              Phone: (215) 686-5560
-            </p>
-          </div>
-        </section>
-
-        {/* Local Tips */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Philadelphia-Specific Dumpster Tips</h2>
+          <h2 className="text-2xl font-bold mb-6">Philadelphia Dumpster Considerations</h2>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Narrow Streets in South Philly</h3>
+              <h3 className="font-semibold mb-1">Rowhouse Challenges</h3>
               <p className="text-gray-600">
-                Consider a 10-yard dumpster for tight rowhome blocks. Smaller footprint fits better on narrow streets.
+                Philadelphia's iconic rowhouses often have narrow streets and limited driveway space. Many companies specialize in tight placement.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Parking Considerations</h3>
+              <h3 className="font-semibold mb-1">Historic Districts</h3>
               <p className="text-gray-600">
-                Place "No Parking" signs 72 hours before delivery. PPA is strict about parking violations.
+                Old City, Society Hill, and other historic areas may have special placement restrictions. Check with your rental company.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Street Cleaning Schedule</h3>
+              <h3 className="font-semibold mb-1">Street Permits</h3>
               <p className="text-gray-600">
-                Check Philadelphia street cleaning schedule to avoid conflicts with your rental period.
+                Philadelphia Streets Department permits required for street placement. Contact them at 215-686-5500 or check online.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Local Disposal Facilities</h3>
+              <h3 className="font-semibold mb-1">Winter Weather</h3>
               <p className="text-gray-600">
-                Materials typically go to Waste Management facilities in North Philly or Republic Services in Chester County.
+                Philadelphia winters can bring snow and ice. Plan cleanup projects around weather and potential delivery delays.
+              </p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Construction Boom</h3>
+              <p className="text-gray-600">
+                Philly's ongoing development means high demand for dumpsters. Book early, especially in popular renovation neighborhoods.
               </p>
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Philadelphia Dumpster Rental FAQs</h2>
-          <div className="space-y-4">
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">How fast can I get a dumpster delivered in Philadelphia?</summary>
-              <p className="mt-2 text-gray-600">
-                Same-day delivery is available for orders placed before 12 PM. Most deliveries in Center City, 
-                South Philly, and nearby areas can be completed within 24 hours.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">What size dumpster for a Philadelphia rowhome renovation?</summary>
-              <p className="mt-2 text-gray-600">
-                Most rowhome renovations need a 20-yard dumpster. For single-room updates, a 10-yard works well. 
-                Full gut renovations may require a 30-yard or multiple hauls.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Can I put concrete from my Philly basement in a dumpster?</summary>
-              <p className="mt-2 text-gray-600">
-                Yes, but you need a specific heavy debris dumpster. Regular dumpsters have weight limits that 
-                concrete exceeds quickly. Expect to pay 30-50% more for concrete disposal.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Do you deliver to New Jersey?</summary>
-              <p className="mt-2 text-gray-600">
-                Yes! We serve Camden, Cherry Hill, and nearby NJ areas. Delivery fees may apply for locations 
-                beyond 20 miles from Philadelphia.
-              </p>
-            </details>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <div className="bg-green-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Ready to Rent a Dumpster in Philadelphia?</h2>
+        {/* Back to Calculator */}
+        <div className="bg-gray-50 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Need Help Choosing a Size?</h2>
           <p className="mb-6 text-gray-700">
-            Get instant size recommendations and connect with trusted local providers
+            Use our free calculator to determine the right dumpster size for your Philadelphia project
           </p>
-          <div className="space-y-4">
-            <Link href="/" className="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-700 transition">
-              Get Free Quotes Now
-            </Link>
-            <p className="text-sm text-gray-600">
-              Or call for immediate service: <strong>1-877-DUMPSTER</strong>
-            </p>
-          </div>
+          <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
+            Calculate Dumpster Size
+          </Link>
         </div>
-
-        {/* Schema Markup for Local SEO */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              "name": "Dumpster Rental Philadelphia",
-              "provider": {
-                "@type": "Organization",
-                "name": "Dumpster Calculator"
-              },
-              "areaServed": {
-                "@type": "City",
-                "name": "Philadelphia",
-                "addressRegion": "PA"
-              },
-              "serviceType": "Dumpster Rental",
-              "availableChannel": {
-                "@type": "ServiceChannel",
-                "serviceUrl": "https://dumpstercalculator.com/dumpster-rental-philadelphia",
-                "servicePhone": "1-877-DUMPSTER"
-              }
-            })
-          }}
-        />
       </div>
     </main>
   );

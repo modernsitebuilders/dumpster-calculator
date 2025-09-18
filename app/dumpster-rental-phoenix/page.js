@@ -2,88 +2,135 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental Phoenix AZ | Desert Delivery | Best Arizona Prices',
-  description: 'Dumpster rental in Phoenix starting at $275. Serving Scottsdale, Tempe, Mesa, and all of Valley of the Sun. Heat-resistant service.',
-  keywords: 'dumpster rental phoenix, dumpster rental arizona, roll off dumpster phoenix, scottsdale dumpster rental'
+  title: 'Dumpster Rental Phoenix AZ | Local Companies & Size Guide',
+  description: 'Find dumpster rental companies in Phoenix. Compare local providers serving Maricopa County and surrounding areas.',
+  keywords: 'dumpster rental phoenix, phoenix dumpster companies, roll off dumpster phoenix, scottsdale dumpster rental'
 };
 
 export default function PhoenixPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* Local Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Dumpster Rental in Phoenix, AZ
+            Dumpster Rental in Phoenix, Arizona
           </h1>
+          <p className="text-xl text-gray-600">
+            Find local dumpster rental companies serving Phoenix, Scottsdale, and the Valley
+          </p>
         </div>
 
+        {/* Quick Calculator CTA */}
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">Get Phoenix Dumpster Quote</h2>
-          <p className="mb-6">Beat the heat with early morning delivery</p>
+          <h2 className="text-2xl font-bold mb-4">Calculate Your Dumpster Size</h2>
+          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your Phoenix project</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
-            Calculate Size & Get Quotes
+            Use Size Calculator
           </Link>
         </div>
 
+        {/* Local Phoenix Companies */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Phoenix Dumpster Rental Pricing</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">10 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$275 - $375</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Small projects</li>
-                <li>• Pool area cleanouts</li>
-                <li>• Garage renovations</li>
-              </ul>
+          <h2 className="text-2xl font-bold mb-6">Phoenix Dumpster Rental Companies</h2>
+          <div className="space-y-6">
+            
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Az Junk Removal & Dumpsters</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> 602-799-4181</p>
+                  <p><strong>Website:</strong> azjunkremoval.com/dumpster-rental/</p>
+                  <p><strong>Location:</strong> Waddell (serves Phoenix metro)</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Phoenix, Peoria, Avondale, Buckeye, Surprise, Glendale</p>
+                  <p><strong>Specialties:</strong> Same-day service, property management, residential focus</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">20 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$375 - $475</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Kitchen remodels</li>
-                <li>• Tile removal</li>
-                <li>• Bathroom renovations</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">VaVia Dumpster Rental Phoenix</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> govavia.com/phoenix-az-dumpster-rental/</p>
+                  <p><strong>Features:</strong> Transparent pricing, no hidden fees</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Phoenix area</p>
+                  <p><strong>Specialties:</strong> Locally owned, personalized service, flexible rental periods</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">30 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$475 - $600</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Whole house projects</li>
-                <li>• New construction</li>
-                <li>• Large cleanouts</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Bin There Dump That Phoenix-Scottsdale</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> bintheredumpthat.com/phoenix-scottsdale-dumpster-rentals/</p>
+                  <p><strong>Owner:</strong> Les Englund (38+ years in Phoenix, ASU graduate)</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Phoenix and Scottsdale</p>
+                  <p><strong>Specialties:</strong> "Residential Friendly" service, driveway-friendly bins</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">40 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$575 - $725</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Commercial projects</li>
-                <li>• Large construction</li>
-                <li>• Multi-building sites</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">redbox+ Dumpsters of Phoenix East Valley</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> 480-454-5844</p>
+                  <p><strong>Website:</strong> redboxplus.com/phoenix-east-valley/</p>
+                  <p><strong>Container Sizes:</strong> 10, 20, 30, 40-yard options</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Phoenix, Scottsdale, Cave Creek, Fountain Hills, Paradise Valley</p>
+                  <p><strong>Unique:</strong> 2-in-1 dumpster with porta potty option</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Quarry Rentals Phoenix</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> quarryrents.com/dumpsters/phoenix</p>
+                  <p><strong>Features:</strong> Same-day delivery, 7-day standard rental</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Phoenix area</p>
+                  <p><strong>Services:</strong> Permit handling, free consultation, inert material dumpsters</p>
+                </div>
+              </div>
             </div>
           </div>
-          <p className="text-sm text-gray-600 mt-4">
-            *Prices include 7-day rental period. Arizona has some of the most competitive rates in the Southwest.
-          </p>
+
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">
+              <strong>Note:</strong> These companies are listed for informational purposes. Contact companies directly 
+              for current pricing, availability, and service details. Always verify licensing and insurance.
+            </p>
+          </div>
         </section>
 
+        {/* Phoenix Area Coverage */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Phoenix Valley Areas We Serve</h2>
+          <h2 className="text-2xl font-bold mb-6">Phoenix Area Coverage</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <h3 className="font-semibold mb-2">Phoenix Proper</h3>
+              <h3 className="font-semibold mb-2">Central Phoenix</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>Downtown Phoenix</li>
-                <li>Central Phoenix</li>
-                <li>North Phoenix</li>
-                <li>Ahwatukee</li>
+                <li>Midtown</li>
                 <li>Arcadia</li>
                 <li>Biltmore</li>
-                <li>Camelback</li>
-                <li>Desert Ridge</li>
+                <li>Central Corridor</li>
+                <li>Camelback East</li>
+                <li>Paradise Valley</li>
+                <li>Ahwatukee</li>
               </ul>
             </div>
             <div>
@@ -94,9 +141,9 @@ export default function PhoenixPage() {
                 <li>Mesa</li>
                 <li>Chandler</li>
                 <li>Gilbert</li>
-                <li>Apache Junction</li>
-                <li>Queen Creek</li>
                 <li>Fountain Hills</li>
+                <li>Cave Creek</li>
+                <li>Carefree</li>
               </ul>
             </div>
             <div>
@@ -113,102 +160,73 @@ export default function PhoenixPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">North Valley</h3>
+              <h3 className="font-semibold mb-2">North Phoenix</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Paradise Valley</li>
-                <li>Cave Creek</li>
-                <li>Carefree</li>
+                <li>Deer Valley</li>
+                <li>Desert Ridge</li>
+                <li>North Mountain</li>
+                <li>Moon Valley</li>
                 <li>Anthem</li>
                 <li>New River</li>
-                <li>Desert Hills</li>
-                <li>North Scottsdale</li>
-                <li>Deer Valley</li>
+                <li>Sun City</li>
+                <li>Sun City West</li>
               </ul>
             </div>
           </div>
           
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600">
-              <strong>Extended Service:</strong> We also serve Tucson, Flagstaff, Sedona, 
-              and other Arizona communities with advance scheduling.
+              <strong>Also serving:</strong> Apache Junction, Queen Creek, Maricopa, Wickenburg, 
+              and all of Maricopa County
             </p>
           </div>
         </section>
 
+        {/* Phoenix Tips */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Phoenix Desert Climate Tips</h2>
+          <h2 className="text-2xl font-bold mb-6">Phoenix Dumpster Considerations</h2>
           <div className="space-y-4">
-            <div className="border-l-4 border-orange-500 pl-4">
-              <h3 className="font-semibold mb-1">Extreme Heat Management</h3>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Extreme Heat</h3>
               <p className="text-gray-600">
-                Summer temperatures exceed 115°F. We schedule deliveries for dawn hours (5-7 AM) and provide heat-resistant containers and covers.
+                Phoenix summers can exceed 115°F. Plan loading during cooler morning/evening hours. Stay hydrated.
               </p>
             </div>
-            <div className="border-l-4 border-orange-500 pl-4">
-              <h3 className="font-semibold mb-1">Monsoon Season Preparation</h3>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Desert Landscaping</h3>
               <p className="text-gray-600">
-                July-September brings sudden storms and flash floods. Our dumpsters include secure tie-downs and drainage features for safety.
+                Many Phoenix properties have gravel yards and desert plants. Protect surfaces during dumpster placement.
               </p>
             </div>
-            <div className="border-l-4 border-orange-500 pl-4">
-              <h3 className="font-semibold mb-1">Desert Landscaping Projects</h3>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Monsoon Season</h3>
               <p className="text-gray-600">
-                Removing desert plants, rocks, and hardscaping is common. We specialize in heavy desert debris and coordinate with xeriscape contractors.
+                July-September monsoons bring dust storms and flash floods. Consider covered loading during storms.
               </p>
             </div>
-            <div className="border-l-4 border-orange-500 pl-4">
-              <h3 className="font-semibold mb-1">HOA Requirements</h3>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">HOA Restrictions</h3>
               <p className="text-gray-600">
-                Many Valley communities have strict HOA rules about dumpster placement and screening. We provide guidance on compliance and timing.
+                Many Phoenix neighborhoods have strict HOA rules. Check requirements before dumpster delivery.
               </p>
             </div>
-            <div className="border-l-4 border-orange-500 pl-4">
-              <h3 className="font-semibold mb-1">Pool Renovation Specialists</h3>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">City Permits</h3>
               <p className="text-gray-600">
-                Pool remodels and removals are common in Phoenix. We handle pool coping, decking, and equipment disposal with proper drainage considerations.
+                Phoenix requires permits for street placement. Many companies can handle the permitting process.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Phoenix Dumpster Rental FAQs</h2>
-          <div className="space-y-4">
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">What time do you deliver in Phoenix summers?</summary>
-              <p className="mt-2 text-gray-600">
-                Summer deliveries start at 5 AM to beat the heat. We complete most deliveries by 8 AM when temperatures are still manageable for our crew.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Can dumpsters handle desert heat?</summary>
-              <p className="mt-2 text-gray-600">
-                Yes! Our dumpsters are built for extreme conditions. We use reinforced materials and heat-resistant coatings to prevent warping or damage.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">What about monsoon season?</summary>
-              <p className="mt-2 text-gray-600">
-                We monitor weather closely during monsoon season (July-September) and may reschedule deliveries during flash flood warnings for safety.
-              </p>
-            </details>
-            
-            <details className="border rounded-lg p-4 cursor-pointer">
-              <summary className="font-semibold">Do you serve Scottsdale and Paradise Valley?</summary>
-              <p className="mt-2 text-gray-600">
-                Absolutely! We're familiar with upscale community requirements and provide discrete, professional service that meets HOA standards.
-              </p>
-            </details>
-          </div>
-        </section>
-
-        <div className="bg-green-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Ready to Rent in Phoenix?</h2>
-          <p className="mb-6 text-gray-700">Get quotes from licensed Arizona providers</p>
-          <Link href="/" className="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-700 transition">
-            Get Phoenix Quotes Now
+        {/* Back to Calculator */}
+        <div className="bg-gray-50 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Need Help Choosing a Size?</h2>
+          <p className="mb-6 text-gray-700">
+            Use our free calculator to determine the right dumpster size for your Phoenix project
+          </p>
+          <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
+            Calculate Dumpster Size
           </Link>
         </div>
       </div>
