@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://yourdomain.com'),
+  metadataBase: new URL('https://dumpster-size-calculator.com'),
   title: {
     default: 'Dumpster Size Calculator - Find the Right Size & Price',
     template: '%s | Dumpster Calculator'
@@ -35,7 +35,7 @@ export const metadata = {
   openGraph: {
     title: 'Dumpster Size Calculator - Find the Right Size & Price',
     description: 'Free dumpster size calculator. Get instant recommendations for your project.',
-    url: 'https://yourdomain.com',
+    url: 'https://dumpster-size-calculator.com',
     siteName: 'Dumpster Calculator',
     locale: 'en_US',
     type: 'website',
