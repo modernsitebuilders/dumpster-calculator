@@ -6,6 +6,15 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   compress: true,
+  async redirects() {
+    return [
+      {
+        source: '/blog/landscaping-cleanup-dumpster-size',
+        destination: '/blog/landscaping-debris-dumpster-size',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
