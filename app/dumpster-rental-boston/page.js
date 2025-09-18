@@ -1,110 +1,126 @@
-// app/dumpster-rental-denver/page.js
+// app/dumpster-rental-boston/page.js
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental Denver CO | Local Companies & Size Guide',
-  description: 'Find dumpster rental companies in Denver. Compare local providers serving the Mile High City and Front Range.',
-  keywords: 'dumpster rental denver, denver dumpster companies, roll off dumpster denver, colorado dumpster rental'
+  title: 'Dumpster Rental Boston MA | Local Companies & Size Guide',
+  description: 'Find dumpster rental companies in Boston. Compare local providers serving Greater Boston and the North Shore.',
+  keywords: 'dumpster rental boston, boston dumpster companies, roll off dumpster boston, massachusetts dumpster rental'
 };
 
-export default function DenverPage() {
+export default function BostonPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Local Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Dumpster Rental in Denver, Colorado
+            Dumpster Rental in Boston, Massachusetts
           </h1>
           <p className="text-xl text-gray-600">
-            Find local dumpster rental companies serving the Mile High City and Front Range
+            Find local dumpster rental companies serving Greater Boston and the North Shore
           </p>
         </div>
 
         {/* Quick Calculator CTA */}
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
           <h2 className="text-2xl font-bold mb-4">Calculate Your Dumpster Size</h2>
-          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your Denver project</p>
+          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your Boston project</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
             Use Size Calculator
           </Link>
         </div>
 
-        {/* Local Denver Companies */}
+        {/* Local Boston Companies */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Denver Dumpster Rental Companies</h2>
+          <h2 className="text-2xl font-bold mb-6">Boston Dumpster Rental Companies</h2>
           <div className="space-y-6">
             
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">5280 Waste</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Diamond Dumpster Rentals</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Phone:</strong> (720) 884-0300</p>
-                  <p><strong>Website:</strong> 5280waste.com</p>
-                  <p><strong>Features:</strong> Direct local calls, no call center</p>
+                  <p><strong>Phone:</strong> (617) 522-1841</p>
+                  <p><strong>Website:</strong> diamonddumpsterrentals.com</p>
+                  <p><strong>Features:</strong> Same-day delivery available</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Denver metro, Front Range</p>
-                  <p><strong>Specialties:</strong> Only locally owned Denver waste hauler, sustainability focus</p>
+                  <p><strong>Service Areas:</strong> Roslindale, Canton, Greater Boston</p>
+                  <p><strong>Specialties:</strong> Founded 2021, locally-owned, emergency drop-offs</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Sam's Hauling Denver</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Homestead Disposal Inc</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Website:</strong> samshauling.com</p>
-                  <p><strong>Experience:</strong> 25+ years in business</p>
-                  <p><strong>Features:</strong> Small-footprint containers, side doors</p>
+                  <p><strong>Phone:</strong> (781) 320-0516</p>
+                  <p><strong>Website:</strong> homestead-disposal.com</p>
+                  <p><strong>Container Sizes:</strong> 10 and 15-yard options</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Denver area</p>
-                  <p><strong>Specialties:</strong> Family-owned, "best prices in Denver," no hidden fees</p>
+                  <p><strong>Service Areas:</strong> Greater Boston, Metro West, South Shore</p>
+                  <p><strong>Specialties:</strong> Same-day/next-day delivery, transparent pricing</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Liberty Dumpster Rental Denver</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Quick Disposal</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Website:</strong> denver.libertydumpster.com</p>
-                  <p><strong>Features:</strong> Online booking, transparent pricing</p>
+                  <p><strong>Phone:</strong> (781) 246-2090</p>
+                  <p><strong>Website:</strong> quickdisposal.com</p>
+                  <p><strong>Experience:</strong> Serving MA since 1995</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Denver area</p>
-                  <p><strong>Services:</strong> Home renovation, construction, estate cleanouts</p>
+                  <p><strong>Service Areas:</strong> Middlesex and Essex counties</p>
+                  <p><strong>Specialties:</strong> Family-owned for 25+ years, demolition services</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">ASL Dumpsters</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Hippo Dumpster Rental Boston</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Phone:</strong> (303) 981-2288</p>
-                  <p><strong>Website:</strong> asldumpster.com</p>
+                  <p><strong>Phone:</strong> (617) 890-9058</p>
+                  <p><strong>Website:</strong> hippodumpstersma.com</p>
                   <p><strong>Container Sizes:</strong> 10, 15, 20-yard options</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Denver and surrounding Colorado areas</p>
-                  <p><strong>Discounts:</strong> Military, first responder, teacher discounts</p>
+                  <p><strong>Service Areas:</strong> Boston and surrounding areas</p>
+                  <p><strong>Specialties:</strong> Family-owned, multiple locations, competitive pricing</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Denver Dumpster Rental Center</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Budget Dumpster</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Phone:</strong> 720-573-2424</p>
-                  <p><strong>Website:</strong> denverdumpsterrental.org</p>
-                  <p><strong>Features:</strong> Family-owned, green company</p>
+                  <p><strong>Website:</strong> budgetdumpster.com</p>
+                  <p><strong>Features:</strong> Upfront pricing, bundled services</p>
+                  <p><strong>Requirements:</strong> 60 ft space, 23 ft vertical clearance</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Denver area</p>
-                  <p><strong>Container Sizes:</strong> 10, 15, 20, 30-yard options</p>
+                  <p><strong>Service Areas:</strong> Greater Boston area</p>
+                  <p><strong>Specialties:</strong> Low prices, transparent pricing, fast service</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Casella Waste Systems</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (617) 765-4780</p>
+                  <p><strong>Website:</strong> casella.com</p>
+                  <p><strong>Experience:</strong> 50+ years in business</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Boston and surrounding areas</p>
+                  <p><strong>Specialties:</strong> All-inclusive pricing, commercial and residential</p>
                 </div>
               </div>
             </div>
@@ -118,110 +134,110 @@ export default function DenverPage() {
           </div>
         </section>
 
-        {/* Denver Area Coverage */}
+        {/* Boston Area Coverage */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Denver Metro Area Coverage</h2>
+          <h2 className="text-2xl font-bold mb-6">Greater Boston Area Coverage</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <h3 className="font-semibold mb-2">Central Denver</h3>
+              <h3 className="font-semibold mb-2">Boston Proper</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Downtown</li>
-                <li>LoDo (Lower Downtown)</li>
-                <li>RiNo (River North)</li>
-                <li>Capitol Hill</li>
-                <li>Five Points</li>
-                <li>Cherry Creek</li>
-                <li>Washington Park</li>
-                <li>City Park</li>
+                <li>Back Bay</li>
+                <li>Beacon Hill</li>
+                <li>North End</li>
+                <li>South End</li>
+                <li>Financial District</li>
+                <li>Fenway</li>
+                <li>South Boston</li>
+                <li>Charlestown</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">North Denver</h3>
+              <h3 className="font-semibold mb-2">Cambridge Area</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Highland</li>
-                <li>Berkeley</li>
-                <li>Regis</li>
-                <li>Chaffee Park</li>
-                <li>Sunnyside</li>
-                <li>Thornton</li>
-                <li>Westminster</li>
-                <li>Northglenn</li>
+                <li>Cambridge</li>
+                <li>Somerville</li>
+                <li>Arlington</li>
+                <li>Belmont</li>
+                <li>Watertown</li>
+                <li>Medford</li>
+                <li>Malden</li>
+                <li>Everett</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">South Denver</h3>
+              <h3 className="font-semibold mb-2">North Shore</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Glendale</li>
-                <li>Englewood</li>
-                <li>Littleton</li>
-                <li>Centennial</li>
-                <li>Aurora</li>
-                <li>Greenwood Village</li>
-                <li>Cherry Hills Village</li>
-                <li>Lone Tree</li>
+                <li>Lynn</li>
+                <li>Salem</li>
+                <li>Peabody</li>
+                <li>Beverly</li>
+                <li>Danvers</li>
+                <li>Marblehead</li>
+                <li>Swampscott</li>
+                <li>Saugus</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">West Denver</h3>
+              <h3 className="font-semibold mb-2">Metro West</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Lakewood</li>
-                <li>Golden</li>
-                <li>Wheat Ridge</li>
-                <li>Arvada</li>
-                <li>Edgewater</li>
-                <li>Mountain View</li>
-                <li>Sloan Lake</li>
-                <li>West Colfax</li>
+                <li>Newton</li>
+                <li>Brookline</li>
+                <li>Waltham</li>
+                <li>Lexington</li>
+                <li>Framingham</li>
+                <li>Natick</li>
+                <li>Wellesley</li>
+                <li>Needham</li>
               </ul>
             </div>
           </div>
           
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600">
-              <strong>Also serving:</strong> Boulder, Fort Collins, Colorado Springs, 
-              Pueblo, and all of the Front Range
+              <strong>Also serving:</strong> Quincy, Braintree, Milton, Dedham, 
+              Woburn, Burlington, and all of Eastern Massachusetts
             </p>
           </div>
         </section>
 
-        {/* Denver Tips */}
+        {/* Boston Tips */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Denver Dumpster Considerations</h2>
+          <h2 className="text-2xl font-bold mb-6">Boston Dumpster Considerations</h2>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Mile High Altitude</h3>
+              <h3 className="font-semibold mb-1">Narrow Historic Streets</h3>
               <p className="text-gray-600">
-                Denver's 5,280-foot elevation can make physical work more demanding. Take breaks when loading dumpsters and stay hydrated.
+                Many Boston streets are too narrow for large dumpsters. Companies offer smaller footprint options for tight spaces in Beacon Hill, North End, and Back Bay.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Seasonal Weather Challenges</h3>
+              <h3 className="font-semibold mb-1">Complex Permit Process</h3>
               <p className="text-gray-600">
-                Colorado weather is unpredictable - sudden snowstorms even in spring/fall can affect delivery schedules. Plan for weather delays.
+                Boston requires permits from multiple departments for street placement. Many companies handle this complex process for you - always ask about permit assistance.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Green Focus</h3>
+              <h3 className="font-semibold mb-1">Snow Emergency Routes</h3>
               <p className="text-gray-600">
-                Denver prioritizes sustainability. Many local companies emphasize recycling and eco-friendly disposal practices.
+                Winter rentals must avoid snow emergency routes. Companies track restrictions and will adjust placement to comply with city requirements.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Historic Home Renovations</h3>
+              <h3 className="font-semibold mb-1">University Move-In/Out Periods</h3>
               <p className="text-gray-600">
-                Many Denver neighborhoods have historic homes requiring careful renovation. Be aware of lead paint and asbestos disposal regulations.
+                September 1st and May 31st are extremely busy due to student moves. Book early during these periods as availability is limited.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Rapid Development</h3>
+              <h3 className="font-semibold mb-1">Higher Disposal Costs</h3>
               <p className="text-gray-600">
-                Denver's booming growth creates high demand for dumpsters. Book early, especially in developing areas like RiNo and Stapleton.
+                Limited disposal facilities in Eastern Massachusetts mean higher costs than national average. Prices reflect transportation to distant facilities.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Local Business Preference</h3>
+              <h3 className="font-semibold mb-1">Historic Building Materials</h3>
               <p className="text-gray-600">
-                Denver values local businesses. Several locally-owned companies offer personalized service and community support.
+                Many Boston buildings contain lead paint and asbestos. Ensure your rental company can handle these materials with proper disposal procedures.
               </p>
             </div>
           </div>
@@ -231,7 +247,7 @@ export default function DenverPage() {
         <div className="bg-gray-50 rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">Need Help Choosing a Size?</h2>
           <p className="mb-6 text-gray-700">
-            Use our free calculator to determine the right dumpster size for your Denver project
+            Use our free calculator to determine the right dumpster size for your Boston project
           </p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
             Calculate Dumpster Size
