@@ -75,6 +75,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/favicon.ico" />
         {/* Preconnect to external domains for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
