@@ -76,8 +76,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.variable}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         {/* Preconnect to external domains for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
