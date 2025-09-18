@@ -258,19 +258,19 @@ export default function Home() {
 
             {/* Weight Guides */}
             <div className="bg-white rounded-lg p-6 text-center shadow-md">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-3">Weight Limits Guide</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Learn how different materials affect weight limits and costs
-              </p>
-              <Link href="/blog/dumpster-weight-limits" className="text-blue-600 hover:text-blue-800 font-semibold">
-                Understanding Weight →
-              </Link>
-            </div>
+  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+    </svg>
+  </div>
+  <h3 className="text-lg font-semibold mb-3">Weight Limits Guide</h3>
+  <p className="text-gray-600 text-sm mb-4">
+    Learn how different materials affect weight limits and costs
+  </p>
+  <Link href="/blog/weight-limits-overage-fees" className="text-blue-600 hover:text-blue-800 font-semibold">
+    Understanding Weight →
+  </Link>
+</div>
 
             {/* Local Information */}
             <div className="bg-white rounded-lg p-6 text-center shadow-md">
@@ -390,20 +390,23 @@ export default function Home() {
           {/* Popular Resources */}
           <div className="mt-12 bg-blue-50 rounded-lg p-8">
             <h3 className="text-lg font-semibold text-center mb-6">Popular Resources</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Link href="/blog/concrete-disposal-guide" className="block text-center p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <span className="text-sm font-medium text-gray-700 hover:text-blue-600">Concrete Disposal</span>
-              </Link>
-              <Link href="/blog/roofing-shingle-weight" className="block text-center p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <span className="text-sm font-medium text-gray-700 hover:text-blue-600">Shingle Weight Guide</span>
-              </Link>
-              <Link href="/blog/avoid-overage-fees" className="block text-center p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <span className="text-sm font-medium text-gray-700 hover:text-blue-600">Avoid Overage Fees</span>
-              </Link>
-              <Link href="/blog/weight-vs-volume" className="block text-center p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <span className="text-sm font-medium text-gray-700 hover:text-blue-600">Weight vs Volume</span>
-              </Link>
-            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+  <Link href="/blog/concrete-disposal-guide" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+    <h4 className="font-semibold text-gray-900">Concrete Disposal</h4>
+  </Link>
+  
+  <Link href="/blog/roofing-shingle-weight-calculator" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+    <h4 className="font-semibold text-gray-900">Shingle Weight Guide</h4>
+  </Link>
+  
+  <Link href="/blog/how-to-avoid-dumpster-overage-fees" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+    <h4 className="font-semibold text-gray-900">Avoid Overage Fees</h4>
+  </Link>
+  
+  <Link href="/blog/dumpster-weight-vs-volume" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+    <h4 className="font-semibold text-gray-900">Weight vs Volume</h4>
+  </Link>
+</div>
           </div>
         </div>
       </div>
