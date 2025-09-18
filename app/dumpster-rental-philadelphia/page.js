@@ -16,20 +16,6 @@ export default function PhiladelphiaPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in Philadelphia, PA
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Fast, reliable dumpster rentals serving Philadelphia and surrounding areas
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Same Day Delivery</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Best Local Prices</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ No Hidden Fees</span>
-          </div>
-        </div>
-
-        {/* Quick Calculator CTA */}
-        <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">Get Instant Size Recommendation</h2>
-          <p className="mb-6">Use our free calculator to find the perfect dumpster size for your Philadelphia project</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
             Calculate Size & Get Quotes
           </Link>

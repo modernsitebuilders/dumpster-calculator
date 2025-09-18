@@ -16,14 +16,6 @@ export default function BostonPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in Boston, MA
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Professional dumpster rentals for Boston's historic neighborhoods and modern developments
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Permit Assistance</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Historic District Approved</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Narrow Street Specialists</span>
-          </div>
         </div>
 
         {/* Quick Calculator CTA */}

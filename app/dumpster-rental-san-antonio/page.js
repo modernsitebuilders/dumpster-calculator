@@ -14,14 +14,6 @@ export default function SanAntonioPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in San Antonio, TX
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Alamo City dumpster service for residential, commercial, and military projects
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Military Friendly</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Historic District Approved</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Fiesta Ready</span>
-          </div>
         </div>
 
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">

@@ -16,14 +16,6 @@ export default function LosAngelesPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in Los Angeles, CA
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Reliable dumpster rentals serving LA County from the beaches to the valleys
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Same Day Delivery</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Film Set Specialists</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Eco-Friendly Disposal</span>
-          </div>
         </div>
 
         {/* Quick Calculator CTA */}

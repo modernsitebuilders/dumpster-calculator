@@ -14,14 +14,6 @@ export default function PortlandPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in Portland, OR
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Keep Portland clean with sustainable dumpster rentals across the metro area
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Eco-Friendly</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Rain-Ready</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Urban-Rural Service</span>
-          </div>
         </div>
 
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">

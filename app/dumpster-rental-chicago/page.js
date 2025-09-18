@@ -15,14 +15,6 @@ export default function ChicagoPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in Chicago, IL
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Reliable dumpster rentals serving Chicago and Chicagoland suburbs
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Winter Service</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Union Friendly</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Alley Placement</span>
-          </div>
         </div>
 
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">

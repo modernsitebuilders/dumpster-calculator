@@ -16,14 +16,6 @@ export default function NewYorkPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in New York City
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Fast, reliable dumpster rentals serving all five boroughs of NYC
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Same Day Delivery</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ All 5 Boroughs</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Permit Assistance</span>
-          </div>
         </div>
 
         {/* Quick Calculator CTA */}

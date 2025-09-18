@@ -15,14 +15,6 @@ export default function DetroitPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in Detroit, MI
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Motor City dumpster service for Detroit's renewal and all of Metro Detroit
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Urban Renewal Ready</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Industrial Strength</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Metro Coverage</span>
-          </div>
         </div>
 
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">

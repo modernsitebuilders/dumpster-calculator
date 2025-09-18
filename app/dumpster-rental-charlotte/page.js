@@ -15,14 +15,6 @@ export default function CharlottePage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in Charlotte, NC
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Professional dumpster service for the Queen City
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Fast Delivery</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ All Neighborhoods</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Competitive Rates</span>
-          </div>
         </div>
 
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">

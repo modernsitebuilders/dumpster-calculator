@@ -14,14 +14,6 @@ export default function WashingtonDCPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in Washington, DC
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Professional dumpster service for the Nation's Capital and DMV region
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Security Cleared</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Government Ready</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Historic District Approved</span>
-          </div>
         </div>
 
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
