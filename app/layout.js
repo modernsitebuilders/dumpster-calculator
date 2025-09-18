@@ -146,51 +146,6 @@ export default function RootLayout({ children }) {
         
         {/* Footer */}
         <Footer />
-        
-        {/* Load non-critical scripts after page load */}
-        <Script
-          id="performance-monitor"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Monitor Core Web Vitals
-              if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
-                try {
-                  // Monitor Largest Contentful Paint
-                  const lcpObserver = new PerformanceObserver((list) => {
-                    const entries = list.getEntries();
-                    const lastEntry = entries[entries.length - 1];
-                    console.log('LCP:', lastEntry.startTime);
-                  });
-                  lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
-                  
-                  // Monitor First Input Delay
-                  const fidObserver = new PerformanceObserver((list) => {
-                    const entries = list.getEntries();
-                    entries.forEach((entry) => {
-                      console.log('FID:', entry.processingStart - entry.startTime);
-                    });
-                  });
-                  fidObserver.observe({ type: 'first-input', buffered: true });
-                  
-                  // Monitor Cumulative Layout Shift
-                  let clsValue = 0;
-                  const clsObserver = new PerformanceObserver((list) => {
-                    for (const entry of list.getEntries()) {
-                      if (!entry.hadRecentInput) {
-                        clsValue += entry.value;
-                        console.log('CLS:', clsValue);
-                      }
-                    }
-                  });
-                  clsObserver.observe({ type: 'layout-shift', buffered: true });
-                } catch (e) {
-                  console.error('Performance monitoring error:', e);
-                }
-              }
-            `,
-          }}
-        />
       </body>
     </html>
   );
