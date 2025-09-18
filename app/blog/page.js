@@ -327,18 +327,6 @@ export default function BlogIndex() {
       height: 450,
     },
     {
-      title: "Landscaping Cleanup Dumpster Size: Seasonal & Project Guide",
-      excerpt: "Landscaping cleanups require proper debris disposal. Learn what dumpster size you need for seasonal yard work, tree trimming, and garden renovations.",
-      slug: "landscaping-cleanup-dumpster-size",
-      category: "Landscaping",
-      readTime: "6 min read",
-      publishDate: "January 28, 2025",
-      featured: false,
-      image: "/images/blog/landscaping-debris.webp",
-      width: 800,
-      height: 450,
-    },
-    {
       title: "Landscaping Debris Dumpster Size: Yard Waste & Tree Removal",
       excerpt: "Landscaping projects create unique disposal challenges. Learn what dumpster size you need for tree removal, yard cleanups, and landscaping renovations.",
       slug: "landscaping-debris-dumpster-size",

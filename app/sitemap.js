@@ -45,7 +45,6 @@ export default function sitemap() {
     '/blog/flooring-replacement-dumpster-size',
     '/blog/living-room-renovation-dumpster-size',
     '/blog/construction-debris-dumpster-size',
-    '/blog/landscaping-cleanup-dumpster-size',
     '/blog/landscaping-debris-dumpster-size',
     '/blog/moving-cleanout-dumpster-size',
 
