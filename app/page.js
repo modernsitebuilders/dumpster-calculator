@@ -6,7 +6,7 @@ import { trackCalculatorUsage } from '../utils/analytics';
 import dynamic from 'next/dynamic';
 
 const DumpsterCalculatorWithMaterials = dynamic(
-  () => import('@/calculator-v2/components/calculator/CalculatorV2'),
+  () => import('@/calculator-v2/components/calculator/CalculatorV2.jsx'),
   { 
     loading: () => <div>Loading calculator...</div>,
     ssr: false 
