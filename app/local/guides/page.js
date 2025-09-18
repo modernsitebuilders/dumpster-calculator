@@ -5,7 +5,7 @@ import { MapPin } from 'lucide-react';
 export const metadata = {
   title: "Local Dumpster Rental Pricing Guides by City | Compare Providers",
   description: "Compare dumpster rental pricing and find trusted local providers in major US cities. City-specific pricing data and neighborhood coverage maps.",
-  keywords: "dumpster rental pricing by city, local dumpster companies, city pricing guides"
+  keywords: "dumpster rental pricing by city, city pricing guides"
 };
 
 export default function LocalGuidesPage() {
