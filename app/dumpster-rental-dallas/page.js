@@ -2,9 +2,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental Dallas TX | Same Day Service | Best DFW Prices',
-  description: 'Dumpster rental in Dallas starting at $300. Serving Plano, Arlington, Fort Worth, and all of DFW metroplex. Same-day delivery available.',
-  keywords: 'dumpster rental dallas, dumpster rental DFW, roll off dumpster dallas, dumpster rental plano, dumpster rental fort worth'
+  title: 'Dumpster Rental Dallas TX | Local Companies & Size Guide',
+  description: 'Find dumpster rental companies in Dallas. Compare local providers serving the DFW Metroplex and surrounding areas.',
+  keywords: 'dumpster rental dallas, DFW dumpster companies, roll off dumpster dallas, texas dumpster rental'
 };
 
 export default function DallasPage() {
@@ -14,163 +14,228 @@ export default function DallasPage() {
         {/* Local Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Dumpster Rental in Dallas, TX
+            Dumpster Rental in Dallas, Texas
           </h1>
+          <p className="text-xl text-gray-600">
+            Find local dumpster rental companies serving the DFW Metroplex and surrounding areas
+          </p>
         </div>
 
         {/* Quick Calculator CTA */}
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">Get Instant Dallas Dumpster Quote</h2>
-          <p className="mb-6">Fast, reliable service across the DFW metroplex</p>
+          <h2 className="text-2xl font-bold mb-4">Calculate Your Dumpster Size</h2>
+          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your Dallas project</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
-            Calculate Size & Get Quotes
+            Use Size Calculator
           </Link>
         </div>
 
-        {/* Local Pricing */}
+        {/* Local Dallas Companies */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Dallas Dumpster Rental Pricing</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">10 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$300 - $425</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Small home projects</li>
-                <li>• Garage cleanouts</li>
-                <li>• Minor renovations</li>
-              </ul>
+          <h2 className="text-2xl font-bold mb-6">Dallas Dumpster Rental Companies</h2>
+          <div className="space-y-6">
+            
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Frontier Waste Solutions</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> frontierwaste.com/dallas-dumpster-rental/</p>
+                  <p><strong>Starting Price:</strong> $185/haul</p>
+                  <p><strong>Container Sizes:</strong> 20, 30, 40-yard options</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Dallas, Fort Worth, Garland, Irving, Carrollton, Addison</p>
+                  <p><strong>Features:</strong> Free site surveys, transparent pricing, no hidden fees</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">20 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$400 - $525</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Kitchen renovations</li>
-                <li>• Bathroom remodels</li>
-                <li>• Flooring projects</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Bin There Dump That Dallas</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> 972-345-2722</p>
+                  <p><strong>Website:</strong> bintheredumpthat.com/dallas-dumpster-rentals/</p>
+                  <p><strong>Features:</strong> 24-hour delivery, driveway protection</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Dallas and surrounding neighborhoods</p>
+                  <p><strong>Coverage:</strong> Lakewood, Oak Cliff, Preston Hollow, Highland Park, Deep Ellum</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">30 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$500 - $650</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Whole house renovations</li>
-                <li>• New construction</li>
-                <li>• Large cleanouts</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Dumpster Dudez</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> dumpsterdudez.com/dallas</p>
+                  <p><strong>Owner:</strong> Jared (owner-operated)</p>
+                  <p><strong>Container Sizes:</strong> 10 to 25-yard options</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Dallas area</p>
+                  <p><strong>Features:</strong> EZ booking process, project team approach</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">40 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$600 - $775</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Commercial projects</li>
-                <li>• Large construction</li>
-                <li>• Multi-unit buildings</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">VaVia Dallas/Fort Worth</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> 817-482-3851</p>
+                  <p><strong>Website:</strong> govavia.com/dallas-tx-dumpster-rental/</p>
+                  <p><strong>Address:</strong> Kennedale, TX</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Dallas, Fort Worth, Arlington, DFW Metroplex</p>
+                  <p><strong>Features:</strong> Family owned, no hidden fees, flexible scheduling</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Red-E-Bins DFW</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> dfw.redebins.us</p>
+                  <p><strong>Container Sizes:</strong> 5, 10, 15-yard (specialty small sizes)</p>
+                  <p><strong>Unique:</strong> Fits in compact car spaces</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Dallas metro area</p>
+                  <p><strong>Features:</strong> Crane system, tight access, 7-day support</p>
+                </div>
+              </div>
             </div>
           </div>
-          <p className="text-sm text-gray-600 mt-4">
-            *Prices include 7-day rental period. Texas has some of the most competitive dumpster rental rates in the US.
-          </p>
+
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">
+              <strong>Note:</strong> These companies are listed for informational purposes. Contact companies directly 
+              for current pricing, availability, and service details. Always verify licensing and insurance.
+            </p>
+          </div>
         </section>
 
-        {/* DFW Service Areas */}
+        {/* Dallas Area Coverage */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">DFW Metroplex Areas We Serve</h2>
+          <h2 className="text-2xl font-bold mb-6">DFW Metroplex Coverage</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <h3 className="font-semibold mb-2">Dallas County</h3>
+              <h3 className="font-semibold mb-2">Central Dallas</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Dallas</li>
-                <li>Plano</li>
-                <li>Richardson</li>
-                <li>Garland</li>
-                <li>Irving</li>
-                <li>Mesquite</li>
-                <li>Carrollton</li>
-                <li>Farmers Branch</li>
+                <li>Downtown Dallas</li>
+                <li>Deep Ellum</li>
+                <li>Uptown</li>
+                <li>Design District</li>
+                <li>Victory Park</li>
+                <li>Cityplace</li>
+                <li>Knox-Henderson</li>
+                <li>Bishop Arts District</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">Tarrant County</h3>
+              <h3 className="font-semibold mb-2">North Dallas</h3>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>Preston Hollow</li>
+                <li>Highland Park</li>
+                <li>University Park</li>
+                <li>Lake Highlands</li>
+                <li>Lakewood</li>
+                <li>M Streets</li>
+                <li>Greenville Avenue</li>
+                <li>Forest Hills</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">East/South Dallas</h3>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>Oak Cliff</li>
+                <li>Fair Park</li>
+                <li>Exposition Park</li>
+                <li>Kessler Park</li>
+                <li>Winnetka Heights</li>
+                <li>Cedar Crest</li>
+                <li>Pleasant Grove</li>
+                <li>White Rock</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">DFW Suburbs</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>Fort Worth</li>
                 <li>Arlington</li>
-                <li>Grand Prairie</li>
-                <li>Euless</li>
-                <li>Bedford</li>
-                <li>Hurst</li>
-                <li>Keller</li>
-                <li>Southlake</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Collin County</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>McKinney</li>
-                <li>Frisco</li>
-                <li>Allen</li>
-                <li>Wylie</li>
-                <li>Murphy</li>
-                <li>Prosper</li>
-                <li>Celina</li>
-                <li>The Colony</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Denton County</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>Denton</li>
-                <li>Lewisville</li>
-                <li>Flower Mound</li>
-                <li>Coppell</li>
-                <li>Grapevine</li>
-                <li>Highland Village</li>
-                <li>Lake Dallas</li>
-                <li>Little Elm</li>
+                <li>Plano</li>
+                <li>Irving</li>
+                <li>Garland</li>
+                <li>Mesquite</li>
+                <li>Carrollton</li>
+                <li>Richardson</li>
               </ul>
             </div>
           </div>
+          
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">
+              <strong>Also serving:</strong> Grand Prairie, Duncanville, DeSoto, Cedar Hill, 
+              Mansfield, Euless, Bedford, Hurst, and all of DFW Metroplex
+            </p>
+          </div>
         </section>
 
-        {/* Texas-Specific Tips */}
+        {/* Dallas Tips */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Dallas-Specific Dumpster Tips</h2>
+          <h2 className="text-2xl font-bold mb-6">Dallas Dumpster Considerations</h2>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Weather Considerations</h3>
+              <h3 className="font-semibold mb-1">DFW Size & Distance</h3>
               <p className="text-gray-600">
-                Texas heat can make debris handling tough. Schedule deliveries for early morning (6-8 AM) during summer months.
+                The DFW Metroplex is huge - delivery fees often depend on distance from the company's location. Local companies may offer better rates.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Storm Season Planning</h3>
+              <h3 className="font-semibold mb-1">Severe Weather Season</h3>
               <p className="text-gray-600">
-                March-May tornado season and summer storms create high demand. Book dumpsters in advance during storm cleanup periods.
+                Spring brings tornadoes and severe storms to Dallas. Plan for weather delays and potential storm cleanup needs.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibent mb-1">HOA Requirements</h3>
+              <h3 className="font-semibold mb-1">Construction Boom</h3>
               <p className="text-gray-600">
-                Many DFW neighborhoods have strict HOA rules. Plano, Frisco, and Southlake often require advance approval for dumpster placement.
+                Dallas construction is booming. High demand means booking early is important, especially in growing suburbs.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Construction Boom Areas</h3>
+              <h3 className="font-semibold mb-1">HOA Communities</h3>
               <p className="text-gray-600">
-                Frisco, McKinney, and Prosper have heavy construction. Plan for potential delivery delays during peak building season.
+                Many Dallas suburbs have strict HOA rules about dumpster placement. Check requirements before scheduling delivery.
+              </p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Traffic & Timing</h3>
+              <p className="text-gray-600">
+                Dallas traffic is notorious. Many companies schedule deliveries during off-peak hours to avoid delays.
+              </p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Summer Heat</h3>
+              <p className="text-gray-600">
+                Texas summers can be brutal (100°F+). Plan loading during cooler morning/evening hours and stay hydrated.
               </p>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <div className="bg-green-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Ready to Rent in the DFW Area?</h2>
+        {/* Back to Calculator */}
+        <div className="bg-gray-50 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Need Help Choosing a Size?</h2>
           <p className="mb-6 text-gray-700">
-            Get competitive quotes from licensed DFW providers
+            Use our free calculator to determine the right dumpster size for your Dallas project
           </p>
-          <Link href="/" className="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-700 transition">
-            Get DFW Quotes Now
+          <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
+            Calculate Dumpster Size
           </Link>
         </div>
       </div>

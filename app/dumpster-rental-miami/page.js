@@ -1,286 +1,240 @@
+// app/dumpster-rental-miami/page.js
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental Miami FL - Size Calculator & Local Providers',
-  description: 'Find the right dumpster size for your Miami project. Free calculator plus local Miami-Dade County dumpster rental companies. Get quotes from trusted providers.',
-  keywords: 'dumpster rental Miami, Miami dumpster sizes, Miami-Dade waste management, South Beach dumpster rental, Coral Gables dumpster, Miami construction dumpster',
-  openGraph: {
-    title: 'Dumpster Rental Miami FL - Size Calculator & Local Providers',
-    description: 'Find the right dumpster size for your Miami project. Free calculator plus local Miami-Dade County dumpster rental companies.',
-    url: 'https://dumpster-size-calculator.com/miami-dumpster-rental',
-  }
+  title: 'Dumpster Rental Miami FL | Local Companies & Size Guide',
+  description: 'Find dumpster rental companies in Miami. Compare local providers serving Miami-Dade County and South Florida.',
+  keywords: 'dumpster rental miami, miami dumpster companies, roll off dumpster miami, south florida dumpster rental'
 };
 
-export default function MiamiDumpsterRental() {
+export default function MiamiPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Header */}
-        <div className="text-center mb-8">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* Local Hero Section */}
+        <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Dumpster Rental in Miami, Florida
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Find the perfect dumpster size for your Miami project with our free calculator
+          <p className="text-xl text-gray-600">
+            Find local dumpster rental companies serving Miami-Dade County and South Florida
           </p>
-          <Link 
-            href="/" 
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-          >
-            Use Free Size Calculator
+        </div>
+
+        {/* Quick Calculator CTA */}
+        <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
+          <h2 className="text-2xl font-bold mb-4">Calculate Your Dumpster Size</h2>
+          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your Miami project</p>
+          <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
+            Use Size Calculator
           </Link>
         </div>
 
-        {/* Miami-Specific Intro */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Dumpster Rentals for Miami Projects
-          </h2>
-          <p className="text-gray-600 mb-4">
-            Whether you're renovating a South Beach condo, cleaning out a Coral Gables estate, or managing construction debris in Downtown Miami, our calculator helps you choose the right dumpster size. Miami's unique building requirements and hurricane preparedness standards make proper waste management crucial for any project.
-          </p>
-          <p className="text-gray-600">
-            From Little Havana home renovations to Brickell high-rise construction, we connect you with trusted Miami-Dade County dumpster rental providers who understand local regulations and permit requirements.
-          </p>
-        </div>
-
-        {/* Popular Project Types in Miami */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Common Miami Dumpster Rental Projects
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Hurricane Cleanup</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Post-storm debris removal throughout Miami-Dade County. Quick cleanup is essential for insurance claims and safety.
-              </p>
-              
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Condo Renovations</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                High-rise apartment and condo remodels in Brickell, South Beach, and Downtown Miami require careful waste management.
-              </p>
-
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Pool Deck Removal</h3>
-              <p className="text-gray-600 text-sm">
-                Miami's pool culture means frequent deck renovations and pool area remodeling projects.
-              </p>
+        {/* Local Miami Companies */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">Miami Dumpster Rental Companies</h2>
+          <div className="space-y-6">
+            
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Affordable Dumpster Rental Miami</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (305) 901-2696 / (305) 707-0978</p>
+                  <p><strong>Website:</strong> affordabledumpsterrental.com/dumpster-rental-miami/</p>
+                  <p><strong>Starting Price:</strong> $199 special</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Miami and surrounding areas</p>
+                  <p><strong>Specialties:</strong> Construction, roofing projects, contractor services</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Roof Replacement</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Hurricane-resistant roofing upgrades are common in Miami. Proper debris disposal is required by local codes.
-              </p>
 
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Landscaping Projects</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Tropical landscaping and palm tree removal generate significant yard waste in Miami's climate.
-              </p>
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Coastal Waste Inc.</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> coastalwasteinc.com/roll-off-dumpsters/miami-dade-county/</p>
+                  <p><strong>Container Sizes:</strong> 10 to 40 cubic yards</p>
+                  <p><strong>Features:</strong> Environmental sustainability focus</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Miami-Dade County, Miami</p>
+                  <p><strong>Coverage:</strong> Brickell, Little Havana, Coral Gables</p>
+                </div>
+              </div>
+            </div>
 
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Estate Cleanouts</h3>
-              <p className="text-gray-600 text-sm">
-                Large home cleanouts in Coral Gables, Pinecrest, and other established Miami neighborhoods.
-              </p>
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Pronto Waste Service</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> 855-596-3278</p>
+                  <p><strong>Website:</strong> prontowasteservice.com</p>
+                  <p><strong>Experience:</strong> 10+ years in business</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Miami and Broward County</p>
+                  <p><strong>Features:</strong> No hidden fees, on-time delivery guarantee</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Miami Dumpster</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> dumpster-rental-miami.com</p>
+                  <p><strong>Services:</strong> Roll-off rentals, junk removal, recycling</p>
+                  <p><strong>Features:</strong> Low-cost rentals, variety of sizes</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Miami area</p>
+                  <p><strong>Specialties:</strong> Environmental disposal, commercial & residential</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Up Waste</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Rating:</strong> Top-rated on Yelp</p>
+                  <p><strong>Services:</strong> Local waste management, dumpster rentals</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Miami area</p>
+                  <p><strong>Focus:</strong> Local company with community focus</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Miami Neighborhoods Served */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Miami Areas We Serve
-          </h2>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">
+              <strong>Note:</strong> These companies are listed for informational purposes. Contact companies directly 
+              for current pricing, availability, and service details. Always verify licensing and insurance.
+            </p>
+          </div>
+        </section>
+
+        {/* Miami Area Coverage */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">Miami Area Coverage</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">Central Miami</h3>
+              <h3 className="font-semibold mb-2">Downtown/Brickell</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Downtown Miami</li>
-                <li>• Brickell</li>
-                <li>• South Beach</li>
-                <li>• Miami Beach</li>
-                <li>• Key Biscayne</li>
+                <li>Downtown Miami</li>
+                <li>Brickell</li>
+                <li>Financial District</li>
+                <li>Government Center</li>
+                <li>Park West</li>
+                <li>Omni</li>
+                <li>Arts & Entertainment</li>
+                <li>Bayfront Park</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">West Miami</h3>
+              <h3 className="font-semibold mb-2">Miami Beach</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Coral Gables</li>
-                <li>• Little Havana</li>
-                <li>• Westchester</li>
-                <li>• Doral</li>
-                <li>• Hialeah</li>
+                <li>South Beach</li>
+                <li>Mid Beach</li>
+                <li>North Beach</li>
+                <li>Bal Harbour</li>
+                <li>Surfside</li>
+                <li>Bay Harbor Islands</li>
+                <li>Sunny Isles Beach</li>
+                <li>Aventura</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">South Miami</h3>
+              <h3 className="font-semibold mb-2">West Miami</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Pinecrest</li>
-                <li>• Kendall</li>
-                <li>• Homestead</li>
-                <li>• South Miami</li>
-                <li>• Palmetto Bay</li>
+                <li>Little Havana</li>
+                <li>Coral Gables</li>
+                <li>Westchester</li>
+                <li>Flagami</li>
+                <li>Doral</li>
+                <li>Fontainebleau</li>
+                <li>Hialeah</li>
+                <li>Miami Lakes</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2">South Miami</h3>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>Coconut Grove</li>
+                <li>Pinecrest</li>
+                <li>Palmetto Bay</li>
+                <li>Cutler Bay</li>
+                <li>Homestead</li>
+                <li>South Miami Heights</li>
+                <li>Kendall</li>
+                <li>The Hammocks</li>
               </ul>
             </div>
           </div>
-        </div>
-
-        {/* Dumpster Sizes for Miami */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Dumpster Sizes Available in Miami
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="border rounded-lg p-4">
-              <h3 className="text-lg font-semibold text-blue-600 mb-2">10 Yard Dumpster</h3>
-              <p className="text-sm text-gray-600 mb-2">Perfect for small Miami projects</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Bathroom remodels</li>
-                <li>• Small condo cleanouts</li>
-                <li>• Minor landscaping</li>
-                <li>• Typical cost: $250-350</li>
-              </ul>
-            </div>
-            <div className="border rounded-lg p-4">
-              <h3 className="text-lg font-semibold text-blue-600 mb-2">20 Yard Dumpster</h3>
-              <p className="text-sm text-gray-600 mb-2">Most popular size in Miami</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Kitchen renovations</li>
-                <li>• Pool deck removal</li>
-                <li>• Medium home cleanouts</li>
-                <li>• Typical cost: $350-450</li>
-              </ul>
-            </div>
-            <div className="border rounded-lg p-4">
-              <h3 className="text-lg font-semibold text-blue-600 mb-2">30 Yard Dumpster</h3>
-              <p className="text-sm text-gray-600 mb-2">Large Miami renovations</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Whole house cleanouts</li>
-                <li>• Large construction projects</li>
-                <li>• Hurricane debris removal</li>
-                <li>• Typical cost: $450-550</li>
-              </ul>
-            </div>
-            <div className="border rounded-lg p-4">
-              <h3 className="text-lg font-semibold text-blue-600 mb-2">40 Yard Dumpster</h3>
-              <p className="text-sm text-gray-600 mb-2">Major Miami projects</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Large construction sites</li>
-                <li>• Major estate cleanouts</li>
-                <li>• Commercial renovations</li>
-                <li>• Typical cost: $550-650</li>
-              </ul>
-            </div>
+          
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">
+              <strong>Also serving:</strong> Fort Lauderdale, Hollywood, Pembroke Pines, Miramar, 
+              and all of Broward County
+            </p>
           </div>
-        </div>
+        </section>
 
-        {/* Miami Regulations */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Miami Dumpster Permit Requirements
-          </h2>
+        {/* Miami Tips */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">Miami Dumpster Considerations</h2>
           <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Street Placement Permits</h3>
-              <p className="text-gray-600 text-sm">
-                Miami-Dade County requires permits for dumpsters placed on public streets or right-of-way. Contact the Miami-Dade Public Works Department at (305) 375-4507 for permit applications.
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Hurricane Season</h3>
+              <p className="text-gray-600">
+                Miami's hurricane season (June-November) can affect delivery schedules and create storm debris cleanup needs.
               </p>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Hurricane Season Considerations</h3>
-              <p className="text-gray-600 text-sm">
-                During hurricane season (June-November), dumpster placement may be restricted. Many companies will collect dumpsters before major storms approach South Florida.
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Tropical Heat & Humidity</h3>
+              <p className="text-gray-600">
+                Year-round heat and humidity make loading challenging. Plan work during cooler morning/evening hours.
               </p>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Prohibited Items</h3>
-              <p className="text-gray-600 text-sm">
-                Miami-Dade has strict disposal regulations. Prohibited items include paint, chemicals, tires, batteries, and appliances with refrigerants. Electronics must be disposed of through Miami-Dade's e-waste program.
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Flooding Considerations</h3>
+              <p className="text-gray-600">
+                Miami's low elevation and frequent flooding require careful dumpster placement during rainy season.
+              </p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Right-of-Way Permits</h3>
+              <p className="text-gray-600">
+                City of Miami requires Temporary Occupancy Permits for street placement. Contact city before delivery.
+              </p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Condo/HOA Restrictions</h3>
+              <p className="text-gray-600">
+                Many Miami condos and communities have strict placement rules. Check with building management first.
+              </p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Tourism Impact</h3>
+              <p className="text-gray-600">
+                High tourism season can affect delivery schedules in South Beach and tourist areas. Plan accordingly.
               </p>
             </div>
           </div>
-        </div>
-
-        {/* Local Providers */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Miami Dumpster Rental Companies
-          </h2>
-          <p className="text-gray-600 mb-4">
-            Compare quotes from these trusted Miami-area dumpster rental providers:
-          </p>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="border rounded-lg p-4">
-              <h3 className="font-semibold text-gray-800">Waste Management Miami</h3>
-              <p className="text-sm text-gray-600">Serving all of Miami-Dade County</p>
-            </div>
-            <div className="border rounded-lg p-4">
-              <h3 className="font-semibold text-gray-800">Republic Services</h3>
-              <p className="text-sm text-gray-600">Construction and residential dumpsters</p>
-            </div>
-            <div className="border rounded-lg p-4">
-              <h3 className="font-semibold text-gray-800">Miami Dumpster Rental Pro</h3>
-              <p className="text-sm text-gray-600">Local Miami specialist</p>
-            </div>
-            <div className="border rounded-lg p-4">
-              <h3 className="font-semibold text-gray-800">Budget Dumpster</h3>
-              <p className="text-sm text-gray-600">Online booking and competitive rates</p>
-            </div>
-          </div>
-        </div>
-
-        {/* FAQ for Miami */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Miami Dumpster Rental FAQ
-          </h2>
-          <div className="space-y-4">
-            <details className="cursor-pointer">
-              <summary className="font-semibold text-gray-800">How much does dumpster rental cost in Miami?</summary>
-              <p className="mt-2 text-gray-600 text-sm">
-                Miami dumpster rental prices range from $250-350 for 10-yard dumpsters to $550-650 for 40-yard containers. Prices vary by location, with South Beach and Brickell typically higher due to access challenges.
-              </p>
-            </details>
-            <details className="cursor-pointer">
-              <summary className="font-semibold text-gray-800">Do I need a permit for dumpster rental in Miami?</summary>
-              <p className="mt-2 text-gray-600 text-sm">
-                You need a permit if placing the dumpster on a public street or right-of-way in Miami-Dade County. Private property placement typically doesn't require permits. Check with Miami-Dade Public Works for current requirements.
-              </p>
-            </details>
-            <details className="cursor-pointer">
-              <summary className="font-semibold text-gray-800">What can't I put in a Miami dumpster?</summary>
-              <p className="mt-2 text-gray-600 text-sm">
-                Prohibited items include hazardous materials, paint, chemicals, tires, batteries, appliances with refrigerants, and electronics. Miami-Dade has special disposal programs for these items.
-              </p>
-            </details>
-            <details className="cursor-pointer">
-              <summary className="font-semibold text-gray-800">How long can I keep a dumpster in Miami?</summary>
-              <p className="mt-2 text-gray-600 text-sm">
-                Most Miami dumpster rentals include 7-10 days. Extended rental periods are available for an additional daily fee. During hurricane season, collection schedules may be adjusted for safety.
-              </p>
-            </details>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="bg-blue-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Find Your Miami Dumpster Size?
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Use our free calculator to determine the perfect dumpster size for your Miami project
-          </p>
-          <Link 
-            href="/" 
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-          >
-            Calculate Dumpster Size
-          </Link>
-        </div>
+        </section>
 
         {/* Back to Calculator */}
-        <div className="mt-8 text-center">
-          <Link href="/" className="text-blue-600 hover:underline">
-            ← Back to Calculator
+        <div className="bg-gray-50 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Need Help Choosing a Size?</h2>
+          <p className="mb-6 text-gray-700">
+            Use our free calculator to determine the right dumpster size for your Miami project
+          </p>
+          <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
+            Calculate Dumpster Size
           </Link>
         </div>
       </div>
