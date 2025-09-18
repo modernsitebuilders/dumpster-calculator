@@ -288,13 +288,16 @@ export default function Home() {
               {/* ZIP Code Input */}
               <form onSubmit={handleZipCodeSubmit} className="flex gap-2 max-w-xs mx-auto mb-4">
                 <input
-                  type="text"
-                  value={zipCode}
-                  onChange={handleZipCodeChange}
-                  placeholder="ZIP code"
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none text-center text-sm"
-                  maxLength="5"
-                />
+  type="text"
+  id="zipcode-input"
+  name="zipcode"
+  value={zipCode}
+  onChange={handleZipCodeChange}
+  placeholder="ZIP code"
+  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none text-center text-sm"
+  maxLength="5"
+  aria-label="Enter ZIP code"
+/>
                 <button
                   type="submit"
                   className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-4 py-2 rounded-lg transition text-sm"
