@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import BlogContent from './BlogContent';
 
 export const metadata = {
@@ -9,6 +10,40 @@ export const metadata = {
     type: 'website',
   }
 };
+
+// Loading skeleton component for Suspense fallback
+function BlogLoadingSkeleton() {
+  return (
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="h-10 bg-gray-200 rounded w-64 mb-4 animate-pulse"></div>
+        <div className="h-6 bg-gray-200 rounded w-96 mb-8 animate-pulse"></div>
+        
+        {/* Category skeleton */}
+        <div className="flex flex-wrap gap-3 mb-8">
+          {[...Array(8)].map((_, i) => (
+            <div key={i} className="h-10 w-24 bg-gray-200 rounded-full animate-pulse"></div>
+          ))}
+        </div>
+        
+        {/* Posts skeleton */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="bg-white rounded-lg shadow-md h-96">
+              <div className="w-full h-40 bg-gray-200 animate-pulse"></div>
+              <div className="p-6">
+                <div className="h-6 bg-gray-200 rounded mb-4 animate-pulse"></div>
+                <div className="h-4 bg-gray-200 rounded mb-2 animate-pulse"></div>
+                <div className="h-4 bg-gray-200 rounded mb-2 animate-pulse"></div>
+                <div className="h-4 bg-gray-200 rounded w-2/3 animate-pulse"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function BlogIndex() {
   const blogPosts = [
@@ -415,5 +450,9 @@ export default function BlogIndex() {
     }
   ];
 
-  return <BlogContent blogPosts={blogPosts} />;
+  return (
+    <Suspense fallback={<BlogLoadingSkeleton />}>
+      <BlogContent blogPosts={blogPosts} />
+    </Suspense>
+  );
 }
