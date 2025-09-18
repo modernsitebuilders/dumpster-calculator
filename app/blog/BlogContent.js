@@ -7,21 +7,21 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
 // Lazy load non-critical images
-const BlogCard = ({ post, priority = false }) => {
+const BlogCard = ({ post, priority = false, isFirst = false }) => {
   return (
     <article className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
       <div className="relative w-full h-40">
         <Image
-  src={post.image}
-  alt={post.title}
-  fill
-  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-  className="object-cover"
-  loading={priority ? 'eager' : 'lazy'}
-  priority={index < 3} // Only first 3 images
-  placeholder="blur"
-  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJR..." // Add blur placeholder
-/>
+          src={post.image}
+          alt={post.title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover"
+          loading={priority ? 'eager' : 'lazy'}
+          priority={priority}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
+        />
       </div>
       <div className="p-6 flex flex-col flex-grow">
         <h2 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-2">
@@ -152,20 +152,21 @@ export default function BlogContent({ blogPosts }) {
             </div>
           ) : (
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredPosts.length === 0 ? (
-                <p className="text-gray-500 col-span-full text-center py-12">
-                  No posts found in this category.
-                </p>
-              ) : (
-                filteredPosts.map((post, index) => (
-                  <BlogCard 
-                    key={post.slug} 
-                    post={post} 
-                    priority={index < 3} // Prioritize first 3 images
-                  />
-                ))
-              )}
-            </div>
+  {filteredPosts.length === 0 ? (
+    <p className="text-gray-500 col-span-full text-center py-12">
+      No posts found in this category.
+    </p>
+  ) : (
+    filteredPosts.map((post, index) => (
+      <BlogCard 
+        key={post.slug} 
+        post={post} 
+        priority={index < 3} // This works because index is defined in this scope
+        isFirst={index === 0}
+      />
+    ))
+  )}
+</div>
           )}
         </main>
 
