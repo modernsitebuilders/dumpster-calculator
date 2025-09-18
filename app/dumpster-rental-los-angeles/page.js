@@ -2,9 +2,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental Los Angeles CA | Same Day Service | Best LA Prices',
-  description: 'Dumpster rental in Los Angeles starting at $350. Serving Hollywood, Beverly Hills, Santa Monica, Downtown LA, and all of LA County. Same-day delivery available.',
-  keywords: 'dumpster rental los angeles, dumpster rental LA, roll off dumpster los angeles, dumpster rental hollywood, dumpster rental beverly hills'
+  title: 'Dumpster Rental Los Angeles CA | Local Companies & Size Guide',
+  description: 'Find dumpster rental companies in Los Angeles. Compare local providers serving LA, Hollywood, Santa Monica, and surrounding areas.',
+  keywords: 'dumpster rental los angeles, LA dumpster companies, roll off dumpster los angeles, hollywood dumpster rental'
 };
 
 export default function LosAngelesPage() {
@@ -14,68 +14,114 @@ export default function LosAngelesPage() {
         {/* Local Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Dumpster Rental in Los Angeles, CA
+            Dumpster Rental in Los Angeles, California
           </h1>
+          <p className="text-xl text-gray-600">
+            Find local dumpster rental companies serving Los Angeles County and surrounding areas
+          </p>
         </div>
 
         {/* Quick Calculator CTA */}
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">Get Instant LA Dumpster Quote</h2>
-          <p className="mb-6">Calculate the perfect size for your Los Angeles project</p>
+          <h2 className="text-2xl font-bold mb-4">Calculate Your Dumpster Size</h2>
+          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your LA project</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
-            Calculate Size & Get Quotes
+            Use Size Calculator
           </Link>
         </div>
 
-        {/* Local Pricing */}
+        {/* Local LA Companies */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Los Angeles Dumpster Rental Prices</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">10 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$350 - $450</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Hollywood apartment cleanouts</li>
-                <li>• Small home remodels in West LA</li>
-                <li>• Garage cleanouts in the Valley</li>
-              </ul>
-            </div>
+          <h2 className="text-2xl font-bold mb-6">Los Angeles Dumpster Rental Companies</h2>
+          <div className="space-y-6">
             
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">20 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$450 - $550</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Beverly Hills home renovations</li>
-                <li>• Restaurant remodels on Sunset</li>
-                <li>• Office cleanouts Downtown</li>
-              </ul>
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">The Green Dumpster</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (818) 404-5865 (24/7)</p>
+                  <p><strong>Website:</strong> thegreendumpster.com</p>
+                  <p><strong>Features:</strong> GPS tracking, instant online booking</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Los Angeles County, San Fernando Valley</p>
+                  <p><strong>Notes:</strong> Third-generation family business, graffiti-free dumpsters</p>
+                </div>
+              </div>
             </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">30 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$550 - $650</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Malibu estate cleanouts</li>
-                <li>• Commercial construction</li>
-                <li>• Film set breakdown</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">American Reclamation</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (888) 999-9330</p>
+                  <p><strong>Website:</strong> americanreclamation.com</p>
+                  <p><strong>Experience:</strong> 50+ years, three generations</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Greater Los Angeles metro area</p>
+                  <p><strong>Services:</strong> Full-service waste collection, recycling facility, CNG trucks</p>
+                </div>
+              </div>
             </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold mb-3">40 Yard Dumpster</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">$650 - $800</p>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Major studio productions</li>
-                <li>• Large demolition projects</li>
-                <li>• Warehouse cleanouts</li>
-              </ul>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Budget Bins (Got Trash)</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Website:</strong> gottrash.net</p>
+                  <p><strong>Experience:</strong> 30+ years in LA area</p>
+                  <p><strong>Container Sizes:</strong> 3-yard to 40-yard options</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Greater San Fernando Valley, LA County</p>
+                  <p><strong>Features:</strong> Online booking, up to 8 days included</p>
+                </div>
+              </div>
             </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">California Waste Services (CWS)</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (800) 839-5550</p>
+                  <p><strong>Website:</strong> californiawasteservices.com</p>
+                  <p><strong>Specialties:</strong> LEED compliance, recycling facility</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Los Angeles, Long Beach, Orange County</p>
+                  <p><strong>Container Sizes:</strong> 1, 3, 10, 20, 40-yard options</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">LA Dumpster Rental</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p><strong>Phone:</strong> (213) 279-5046</p>
+                  <p><strong>Website:</strong> ladumpsterrental.com</p>
+                  <p><strong>Features:</strong> 7-day rentals, LEED certification</p>
+                </div>
+                <div>
+                  <p><strong>Service Areas:</strong> Los Angeles area, Hollywood Hills, Downtown</p>
+                  <p><strong>Specialties:</strong> Hard-to-reach locations, event services</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">
+              <strong>Note:</strong> These companies are listed for informational purposes. Contact companies directly 
+              for current pricing, availability, and service details. Always verify licensing and insurance.
+            </p>
           </div>
         </section>
 
-        {/* Service Areas */}
+        {/* LA Area Coverage */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">LA Areas We Serve</h2>
+          <h2 className="text-2xl font-bold mb-6">Los Angeles Area Coverage</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
               <h3 className="font-semibold mb-2">Central LA</h3>
@@ -83,11 +129,11 @@ export default function LosAngelesPage() {
                 <li>Downtown</li>
                 <li>Hollywood</li>
                 <li>West Hollywood</li>
-                <li>Beverly Hills</li>
+                <li>Mid-City</li>
                 <li>Koreatown</li>
                 <li>Silver Lake</li>
-                <li>Los Feliz</li>
                 <li>Echo Park</li>
+                <li>Los Feliz</li>
               </ul>
             </div>
             <div>
@@ -95,25 +141,25 @@ export default function LosAngelesPage() {
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>Santa Monica</li>
                 <li>Venice</li>
-                <li>Brentwood</li>
-                <li>Westwood</li>
-                <li>Pacific Palisades</li>
-                <li>Mar Vista</li>
+                <li>Beverly Hills</li>
+                <li>West LA</li>
                 <li>Culver City</li>
                 <li>Marina del Rey</li>
+                <li>Brentwood</li>
+                <li>Pacific Palisades</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">The Valley</h3>
+              <h3 className="font-semibold mb-2">San Fernando Valley</h3>
               <ul className="text-sm text-gray-600 space-y-1">
+                <li>Van Nuys</li>
+                <li>North Hollywood</li>
                 <li>Burbank</li>
                 <li>Glendale</li>
-                <li>Studio City</li>
                 <li>Sherman Oaks</li>
+                <li>Studio City</li>
                 <li>Encino</li>
                 <li>Woodland Hills</li>
-                <li>North Hollywood</li>
-                <li>Van Nuys</li>
               </ul>
             </div>
             <div>
@@ -139,9 +185,9 @@ export default function LosAngelesPage() {
           </div>
         </section>
 
-        {/* LA-Specific Tips */}
+        {/* LA Tips */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">LA Dumpster Rental Tips</h2>
+          <h2 className="text-2xl font-bold mb-6">LA Dumpster Considerations</h2>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
               <h3 className="font-semibold mb-1">Film Industry Service</h3>
@@ -152,32 +198,38 @@ export default function LosAngelesPage() {
             <div className="border-l-4 border-blue-500 pl-4">
               <h3 className="font-semibold mb-1">Hillside Properties</h3>
               <p className="text-gray-600">
-                Special equipment for Hollywood Hills and canyon properties. We handle steep driveways and limited access.
+                Special equipment for Hollywood Hills and canyon properties. Many companies handle steep driveways and limited access.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
               <h3 className="font-semibold mb-1">Beach Cities</h3>
               <p className="text-gray-600">
-                Same-day service to Santa Monica, Venice, and South Bay. We know coastal permit requirements.
+                Service to Santa Monica, Venice, and South Bay areas. Check with companies about coastal permit requirements.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Green Disposal</h3>
+              <h3 className="font-semibold mb-1">Traffic Considerations</h3>
               <p className="text-gray-600">
-                LA County recycling compliance. We sort and divert 65% of waste from landfills per city requirements.
+                LA traffic affects delivery times. Many companies offer early morning or weekend delivery to avoid peak hours.
+              </p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold mb-1">Environmental Compliance</h3>
+              <p className="text-gray-600">
+                LA County has recycling requirements. Many companies offer LEED compliance and high diversion rates.
               </p>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <div className="bg-green-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Ready to Rent a Dumpster in LA?</h2>
+        {/* Back to Calculator */}
+        <div className="bg-gray-50 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Need Help Choosing a Size?</h2>
           <p className="mb-6 text-gray-700">
-            Get instant quotes from licensed Los Angeles providers
+            Use our free calculator to determine the right dumpster size for your LA project
           </p>
-          <Link href="/" className="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-700 transition">
-            Get LA Quotes Now
+          <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
+            Calculate Dumpster Size
           </Link>
         </div>
       </div>
