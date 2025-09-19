@@ -1,9 +1,54 @@
 // app/api/subscribe/route.js
 import { NextResponse } from 'next/server';
 
+// Simple in-memory rate limiting (consider Redis for production)
+const rateLimitMap = new Map();
+
+function checkRateLimit(ip) {
+  const now = Date.now();
+  const windowMs = 60 * 1000; // 1 minute window
+  const maxRequests = 5; // 5 requests per minute
+  
+  if (!rateLimitMap.has(ip)) {
+    rateLimitMap.set(ip, [now]);
+    return true;
+  }
+  
+  const timestamps = rateLimitMap.get(ip).filter(t => now - t < windowMs);
+  
+  if (timestamps.length >= maxRequests) {
+    return false;
+  }
+  
+  timestamps.push(now);
+  rateLimitMap.set(ip, timestamps);
+  return true;
+}
+
 export async function POST(request) {
   try {
+    // Get IP for rate limiting
+    const ip = request.headers.get('x-forwarded-for') || 
+               request.headers.get('x-real-ip') || 
+               'unknown';
+    
+    // Check rate limit
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      );
+    }
+    
     const body = await request.json();
+    
+    // Check for honeypot field (anti-bot measure)
+    if (body.honeypot) {
+      return NextResponse.json(
+        { error: 'Invalid submission' },
+        { status: 400 }
+      );
+    }
     
     // Check if this is a newsletter subscription or contact form
     if (body.email && !body.name) {
@@ -15,7 +60,8 @@ export async function POST(request) {
     }
     
   } catch (error) {
-    console.error('API error:', error);
+    // Remove console.error for production - use proper logging service
+    // Consider using a service like Sentry or LogRocket
     return NextResponse.json(
       { error: 'Failed to process request' },
       { status: 500 }
@@ -30,6 +76,18 @@ async function handleNewsletterSubscription({ email, source }) {
     return NextResponse.json(
       { error: 'Invalid email address' },
       { status: 400 }
+    );
+  }
+  
+  // Sanitize input to prevent XSS
+  const sanitizedEmail = email.trim().toLowerCase();
+  const sanitizedSource = (source || 'website').replace(/[<>]/g, '');
+
+  // Check for Resend API key
+  if (!process.env.RESEND_API_KEY) {
+    return NextResponse.json(
+      { error: 'Email service not configured' },
+      { status: 500 }
     );
   }
 
@@ -47,8 +105,8 @@ async function handleNewsletterSubscription({ email, source }) {
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #2563eb;">New Newsletter Subscription</h2>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Source:</strong> ${source || 'website'}</p>
+          <p><strong>Email:</strong> ${sanitizedEmail}</p>
+          <p><strong>Source:</strong> ${sanitizedSource}</p>
           <p><strong>Timestamp:</strong> ${new Date().toISOString()}</p>
         </div>
       `,
@@ -56,14 +114,22 @@ async function handleNewsletterSubscription({ email, source }) {
   });
 
   if (!resendResponse.ok) {
-    const errorData = await resendResponse.text();
-    console.error('Resend API error:', errorData);
-    throw new Error('Failed to send subscription notification');
+    // Don't expose internal errors to client
+    return NextResponse.json(
+      { error: 'Failed to process subscription. Please try again.' },
+      { status: 500 }
+    );
   }
-
-  console.log('New subscriber:', { email, source: source || 'website', timestamp: new Date().toISOString() });
   
-  return NextResponse.json({ message: 'Successfully subscribed!' });
+  return NextResponse.json(
+    { message: 'Successfully subscribed!' },
+    { 
+      status: 200,
+      headers: {
+        'Cache-Control': 'no-store',
+      }
+    }
+  );
 }
 
 async function handleContactForm({ name, email, company, subject, message }) {
@@ -72,6 +138,32 @@ async function handleContactForm({ name, email, company, subject, message }) {
     return NextResponse.json(
       { error: 'Missing required fields' },
       { status: 400 }
+    );
+  }
+  
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return NextResponse.json(
+      { error: 'Invalid email address' },
+      { status: 400 }
+    );
+  }
+  
+  // Sanitize inputs to prevent XSS
+  const sanitizedData = {
+    name: name.trim().replace(/[<>]/g, '').substring(0, 100),
+    email: email.trim().toLowerCase(),
+    company: (company || '').replace(/[<>]/g, '').substring(0, 100),
+    subject: (subject || 'general').replace(/[<>]/g, '').substring(0, 200),
+    message: message.replace(/[<>]/g, '').substring(0, 5000)
+  };
+  
+  // Check for Resend API key
+  if (!process.env.RESEND_API_KEY) {
+    return NextResponse.json(
+      { error: 'Email service not configured' },
+      { status: 500 }
     );
   }
 
@@ -85,7 +177,7 @@ async function handleContactForm({ name, email, company, subject, message }) {
     body: JSON.stringify({
       from: 'onboarding@resend.dev',
       to: 'dave@modernsitebuilders.com',
-      subject: `New Contact: ${subject}`,
+      subject: `New Contact: ${sanitizedData.subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #2563eb; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">
@@ -93,16 +185,16 @@ async function handleContactForm({ name, email, company, subject, message }) {
           </h2>
           
           <div style="margin: 20px 0;">
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Company:</strong> ${company || 'Not provided'}</p>
-            <p><strong>Subject:</strong> ${subject}</p>
+            <p><strong>Name:</strong> ${sanitizedData.name}</p>
+            <p><strong>Email:</strong> ${sanitizedData.email}</p>
+            <p><strong>Company:</strong> ${sanitizedData.company || 'Not provided'}</p>
+            <p><strong>Subject:</strong> ${sanitizedData.subject}</p>
           </div>
           
           <div style="margin: 20px 0;">
             <p><strong>Message:</strong></p>
             <div style="background-color: #f3f4f6; padding: 15px; border-radius: 5px; border-left: 4px solid #2563eb;">
-              ${message.replace(/\n/g, '<br>')}
+              ${sanitizedData.message.replace(/\n/g, '<br>')}
             </div>
           </div>
           
@@ -113,15 +205,25 @@ async function handleContactForm({ name, email, company, subject, message }) {
           </p>
         </div>
       `,
-      reply_to: email,
+      reply_to: sanitizedData.email,
     }),
   });
 
   if (!resendResponse.ok) {
-    const errorData = await resendResponse.text();
-    console.error('Resend API error:', errorData);
-    throw new Error('Failed to send email');
+    // Don't expose internal errors to client
+    return NextResponse.json(
+      { error: 'Failed to send message. Please try again.' },
+      { status: 500 }
+    );
   }
 
-  return NextResponse.json({ message: 'Email sent successfully' });
+  return NextResponse.json(
+    { message: 'Email sent successfully' },
+    { 
+      status: 200,
+      headers: {
+        'Cache-Control': 'no-store',
+      }
+    }
+  );
 }

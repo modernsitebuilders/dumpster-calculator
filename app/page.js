@@ -6,7 +6,15 @@ import { trackCalculatorUsage } from '../utils/analytics';
 import dynamic from 'next/dynamic';
 
 const DumpsterCalculatorWithMaterials = dynamic(
-  () => import('@/calculator-v2/components/calculator/CalculatorV2.jsx'),
+  () => import('@/calculator-v2/components/calculator/CalculatorV2.jsx')
+    .catch(() => {
+      // Return a fallback component
+      return () => (
+        <div className="text-center p-8 bg-yellow-50 rounded-lg">
+          <p className="text-yellow-800">Calculator temporarily unavailable. Please refresh the page.</p>
+        </div>
+      );
+    }),
   { 
     loading: () => <div>Loading calculator...</div>,
     ssr: false 

@@ -46,7 +46,6 @@ export default function ContactForm() {
         setStatus('error');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
       setStatus('error');
     }
     setLoading(false);

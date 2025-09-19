@@ -27,7 +27,6 @@ export default function EmailCapture({ source = 'website' }) {
         setStatus('error');
       }
     } catch (error) {
-      console.error('Subscription error:', error);
       setStatus('error');
     }
     
