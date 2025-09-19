@@ -483,6 +483,66 @@ export default function BlogIndex() {
       width: 800,
       height: 450
     },
+    {
+  title: "Austin Dumpster Permit Guide: Digital-Only TURP System",
+  excerpt: "Navigate Austin's digital permit system with 30-day maximum placement and strict safety requirements. Learn about TURP permits and ABC Portal applications.",
+  slug: "austin-dumpster-permit-guide",
+  category: "Local Permits",
+  readTime: "6 min read",
+  publishDate: "September 19, 2025",
+  featured: false,
+  image: "/images/blog/building-permit.webp",
+  width: 800,
+  height: 450
+},
+{
+  title: "Charlotte Dumpster Permit Guide: Strict Neighborhood Setbacks",
+  excerpt: "Charlotte enforces 25-foot minimum setbacks from residential areas. Learn about CDOT requirements and neighborhood-specific regulations.",
+  slug: "charlotte-dumpster-permit-guide",
+  category: "Local Permits",
+  readTime: "7 min read",
+  publishDate: "September 19, 2025",
+  featured: false,
+  image: "/images/blog/building-permit.webp",
+  width: 800,
+  height: 450
+},
+{
+  title: "Denver Dumpster Permit Guide: 180-Day Extended Placement",
+  excerpt: "Denver offers the most flexible placement duration with up to 180 days per year. Learn about DOTI permits and one-time vs annual options.",
+  slug: "denver-dumpster-permit-guide",
+  category: "Local Permits",
+  readTime: "6 min read",
+  publishDate: "September 19, 2025",
+  featured: false,
+  image: "/images/blog/building-permit.webp",
+  width: 800,
+  height: 450
+},
+{
+  title: "Detroit Dumpster Permit Guide: Engineering Requirements & $2,500 Bond",
+  excerpt: "Detroit requires professional engineering drawings and a $2,500 surety bond. Learn about the most rigorous technical requirements in the nation.",
+  slug: "detroit-dumpster-permit-guide",
+  category: "Local Permits",
+  readTime: "8 min read",
+  publishDate: "September 19, 2025",
+  featured: false,
+  image: "/images/blog/building-permit.webp",
+  width: 800,
+  height: 450
+},
+{
+  title: "Miami Dumpster Permit Guide: Complex Jurisdictional Navigation",
+  excerpt: "Navigate Miami's overlapping city-county jurisdictions. Learn about iBuild Miami, solid waste surcharges, and municipality-specific rules.",
+  slug: "miami-dumpster-permit-guide",
+  category: "Local Permits",
+  readTime: "7 min read",
+  publishDate: "September 19, 2025",
+  featured: false,
+  image: "/images/blog/building-permit.webp",
+  width: 800,
+  height: 450
+},
     // ADDITIONAL GUIDES
     {
       title: "Dumpster Permit Requirements: Complete State-by-State Guide",
