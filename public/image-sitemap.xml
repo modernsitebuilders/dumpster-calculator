@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Local Guides Page with all city images -->
+  <url>
+    <loc>https://dumpster-size-calculator.com/local/guides</loc>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/atlanta-skyline.webp</image:loc>
+      <image:caption>Atlanta skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/austin-skyline.webp</image:loc>
+      <image:caption>Austin skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/boston-skyline.webp</image:loc>
+      <image:caption>Boston skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/charlotte-skyline.webp</image:loc>
+      <image:caption>Charlotte skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/chicago-skyline.webp</image:loc>
+      <image:caption>Chicago skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/denver-skyline.webp</image:loc>
+      <image:caption>Denver skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/detroit-skyline.webp</image:loc>
+      <image:caption>Detroit skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/houston-skyline.webp</image:loc>
+      <image:caption>Houston skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/los-angeles-skyline.webp</image:loc>
+      <image:caption>Los Angeles skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/miami-skyline.webp</image:loc>
+      <image:caption>Miami skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/nyc-skyline.webp</image:loc>
+      <image:caption>New York City skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/philadelphia-skyline.webp</image:loc>
+      <image:caption>Philadelphia skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/phoenix-skyline.webp</image:loc>
+      <image:caption>Phoenix skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/portland-skyline.webp</image:
+      <image:caption>Portland skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/san-antonio-skyline.webp</image:loc>
+      <image:caption>San Antonio skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/san-diego-skyline.webp</image:loc>
+      <image:caption>San Diego skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/san-francisco-skyline.webp</image:loc>
+      <image:caption>San Francisco skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/seattle-skyline.webp</image:loc>
+      <image:caption>Seattle skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dumpster-size-calculator.com/images/cities/dc-skyline.webp</image:loc>
+      <image:caption>Washington DC skyline - dumpster rental pricing and providers</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

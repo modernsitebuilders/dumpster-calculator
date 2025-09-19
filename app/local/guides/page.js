@@ -1,5 +1,6 @@
-// app/local/guides/page.js - LOCAL PRICING GUIDES PAGE
+// app/local/guides/page.js - LOCAL PRICING GUIDES PAGE with City Images
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 
 export const metadata = {
@@ -10,26 +11,158 @@ export const metadata = {
 
 export default function LocalGuidesPage() {
   const localGuides = [
-    { name: 'Chicago', state: 'IL', slug: 'chicago', priceRange: '$325-$525', providers: 15 },
-    { name: 'Houston', state: 'TX', slug: 'houston', priceRange: '$280-$480', providers: 12 },
-    { name: 'New York', state: 'NY', slug: 'new-york', priceRange: '$450-$750', providers: 18 },
-    { name: 'Los Angeles', state: 'CA', slug: 'los-angeles', priceRange: '$380-$580', providers: 14 },
-    { name: 'Phoenix', state: 'AZ', slug: 'phoenix', priceRange: '$290-$490', providers: 10 },
-    { name: 'Philadelphia', state: 'PA', slug: 'philadelphia', priceRange: '$320-$520', providers: 11 },
-    { name: 'San Antonio', state: 'TX', slug: 'san-antonio', priceRange: '$270-$470', providers: 8 },
-    { name: 'San Diego', state: 'CA', slug: 'san-diego', priceRange: '$350-$550', providers: 9 },
-    { name: 'Dallas', state: 'TX', slug: 'dallas', priceRange: '$285-$485', providers: 13 },
-    { name: 'Miami', state: 'FL', slug: 'miami', priceRange: '$340-$540', providers: 10 },
-    { name: 'Atlanta', state: 'GA', slug: 'atlanta', priceRange: '$300-$500', providers: 12 },
-    { name: 'Seattle', state: 'WA', slug: 'seattle', priceRange: '$380-$580', providers: 8 },
-    { name: 'Denver', state: 'CO', slug: 'denver', priceRange: '$310-$510', providers: 9 },
-    { name: 'Boston', state: 'MA', slug: 'boston', priceRange: '$400-$600', providers: 11 },
-    { name: 'Detroit', state: 'MI', slug: 'detroit', priceRange: '$290-$490', providers: 7 },
-    { name: 'Portland', state: 'OR', slug: 'portland', priceRange: '$330-$530', providers: 6 },
-    { name: 'Charlotte', state: 'NC', slug: 'charlotte', priceRange: '$280-$480', providers: 8 },
-    { name: 'Austin', state: 'TX', slug: 'austin', priceRange: '$295-$495', providers: 9 },
-    { name: 'San Francisco', state: 'CA', slug: 'san-francisco', priceRange: '$450-$650', providers: 10 },
-    { name: 'Washington DC', state: 'DC', slug: 'washington-dc', priceRange: '$380-$580', providers: 12 }
+    { 
+      name: 'Chicago', 
+      state: 'IL', 
+      slug: 'chicago', 
+      priceRange: '$325-$525', 
+      providers: 15,
+      image: '/images/cities/chicago-skyline.webp'
+    },
+    { 
+      name: 'Houston', 
+      state: 'TX', 
+      slug: 'houston', 
+      priceRange: '$280-$480', 
+      providers: 12,
+      image: '/images/cities/houston-skyline.webp'
+    },
+    { 
+      name: 'New York', 
+      state: 'NY', 
+      slug: 'new-york', 
+      priceRange: '$450-$750', 
+      providers: 18,
+      image: '/images/cities/nyc-skyline.webp'
+    },
+    { 
+      name: 'Los Angeles', 
+      state: 'CA', 
+      slug: 'los-angeles', 
+      priceRange: '$380-$580', 
+      providers: 14,
+      image: '/images/cities/los-angeles-skyline.webp'
+    },
+    { 
+      name: 'Phoenix', 
+      state: 'AZ', 
+      slug: 'phoenix', 
+      priceRange: '$290-$490', 
+      providers: 10,
+      image: '/images/cities/phoenix-skyline.webp'
+    },
+    { 
+      name: 'Philadelphia', 
+      state: 'PA', 
+      slug: 'philadelphia', 
+      priceRange: '$320-$520', 
+      providers: 11,
+      image: '/images/cities/philadelphia-skyline.webp'
+    },
+    { 
+      name: 'San Antonio', 
+      state: 'TX', 
+      slug: 'san-antonio', 
+      priceRange: '$270-$470', 
+      providers: 8,
+      image: '/images/cities/san-antonio-skyline.webp'
+    },
+    { 
+      name: 'San Diego', 
+      state: 'CA', 
+      slug: 'san-diego', 
+      priceRange: '$350-$550', 
+      providers: 9,
+      image: '/images/cities/san-diego-skyline.webp'
+    },
+    { 
+      name: 'Miami', 
+      state: 'FL', 
+      slug: 'miami', 
+      priceRange: '$340-$540', 
+      providers: 10,
+      image: '/images/cities/miami-skyline.webp'
+    },
+    { 
+      name: 'Atlanta', 
+      state: 'GA', 
+      slug: 'atlanta', 
+      priceRange: '$300-$500', 
+      providers: 12,
+      image: '/images/cities/atlanta-skyline.webp'
+    },
+    { 
+      name: 'Seattle', 
+      state: 'WA', 
+      slug: 'seattle', 
+      priceRange: '$380-$580', 
+      providers: 8,
+      image: '/images/cities/seattle-skyline.webp'
+    },
+    { 
+      name: 'Denver', 
+      state: 'CO', 
+      slug: 'denver', 
+      priceRange: '$310-$510', 
+      providers: 9,
+      image: '/images/cities/denver-skyline.webp'
+    },
+    { 
+      name: 'Boston', 
+      state: 'MA', 
+      slug: 'boston', 
+      priceRange: '$400-$600', 
+      providers: 11,
+      image: '/images/cities/boston-skyline.webp'
+    },
+    { 
+      name: 'Detroit', 
+      state: 'MI', 
+      slug: 'detroit', 
+      priceRange: '$290-$490', 
+      providers: 7,
+      image: '/images/cities/detroit-skyline.webp'
+    },
+    { 
+      name: 'Portland', 
+      state: 'OR', 
+      slug: 'portland', 
+      priceRange: '$330-$530', 
+      providers: 6,
+      image: '/images/cities/portland-skyline.webp'
+    },
+    { 
+      name: 'Charlotte', 
+      state: 'NC', 
+      slug: 'charlotte', 
+      priceRange: '$280-$480', 
+      providers: 8,
+      image: '/images/cities/charlotte-skyline.webp'
+    },
+    { 
+      name: 'Austin', 
+      state: 'TX', 
+      slug: 'austin', 
+      priceRange: '$295-$495', 
+      providers: 9,
+      image: '/images/cities/austin-skyline.webp'
+    },
+    { 
+      name: 'San Francisco', 
+      state: 'CA', 
+      slug: 'san-francisco', 
+      priceRange: '$450-$650', 
+      providers: 10,
+      image: '/images/cities/san-francisco-skyline.webp'
+    },
+    { 
+      name: 'Washington DC', 
+      state: 'DC', 
+      slug: 'washington-dc', 
+      priceRange: '$380-$580', 
+      providers: 12,
+      image: '/images/cities/dc-skyline.webp'
+    }
   ];
 
   return (
@@ -41,39 +174,53 @@ export default function LocalGuidesPage() {
             Local Dumpster Rental Pricing Guides
           </h1>
           <p className="text-xl text-gray-600">
-            Find pricing, and neighborhood coverage in your city
+            Find pricing and neighborhood coverage in your city
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {localGuides.map((city) => (
-            <div key={city.slug} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center">
-                  <MapPin className="w-5 h-5 text-blue-600 mr-2" />
-                  <h3 className="text-xl font-bold text-gray-900">
-                    {city.name}, {city.state}
-                  </h3>
-                </div>
+            <div key={city.slug} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              {/* City Image */}
+              <div className="relative h-48 w-full">
+                <Image
+                  src={city.image}
+                  alt={`${city.name} skyline`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
               </div>
               
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-600">20-Yard Pricing:</span>
-                  <span className="font-semibold text-green-600">{city.priceRange}</span>
+              {/* Card Content */}
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center">
+                    <MapPin className="w-5 h-5 text-blue-600 mr-2" />
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {city.name}, {city.state}
+                    </h3>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Local Providers:</span>
-                  <span className="font-semibold">{city.providers}+ companies</span>
+                
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-600">20-Yard Pricing:</span>
+                    <span className="font-semibold text-green-600">{city.priceRange}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-600">Local Providers:</span>
+                    <span className="font-semibold">{city.providers}+ companies</span>
+                  </div>
                 </div>
-              </div>
 
-              <Link 
-                href={`/dumpster-rental-${city.slug}`}
-                className="block bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
-              >
-                View {city.name} Guide →
-              </Link>
+                <Link 
+                  href={`/dumpster-rental-${city.slug}`}
+                  className="block bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+                >
+                  View {city.name} Guide →
+                </Link>
+              </div>
             </div>
           ))}
         </div>

@@ -12,7 +12,7 @@ export default function Header() {
           <div className="flex space-x-6">
             <Link href="/" className="text-gray-600 hover:text-blue-600">Calculator</Link>
             <Link href="/blog" className="text-gray-600 hover:text-blue-600">Blog</Link>
-            <Link href="/local" className="text-gray-600 hover:text-blue-600">Local Guides</Link>
+            <Link href="/local/guides" className="text-gray-600 hover:text-blue-600">Local Guides</Link>
             <Link href="/about" className="text-gray-600 hover:text-blue-600">About</Link>
             <Link href="/contact" className="text-gray-600 hover:text-blue-600">Contact</Link>
           </div>

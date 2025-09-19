@@ -1,4 +1,4 @@
-// app/sitemap.js - COMPLETE SITEMAP WITH ALL ROUTES
+// app/sitemap.js - COMPLETE SITEMAP WITH ALL ROUTES INCLUDING LOCAL PAGES
 export default function sitemap() {
   const baseUrl = 'https://dumpster-size-calculator.com';
   
@@ -12,6 +12,11 @@ export default function sitemap() {
     '/terms',
     '/disclosure',
 
+    // LOCAL HUB PAGES (NEW)
+    '/local',
+    '/local/guides',
+    '/local/permits',
+
     // EXISTING BLOG POSTS (CONFIRMED WORKING)
     '/blog/what-size-dumpster-do-i-need',           
     '/blog/dumpster-rental-cost-guide',             
@@ -21,9 +26,9 @@ export default function sitemap() {
     '/blog/roof-replacement-dumpster-size',
     '/blog/do-i-need-dumpster-permit',
     '/blog/concrete-disposal-guide',
-'/blog/roofing-shingle-weight-calculator',
-'/blog/how-to-avoid-dumpster-overage-fees',
-'/blog/dumpster-weight-vs-volume',
+    '/blog/roofing-shingle-weight-calculator',
+    '/blog/how-to-avoid-dumpster-overage-fees',
+    '/blog/dumpster-weight-vs-volume',
 
     // NEW DUMPSTER SIZE GUIDES
     '/blog/10-yard-dumpster-guide',
@@ -58,6 +63,15 @@ export default function sitemap() {
     '/blog/atlanta-dumpster-permit-guide',
     '/blog/dallas-dumpster-permit-guide',
     '/blog/boston-dumpster-permit-guide',
+    '/blog/seattle-dumpster-permit-guide',
+    '/blog/denver-dumpster-permit-guide',
+    '/blog/detroit-dumpster-permit-guide',
+    '/blog/portland-dumpster-permit-guide',
+    '/blog/charlotte-dumpster-permit-guide',
+    '/blog/austin-dumpster-permit-guide',
+    '/blog/san-antonio-dumpster-permit-guide',
+    '/blog/san-diego-dumpster-permit-guide',
+    '/blog/miami-dumpster-permit-guide',
     '/blog/san-francisco-dumpster-permit-guide',
     '/blog/washington-dc-dumpster-permit-guide',
 
@@ -93,9 +107,12 @@ export default function sitemap() {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === '' ? 'daily' : 
+                    route === '/local' || route === '/local/guides' || route === '/local/permits' ? 'weekly' :
                     route.includes('blog') ? 'weekly' : 
                     route.includes('dumpster-rental') ? 'monthly' : 'monthly',
-    priority: route === '' ? 1.0 : 
+    priority: route === '' ? 1.0 :
+             route === '/local' ? 0.9 :
+             route === '/local/guides' || route === '/local/permits' ? 0.8 :
              route.includes('blog') && (route.includes('bathroom') || route.includes('kitchen') || route.includes('20-yard') || route.includes('what-size')) ? 0.9 :
              route.includes('blog') ? 0.8 : 
              route.includes('dumpster-rental') && (route.includes('new-york') || route.includes('los-angeles') || route.includes('chicago')) ? 0.8 :
