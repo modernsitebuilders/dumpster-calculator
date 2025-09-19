@@ -30,6 +30,13 @@ export default function sitemap() {
     '/blog/how-to-avoid-dumpster-overage-fees',
     '/blog/dumpster-weight-vs-volume',
 
+    // NEW STRATEGIC BLOG POSTS (BATCH 1-5)
+    '/blog/estate-cleanout-dumpster-size',
+    '/blog/dumpster-rental-duration-calculator',
+    '/blog/seasonal-dumpster-rental-guide',
+    '/blog/emergency-disaster-cleanup-dumpster-guide',
+    '/blog/diy-vs-professional-dumpster-loading',
+
     // NEW DUMPSTER SIZE GUIDES
     '/blog/10-yard-dumpster-guide',
     '/blog/20-yard-dumpster-guide', 

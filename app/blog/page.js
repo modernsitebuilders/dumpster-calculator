@@ -567,7 +567,69 @@ export default function BlogIndex() {
       image: "/images/blog/hoa-rules.webp",
       width: 800,
       height: 450,
-    }
+    },
+    // Add these to your blogPosts array in app/blog/page.js
+{
+  title: "Seasonal Dumpster Rental Guide: Spring Cleaning to Holiday Cleanup",
+  excerpt: "Optimize dumpster rentals for seasonal projects. Spring cleaning, summer landscaping, fall yard waste, and holiday decoration disposal strategies.",
+  slug: "seasonal-dumpster-rental-guide",
+  category: "General Tips",
+  readTime: "10 min read",
+  publishDate: "February 22, 2025",
+  featured: false,
+  image: "/images/blog/seasonal-cleanup.webp",
+  width: 800,
+  height: 450
+},
+{
+  title: "Emergency & Disaster Cleanup Dumpster Guide: Fire, Flood & Storm Recovery",
+  excerpt: "Navigate disaster cleanup with proper dumpster sizing. Insurance claims, FEMA guidelines, and rapid response strategies for emergency situations.",
+  slug: "emergency-disaster-cleanup-dumpster-guide",
+  category: "General Tips",
+  readTime: "11 min read",
+  publishDate: "February 23, 2025",
+  featured: false,
+  image: "/images/blog/emergency-cleanup.webp",
+  width: 800,
+  height: 450
+},
+{
+  title: "DIY vs Professional: When to Handle Your Own Dumpster Loading",
+  excerpt: "Safety-focused guide on when to load dumpsters yourself vs hiring help. Learn proper techniques, weight limits, and injury prevention strategies.",
+  slug: "diy-vs-professional-dumpster-loading",
+  category: "General Tips",
+  readTime: "8 min read",
+  publishDate: "February 24, 2025",
+  featured: false,
+  image: "/images/blog/diy-loading.webp",
+  width: 800,
+  height: 450
+},
+// Add these to your blogPosts array in app/blog/page.js
+{
+  title: "Estate Cleanout Dumpster Size Guide: Compassionate Planning for Transitions",
+  excerpt: "Navigate estate cleanouts with sensitivity and efficiency. Learn dumpster sizing for probate properties, downsizing, and family home transitions.",
+  slug: "estate-cleanout-dumpster-size",
+  category: "Cleanouts",
+  readTime: "8 min read",
+  publishDate: "February 20, 2025",
+  featured: false,
+  image: "/images/blog/estate-cleanout.webp",
+  width: 800,
+  height: 450
+},
+{
+  title: "Dumpster Rental Duration Calculator: How Long Do You Really Need?",
+  excerpt: "Calculate the perfect rental duration for your project. Compare daily, weekly, and monthly rates to minimize costs and avoid rush fees.",
+  slug: "dumpster-rental-duration-calculator",
+  category: "Pricing",
+  readTime: "9 min read",
+  publishDate: "February 21, 2025",
+  featured: false,
+  image: "/images/blog/rental-duration.webp",
+  width: 800,
+  height: 450
+}
   ];
 
   return (
