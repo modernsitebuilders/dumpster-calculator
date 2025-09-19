@@ -1,4 +1,4 @@
-// app/sitemap.js - COMPLETE SITEMAP WITH ALL ROUTES INCLUDING LOCAL PAGES
+// app/sitemap.js - COMPLETE SITEMAP WITH ALL ACTUAL PAGES
 export default function sitemap() {
   const baseUrl = 'https://dumpster-size-calculator.com';
   
@@ -12,7 +12,7 @@ export default function sitemap() {
     '/terms',
     '/disclosure',
 
-    // LOCAL HUB PAGES (NEW)
+    // LOCAL HUB PAGES
     '/local',
     '/local/guides',
     '/local/permits',
@@ -80,27 +80,44 @@ export default function sitemap() {
     '/blog/dumpster-permit-requirements',
     '/blog/dumpster-placement-rules',
 
-    // ALL CITY PAGES
-    '/dumpster-rental-atlanta',
-    '/dumpster-rental-austin',
-    '/dumpster-rental-boston',
-    '/dumpster-rental-charlotte',
-    '/dumpster-rental-chicago',
-    '/dumpster-rental-dallas',
-    '/dumpster-rental-denver',
-    '/dumpster-rental-detroit',
-    '/dumpster-rental-houston',
-    '/dumpster-rental-los-angeles',
-    '/dumpster-rental-miami',
-    '/dumpster-rental-new-york',
-    '/dumpster-rental-philadelphia',
-    '/dumpster-rental-phoenix',
-    '/dumpster-rental-portland',
-    '/dumpster-rental-san-antonio',
-    '/dumpster-rental-san-diego',
-    '/dumpster-rental-san-francisco',
-    '/dumpster-rental-seattle',
-    '/dumpster-rental-washington-dc'
+    // ALL ACTUAL STATE PAGES (15 STATES BUILT)
+    '/local/guides/california',
+    '/local/guides/texas', 
+    '/local/guides/new-york-state',
+    '/local/guides/illinois',
+    '/local/guides/florida',
+    '/local/guides/georgia',
+    '/local/guides/washington',
+    '/local/guides/colorado',
+    '/local/guides/massachusetts',
+    '/local/guides/michigan', 
+    '/local/guides/oregon',
+    '/local/guides/north-carolina',
+    '/local/guides/pennsylvania',
+    '/local/guides/arizona',
+    '/local/guides/washington-dc',
+
+    // PRIORITY CITY PAGES (TOP MARKETS)
+    '/dumpster-rental-new-york',        // Highest search volume
+    '/dumpster-rental-los-angeles',     // Second biggest market  
+    '/dumpster-rental-chicago',         // Major midwest hub
+    '/dumpster-rental-houston',         // Largest Texas market
+    '/dumpster-rental-miami',           // Southeast hub
+    '/dumpster-rental-philadelphia',    // Your local market
+    '/dumpster-rental-phoenix',         // Southwest hub
+    '/dumpster-rental-dallas',          // Texas market
+    '/dumpster-rental-atlanta',         // Southeast market
+    '/dumpster-rental-seattle',         // Pacific Northwest
+    '/dumpster-rental-denver',          // Mountain West
+    '/dumpster-rental-boston',          // New England
+    '/dumpster-rental-detroit',         // Rust Belt
+    '/dumpster-rental-portland',        // Pacific Northwest
+    '/dumpster-rental-charlotte',       // Southeast
+    '/dumpster-rental-austin',          // Texas tech hub
+    '/dumpster-rental-san-antonio',     // Texas market
+    '/dumpster-rental-san-diego',       // Southern California
+    '/dumpster-rental-san-francisco',   // Northern California
+    '/dumpster-rental-washington-dc'    // DMV area
   ];
 
   return routes.map((route) => ({
