@@ -179,52 +179,52 @@ export default function LocalGuidesPage() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {localGuides.map((city) => (
-            <div key={city.slug} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              {/* City Image */}
-              <div className="relative h-48 w-full">
-                <Image
-                  src={city.image}
-                  alt={`${city.name} skyline`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              
-              {/* Card Content */}
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <MapPin className="w-5 h-5 text-blue-600 mr-2" />
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {city.name}, {city.state}
-                    </h3>
-                  </div>
-                </div>
-                
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">20-Yard Pricing:</span>
-                    <span className="font-semibold text-green-600">{city.priceRange}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">Local Providers:</span>
-                    <span className="font-semibold">{city.providers}+ companies</span>
-                  </div>
-                </div>
-
-                <Link 
-                  href={`/dumpster-rental-${city.slug}`}
-                  className="block bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
-                >
-                  View {city.name} Guide →
-                </Link>
-              </div>
-            </div>
-          ))}
+  {localGuides.map((city, index) => (
+    <div key={city.slug} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+      {/* City Image */}
+      <div className="relative h-48 w-full">
+        <Image
+          src={city.image}
+          alt={`${city.name} skyline`}
+          fill
+          className="object-cover"
+          priority={index < 6}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+      </div>
+      
+      {/* Card Content */}
+      <div className="p-6">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center">
+            <MapPin className="w-5 h-5 text-blue-600 mr-2" />
+            <h3 className="text-xl font-bold text-gray-900">
+              {city.name}, {city.state}
+            </h3>
+          </div>
+        </div>
+        
+        <div className="space-y-3 mb-6">
+          <div className="flex items-center justify-between">
+            <span className="text-gray-600">20-Yard Pricing:</span>
+            <span className="font-semibold text-green-600">{city.priceRange}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-gray-600">Local Providers:</span>
+            <span className="font-semibold">{city.providers}+ companies</span>
+          </div>
         </div>
 
+        <Link 
+          href={`/dumpster-rental-${city.slug}`}
+          className="block bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+        >
+          View {city.name} Guide →
+        </Link>
+      </div>
+    </div>
+  ))}
+</div>
         <div className="text-center mt-12">
           <Link href="/local" className="text-blue-600 hover:underline">
             ← Back to Local Hub
