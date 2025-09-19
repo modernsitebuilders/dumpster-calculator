@@ -8,6 +8,7 @@ import { useSearchParams } from 'next/navigation';
 
 // Lazy load non-critical images
 const BlogCard = ({ post, priority = false, isFirst = false }) => {
+  const mobileImage = post.image.replace('.webp', '-mobile.webp');
   return (
     <article className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
       <div className="relative w-full h-40">
