@@ -156,8 +156,7 @@ export default function LocalGuidesPage() {
       image: '/images/cities/san-francisco-skyline.webp'
     },
     { 
-      name: 'Washington DC', 
-      state: 'DC', 
+      name: 'Washington DC',  
       slug: 'washington-dc', 
       priceRange: '$380-$580', 
       providers: 12,
