@@ -73,6 +73,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <link
+  rel="preload"
+  href="/images/blog/weight-limits.webp"
+  as="image"
+  type="image/webp"
+  fetchpriority="high"
+/>
         <link rel="icon" href="/dumpster-icon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         {/* Preconnect to external domains for faster loading */}
