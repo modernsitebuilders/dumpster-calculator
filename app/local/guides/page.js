@@ -1,13 +1,15 @@
-// app/local/guides/page.js - LOCAL PRICING GUIDES PAGE with Progressive Loading
-'use client';
+// app/local/guides/page.js - LOCAL PRICING GUIDES PAGE with City Images
 import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
-import { useState, useEffect } from 'react';
+
+export const metadata = {
+  title: "Local Dumpster Rental Pricing Guides by City | Compare Providers",
+  description: "Compare dumpster rental pricing and find trusted local providers in major US cities. City-specific pricing data and neighborhood coverage maps.",
+  keywords: "dumpster rental pricing by city, city pricing guides"
+};
 
 export default function LocalGuidesPage() {
-  const [loadedImages, setLoadedImages] = useState(new Set());
-
   const localGuides = [
     { 
       name: 'Chicago', 
@@ -154,67 +156,13 @@ export default function LocalGuidesPage() {
       image: '/images/cities/san-francisco-skyline.webp'
     },
     { 
-      name: 'Washington DC', 
-      state: 'DC', 
+      name: 'Washington DC',  
       slug: 'washington-dc', 
       priceRange: '$380-$580', 
       providers: 12,
       image: '/images/cities/dc-skyline.webp'
     }
   ];
-
-  useEffect(() => {
-    // Load first 6 images immediately
-    const initialImages = new Set();
-    for (let i = 0; i < Math.min(6, localGuides.length); i++) {
-      initialImages.add(i);
-    }
-    setLoadedImages(initialImages);
-
-    // Progressive loading of remaining images
-    const loadRemainingImages = () => {
-      const intervals = [500, 800, 1200, 1800, 2500, 3500]; // Staggered timing
-      
-      for (let i = 6; i < localGuides.length; i++) {
-        const delay = intervals[(i - 6) % intervals.length];
-        
-        setTimeout(() => {
-          setLoadedImages(prev => new Set(prev).add(i));
-        }, delay);
-      }
-    };
-
-    // Start loading remaining images after initial render
-    const timer = setTimeout(loadRemainingImages, 100);
-    
-    return () => clearTimeout(timer);
-  }, []);
-
-  const ProgressiveImage = ({ city, index }) => {
-    const shouldLoad = loadedImages.has(index);
-
-    return (
-      <div className="relative h-48 w-full bg-gray-100">
-        {shouldLoad ? (
-          <Image
-            src={city.image}
-            alt={`${city.name} skyline`}
-            fill
-            className="object-cover transition-opacity duration-500"
-            priority={index < 6}
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-8 h-8 border-2 border-blue-200 border-t-blue-500 rounded-full animate-spin mx-auto mb-2"></div>
-              <div className="text-sm text-gray-400">Loading {city.name}...</div>
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  };
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -230,44 +178,52 @@ export default function LocalGuidesPage() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {localGuides.map((city, index) => (
-            <div key={city.slug} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              {/* Progressive Loading Image */}
-              <ProgressiveImage city={city} index={index} />
-              
-              {/* Card Content */}
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <MapPin className="w-5 h-5 text-blue-600 mr-2" />
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {city.name}, {city.state}
-                    </h3>
-                  </div>
-                </div>
-                
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">20-Yard Pricing:</span>
-                    <span className="font-semibold text-green-600">{city.priceRange}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">Local Providers:</span>
-                    <span className="font-semibold">{city.providers}+ companies</span>
-                  </div>
-                </div>
-
-                <Link 
-                  href={`/dumpster-rental-${city.slug}`}
-                  className="block bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
-                >
-                  View {city.name} Guide →
-                </Link>
-              </div>
-            </div>
-          ))}
+  {localGuides.map((city, index) => (
+    <div key={city.slug} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+      {/* City Image */}
+      <div className="relative h-48 w-full">
+        <Image
+          src={city.image}
+          alt={`${city.name} skyline`}
+          fill
+          className="object-cover"
+          priority={index < 6}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+      </div>
+      
+      {/* Card Content */}
+      <div className="p-6">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center">
+            <MapPin className="w-5 h-5 text-blue-600 mr-2" />
+            <h3 className="text-xl font-bold text-gray-900">
+              {city.name}, {city.state}
+            </h3>
+          </div>
+        </div>
+        
+        <div className="space-y-3 mb-6">
+          <div className="flex items-center justify-between">
+            <span className="text-gray-600">20-Yard Pricing:</span>
+            <span className="font-semibold text-green-600">{city.priceRange}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-gray-600">Local Providers:</span>
+            <span className="font-semibold">{city.providers}+ companies</span>
+          </div>
         </div>
 
+        <Link 
+          href={`/dumpster-rental-${city.slug}`}
+          className="block bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+        >
+          View {city.name} Guide →
+        </Link>
+      </div>
+    </div>
+  ))}
+</div>
         <div className="text-center mt-12">
           <Link href="/local" className="text-blue-600 hover:underline">
             ← Back to Local Hub
