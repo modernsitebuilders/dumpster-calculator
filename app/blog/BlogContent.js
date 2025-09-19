@@ -8,7 +8,6 @@ import { useSearchParams } from 'next/navigation';
 
 // Lazy load non-critical images
 const BlogCard = ({ post, priority = false, isFirst = false }) => {
-  const mobileImage = post.image.replace('.webp', '-mobile.webp');
   return (
     <article className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
       <div className="relative w-full h-40">
@@ -16,14 +15,13 @@ const BlogCard = ({ post, priority = false, isFirst = false }) => {
           src={post.image}
           alt={post.title}
           fill
-          // IMPROVED: Better mobile sizing
           sizes="(max-width: 640px) 400px, (max-width: 1024px) 50vw, 33vw"
           className="object-cover"
           loading={priority ? 'eager' : 'lazy'}
           priority={priority}
           placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
-          quality={85}
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
+          quality={75}
         />
       </div>
       <div className="p-6 flex flex-col flex-grow">
@@ -81,6 +79,11 @@ export default function BlogContent({ blogPosts }) {
     if (selectedCategory === "All Posts") return blogPosts;
     return blogPosts.filter(post => post.category === selectedCategory);
   }, [selectedCategory, blogPosts]);
+
+  // LIMIT POSTS - Only show first 9 posts initially
+  const displayedPosts = useMemo(() => {
+    return filteredPosts.slice(0, 9);
+  }, [filteredPosts]);
 
   // Handle category change with loading state
   const handleCategoryChange = useCallback((cat) => {
