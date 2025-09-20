@@ -84,14 +84,14 @@ export default function TampaPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">MobileDumps Tampa</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Website:</strong> mobiledumps.com</p>
-                  <p><strong>Features:</strong> Mobile dumpster trailers, back swinging doors</p>
-                  <p><strong>Reviews:</strong> 500+ five-star reviews</p>
-                </div>
-                <div>
-                  <p><strong>Service Areas:</strong> Greater Tampa area</p>
-                  <p><strong>Specialties:</strong> Husband & wife team, clean trailers, low deck positioning</p>
-                </div>
+  <p><strong>Website:</strong> mobiledumps.com</p>
+  <p><strong>Features:</strong> Mobile dumpster trailers, back swinging doors</p>
+  <p><strong>Owner:</strong> Certified woman-owned business since 2022</p>
+</div>
+<div>
+  <p><strong>Service Areas:</strong> Greater Tampa Bay area</p>
+  <p><strong>Specialties:</strong> Same-day service, text/email availability</p>
+</div>
               </div>
             </div>
 
