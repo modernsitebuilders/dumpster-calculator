@@ -187,9 +187,10 @@ export default function WashingtonDCStatePage() {
                   </div>
 
                   {/* Special Notes */}
-                  <p className="text-gray-600 mb-6">
-                    <strong>Capital Reality:</strong> {city.specialNotes}
-                  </p>
+<div className="bg-gray-50 rounded-lg p-4 mb-6">
+  <h4 className="font-semibold text-gray-900 mb-2">Special Considerations:</h4>
+  <p className="text-gray-700 text-sm">{city.specialNotes}</p>
+</div>
 
                   {/* CORRECT - Dynamic city name */}
 <Link 

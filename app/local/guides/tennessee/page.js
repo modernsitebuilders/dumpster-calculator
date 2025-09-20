@@ -190,10 +190,10 @@ export default function TennesseeStatePage() {
                   </div>
 
                   {/* Special Notes */}
-                  <div className="bg-gray-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">Special Considerations:</h4>
-                    <p className="text-gray-700 text-sm">{city.specialNotes}</p>
-                  </div>
+<div className="bg-gray-50 rounded-lg p-4 mb-6">
+  <h4 className="font-semibold text-gray-900 mb-2">Special Considerations:</h4>
+  <p className="text-gray-700 text-sm">{city.specialNotes}</p>
+</div>
                   {/* CORRECT - Dynamic city name */}
 <Link 
   href={`/dumpster-rental-${city.slug}`}
