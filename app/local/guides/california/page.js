@@ -143,7 +143,8 @@ export default function CaliforniaStatePage() {
           </h2>
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {californiaCities.map((city, index) => (
-<div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-200 h-full">                
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-200">
+                
                 {/* City Image */}
                 <div className="relative h-48">
                   <Image
