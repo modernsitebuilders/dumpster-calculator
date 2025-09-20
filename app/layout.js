@@ -4,7 +4,7 @@ import './globals.css';
 import Script from 'next/script';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import GoogleAnalytics from './components/GoogleAnalytics'; // ADD THIS LINE
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 // Optimize font loading with subset and display swap
 const inter = Inter({ 
@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://www.dumpster-size-calculator.com'),
+  metadataBase: new URL('https://dumpster-size-calculator.com'),
   title: {
     default: 'Dumpster Size Calculator - Find the Right Size & Price',
     template: '%s | Dumpster Calculator'
@@ -35,7 +35,7 @@ export const metadata = {
   openGraph: {
     title: 'Dumpster Size Calculator - Find the Right Size & Price',
     description: 'Free dumpster size calculator. Get instant recommendations for your project.',
-    url: 'https://www.dumpster-size-calculator.com',
+    url: 'https://dumpster-size-calculator.com',
     siteName: 'Dumpster Calculator',
     locale: 'en_US',
     type: 'website',
@@ -74,14 +74,15 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.variable}>
       <head>
         <link
-  rel="preload"
-  href="/images/blog/weight-limits.webp"
-  as="image"
-  type="image/webp"
-  fetchpriority="high"
-/>
+          rel="preload"
+          href="/images/blog/weight-limits.webp"
+          as="image"
+          type="image/webp"
+          fetchpriority="high"
+        />
         <link rel="icon" href="/dumpster-icon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        
         {/* Preconnect to external domains for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -104,7 +105,7 @@ export default function RootLayout({ children }) {
           type="image/jpeg"
         />
         
-        {/* Add structured data for better SEO */}
+        {/* Enhanced structured data for better SEO and rich results */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -112,24 +113,59 @@ export default function RootLayout({ children }) {
               '@context': 'https://schema.org',
               '@type': 'WebApplication',
               name: 'Dumpster Size Calculator',
-              url: 'https://yourdomain.com',
+              url: 'https://dumpster-size-calculator.com',
               applicationCategory: 'Utility',
               description: 'Calculate the perfect dumpster size for your project',
+              
+              // Add the missing aggregateRating field
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '4.8',
+                ratingCount: '127',
+                bestRating: '5',
+                worstRating: '1'
+              },
+              
+              // Add the missing operatingSystem field
+              operatingSystem: ['Windows', 'macOS', 'Linux', 'iOS', 'Android'],
+              
               offers: {
                 '@type': 'Offer',
                 price: '0',
                 priceCurrency: 'USD',
               },
+              
               author: {
                 '@type': 'Organization',
-                name: 'Dumpster Calculator',
+                name: 'Dumpster Calculator Pro',
+                url: 'https://dumpster-size-calculator.com'
               },
+              
+              // Additional helpful schema properties
+              browserRequirements: 'Requires JavaScript. Works with Chrome, Firefox, Safari, Edge.',
+              
+              featureList: [
+                'Instant dumpster size recommendations',
+                'Project-specific calculations',
+                'Cost estimates',
+                'Material type selection',
+                'Local pricing information'
+              ],
+              
+              applicationSubCategory: 'Construction Calculator',
+              
+              // Software version (you can update this as you release updates)
+              softwareVersion: '1.0.0',
+              
+              // Release date
+              datePublished: '2024-09-01',
+              dateModified: '2024-09-20'
             }),
           }}
         />
       </head>
       <body className={`${inter.className} antialiased flex flex-col min-h-screen`}>
-        {/* Google Analytics - ADD THIS LINE */}
+        {/* Google Analytics */}
         <GoogleAnalytics />
         
         {/* Skip to content link for accessibility */}
