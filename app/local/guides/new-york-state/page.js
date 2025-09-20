@@ -173,11 +173,11 @@ export default function NewYorkStatePage() {
                   </div>
 
                   {/* Special Notes */}
-                  <p className="text-gray-600 mb-6">
-                    <strong>Market Reality:</strong> {city.specialNotes}
-                  </p>
+<p className="text-gray-600 mb-6">  {/* ADD mb-6 here */}
+  <strong>Market Reality:</strong> {city.specialNotes}
+</p>
 
-                  {/* CORRECT - Dynamic city name */}
+{/* CTA Button */}
 <Link 
   href={`/dumpster-rental-${city.slug}`}
   className="block w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg transition-colors font-semibold text-center text-lg"

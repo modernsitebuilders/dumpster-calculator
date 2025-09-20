@@ -194,19 +194,18 @@ export default function TennesseeStatePage() {
                     <h4 className="font-semibold text-gray-900 mb-2">Special Considerations:</h4>
                     <p className="text-gray-700 text-sm">{city.specialNotes}</p>
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CORRECT - Dynamic city name */}
+                  {/* CORRECT - Dynamic city name */}
 <Link 
   href={`/dumpster-rental-${city.slug}`}
   className="block w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg transition-colors font-semibold text-center text-lg"
 >
   View {city.name} Guide →
 </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* State-Specific Tips */}
         <div className="mb-12">

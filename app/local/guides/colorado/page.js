@@ -188,26 +188,18 @@ export default function ColoradoStatePage() {
                     <strong>Local Factors:</strong> {city.specialNotes}
                   </p>
 
-                  {/* CTA Button */}
-                  <Link 
-                    href={`/dumpster-rental-${city.slug}`}
-                    className="block w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-4 rounded-lg transition-colors font-semibold text-center text-lg"
-                  >
-                    View Denver Guide →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CORRECT - Dynamic city name */}
+                  {/* CORRECT - Dynamic city name */}
 <Link 
   href={`/dumpster-rental-${city.slug}`}
   className="block w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg transition-colors font-semibold text-center text-lg"
 >
   View {city.name} Guide →
 </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Colorado-Specific Tips */}
         <div className="bg-purple-50 rounded-lg p-8 mb-12">
