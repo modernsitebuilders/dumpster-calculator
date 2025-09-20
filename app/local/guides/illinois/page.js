@@ -127,8 +127,7 @@ export default function IllinoisStatePage() {
                 </div>
 
                 {/* City Info */}
-                <div className="p-8 flex flex-col h-full">
-                  {/* Pricing */}
+<div className="p-8 flex flex-col">                  {/* Pricing */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center text-green-600">
                       <DollarSign className="w-6 h-6 mr-2" />
