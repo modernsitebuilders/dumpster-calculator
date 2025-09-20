@@ -163,8 +163,7 @@ export default function CaliforniaStatePage() {
                 </div>
 
                 {/* City Info */}
-                <div className="p-8 flex flex-col h-full">
-                  
+<div className="p-8 flex flex-col">                  
                   {/* Pricing */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center text-green-600">
