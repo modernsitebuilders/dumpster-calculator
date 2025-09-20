@@ -127,7 +127,7 @@ export default function MassachusettsStatePage() {
                 </div>
 
                 {/* City Info */}
-                <div className="p-8">
+                <div className="p-8 flex flex-col h-full">
                   
                   {/* Pricing - Emphasized for Boston */}
                   <div className="flex items-center justify-between mb-6 p-4 bg-red-50 rounded-lg">
