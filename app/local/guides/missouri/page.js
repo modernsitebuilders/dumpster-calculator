@@ -18,7 +18,7 @@ const missouriCities = [
     providers: 10,
     image: '/images/cities/kansas-city-skyline.webp',
     neighborhoods: ['Downtown', 'Country Club Plaza', 'Westport', 'River Market', 'Crossroads', 'Power & Light'],
-    specialNotes: 'Major Midwest hub with fountains and parks. Good provider availability across metro area.',
+specialNotes: 'Central location serves broader regional market effectively. Tornado season planning essential during spring months.',
     permitRequired: true,
     permitCost: '$50-$125',
     processingTime: '3-5 days'

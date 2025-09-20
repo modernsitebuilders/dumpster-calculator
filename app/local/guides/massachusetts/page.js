@@ -18,7 +18,7 @@ const massachusettsCities = [
     providers: 11,
     image: '/images/cities/boston-skyline.webp',
     neighborhoods: ['Back Bay', 'North End', 'Beacon Hill', 'Cambridge', 'Somerville', 'Quincy'],
-    specialNotes: 'Historic districts have strict regulations. Narrow streets and limited parking create placement challenges.',
+    specialNotes: 'Historic city with narrow streets and parking restrictions. Complex permitting process in downtown areas.',
     permitRequired: true,
     permitCost: '$50-$1,490/month',
     processingTime: '7+ days'

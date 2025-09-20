@@ -18,7 +18,7 @@ const pennsylvaniaCities = [
     providers: 16,
     image: '/images/cities/philadelphia-skyline.webp',
     neighborhoods: ['Center City', 'Old City', 'Northern Liberties', 'Fishtown', 'South Philly', 'University City'],
-    specialNotes: 'Dense urban environment with narrow streets. Historic districts require special considerations.',
+    specialNotes: 'Historic city with narrow streets and tight spaces. Rowhouse renovations require specialized placement strategies.',
     permitRequired: true,
     permitCost: '$80-$500/year',
     processingTime: '5 days'

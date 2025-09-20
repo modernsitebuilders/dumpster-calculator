@@ -30,7 +30,7 @@ const tennesseeCities = [
     providers: 9,
     image: '/images/cities/memphis-skyline.webp',
     neighborhoods: ['Downtown', 'Midtown', 'East Memphis', 'Germantown', 'Cordova', 'Bartlett'],
-    specialNotes: 'Major logistics and distribution hub. Experience with large commercial and industrial projects.',
+specialNotes: 'Major logistics hub with Mississippi River commerce. Music industry creates unique entertainment venue projects.',
     permitRequired: true,
     permitCost: '$45-$125',
     processingTime: '2-5 days'

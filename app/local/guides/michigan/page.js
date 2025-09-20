@@ -18,7 +18,7 @@ const michiganCities = [
     providers: 7,
     image: '/images/cities/detroit-skyline.webp',
     neighborhoods: ['Downtown', 'Midtown', 'Corktown', 'Eastern Market', 'Riverfront', 'New Center'],
-    specialNotes: 'Industrial heritage creates opportunities for large-scale projects. Competitive pricing due to lower overhead costs.',
+    specialNotes: 'Industrial heritage with automotive sector expertise. Economic revitalization creates growing construction demand.',
     permitRequired: true,
     permitCost: '$35-$150',
     processingTime: '3-7 days'

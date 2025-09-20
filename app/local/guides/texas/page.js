@@ -18,7 +18,7 @@ const texasCities = [
     providers: 12,
     image: '/images/cities/houston-skyline.webp',
     neighborhoods: ['Downtown', 'Galleria', 'River Oaks', 'Heights', 'Montrose', 'Energy Corridor'],
-    specialNotes: 'Major metropolitan area with extensive service coverage.',
+    specialNotes: 'Energy capital with extensive industrial project expertise. Major metropolitan area with broad service coverage.',
     permitRequired: true,
     permitCost: '$50-$150',
     processingTime: '3-5 days'
@@ -30,7 +30,7 @@ const texasCities = [
     providers: 11,
     image: '/images/cities/dallas-skyline.webp',
     neighborhoods: ['Downtown', 'Deep Ellum', 'Uptown', 'Bishop Arts', 'Knox-Henderson', 'Design District'],
-    specialNotes: 'Part of DFW Metroplex. Escalating permit fees for violations.',
+    specialNotes: 'Part of DFW Metroplex with escalating permit fees. Business center creates consistent commercial demand.',
     permitRequired: true,
     permitCost: '$240+ (escalating)',
     processingTime: '48 hours - 2 weeks'
@@ -42,7 +42,7 @@ const texasCities = [
     providers: 8,
     image: '/images/cities/san-antonio-skyline.webp',
     neighborhoods: ['Downtown', 'Southtown', 'King William', 'Stone Oak', 'Alamo Heights', 'Medical Center'],
-    specialNotes: 'Growing city with expanding service areas.',
+    specialNotes: 'Military city with growing medical center expansion. Historic district projects require special considerations.',
     permitRequired: true,
     permitCost: '$25-$75',
     processingTime: '3-7 days'
@@ -54,7 +54,7 @@ const texasCities = [
     providers: 9,
     image: '/images/cities/austin-skyline.webp',
     neighborhoods: ['Downtown', 'South Austin', 'East Austin', 'Zilker', 'Mueller', 'Cedar Park'],
-    specialNotes: 'Rapidly growing tech hub with high construction activity.',
+    specialNotes: 'Rapidly growing tech hub with high construction activity. Keep Austin Weird culture creates unique project needs.',
     permitRequired: true,
     permitCost: '$50-$125',
     processingTime: '5-10 days'
@@ -66,7 +66,7 @@ const texasCities = [
     providers: 10,
     image: '/images/cities/fort-worth-skyline.webp',
     neighborhoods: ['Downtown', 'Sundance Square', 'Near Southside', 'Cultural District', 'TCU Area', 'Alliance'],
-    specialNotes: 'Historic cowtown with modern development. Part of DFW Metroplex logistics hub.',
+    specialNotes: 'Historic cowtown with modern development projects. Part of DFW Metroplex logistics hub.',
     permitRequired: true,
     permitCost: '$50-$140',
     processingTime: '3-7 days'

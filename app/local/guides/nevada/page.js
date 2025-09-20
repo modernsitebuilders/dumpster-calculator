@@ -18,7 +18,7 @@ const nevadaCities = [
     providers: 14,
     image: '/images/cities/las-vegas-skyline.webp',
     neighborhoods: ['Strip', 'Downtown', 'Henderson', 'Summerlin', 'Green Valley', 'Paradise'],
-    specialNotes: '24/7 entertainment city with unique scheduling needs. High construction activity and casino projects.',
+specialNotes: 'Entertainment capital with 24/7 construction activity. Desert conditions affect equipment and scheduling.',
     permitRequired: true,
     permitCost: '$60-$180',
     processingTime: '3-7 days'

@@ -18,7 +18,7 @@ const oklahomaCities = [
     providers: 9,
     image: '/images/cities/oklahoma-city-skyline.webp',
     neighborhoods: ['Downtown', 'Bricktown', 'Midtown', 'Edmond', 'Norman', 'Moore'],
-    specialNotes: 'Energy sector hub with experience in industrial and commercial projects. Weather-dependent scheduling.',
+specialNotes: 'Energy sector hub with industrial project expertise. Tornado season affects spring delivery scheduling.',
     permitRequired: true,
     permitCost: '$40-$120',
     processingTime: '2-5 days'

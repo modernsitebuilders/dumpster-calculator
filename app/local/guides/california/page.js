@@ -18,7 +18,7 @@ const californiaCities = [
     providers: 14,
     image: '/images/cities/los-angeles-skyline.webp',
     neighborhoods: ['Hollywood', 'Beverly Hills', 'Santa Monica', 'Downtown LA', 'West Hollywood', 'Venice'],
-    specialNotes: 'Strict permitting in many areas. High demand market.',
+    specialNotes: 'High demand market with strict permitting requirements. Entertainment industry creates unique project needs.',
     permitRequired: true,
     permitCost: '$63-$400',
     processingTime: '5-10 days'
@@ -30,7 +30,7 @@ const californiaCities = [
     providers: 9,
     image: '/images/cities/san-diego-skyline.webp',
     neighborhoods: ['Gaslamp Quarter', 'Balboa Park', 'Mission Beach', 'La Jolla', 'Hillcrest', 'Pacific Beach'],
-    specialNotes: 'Coastal regulations may apply in some areas.',
+    specialNotes: 'Coastal regulations may apply in waterfront areas. Military presence creates steady construction demand.',
     permitRequired: true,
     permitCost: '$50-$200',
     processingTime: '3-7 days'
@@ -42,7 +42,7 @@ const californiaCities = [
     providers: 10,
     image: '/images/cities/san-francisco-skyline.webp',
     neighborhoods: ['SOMA', 'Mission District', 'Castro', 'Nob Hill', 'Pacific Heights', 'Chinatown'],
-    specialNotes: 'Most expensive market. Limited street space for placement.',
+    specialNotes: 'Most expensive market with limited street space. Complex permitting process requires advance planning.',
     permitRequired: true,
     permitCost: '$484 + $205/month',
     processingTime: '10-15 days'
@@ -54,7 +54,7 @@ const californiaCities = [
     providers: 11,
     image: '/images/cities/san-jose-skyline.webp',
     neighborhoods: ['Downtown', 'Willow Glen', 'Almaden Valley', 'Evergreen', 'North San Jose', 'Cambrian Park'],
-    specialNotes: 'Silicon Valley tech hub with high construction activity. Growing market demand.',
+    specialNotes: 'Silicon Valley tech hub with high construction activity. Growing market demand drives competitive pricing.',
     permitRequired: true,
     permitCost: '$85-$250',
     processingTime: '5-10 days'

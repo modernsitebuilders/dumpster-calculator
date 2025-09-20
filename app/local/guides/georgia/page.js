@@ -18,7 +18,7 @@ const georgiaCities = [
     providers: 12,
     image: '/images/cities/atlanta-skyline.webp',
     neighborhoods: ['Midtown', 'Buckhead', 'Virginia-Highland', 'Little Five Points', 'Decatur', 'Sandy Springs'],
-    specialNotes: 'Rapidly growing metro area with extensive suburban coverage. Strong competition keeps prices competitive.',
+    specialNotes: 'Major transportation hub with extensive service coverage. Film industry creates unique project requirements.',
     permitRequired: true,
     permitCost: '$20 + $10-25/day',
     processingTime: '7 days'

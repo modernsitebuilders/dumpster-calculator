@@ -18,7 +18,7 @@ const nebraskaCities = [
     providers: 8,
     image: '/images/cities/omaha-skyline.webp',
     neighborhoods: ['Downtown', 'Old Market', 'Benson', 'Dundee', 'Aksarben', 'West Omaha'],
-    specialNotes: 'Major Midwest transportation hub with good provider availability. Weather-dependent scheduling.',
+    specialNotes: 'Agricultural hub with insurance industry presence. Tornado season planning essential during spring months.',
     permitRequired: true,
     permitCost: '$35-$100',
     processingTime: '2-5 days'

@@ -18,7 +18,7 @@ const ohioCities = [
     providers: 12,
     image: '/images/cities/columbus-skyline.webp',
     neighborhoods: ['Downtown', 'Short North', 'German Village', 'Victorian Village', 'Clintonville', 'Dublin'],
-    specialNotes: 'State capital and university town. OSU campus projects and government facilities experience.',
+    specialNotes: 'State capital with diverse economic base expansion. University district creates seasonal project cycles.',
     permitRequired: true,
     permitCost: '$45-$130',
     processingTime: '3-7 days'

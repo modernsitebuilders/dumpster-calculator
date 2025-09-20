@@ -18,7 +18,7 @@ const newYorkCities = [
     providers: 18,
     image: '/images/cities/nyc-skyline.webp',
     neighborhoods: ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island', 'Long Island'],
-    specialNotes: 'Most expensive market in US. Extremely limited street space and strict regulations.',
+    specialNotes: 'Most expensive market with extremely limited street space. Complex DOT requirements and strict regulations.',
     permitRequired: true,
     permitCost: '$45-$200',
     processingTime: '7-14 days'

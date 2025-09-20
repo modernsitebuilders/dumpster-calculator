@@ -18,7 +18,7 @@ const washingtonCities = [
     providers: 8,
     image: '/images/cities/seattle-skyline.webp',
     neighborhoods: ['Capitol Hill', 'Ballard', 'Fremont', 'Queen Anne', 'Bellevue', 'Redmond'],
-    specialNotes: 'Rain affects scheduling year-round. Strong environmental regulations require careful sorting.',
+    specialNotes: 'Tech hub with environmental regulations and rain considerations. Hill terrain creates delivery challenges.',
     permitRequired: true,
     permitCost: '$50-$200',
     processingTime: '5-10 days'

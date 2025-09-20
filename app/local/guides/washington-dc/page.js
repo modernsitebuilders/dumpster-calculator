@@ -18,7 +18,7 @@ const dcAreas = [
     providers: 14,
     image: '/images/cities/dc-skyline.webp',
     neighborhoods: ['Downtown', 'Capitol Hill', 'Dupont Circle', 'Georgetown', 'Adams Morgan', 'Foggy Bottom'],
-    specialNotes: 'Federal regulations and security zones create unique challenges. Premium pricing due to high real estate costs.',
+    specialNotes: 'Federal capital with strict security and permitting requirements. Government project protocols require advance coordination.',
     permitRequired: true,
     permitCost: '$50 + $75-200/month',
     processingTime: '15 days'

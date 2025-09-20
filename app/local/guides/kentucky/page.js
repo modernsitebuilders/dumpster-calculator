@@ -18,7 +18,7 @@ const kentuckyCities = [
     providers: 9,
     image: '/images/cities/louisville-skyline.webp',
     neighborhoods: ['Downtown', 'Highlands', 'Germantown', 'St. Matthews', 'Jeffersontown', 'Okolona'],
-    specialNotes: 'Derby city with Ohio River access. Experience with historic preservation and event planning.',
+    specialNotes: 'Derby city with bourbon industry construction projects. Ohio River regulations may apply near waterfront.',
     permitRequired: true,
     permitCost: '$40-$110',
     processingTime: '3-5 days'

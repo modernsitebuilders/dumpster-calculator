@@ -18,7 +18,7 @@ const oregonCities = [
     providers: 6,
     image: '/images/cities/portland-skyline.webp',
     neighborhoods: ['Pearl District', 'Hawthorne', 'Alberta', 'Sellwood', 'Beaverton', 'Lake Oswego'],
-    specialNotes: 'Strong environmental focus requires careful waste sorting. Rain affects outdoor projects year-round.',
+    specialNotes: 'Eco-friendly city with strict environmental compliance requirements. Rain season affects outdoor project scheduling.',
     permitRequired: true,
     permitCost: '$40-$120',
     processingTime: '5-10 days'

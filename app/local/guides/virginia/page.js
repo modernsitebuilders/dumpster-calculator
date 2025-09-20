@@ -18,7 +18,7 @@ const virginiaCities = [
     providers: 12,
     image: '/images/cities/virginia-beach-skyline.webp',
     neighborhoods: ['Oceanfront', 'Town Center', 'Kempsville', 'Chesapeake Bay', 'Sandbridge', 'Little Creek'],
-    specialNotes: 'Tourist destination with seasonal demand variations. Coastal regulations apply.',
+    specialNotes: 'Coastal city with military presence and tourism. Beach regulations apply during peak summer season.',
     permitRequired: true,
     permitCost: '$75-$200',
     processingTime: '3-7 days'

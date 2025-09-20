@@ -18,7 +18,7 @@ const coloradoCities = [
     providers: 9,
     image: '/images/cities/denver-skyline.webp',
     neighborhoods: ['LoDo', 'Capitol Hill', 'Highlands', 'RiNo', 'Cherry Creek', 'Lakewood'],
-    specialNotes: 'Mile-high altitude affects logistics. Seasonal weather creates scheduling challenges.',
+    specialNotes: 'Mile-high altitude affects truck performance and logistics. Winter weather creates seasonal scheduling challenges.',
     permitRequired: true,
     permitCost: '$25-$100',
     processingTime: '5-10 days'

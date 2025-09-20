@@ -18,7 +18,7 @@ const illinoisCities = [
     providers: 15,
     image: '/images/cities/chicago-skyline.webp',
     neighborhoods: ['Loop', 'Lincoln Park', 'Wicker Park', 'River North', 'Gold Coast', 'Millennium Park'],
-    specialNotes: 'Complex permitting system with strict enforcement. Winter weather affects scheduling.',
+    specialNotes: 'Harsh winters affect scheduling and equipment performance. Complex city regulations require advance planning.',
     permitRequired: true,
     permitCost: '$21-$488',
     processingTime: '5-10 days'

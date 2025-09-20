@@ -18,7 +18,7 @@ const floridaCities = [
     providers: 10,
     image: '/images/cities/miami-skyline.webp',
     neighborhoods: ['South Beach', 'Downtown Miami', 'Coral Gables', 'Coconut Grove', 'Wynwood', 'Brickell'],
-    specialNotes: 'Hurricane season affects scheduling. Coastal regulations may apply in waterfront areas.',
+    specialNotes: 'Hurricane season affects scheduling June through November. Coastal regulations apply in waterfront areas.',
     permitRequired: true,
     permitCost: '$35-$150',
     processingTime: '3-7 days'
@@ -30,7 +30,7 @@ const floridaCities = [
     providers: 11,
     image: '/images/cities/tampa-skyline.webp',
     neighborhoods: ['Downtown', 'Ybor City', 'Hyde Park', 'Westshore', 'Davis Islands', 'Brandon'],
-    specialNotes: 'Major port city with growing tech sector. Bay area logistics and convention center projects.',
+    specialNotes: 'Major port city with growing tech sector presence. Bay area logistics and convention projects common.',
     permitRequired: true,
     permitCost: '$45-$125',
     processingTime: '3-5 days'
@@ -42,7 +42,7 @@ const floridaCities = [
     providers: 9,
     image: '/images/cities/jacksonville-skyline.webp',
     neighborhoods: ['Downtown', 'Riverside', 'Avondale', 'Southside', 'Mandarin', 'Neptune Beach'],
-    specialNotes: 'Largest city by area in US. Military presence and port operations create diverse project needs.',
+    specialNotes: 'Largest city by area in US with diverse project needs. Military and port operations create industrial demand.',
     permitRequired: true,
     permitCost: '$35-$115',
     processingTime: '2-5 days'
@@ -54,7 +54,7 @@ const floridaCities = [
     providers: 12,
     image: '/images/cities/orlando-skyline.webp',
     neighborhoods: ['Downtown', 'Winter Park', 'Dr. Phillips', 'Mills 50', 'College Park', 'Lake Nona'],
-    specialNotes: 'Tourism capital with theme park construction activity. Convention center and hospitality projects.',
+    specialNotes: 'Tourism capital with theme park construction activity. Convention center projects create peak demand periods.',
     permitRequired: true,
     permitCost: '$50-$130',
     processingTime: '3-7 days'

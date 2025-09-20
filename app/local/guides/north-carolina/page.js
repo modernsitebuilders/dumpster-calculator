@@ -18,7 +18,7 @@ const northCarolinaCities = [
     providers: 11,
     image: '/images/cities/charlotte-skyline.webp',
     neighborhoods: ['Uptown', 'South End', 'NoDa', 'Dilworth', 'Myers Park', 'Ballantyne'],
-    specialNotes: 'Rapidly growing financial center with extensive suburban development. Strong competition keeps prices competitive.',
+    specialNotes: 'Major banking center with rapid growth patterns. Construction boom creates high demand periods.',
     permitRequired: true,
     permitCost: '$30-$100',
     processingTime: '3-7 days'
@@ -30,7 +30,7 @@ const northCarolinaCities = [
     providers: 9,
     image: '/images/cities/raleigh-skyline.webp',
     neighborhoods: ['Downtown', 'North Hills', 'Cary', 'Apex', 'Wake Forest', 'Garner'],
-    specialNotes: 'State capital and Research Triangle hub. University projects and government construction activity.',
+    specialNotes: 'State capital with Research Triangle tech expansion. University projects create seasonal demand fluctuations.',
     permitRequired: true,
     permitCost: '$35-$110',
     processingTime: '3-5 days'

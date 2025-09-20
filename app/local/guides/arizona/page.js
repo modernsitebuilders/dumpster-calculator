@@ -18,7 +18,7 @@ const arizonaCities = [
     providers: 12,
     image: '/images/cities/phoenix-skyline.webp',
     neighborhoods: ['Downtown', 'Scottsdale', 'Tempe', 'Mesa', 'Glendale', 'Chandler'],
-    specialNotes: 'Extreme summer heat affects scheduling. Rapidly growing metro area with extensive suburban coverage.',
+    specialNotes: 'Desert heat extremes affect project scheduling and waste decomposition rates. Summer temperatures exceed 110°F requiring early morning work windows.',
     permitRequired: true,
     permitCost: '$25-$100',
     processingTime: '15 days'
