@@ -27,7 +27,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
             <div className="prose prose-lg max-w-none text-gray-700">
               <p className="mb-6">
-                DumpsterCalculator.com was born from a simple frustration: <strong>choosing the wrong dumpster size is expensive and wasteful.</strong>
+                Dumpster-Size-Calculator.com was born from a simple frustration: <strong>choosing the wrong dumpster size is expensive and wasteful.</strong>
               </p>
               <p className="mb-6">
                 After watching countless homeowners struggle with undersized dumpsters (requiring multiple trips) or oversized containers (wasting money), 
