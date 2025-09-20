@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { ArrowLeft, MapPin, DollarSign, Users, Clock, AlertCircle, CheckCircle, Thermometer } from 'lucide-react';
 
 export const metadata = {
-  title: "Texas Dumpster Rental Guide | Houston, Dallas, San Antonio, Austin",
-  description: "Complete Texas dumpster rental guide covering Houston, Dallas, San Antonio, and Austin. Local pricing, permits, and trusted providers across the Lone Star State.",
-  keywords: "Texas dumpster rental, Houston dumpster rental, Dallas dumpster rental, San Antonio dumpster rental, Austin dumpster rental"
+  title: "Texas Dumpster Rental Guide | Houston, Dallas, San Antonio, Austin, Fort Worth",
+  description: "Complete Texas dumpster rental guide covering Houston, Dallas, San Antonio, Austin, and Fort Worth. Local pricing, permits, and trusted providers across the Lone Star State.",
+  keywords: "Texas dumpster rental, Houston dumpster rental, Dallas dumpster rental, San Antonio dumpster rental, Austin dumpster rental, Fort Worth dumpster rental"
 };
 
 const texasCities = [
@@ -58,6 +58,18 @@ const texasCities = [
     permitRequired: true,
     permitCost: '$50-$125',
     processingTime: '5-10 days'
+  },
+  {
+    name: 'Fort Worth',
+    slug: 'fort-worth',
+    priceRange: '$275-$475',
+    providers: 10,
+    image: '/images/cities/fort-worth-skyline.webp',
+    neighborhoods: ['Downtown', 'Sundance Square', 'Near Southside', 'Cultural District', 'TCU Area', 'Alliance'],
+    specialNotes: 'Historic cowtown with modern development. Part of DFW Metroplex logistics hub.',
+    permitRequired: true,
+    permitCost: '$50-$140',
+    processingTime: '3-7 days'
   }
 ];
 
@@ -112,7 +124,7 @@ export default function TexasStatePage() {
                 Texas Dumpster Rental Guide
               </h1>
               <p className="text-xl text-gray-600">
-                4 major cities • 40 providers • Competitive market pricing
+                5 major cities • 50 providers • Competitive market pricing
               </p>
             </div>
           </div>
@@ -136,12 +148,12 @@ export default function TexasStatePage() {
           </div>
         </div>
 
-        {/* Cities Grid */}
+        {/* Texas Cities Coverage */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Texas Cities We Cover
+            Major Texas Markets
           </h2>
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {texasCities.map((city, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-200">
                 
@@ -152,8 +164,8 @@ export default function TexasStatePage() {
                     alt={`${city.name} skyline`}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-                    priority={index === 0}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={index < 2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/20"></div>
                   <div className="absolute bottom-4 left-4 text-white">
@@ -163,106 +175,114 @@ export default function TexasStatePage() {
                 </div>
 
                 {/* City Info */}
-                <div className="p-6">
+                <div className="p-8">
                   
                   {/* Pricing */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center text-green-600">
-                      <DollarSign className="w-5 h-5 mr-1" />
-                      <span className="font-bold text-lg">{city.priceRange}</span>
+                      <DollarSign className="w-6 h-6 mr-2" />
+                      <span className="font-bold text-xl">{city.priceRange}</span>
                     </div>
-                    <div className="flex items-center text-gray-600 text-sm">
-                      <Users className="w-4 h-4 mr-1" />
-                      {city.providers} providers
+                    <div className="flex items-center text-gray-600">
+                      <Users className="w-5 h-5 mr-2" />
+                      <span className="text-lg">{city.providers} providers</span>
                     </div>
                   </div>
 
                   {/* Neighborhoods */}
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">Popular Areas:</h4>
-                    <p className="text-gray-600 text-sm">
-                      {city.neighborhoods.slice(0, 4).join(', ')}
-                      {city.neighborhoods.length > 4 && ` + ${city.neighborhoods.length - 4} more`}
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-gray-900 mb-3 text-lg">Popular Areas:</h4>
+                    <p className="text-gray-600">
+                      {city.neighborhoods.join(', ')}
+                    </p>
+                  </div>
+
+                  {/* Heat Warning */}
+                  <div className="bg-red-50 rounded-lg p-4 mb-6 border-l-4 border-red-400">
+                    <div className="flex items-center mb-2">
+                      <AlertCircle className="w-5 h-5 text-red-600 mr-3" />
+                      <span className="font-bold text-red-800">Summer Heat Planning</span>
+                    </div>
+                    <p className="text-red-700 text-sm">
+                      June - September: Extreme heat (100°F+) affects waste decomposition and loading conditions. 
+                      Consider covered placement and plan work during cooler morning hours.
                     </p>
                   </div>
 
                   {/* Permit Info */}
-                  <div className="bg-yellow-50 rounded-lg p-3 mb-4">
-                    <div className="flex items-center mb-1">
-                      <AlertCircle className="w-4 h-4 text-yellow-600 mr-2" />
-                      <span className="font-semibold text-yellow-800 text-sm">Permit Required</span>
+                  <div className="bg-blue-50 rounded-lg p-4 mb-6">
+                    <div className="flex items-center mb-2">
+                      <MapPin className="w-5 h-5 text-blue-600 mr-3" />
+                      <span className="font-semibold text-blue-800">Permit Information</span>
                     </div>
-                    <p className="text-yellow-700 text-xs">
+                    <p className="text-blue-700 text-sm mb-2">
                       Cost: {city.permitCost} • Processing: {city.processingTime}
+                    </p>
+                    <p className="text-blue-600 text-sm">
+                      {city.name} requires permits for public right-of-way placement. 
+                      {city.name === 'Dallas' && ' Escalating fees for violations.'}
+                      {city.name === 'Fort Worth' && ' Part of DFW Metroplex regulations.'}
                     </p>
                   </div>
 
                   {/* Special Notes */}
-                  <p className="text-gray-600 text-sm mb-4">
-                    <strong>Note:</strong> {city.specialNotes}
-                  </p>
-
-                  {/* CTA Button */}
-                  <Link 
-                    href={`/dumpster-rental-${city.slug}`}
-                    className="block w-full bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg transition-colors font-semibold text-center"
-                  >
-                    View {city.name} Guide →
-                  </Link>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">Special Considerations:</h4>
+                    <p className="text-gray-700 text-sm">{city.specialNotes}</p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Texas Tips */}
-        <div className="bg-red-50 rounded-lg p-8 mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Texas Dumpster Rental Tips
+        {/* State-Specific Tips */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Texas-Specific Tips
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-bold text-gray-900 mb-3">🌡️ Weather Considerations</h3>
-              <ul className="space-y-2 text-gray-700 text-sm">
-                <li>• Schedule delivery/pickup early morning in summer</li>
-                <li>• Cover organic waste to prevent odors in heat</li>
-                <li>• Plan around severe weather seasons</li>
-                <li>• Allow extra time during hurricane season</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-gray-900 mb-3">💰 Cost Savings</h3>
-              <ul className="space-y-2 text-gray-700 text-sm">
-                <li>• Compare prices across metro areas</li>
-                <li>• Book during off-peak construction seasons</li>
-                <li>• Consider longer rental periods for discounts</li>
-                <li>• Ask about volume discounts for multiple projects</li>
-              </ul>
+          <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Regional Differences</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Houston: Energy capital with industrial expertise</li>
+                  <li>• Dallas/Fort Worth: DFW Metroplex logistics hub</li>
+                  <li>• Austin: Tech boom creating high demand</li>
+                  <li>• San Antonio: Military and medical center growth</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Best Practices</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Plan around extreme summer heat</li>
+                  <li>• Book 3-5 days in advance during peak seasons</li>
+                  <li>• Consider permit processing times</li>
+                  <li>• Account for rapid population growth in Austin</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center bg-gray-100 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Find Your Perfect Dumpster Size?
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Use our calculator to get personalized recommendations for your Texas project
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link 
-              href="/"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Calculate My Size →
-            </Link>
-            <Link 
-              href="/local/guides"
-              className="bg-white border-2 border-gray-300 text-gray-700 hover:border-gray-400 px-8 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Browse All States
-            </Link>
+        {/* CTA Section */}
+        <div className="text-center">
+          <div className="bg-red-600 rounded-lg shadow-lg p-8 text-white">
+            <h2 className="text-2xl font-bold mb-4">Ready to Find Your Texas Dumpster Rental?</h2>
+            <p className="text-red-100 mb-6 text-lg">
+              Get quotes from trusted local providers across the Lone Star State.
+            </p>
+            <div className="space-y-4">
+              <Link 
+                href="/" 
+                className="inline-block bg-white text-red-600 px-8 py-3 rounded-lg hover:bg-red-50 transition font-semibold text-lg"
+              >
+                Get Instant Quote
+              </Link>
+              <div className="text-sm text-red-200">
+                <Link href="/local/guides" className="hover:underline">← Back to All State Guides</Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

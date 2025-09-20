@@ -82,29 +82,59 @@ export default function sitemap() {
     '/blog/san-francisco-dumpster-permit-guide',
     '/blog/washington-dc-dumpster-permit-guide',
 
+    // NEW CITY PERMIT GUIDES (FOR THE NEW CITIES WE ADDED)
+    '/blog/tampa-dumpster-permit-guide',
+    '/blog/jacksonville-dumpster-permit-guide', 
+    '/blog/orlando-dumpster-permit-guide',
+    '/blog/fort-worth-dumpster-permit-guide',
+    '/blog/san-jose-dumpster-permit-guide',
+    '/blog/raleigh-dumpster-permit-guide',
+    '/blog/virginia-beach-dumpster-permit-guide',
+    '/blog/omaha-dumpster-permit-guide',
+    '/blog/oklahoma-city-dumpster-permit-guide',
+    '/blog/nashville-dumpster-permit-guide',
+    '/blog/memphis-dumpster-permit-guide',
+    '/blog/kansas-city-dumpster-permit-guide',
+    '/blog/columbus-dumpster-permit-guide',
+    '/blog/louisville-dumpster-permit-guide',
+    '/blog/las-vegas-dumpster-permit-guide',
+
     // ADDITIONAL REGULATION GUIDES  
     '/blog/hoa-dumpster-rules',
     '/blog/dumpster-permit-requirements',
     '/blog/dumpster-placement-rules',
 
-    // ALL ACTUAL STATE PAGES (15 STATES BUILT)
-    '/local/guides/california',
-    '/local/guides/texas', 
+    // ALL ACTUAL STATE PAGES (NOW 23 STATES TOTAL)
+    // EXISTING STATES (UPDATED WITH MORE CITIES)
+    '/local/guides/california',        // Now has 4 cities: LA, San Diego, SF, San Jose
+    '/local/guides/texas',             // Now has 5 cities: Houston, Dallas, San Antonio, Austin, Fort Worth
+    '/local/guides/florida',           // Now has 4 cities: Miami, Tampa, Jacksonville, Orlando
+    '/local/guides/north-carolina',    // Now has 2 cities: Charlotte, Raleigh
+    
+    // EXISTING STATES (UNCHANGED)
     '/local/guides/new-york-state',
     '/local/guides/illinois',
-    '/local/guides/florida',
     '/local/guides/georgia',
     '/local/guides/washington',
     '/local/guides/colorado',
     '/local/guides/massachusetts',
     '/local/guides/michigan', 
     '/local/guides/oregon',
-    '/local/guides/north-carolina',
     '/local/guides/pennsylvania',
     '/local/guides/arizona',
     '/local/guides/washington-dc',
 
-    // PRIORITY CITY PAGES (TOP MARKETS)
+    // NEW STATE PAGES (8 NEW STATES)
+    '/local/guides/virginia',          // Virginia Beach
+    '/local/guides/nebraska',          // Omaha
+    '/local/guides/oklahoma',          // Oklahoma City
+    '/local/guides/tennessee',         // Nashville, Memphis
+    '/local/guides/missouri',          // Kansas City
+    '/local/guides/ohio',              // Columbus
+    '/local/guides/kentucky',          // Louisville
+    '/local/guides/nevada',            // Las Vegas
+
+    // PRIORITY CITY PAGES (TOP MARKETS - EXISTING)
     '/dumpster-rental-new-york',        // Highest search volume
     '/dumpster-rental-los-angeles',     // Second biggest market  
     '/dumpster-rental-chicago',         // Major midwest hub
@@ -124,7 +154,24 @@ export default function sitemap() {
     '/dumpster-rental-san-antonio',     // Texas market
     '/dumpster-rental-san-diego',       // Southern California
     '/dumpster-rental-san-francisco',   // Northern California
-    '/dumpster-rental-washington-dc'    // DMV area
+    '/dumpster-rental-washington-dc',   // DMV area
+
+    // NEW CITY PAGES (FOR THE NEW CITIES WE ADDED)
+    '/dumpster-rental-tampa',           // Florida major market
+    '/dumpster-rental-jacksonville',    // Florida major market
+    '/dumpster-rental-orlando',         // Florida major market
+    '/dumpster-rental-fort-worth',      // Texas DFW market
+    '/dumpster-rental-san-jose',        // Silicon Valley
+    '/dumpster-rental-raleigh',         // North Carolina capital
+    '/dumpster-rental-virginia-beach',  // Virginia coast
+    '/dumpster-rental-omaha',           // Nebraska hub
+    '/dumpster-rental-oklahoma-city',   // Oklahoma capital
+    '/dumpster-rental-nashville',       // Tennessee music city
+    '/dumpster-rental-memphis',         // Tennessee logistics hub
+    '/dumpster-rental-kansas-city',     // Missouri hub
+    '/dumpster-rental-columbus',        // Ohio capital
+    '/dumpster-rental-louisville',      // Kentucky derby city
+    '/dumpster-rental-las-vegas'        // Nevada entertainment capital
   ];
 
   return routes.map((route) => ({

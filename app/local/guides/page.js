@@ -6,21 +6,30 @@ const StateGuide = () => {
   const stateData = [
     {
       name: 'California',
-      cities: ['Los Angeles', 'San Diego', 'San Francisco'],
-      cityCount: 3,
+      cities: ['Los Angeles', 'San Diego', 'San Francisco', 'San Jose'],
+      cityCount: 4,
       avgPrice: '$380-$580',
-      providers: 25,
+      providers: 44,
       slug: 'california',
       abbreviation: 'CA'
     },
     {
       name: 'Texas', 
-      cities: ['Houston', 'San Antonio', 'Austin', 'Dallas'],
-      cityCount: 4,
+      cities: ['Houston', 'Dallas', 'San Antonio', 'Austin', 'Fort Worth'],
+      cityCount: 5,
       avgPrice: '$280-$490',
-      providers: 22,
+      providers: 50,
       slug: 'texas',
       abbreviation: 'TX'
+    },
+    {
+      name: 'Florida',
+      cities: ['Miami', 'Tampa', 'Jacksonville', 'Orlando'],
+      cityCount: 4,
+      avgPrice: '$315-$520',
+      providers: 42,
+      slug: 'florida',
+      abbreviation: 'FL'
     },
     {
       name: 'New York',
@@ -41,13 +50,22 @@ const StateGuide = () => {
       abbreviation: 'IL'
     },
     {
-      name: 'Florida',
-      cities: ['Miami'],
-      cityCount: 1,
-      avgPrice: '$340-$540',
-      providers: 12,
-      slug: 'florida',
-      abbreviation: 'FL'
+      name: 'North Carolina',
+      cities: ['Charlotte', 'Raleigh'],
+      cityCount: 2,
+      avgPrice: '$285-$485',
+      providers: 20,
+      slug: 'north-carolina',
+      abbreviation: 'NC'
+    },
+    {
+      name: 'Tennessee',
+      cities: ['Nashville', 'Memphis'],
+      cityCount: 2,
+      avgPrice: '$285-$485',
+      providers: 20,
+      slug: 'tennessee',
+      abbreviation: 'TN'
     },
     {
       name: 'Georgia',
@@ -86,33 +104,6 @@ const StateGuide = () => {
       abbreviation: 'MA'
     },
     {
-      name: 'Michigan',
-      cities: ['Detroit'],
-      cityCount: 1,
-      avgPrice: '$290-$490',
-      providers: 9,
-      slug: 'michigan',
-      abbreviation: 'MI'
-    },
-    {
-      name: 'Oregon',
-      cities: ['Portland'],
-      cityCount: 1,
-      avgPrice: '$330-$530',
-      providers: 8,
-      slug: 'oregon',
-      abbreviation: 'OR'
-    },
-    {
-      name: 'North Carolina',
-      cities: ['Charlotte'],
-      cityCount: 1,
-      avgPrice: '$280-$480',
-      providers: 11,
-      slug: 'north-carolina',
-      abbreviation: 'NC'
-    },
-    {
       name: 'Pennsylvania',
       cities: ['Philadelphia'],
       cityCount: 1,
@@ -131,6 +122,24 @@ const StateGuide = () => {
       abbreviation: 'AZ'
     },
     {
+      name: 'Michigan',
+      cities: ['Detroit'],
+      cityCount: 1,
+      avgPrice: '$290-$490',
+      providers: 9,
+      slug: 'michigan',
+      abbreviation: 'MI'
+    },
+    {
+      name: 'Oregon',
+      cities: ['Portland'],
+      cityCount: 1,
+      avgPrice: '$330-$530',
+      providers: 8,
+      slug: 'oregon',
+      abbreviation: 'OR'
+    },
+    {
       name: 'Washington DC',
       cities: ['Washington DC'],
       cityCount: 1,
@@ -138,6 +147,69 @@ const StateGuide = () => {
       providers: 14,
       slug: 'washington-dc',
       abbreviation: 'DC'
+    },
+    {
+      name: 'Virginia',
+      cities: ['Virginia Beach'],
+      cityCount: 1,
+      avgPrice: '$320-$520',
+      providers: 12,
+      slug: 'virginia',
+      abbreviation: 'VA'
+    },
+    {
+      name: 'Ohio',
+      cities: ['Columbus'],
+      cityCount: 1,
+      avgPrice: '$285-$485',
+      providers: 12,
+      slug: 'ohio',
+      abbreviation: 'OH'
+    },
+    {
+      name: 'Missouri',
+      cities: ['Kansas City'],
+      cityCount: 1,
+      avgPrice: '$280-$480',
+      providers: 10,
+      slug: 'missouri',
+      abbreviation: 'MO'
+    },
+    {
+      name: 'Nevada',
+      cities: ['Las Vegas'],
+      cityCount: 1,
+      avgPrice: '$310-$510',
+      providers: 14,
+      slug: 'nevada',
+      abbreviation: 'NV'
+    },
+    {
+      name: 'Kentucky',
+      cities: ['Louisville'],
+      cityCount: 1,
+      avgPrice: '$275-$475',
+      providers: 9,
+      slug: 'kentucky',
+      abbreviation: 'KY'
+    },
+    {
+      name: 'Oklahoma',
+      cities: ['Oklahoma City'],
+      cityCount: 1,
+      avgPrice: '$265-$465',
+      providers: 9,
+      slug: 'oklahoma',
+      abbreviation: 'OK'
+    },
+    {
+      name: 'Nebraska',
+      cities: ['Omaha'],
+      cityCount: 1,
+      avgPrice: '$275-$475',
+      providers: 8,
+      slug: 'nebraska',
+      abbreviation: 'NE'
     }
   ];
 
@@ -158,11 +230,11 @@ const StateGuide = () => {
           <div className="flex justify-center space-x-8 text-sm text-gray-600">
             <div className="flex items-center">
               <MapPin className="w-4 h-4 mr-1" />
-              15 States Covered
+              23 States Covered
             </div>
             <div className="flex items-center">
               <Users className="w-4 h-4 mr-1" />
-              200+ Providers
+              350+ Providers
             </div>
             <div className="flex items-center">
               <Clock className="w-4 h-4 mr-1" />
@@ -262,9 +334,9 @@ const StateGuide = () => {
           <p className="text-gray-600 mb-6">
             Use our calculator to get recommendations for any location in the US
           </p>
-          <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+          <Link href="/" className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
             Use Dumpster Calculator →
-          </button>
+          </Link>
         </div>
       </div>
     </div>

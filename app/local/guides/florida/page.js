@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { ArrowLeft, MapPin, DollarSign, Users, Clock, AlertCircle, CheckCircle, Sun, Waves } from 'lucide-react';
 
 export const metadata = {
-  title: "Florida Dumpster Rental Guide | Miami Metro Area",
-  description: "Complete Florida dumpster rental guide covering Miami and surrounding areas. Hurricane season considerations, coastal regulations, and trusted providers.",
-  keywords: "Florida dumpster rental, Miami dumpster rental, hurricane season dumpsters"
+  title: "Florida Dumpster Rental Guide | Miami, Tampa, Jacksonville, Orlando",
+  description: "Complete Florida dumpster rental guide covering Miami, Tampa, Jacksonville, and Orlando. Hurricane season considerations, coastal regulations, and trusted providers.",
+  keywords: "Florida dumpster rental, Miami dumpster rental, Tampa dumpster rental, Jacksonville dumpster rental, Orlando dumpster rental"
 };
 
 const floridaCities = [
@@ -21,6 +21,42 @@ const floridaCities = [
     specialNotes: 'Hurricane season affects scheduling. Coastal regulations may apply in waterfront areas.',
     permitRequired: true,
     permitCost: '$35-$150',
+    processingTime: '3-7 days'
+  },
+  {
+    name: 'Tampa',
+    slug: 'tampa',
+    priceRange: '$315-$515',
+    providers: 11,
+    image: '/images/cities/tampa-skyline.webp',
+    neighborhoods: ['Downtown', 'Ybor City', 'Hyde Park', 'Westshore', 'Davis Islands', 'Brandon'],
+    specialNotes: 'Major port city with growing tech sector. Bay area logistics and convention center projects.',
+    permitRequired: true,
+    permitCost: '$45-$125',
+    processingTime: '3-5 days'
+  },
+  {
+    name: 'Jacksonville',
+    slug: 'jacksonville',
+    priceRange: '$295-$495',
+    providers: 9,
+    image: '/images/cities/jacksonville-skyline.webp',
+    neighborhoods: ['Downtown', 'Riverside', 'Avondale', 'Southside', 'Mandarin', 'Neptune Beach'],
+    specialNotes: 'Largest city by area in US. Military presence and port operations create diverse project needs.',
+    permitRequired: true,
+    permitCost: '$35-$115',
+    processingTime: '2-5 days'
+  },
+  {
+    name: 'Orlando',
+    slug: 'orlando',
+    priceRange: '$305-$505',
+    providers: 12,
+    image: '/images/cities/orlando-skyline.webp',
+    neighborhoods: ['Downtown', 'Winter Park', 'Dr. Phillips', 'Mills 50', 'College Park', 'Lake Nona'],
+    specialNotes: 'Tourism capital with theme park construction activity. Convention center and hospitality projects.',
+    permitRequired: true,
+    permitCost: '$50-$130',
     processingTime: '3-7 days'
   }
 ];
@@ -76,7 +112,7 @@ export default function FloridaStatePage() {
                 Florida Dumpster Rental Guide
               </h1>
               <p className="text-xl text-gray-600">
-                Miami metro • 10 providers • Hurricane season considerations
+                4 major cities • 42 providers • Hurricane season considerations
               </p>
             </div>
           </div>
@@ -100,12 +136,12 @@ export default function FloridaStatePage() {
           </div>
         </div>
 
-        {/* Miami Focus */}
+        {/* Florida Cities Coverage */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Miami Metro Coverage
+            Major Florida Markets
           </h2>
-          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {floridaCities.map((city, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-200">
                 
@@ -117,7 +153,7 @@ export default function FloridaStatePage() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    priority={true}
+                    priority={index < 2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/20"></div>
                   <div className="absolute bottom-4 left-4 text-white">
@@ -171,76 +207,68 @@ export default function FloridaStatePage() {
                       Cost: {city.permitCost} • Processing: {city.processingTime}
                     </p>
                     <p className="text-blue-600 text-sm">
-                      Miami-Dade County requires permits for public right-of-way placement. Coastal areas may have additional regulations.
+                      {city.name} requires permits for public right-of-way placement. Coastal areas may have additional regulations.
                     </p>
                   </div>
 
                   {/* Special Notes */}
-                  <p className="text-gray-600 mb-6">
-                    <strong>Local Considerations:</strong> {city.specialNotes}
-                  </p>
-
-                  {/* CTA Button */}
-                  <Link 
-                    href={`/dumpster-rental-${city.slug}`}
-                    className="block w-full bg-orange-600 hover:bg-orange-700 text-white px-6 py-4 rounded-lg transition-colors font-semibold text-center text-lg"
-                  >
-                    View Miami Guide →
-                  </Link>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">Special Considerations:</h4>
+                    <p className="text-gray-700 text-sm">{city.specialNotes}</p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Florida-Specific Tips */}
-        <div className="bg-orange-50 rounded-lg p-8 mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Florida Dumpster Rental Tips
+        {/* State-Specific Tips */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Florida-Specific Tips
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-bold text-gray-900 mb-3">🌀 Hurricane Preparedness</h3>
-              <ul className="space-y-2 text-gray-700 text-sm">
-                <li>• Monitor weather forecasts during hurricane season</li>
-                <li>• Plan flexible pickup dates during storm watches</li>
-                <li>• Secure loose materials before storms</li>
-                <li>• Consider covered containers during rainy season</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-gray-900 mb-3">🏖️ Coastal Considerations</h3>
-              <ul className="space-y-2 text-gray-700 text-sm">
-                <li>• Check flood zone regulations for placement</li>
-                <li>• Salt air may affect certain materials</li>
-                <li>• High-tide scheduling in waterfront areas</li>
-                <li>• Winter snowbird season increases demand</li>
-              </ul>
+          <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Hurricane Preparedness</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Monitor weather forecasts during hurricane season</li>
+                  <li>• Consider secure tie-downs for extended placements</li>
+                  <li>• Plan alternative pickup dates during storm watches</li>
+                  <li>• Storm debris cleanup creates high demand periods</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Regional Considerations</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Miami: International business hub with strict codes</li>
+                  <li>• Tampa: Port city with logistics infrastructure</li>
+                  <li>• Jacksonville: Military presence and large geographic area</li>
+                  <li>• Orlando: Tourism capital with theme park projects</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center bg-gray-100 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Find Your Perfect Dumpster Size?
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Use our calculator to get personalized recommendations for your Florida project
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link 
-              href="/"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Calculate My Size →
-            </Link>
-            <Link 
-              href="/local/guides"
-              className="bg-white border-2 border-gray-300 text-gray-700 hover:border-gray-400 px-8 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Browse All States
-            </Link>
+        {/* CTA Section */}
+        <div className="text-center">
+          <div className="bg-orange-600 rounded-lg shadow-lg p-8 text-white">
+            <h2 className="text-2xl font-bold mb-4">Ready to Find Your Florida Dumpster Rental?</h2>
+            <p className="text-orange-100 mb-6 text-lg">
+              Get quotes from trusted local providers across Florida's major markets.
+            </p>
+            <div className="space-y-4">
+              <Link 
+                href="/" 
+                className="inline-block bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-orange-50 transition font-semibold text-lg"
+              >
+                Get Instant Quote
+              </Link>
+              <div className="text-sm text-orange-200">
+                <Link href="/local/guides" className="hover:underline">← Back to All State Guides</Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

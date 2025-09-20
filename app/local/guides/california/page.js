@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { ArrowLeft, MapPin, DollarSign, Users, Clock, AlertCircle, CheckCircle } from 'lucide-react';
 
 export const metadata = {
-  title: "California Dumpster Rental Guide | LA, San Diego, San Francisco",
-  description: "Complete California dumpster rental guide covering Los Angeles, San Diego, and San Francisco. Local pricing, permits, and trusted providers.",
-  keywords: "California dumpster rental, LA dumpster rental, San Diego dumpster rental, San Francisco dumpster rental"
+  title: "California Dumpster Rental Guide | LA, San Diego, San Francisco, San Jose",
+  description: "Complete California dumpster rental guide covering Los Angeles, San Diego, San Francisco, and San Jose. Local pricing, permits, and trusted providers.",
+  keywords: "California dumpster rental, LA dumpster rental, San Diego dumpster rental, San Francisco dumpster rental, San Jose dumpster rental"
 };
 
 const californiaCities = [
@@ -46,6 +46,18 @@ const californiaCities = [
     permitRequired: true,
     permitCost: '$484 + $205/month',
     processingTime: '10-15 days'
+  },
+  {
+    name: 'San Jose',
+    slug: 'san-jose',
+    priceRange: '$370-$570',
+    providers: 11,
+    image: '/images/cities/san-jose-skyline.webp',
+    neighborhoods: ['Downtown', 'Willow Glen', 'Almaden Valley', 'Evergreen', 'North San Jose', 'Cambrian Park'],
+    specialNotes: 'Silicon Valley tech hub with high construction activity. Growing market demand.',
+    permitRequired: true,
+    permitCost: '$85-$250',
+    processingTime: '5-10 days'
   }
 ];
 
@@ -100,7 +112,7 @@ export default function CaliforniaStatePage() {
                 California Dumpster Rental Guide
               </h1>
               <p className="text-xl text-gray-600">
-                3 major cities • 33 providers • Premium market pricing
+                4 major cities • 44 providers • Premium market pricing
               </p>
             </div>
           </div>
@@ -124,12 +136,12 @@ export default function CaliforniaStatePage() {
           </div>
         </div>
 
-        {/* Cities Grid */}
+        {/* California Cities Coverage */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            California Cities We Cover
+            Major California Markets
           </h2>
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {californiaCities.map((city, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-200">
                 
@@ -141,7 +153,7 @@ export default function CaliforniaStatePage() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    priority={index === 0}
+                    priority={index < 2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/20"></div>
                   <div className="absolute bottom-4 left-4 text-white">
@@ -151,106 +163,114 @@ export default function CaliforniaStatePage() {
                 </div>
 
                 {/* City Info */}
-                <div className="p-6">
+                <div className="p-8">
                   
                   {/* Pricing */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center text-green-600">
-                      <DollarSign className="w-5 h-5 mr-1" />
-                      <span className="font-bold text-lg">{city.priceRange}</span>
+                      <DollarSign className="w-6 h-6 mr-2" />
+                      <span className="font-bold text-xl">{city.priceRange}</span>
                     </div>
-                    <div className="flex items-center text-gray-600 text-sm">
-                      <Users className="w-4 h-4 mr-1" />
-                      {city.providers} providers
+                    <div className="flex items-center text-gray-600">
+                      <Users className="w-5 h-5 mr-2" />
+                      <span className="text-lg">{city.providers} providers</span>
                     </div>
                   </div>
 
                   {/* Neighborhoods */}
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">Popular Areas:</h4>
-                    <p className="text-gray-600 text-sm">
-                      {city.neighborhoods.slice(0, 4).join(', ')}
-                      {city.neighborhoods.length > 4 && ` + ${city.neighborhoods.length - 4} more`}
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-gray-900 mb-3 text-lg">Popular Areas:</h4>
+                    <p className="text-gray-600">
+                      {city.neighborhoods.join(', ')}
+                    </p>
+                  </div>
+
+                  {/* Environmental Regulations Warning */}
+                  <div className="bg-yellow-50 rounded-lg p-4 mb-6 border-l-4 border-yellow-400">
+                    <div className="flex items-center mb-2">
+                      <AlertCircle className="w-5 h-5 text-yellow-600 mr-3" />
+                      <span className="font-bold text-yellow-800">Environmental Compliance</span>
+                    </div>
+                    <p className="text-yellow-700 text-sm">
+                      California requires strict waste sorting and recycling compliance. Many materials must be separated. 
+                      Verify disposal requirements with your provider.
                     </p>
                   </div>
 
                   {/* Permit Info */}
-                  <div className="bg-yellow-50 rounded-lg p-3 mb-4">
-                    <div className="flex items-center mb-1">
-                      <AlertCircle className="w-4 h-4 text-yellow-600 mr-2" />
-                      <span className="font-semibold text-yellow-800 text-sm">Permit Required</span>
+                  <div className="bg-blue-50 rounded-lg p-4 mb-6">
+                    <div className="flex items-center mb-2">
+                      <MapPin className="w-5 h-5 text-blue-600 mr-3" />
+                      <span className="font-semibold text-blue-800">Permit Information</span>
                     </div>
-                    <p className="text-yellow-700 text-xs">
+                    <p className="text-blue-700 text-sm mb-2">
                       Cost: {city.permitCost} • Processing: {city.processingTime}
+                    </p>
+                    <p className="text-blue-600 text-sm">
+                      {city.name} requires permits for public right-of-way placement. 
+                      {city.name === 'San Francisco' && ' Most restrictive permitting in the state.'}
+                      {city.name === 'San Jose' && ' Silicon Valley tech construction creates high demand.'}
                     </p>
                   </div>
 
                   {/* Special Notes */}
-                  <p className="text-gray-600 text-sm mb-4">
-                    <strong>Note:</strong> {city.specialNotes}
-                  </p>
-
-                  {/* CTA Button */}
-                  <Link 
-                    href={`/dumpster-rental-${city.slug}`}
-                    className="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg transition-colors font-semibold text-center"
-                  >
-                    View {city.name} Guide →
-                  </Link>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">Special Considerations:</h4>
+                    <p className="text-gray-700 text-sm">{city.specialNotes}</p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* California Tips */}
-        <div className="bg-blue-50 rounded-lg p-8 mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            California Dumpster Rental Tips
+        {/* State-Specific Tips */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            California-Specific Tips
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-bold text-gray-900 mb-3">🌍 Environmental Requirements</h3>
-              <ul className="space-y-2 text-gray-700 text-sm">
-                <li>• Separate recyclables from general waste</li>
-                <li>• Construction debris requires special handling</li>
-                <li>• Green waste has specific disposal requirements</li>
-                <li>• Hazardous materials prohibited in all dumpsters</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-gray-900 mb-3">💰 Cost Optimization</h3>
-              <ul className="space-y-2 text-gray-700 text-sm">
-                <li>• Book 5-7 days in advance for better pricing</li>
-                <li>• Consider smaller sizes due to weight limits</li>
-                <li>• Ask about recycling discounts</li>
-                <li>• Group projects with neighbors when possible</li>
-              </ul>
+          <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Regional Differences</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• LA: Entertainment industry and strict regulations</li>
+                  <li>• San Francisco: Premium pricing and limited space</li>
+                  <li>• San Diego: Coastal considerations and military presence</li>
+                  <li>• San Jose: Tech boom and Silicon Valley growth</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Best Practices</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Book 5-7 days in advance during peak seasons</li>
+                  <li>• Understand strict recycling requirements</li>
+                  <li>• Factor in premium pricing for budgeting</li>
+                  <li>• Allow extra time for permit processing</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center bg-gray-100 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Find Your Perfect Dumpster Size?
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Use our calculator to get personalized recommendations for your California project
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link 
-              href="/"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Calculate My Size →
-            </Link>
-            <Link 
-              href="/local/guides"
-              className="bg-white border-2 border-gray-300 text-gray-700 hover:border-gray-400 px-8 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Browse All States
-            </Link>
+        {/* CTA Section */}
+        <div className="text-center">
+          <div className="bg-blue-600 rounded-lg shadow-lg p-8 text-white">
+            <h2 className="text-2xl font-bold mb-4">Ready to Find Your California Dumpster Rental?</h2>
+            <p className="text-blue-100 mb-6 text-lg">
+              Get quotes from trusted local providers across California's major markets.
+            </p>
+            <div className="space-y-4">
+              <Link 
+                href="/" 
+                className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition font-semibold text-lg"
+              >
+                Get Instant Quote
+              </Link>
+              <div className="text-sm text-blue-200">
+                <Link href="/local/guides" className="hover:underline">← Back to All State Guides</Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

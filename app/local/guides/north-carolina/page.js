@@ -2,12 +2,12 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, MapPin, DollarSign, Users, Clock, AlertCircle, CheckCircle, Sun, Building2 } from 'lucide-react';
+import { ArrowLeft, MapPin, DollarSign, Users, Clock, AlertCircle, CheckCircle, Sun, Building2, TreePine } from 'lucide-react';
 
 export const metadata = {
-  title: "North Carolina Dumpster Rental Guide | Charlotte Metro Area",
-  description: "Complete North Carolina dumpster rental guide covering Charlotte and surrounding areas. Banking hub growth, competitive pricing, and trusted providers.",
-  keywords: "North Carolina dumpster rental, Charlotte dumpster rental, banking district dumpsters"
+  title: "North Carolina Dumpster Rental Guide | Charlotte, Raleigh Metro Areas",
+  description: "Complete North Carolina dumpster rental guide covering Charlotte and Raleigh. Banking hub growth, Research Triangle, and trusted providers.",
+  keywords: "North Carolina dumpster rental, Charlotte dumpster rental, Raleigh dumpster rental"
 };
 
 const northCarolinaCities = [
@@ -22,19 +22,31 @@ const northCarolinaCities = [
     permitRequired: true,
     permitCost: '$30-$100',
     processingTime: '3-7 days'
+  },
+  {
+    name: 'Raleigh',
+    slug: 'raleigh',
+    priceRange: '$290-$490',
+    providers: 9,
+    image: '/images/cities/raleigh-skyline.webp',
+    neighborhoods: ['Downtown', 'North Hills', 'Cary', 'Apex', 'Wake Forest', 'Garner'],
+    specialNotes: 'State capital and Research Triangle hub. University projects and government construction activity.',
+    permitRequired: true,
+    permitCost: '$35-$110',
+    processingTime: '3-5 days'
   }
 ];
 
 const stateFeatures = [
   {
     icon: <Building2 className="w-6 h-6 text-blue-600" />,
-    title: 'Banking Hub Growth',
-    description: 'Second-largest financial center in US drives commercial and residential construction. High-rise and suburban demand.'
+    title: 'Banking & Tech Hubs',
+    description: 'Charlotte financial center and Raleigh Research Triangle drive commercial construction and corporate relocations.'
   },
   {
-    icon: <Sun className="w-6 h-6 text-yellow-600" />,
-    title: 'Year-Round Season',
-    description: 'Mild climate allows construction projects throughout the year. Occasional severe weather requires flexibility.'
+    icon: <TreePine className="w-6 h-6 text-green-600" />,
+    title: 'Tree City Growth',
+    description: 'Extensive tree coverage requires careful planning for residential projects and utility work.'
   },
   {
     icon: <DollarSign className="w-6 h-6 text-green-600" />,
@@ -76,7 +88,7 @@ export default function NorthCarolinaStatePage() {
                 North Carolina Dumpster Rental Guide
               </h1>
               <p className="text-xl text-gray-600">
-                Charlotte metro • 11 providers • Financial hub growth
+                2 major cities • 20 providers • Financial hub & Research Triangle
               </p>
             </div>
           </div>
@@ -100,10 +112,10 @@ export default function NorthCarolinaStatePage() {
           </div>
         </div>
 
-        {/* Charlotte Focus */}
+        {/* North Carolina Cities Coverage */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Charlotte Metro Coverage
+            Major North Carolina Markets
           </h2>
           <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {northCarolinaCities.map((city, index) => (
@@ -117,7 +129,7 @@ export default function NorthCarolinaStatePage() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    priority={true}
+                    priority={index < 2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/20"></div>
                   <div className="absolute bottom-4 left-4 text-white">
@@ -134,7 +146,6 @@ export default function NorthCarolinaStatePage() {
                     <div className="flex items-center text-green-600">
                       <DollarSign className="w-6 h-6 mr-2" />
                       <span className="font-bold text-xl">{city.priceRange}</span>
-                      <span className="text-sm text-green-600 ml-2">(Competitive)</span>
                     </div>
                     <div className="flex items-center text-gray-600">
                       <Users className="w-5 h-5 mr-2" />
@@ -144,21 +155,23 @@ export default function NorthCarolinaStatePage() {
 
                   {/* Neighborhoods */}
                   <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-3 text-lg">Metro Areas:</h4>
+                    <h4 className="font-semibold text-gray-900 mb-3 text-lg">Popular Areas:</h4>
                     <p className="text-gray-600">
                       {city.neighborhoods.join(', ')}
                     </p>
                   </div>
 
-                  {/* Financial Hub Growth */}
+                  {/* Growth Market Alert */}
                   <div className="bg-blue-50 rounded-lg p-4 mb-6 border-l-4 border-blue-400">
                     <div className="flex items-center mb-2">
-                      <Building2 className="w-5 h-5 text-blue-600 mr-3" />
-                      <span className="font-bold text-blue-800">Financial Center Expansion</span>
+                      <AlertCircle className="w-5 h-5 text-blue-600 mr-3" />
+                      <span className="font-bold text-blue-800">Growth Market</span>
                     </div>
                     <p className="text-blue-700 text-sm">
-                      Charlotte is the second-largest banking center in the US. Corporate relocations and high-rise construction 
-                      create steady demand for both commercial and residential waste services.
+                      {city.name === 'Charlotte' ? 
+                        'Second-largest banking center in US. Corporate relocations and high-rise construction create steady demand.' :
+                        'Research Triangle and state government drive tech sector growth. University projects and government construction activity.'
+                      }
                     </p>
                   </div>
 
@@ -166,91 +179,74 @@ export default function NorthCarolinaStatePage() {
                   <div className="bg-green-50 rounded-lg p-4 mb-6">
                     <div className="flex items-center mb-2">
                       <MapPin className="w-5 h-5 text-green-600 mr-3" />
-                      <span className="font-semibold text-green-800">Charlotte Permits</span>
+                      <span className="font-semibold text-green-800">Permit Information</span>
                     </div>
                     <p className="text-green-700 text-sm mb-2">
                       Cost: {city.permitCost} • Processing: {city.processingTime}
                     </p>
                     <p className="text-green-600 text-sm">
-                      Reasonable permit costs and efficient processing. Business-friendly environment.
-                    </p>
-                  </div>
-
-                  {/* Growth Advantage */}
-                  <div className="bg-purple-50 rounded-lg p-4 mb-6">
-                    <h4 className="font-semibold text-purple-800 mb-2">📈 Market Growth</h4>
-                    <p className="text-purple-700 text-sm">
-                      Rapid population and business growth means expanding service areas and competitive provider options. 
-                      New developments throughout metro area.
+                      {city.name} permits are reasonably priced with efficient processing. Business-friendly environment.
                     </p>
                   </div>
 
                   {/* Special Notes */}
-                  <p className="text-gray-600 mb-6">
-                    <strong>Market Benefits:</strong> {city.specialNotes}
-                  </p>
-
-                  {/* CTA Button */}
-                  <Link 
-                    href={`/dumpster-rental-${city.slug}`}
-                    className="block w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg transition-colors font-semibold text-center text-lg"
-                  >
-                    View Charlotte Guide →
-                  </Link>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">Special Considerations:</h4>
+                    <p className="text-gray-700 text-sm">{city.specialNotes}</p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* North Carolina-Specific Tips */}
-        <div className="bg-blue-50 rounded-lg p-8 mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            North Carolina Dumpster Rental Tips
+        {/* State-Specific Tips */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            North Carolina-Specific Tips
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-bold text-gray-900 mb-3">🏢 Business Growth</h3>
-              <ul className="space-y-2 text-gray-700 text-sm">
-                <li>• Take advantage of competitive pricing</li>
-                <li>• Multiple providers create options</li>
-                <li>• Consider suburban placement flexibility</li>
-                <li>• Ask about corporate account discounts</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-gray-900 mb-3">🌤️ Climate Benefits</h3>
-              <ul className="space-y-2 text-gray-700 text-sm">
-                <li>• Mild winters allow year-round projects</li>
-                <li>• Plan around occasional severe weather</li>
-                <li>• Summer heat requires odor management</li>
-                <li>• Hurricane season affects coastal areas</li>
-              </ul>
+          <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Regional Differences</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Charlotte: Banking hub with corporate construction</li>
+                  <li>• Raleigh: Research Triangle tech and university projects</li>
+                  <li>• Both cities: Extensive tree coverage requires planning</li>
+                  <li>• Hurricane season affects eastern areas minimally</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Best Practices</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Plan around major sporting events and conventions</li>
+                  <li>• Consider tree protection in historic neighborhoods</li>
+                  <li>• Spring and fall are peak construction seasons</li>
+                  <li>• University schedules affect Raleigh-Durham demand</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center bg-gray-100 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Find Your Perfect Dumpster Size?
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Use our calculator to get personalized recommendations for your North Carolina project
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link 
-              href="/"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Calculate My Size →
-            </Link>
-            <Link 
-              href="/local/guides"
-              className="bg-white border-2 border-gray-300 text-gray-700 hover:border-gray-400 px-8 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Browse All States
-            </Link>
+        {/* CTA Section */}
+        <div className="text-center">
+          <div className="bg-blue-600 rounded-lg shadow-lg p-8 text-white">
+            <h2 className="text-2xl font-bold mb-4">Ready to Find Your North Carolina Dumpster Rental?</h2>
+            <p className="text-blue-100 mb-6 text-lg">
+              Get quotes from trusted local providers across North Carolina's major markets.
+            </p>
+            <div className="space-y-4">
+              <Link 
+                href="/" 
+                className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition font-semibold text-lg"
+              >
+                Get Instant Quote
+              </Link>
+              <div className="text-sm text-blue-200">
+                <Link href="/local/guides" className="hover:underline">← Back to All State Guides</Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
