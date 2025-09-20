@@ -35,7 +35,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Email</h3>
-                  <p className="text-gray-600">info@dumpster-sizecalculator.com</p>
+                  <p className="text-gray-600">info@dumpster-size-calculator.com</p>
                 </div>
                 
                 <div>

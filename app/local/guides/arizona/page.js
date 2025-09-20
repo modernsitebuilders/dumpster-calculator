@@ -189,13 +189,13 @@ export default function ArizonaStatePage() {
                     <strong>Desert Advantages:</strong> {city.specialNotes}
                   </p>
 
-                  {/* CTA Button */}
-                  <Link 
-                    href={`/dumpster-rental-${city.slug}`}
-                    className="block w-full bg-orange-600 hover:bg-orange-700 text-white px-6 py-4 rounded-lg transition-colors font-semibold text-center text-lg"
-                  >
-                    View Phoenix Guide →
-                  </Link>
+                  {/* CORRECT - Dynamic city name */}
+<Link 
+  href={`/dumpster-rental-${city.slug}`}
+  className="block w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg transition-colors font-semibold text-center text-lg"
+>
+  View {city.name} Guide →
+</Link>
                 </div>
               </div>
             ))}
