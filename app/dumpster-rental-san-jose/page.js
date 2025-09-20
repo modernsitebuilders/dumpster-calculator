@@ -1,156 +1,156 @@
-// app/dumpster-rental-columbus/page.js
+// app/dumpster-rental-san-jose/page.js
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Dumpster Rental Columbus OH | Local Companies & Size Guide',
-  description: 'Find dumpster rental companies in Columbus. Compare local providers serving Central Ohio and Franklin County.',
-  keywords: 'dumpster rental columbus, columbus dumpster companies, roll off dumpster columbus, ohio dumpster rental'
+  title: 'Dumpster Rental San Jose CA | Local Companies & Size Guide',
+  description: 'Find dumpster rental companies in San Jose. Compare local providers serving Silicon Valley and Santa Clara County.',
+  keywords: 'dumpster rental san jose, san jose dumpster companies, roll off dumpster san jose, california dumpster rental'
 };
 
-export default function ColumbusPage() {
+export default function SanJosePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Local Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Dumpster Rental in Columbus, Ohio
+            Dumpster Rental in San Jose, California
           </h1>
           <p className="text-xl text-gray-600">
-            Find local dumpster rental companies serving Central Ohio and Franklin County
+            Find local dumpster rental companies serving Silicon Valley and Santa Clara County
           </p>
         </div>
 
         {/* Quick Calculator CTA */}
         <div className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
           <h2 className="text-2xl font-bold mb-4">Calculate Your Dumpster Size</h2>
-          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your Columbus project</p>
+          <p className="mb-6">Use our free calculator to determine what size dumpster you need for your San Jose project</p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
             Use Size Calculator
           </Link>
         </div>
 
-        {/* Local Columbus Companies */}
+        {/* Local San Jose Companies */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Columbus Dumpster Rental Companies</h2>
+          <h2 className="text-2xl font-bold mb-6">San Jose Dumpster Rental Companies</h2>
           <div className="space-y-6">
             
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Frog Hauling</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">A&A Dumpster Rental</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Website:</strong> froghauling.com</p>
-                  <p><strong>Experience:</strong> Nearly 20 years in Columbus</p>
-                  <p><strong>Features:</strong> Green dumpsters, same-day service, online ordering</p>
+                  <p><strong>Phone:</strong> (408) 684-5506</p>
+                  <p><strong>Website:</strong> aandadumpsterrentalca.com</p>
+                  <p><strong>Experience:</strong> 40+ years in Bay Area</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> 30-mile radius of downtown Columbus, Franklin County</p>
-                  <p><strong>Specialties:</strong> Family owned, $5/day rental fee, protective pallets, recycling focus</p>
+                  <p><strong>Service Areas:</strong> San Jose, Gilroy, Bay Area, San Leandro to Redwood City</p>
+                  <p><strong>Specialties:</strong> Locally owned, competitive rates, wide selection of sizes</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Rumpke Dumpster Rental</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">GreenWaste Debris Boxes</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Website:</strong> rumpke.com</p>
-                  <p><strong>Container Types:</strong> Roll-off dumpsters, various sizes</p>
-                  <p><strong>Features:</strong> Short-term and long-term rentals</p>
+                  <p><strong>Phone:</strong> (888) 533-9269</p>
+                  <p><strong>Website:</strong> greenwaste.com</p>
+                  <p><strong>Container Sizes:</strong> 10, 20, 30, 40-yard options</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Columbus and Franklin County</p>
-                  <p><strong>Specialties:</strong> Large variety of dumpsters, commercial & residential, proper scheduling</p>
+                  <p><strong>Service Areas:</strong> Alameda, Santa Clara, San Mateo Counties, Sacramento</p>
+                  <p><strong>Specialties:</strong> Construction & demolition recycling, 75% diversion rate, eco-friendly</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Bin There Dump That Columbus</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Value Dumpster Rental</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Phone:</strong> (614) 683-2747</p>
-                  <p><strong>Website:</strong> bintheredumpthat.com</p>
-                  <p><strong>Owners:</strong> Jeff & Tyler Nuckles</p>
+                  <p><strong>Website:</strong> sjdumpsterrental.com</p>
+                  <p><strong>Container Sizes:</strong> 10, 20, 30, 40-yard dumpsters</p>
+                  <p><strong>Features:</strong> 24-hour delivery, multiple dumpster rentals</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Greater Columbus Ohio area</p>
-                  <p><strong>Specialties:</strong> Family owned, same-day delivery, driveway protection, clean green bins</p>
+                  <p><strong>Service Areas:</strong> San Jose and surrounding areas</p>
+                  <p><strong>Specialties:</strong> Professional drivers, competitive pricing, Bay Area construction projects</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Affordable Dumpsters</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">ECO BOX Recycling</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Address:</strong> 1400 Harmon Ave, Columbus, OH 43223</p>
-                  <p><strong>Experience:</strong> 20+ years in Columbus area</p>
-                  <p><strong>Features:</strong> Licensed, bonded, and insured</p>
+                  <p><strong>Phone:</strong> (408) 639-1373</p>
+                  <p><strong>Website:</strong> ecoboxrecycling.com</p>
+                  <p><strong>Container Sizes:</strong> 10, 20, 30, 40 cubic yard debris boxes</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Dublin, Canal Winchester, Franklin County</p>
-                  <p><strong>Specialties:</strong> Same-day delivery, no hidden fees, fast pickup</p>
+                  <p><strong>Service Areas:</strong> San Jose to Hayward, broad Bay Area coverage</p>
+                  <p><strong>Specialties:</strong> Environmental focus, same/next day delivery, great service reputation</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Dumpster Today Columbus</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Heartland Recycling Services</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Website:</strong> dumpstertoday.com</p>
-                  <p><strong>Features:</strong> Walk-in style dumpsters, same/next day delivery</p>
-                  <p><strong>Weight:</strong> First 2,000 lbs free, additional just $0.05/lb</p>
+                  <p><strong>Phone:</strong> (408) 912-2816</p>
+                  <p><strong>Website:</strong> heartlandrecyclingservices.com</p>
+                  <p><strong>Features:</strong> Top-rated service, same-day delivery available</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Columbus and surrounding areas</p>
-                  <p><strong>Specialties:</strong> 100% on-time delivery, easy scheduling, walk-in doors</p>
+                  <p><strong>Service Areas:</strong> San Jose and surrounding areas</p>
+                  <p><strong>Specialties:</strong> Dependable service, fair pricing, discounts for first responders/military</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Barker's Bins Dumpster Service</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">BigRentz San Jose</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Container Sizes:</strong> 10, 15, 20, 25-yard containers</p>
-                  <p><strong>Dimensions:</strong> 14' and 16' long options</p>
-                  <p><strong>Features:</strong> Same-day service usually available</p>
+                  <p><strong>Website:</strong> bigrentz.com</p>
+                  <p><strong>Container Sizes:</strong> 10, 20, 30, 40-yard dumpsters</p>
+                  <p><strong>Features:</strong> Wide network of suppliers</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Central Ohio area</p>
-                  <p><strong>Specialties:</strong> Family-owned, transparent pricing, zero hidden fees, residential driveways</p>
+                  <p><strong>Service Areas:</strong> San Jose, Santa Clara County</p>
+                  <p><strong>Specialties:</strong> Best rates through supplier network, construction & residential focus</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">BDR Blessed Dumpster Rentals</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Budget Dumpster San Jose</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Website:</strong> bdrblesseddumpsterrentals.us</p>
-                  <p><strong>Container Size:</strong> 13-yard dumpsters</p>
-                  <p><strong>Features:</strong> Rubber wheels, 1-2 day rentals</p>
+                  <p><strong>Website:</strong> budgetdumpster.com</p>
+                  <p><strong>Features:</strong> Bundle pricing (delivery, pickup, rental)</p>
+                  <p><strong>Permits:</strong> Revocable Encroachment Permit guidance</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Columbus and surrounding areas</p>
-                  <p><strong>Specialties:</strong> Driveway protection, tight spaces, curbside pickup starting at $125</p>
+                  <p><strong>Service Areas:</strong> San Jose, Valley Fair, Mayfair areas</p>
+                  <p><strong>Specialties:</strong> Generous rental periods, expert recommendations, empty-and-return service</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Hapybox Dumpster Rentals</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Junk King San Jose</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p><strong>Phone:</strong> (614) 414-6962</p>
-                  <p><strong>Features:</strong> Online booking available</p>
-                  <p><strong>Focus:</strong> Practical and financial needs</p>
+                  <p><strong>Website:</strong> junk-king.com/locations/sanjose</p>
+                  <p><strong>Services:</strong> Dumpster rental and junk removal</p>
+                  <p><strong>Focus:</strong> DIY projects and large disposal jobs</p>
                 </div>
                 <div>
-                  <p><strong>Service Areas:</strong> Columbus area</p>
-                  <p><strong>Specialties:</strong> Exceptional service, faster delivery and pickup, competitive pricing</p>
+                  <p><strong>Service Areas:</strong> San Jose and surrounding areas</p>
+                  <p><strong>Specialties:</strong> Easy process, cleanouts, dual service offerings</p>
                 </div>
               </div>
             </div>
@@ -164,110 +164,110 @@ export default function ColumbusPage() {
           </div>
         </section>
 
-        {/* Columbus Area Coverage */}
+        {/* San Jose Area Coverage */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Columbus Metro Area Coverage</h2>
+          <h2 className="text-2xl font-bold mb-6">Silicon Valley Area Coverage</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <h3 className="font-semibold mb-2">Central Columbus</h3>
+              <h3 className="font-semibold mb-2">Central San Jose</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>Downtown</li>
-                <li>Short North</li>
-                <li>German Village</li>
-                <li>Victorian Village</li>
-                <li>Brewery District</li>
-                <li>Arena District</li>
-                <li>Italian Village</li>
-                <li>Harrison West</li>
+                <li>Japantown</li>
+                <li>Rose Garden</li>
+                <li>Willow Glen</li>
+                <li>Cambrian Park</li>
+                <li>West San Jose</li>
+                <li>Berryessa</li>
+                <li>East San Jose</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">North Columbus</h3>
+              <h3 className="font-semibold mb-2">North San Jose</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Worthington</li>
-                <li>Powell</li>
-                <li>Delaware</li>
-                <li>Westerville</li>
-                <li>Dublin</li>
-                <li>Upper Arlington</li>
-                <li>Clintonville</li>
-                <li>Grandview Heights</li>
+                <li>Milpitas</li>
+                <li>Fremont</li>
+                <li>Union City</li>
+                <li>Newark</li>
+                <li>Alviso</li>
+                <li>North San Jose</li>
+                <li>Warm Springs</li>
+                <li>Ardenwood</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">South Columbus</h3>
+              <h3 className="font-semibold mb-2">South San Jose</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Grove City</li>
-                <li>Pickerington</li>
-                <li>Reynoldsburg</li>
-                <li>Canal Winchester</li>
-                <li>Groveport</li>
-                <li>Obetz</li>
-                <li>Lockbourne</li>
-                <li>Commercial Point</li>
+                <li>Morgan Hill</li>
+                <li>Gilroy</li>
+                <li>San Martin</li>
+                <li>Coyote</li>
+                <li>Almaden Valley</li>
+                <li>Blossom Valley</li>
+                <li>Silver Creek</li>
+                <li>Edenvale</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">East/West Columbus</h3>
+              <h3 className="font-semibold mb-2">Silicon Valley</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>Gahanna</li>
-                <li>New Albany</li>
-                <li>Bexley</li>
-                <li>Whitehall</li>
-                <li>Hilliard</li>
-                <li>Galloway</li>
-                <li>Lincoln Village</li>
-                <li>Valleyview</li>
+                <li>Cupertino</li>
+                <li>Sunnyvale</li>
+                <li>Santa Clara</li>
+                <li>Mountain View</li>
+                <li>Palo Alto</li>
+                <li>Los Altos</li>
+                <li>Campbell</li>
+                <li>Saratoga</li>
               </ul>
             </div>
           </div>
           
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600">
-              <strong>Also serving:</strong> Franklin County, Delaware County, Fairfield County, 
-              Licking County, and all of Central Ohio
+              <strong>Also serving:</strong> Santa Clara County, Alameda County, San Mateo County, 
+              and all of the Greater Bay Area
             </p>
           </div>
         </section>
 
-        {/* Columbus Tips */}
+        {/* San Jose Tips */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Columbus Dumpster Considerations</h2>
+          <h2 className="text-2xl font-bold mb-6">San Jose Dumpster Considerations</h2>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Tech Hub Growth</h3>
+              <h3 className="font-semibold mb-1">Silicon Valley Tech Boom</h3>
               <p className="text-gray-600">
-                Columbus is emerging as a major tech center with companies like Google, Amazon, and Intel. High demand for office construction and data center projects.
+                Constant tech company expansion drives massive commercial construction and office buildouts. High demand means booking well in advance is essential.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Ohio State University Impact</h3>
+              <h3 className="font-semibold mb-1">Premium Market Pricing</h3>
               <p className="text-gray-600">
-                Large student population creates seasonal demand for move-out cleanouts and rental property turnovers. Plan around academic calendar for best availability.
+                Bay Area's high cost of living affects dumpster rental prices. Expect premium rates but competitive service due to strong local economy.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Fortune 500 Headquarters</h3>
+              <h3 className="font-semibold mb-1">Environmental Regulations</h3>
               <p className="text-gray-600">
-                Major corporations like Nationwide, American Electric Power, and Cardinal Health drive commercial construction and office renovations.
+                California has strict environmental rules. Many providers specialize in recycling and diversion to meet state mandates and reduce landfill waste.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Historic Neighborhoods</h3>
+              <h3 className="font-semibold mb-1">Housing Shortage Renovations</h3>
               <p className="text-gray-600">
-                German Village and other historic areas have preservation requirements. Discuss access routes and placement restrictions with providers.
+                Extreme housing costs drive renovation over relocation. High demand for home improvement and ADU (accessory dwelling unit) construction dumpsters.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Government Center Activity</h3>
+              <h3 className="font-semibold mb-1">Traffic & Access Challenges</h3>
               <p className="text-gray-600">
-                State capital status creates steady government facility construction and renovation demand. Many providers experienced with public sector projects.
+                Heavy Bay Area traffic can affect delivery times. Coordinate delivery windows to avoid rush hours on major highways like 101 and 880.
               </p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-semibold mb-1">Suburban Expansion</h3>
+              <h3 className="font-semibold mb-1">Permit Requirements</h3>
               <p className="text-gray-600">
-                Rapid growth in Dublin, New Albany, and surrounding suburbs creates constant residential construction. Book early during peak building seasons.
+                Revocable Encroachment Permit required for street placement. Contact San Jose Public Works Department for permit applications and requirements.
               </p>
             </div>
           </div>
@@ -277,7 +277,7 @@ export default function ColumbusPage() {
         <div className="bg-gray-50 rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">Need Help Choosing a Size?</h2>
           <p className="mb-6 text-gray-700">
-            Use our free calculator to determine the right dumpster size for your Columbus project
+            Use our free calculator to determine the right dumpster size for your San Jose project
           </p>
           <Link href="/" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition">
             Calculate Dumpster Size
